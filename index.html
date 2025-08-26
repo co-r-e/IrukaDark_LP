@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.title">IrukaDark — AI that instantly explains unknown text</title>
+    <meta name="description" data-i18n="meta.description" content="Simply select unknown text you encounter while using your computer and press Option+A. IrukaDark provides clear explanations on the spot. Clone from GitHub and start using immediately." />
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./icons/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./icons/icon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Background visuals -->
+    <div class="bg fx-grid"></div>
+    <div class="bg fx-radial fx-radial-1"></div>
+    <div class="bg fx-radial fx-radial-2"></div>
+    <div class="bg fx-noise"></div>
+
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="#">
+          <img src="./icons/logo.svg" alt="IrukaDark" class="brand-logo lg" />
+        </a>
+        <nav class="nav-actions">
+          <div class="lang-dropdown">
+            <button class="lang-trigger" id="langTrigger">
+              <span class="globe-icon">🌍</span>
+            </button>
+            <div class="lang-menu" id="langMenu">
+              <button class="lang-option" data-lang="en">
+                <span class="lang-text">English</span>
+              </button>
+              <button class="lang-option" data-lang="ja">
+                <span class="lang-text">日本語</span>
+              </button>
+            </div>
+          </div>
+          <a href="https://github.com/" class="btn btn-primary" data-i18n="header.clone">Clone & Use</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="container hero">
+        <div class="hero-card">
+          <div class="hero-content">
+            <h1 class="hero-title" data-i18n="hero.title">
+              AI assistant that <span class="grad-white">instantly explains</span> unknown text and stays on your desktop
+            </h1>
+            <p class="hero-sub" data-i18n="hero.subtitle">
+              Difficult sentences and technical terms you encounter while using your computer. Just select text and press Option+A for instant explanations, or select any area and press Option+S to take a screenshot and get visual explanations. No need to stop anymore.
+            </p>
+            <div class="hero-cta">
+              <a href="https://github.com/" class="btn btn-primary btn-lg" data-i18n="hero.cta">Clone from GitHub</a>
+            </div>
+          </div>
+          <div class="hero-media glass-white">
+            <div class="media-bar">
+              <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+              <span class="title">Text Analysis Demo</span>
+            </div>
+            <div class="text-demo" id="textDemo">
+              <div class="text-sample">
+                <div class="text-line">const result = await fetchUserData().then(data => {</div>
+                <div class="text-line selected">  return data.reduce((acc, user) => ({ ...acc, [user.id]: user }), {});</div>
+                <div class="text-line">}).catch(error => console.error(error));</div>
+              </div>
+              <div class="explanation-bubble">
+                <div class="bubble-header" data-i18n="demo.question">What does this mean?</div>
+                <div class="bubble-content" data-i18n="demo.explanation">
+                  This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user's ID as the key and the user object as the value.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="features.title">パソコン作業が高速に捗る</h2>
+          <p class="section-sub" data-i18n="features.subtitle">もう「わからない」で止まらない。瞬時理解で作業が加速します。</p>
+        </div>
+
+        <div class="grid features">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="features.instant.title">瞬時解説（Option+A）</h3>
+            </div>
+            <p class="card-body" data-i18n="features.instant.description">ウェブサイト、ドキュメント、アプリなどで難しい文章や専門用語を選択してOption+A。画像やグラフの説明が欲しい範囲を選択してOption+S。辞書や検索よりも速く、文脈に沿った的確な解説が得られます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="features.flow.title">フローを断ち切らない</h3>
+            </div>
+            <p class="card-body" data-i18n="features.flow.description">いちいち別のウィンドウに移動して、知りたいテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ、なんてことは不要です。その場でテキストを選択してOption+A、または範囲を選択してOption+Sを押すだけ。作業の流れを止めることなく、瞬時に疑問を解決できます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="features.secure.title">シンプル・セキュア</h3>
+            </div>
+            <p class="card-body" data-i18n="features.secure.description">IrukaDarkはデータベースを持ちません。AIの学習には使われず、プライバシーを守りながら安心して使えます。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section id="use-cases" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="usecases.title">こんなシーンで活躍</h2>
+          <p class="section-sub" data-i18n="usecases.subtitle">日常のパソコン作業で「これどういうこと？」と思う瞬間を、すべて即時理解できます。</p>
+        </div>
+
+        <div class="grid features">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="usecases.programming.title">プログラミング学習</h3>
+            </div>
+            <p class="card-body" data-i18n="usecases.programming.description">さまざまなメソッドや関数に出会ったとき。コードを読んでいて知らない処理に遭遇した瞬間に、その場で解説を受け取れます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="usecases.workplace.title">新しい職場・業界</h3>
+            </div>
+            <p class="card-body" data-i18n="usecases.workplace.description">転職や異動で専門用語にたくさん触れるとき。業界特有の言葉や概念を素早く理解して、新しい環境に早く馴染めます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="usecases.understanding.title">深い理解が欲しいとき</h3>
+            </div>
+            <p class="card-body" data-i18n="usecases.understanding.description">ただの翻訳ではなく、知らない言葉の意図や背景を知りたいとき。単語の意味を超えて、なぜその表現が使われるのかまで理解できます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="usecases.academic.title">学術論文・研究資料</h3>
+            </div>
+            <p class="card-body" data-i18n="usecases.academic.description">論文や研究資料を読んでいて難解な概念に出会ったとき。専門分野の深い内容も、分かりやすい言葉で解説してもらえます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="usecases.english.title">海外サイト・英語資料</h3>
+            </div>
+            <p class="card-body" data-i18n="usecases.english.description">英語の技術文書やサイトを読んでいて、翻訳ツールでは理解しきれない表現に出会ったとき。文脈に沿った自然な解説が得られます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="usecases.legal.title">契約書・法的文書</h3>
+            </div>
+            <p class="card-body" data-i18n="usecases.legal.description">重要な契約書や法的文書を確認していて、専門的な条項や用語の意味を把握したいとき。理解をサポートします。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="howto.title">使い方</h2>
+          <p class="section-sub" data-i18n="howto.subtitle">たった3ステップで、GitHubからクローンして即時利用開始</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="num">1</span>
+            <div class="content">
+              <h4 data-i18n="howto.step1.title">GitHubからクローン</h4>
+              <p data-i18n="howto.step1.description">リポジトリをローカル環境にクローンし、必要な依存関係をインストールしてセットアップを完了します。</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">2</span>
+            <div class="content">
+              <h4 data-i18n="howto.step2.title">テキストを選択してOption+A / 範囲を選択してOption+S</h4>
+              <p data-i18n="howto.step2.description">ウェブサイト、ドキュメント、アプリなどで出会った難しいテキストを選択してOption+Aで解説をリクエスト。画像やグラフなどの視覚的なコンテンツは範囲を選択してOption+Sでスクリーンショット解説。</p>
+              <div class="kbd-demo">
+                <div class="keys">
+                  <span class="kbd">⌥</span>
+                  <span class="plus">+</span>
+                  <span class="kbd">A</span>
+                </div>
+                <div class="hint" data-i18n="howto.step2.hint">テキスト → Option + A / 範囲 → Option + S</div>
+                <div class="selection-demo">
+                  <div class="line"></div>
+                  <div class="line highlight"></div>
+                  <div class="line"></div>
+                </div>
+              </div>
+              <div class="kbd-demo">
+                <div class="keys">
+                  <span class="kbd">⌥</span>
+                  <span class="plus">+</span>
+                  <span class="kbd">S</span>
+                </div>
+                <div class="hint" data-i18n="howto.screenshot.hint">スクリーンショット解説</div>
+                <div class="selection-demo screenshot-demo">
+                  <div class="screenshot-area"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">3</span>
+            <div class="content">
+              <h4 data-i18n="howto.step3.title">文脈を踏まえた解説を受け取り</h4>
+              <p data-i18n="howto.step3.description">ただの単語の意味ではなく、文脈や背景を踏まえた理解が得られ、パソコン作業がスムーズに進みます。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Pricing / CTA -->
+      <section id="cta" class="container section">
+        <div class="cta glass">
+          <div class="cta-copy">
+            <h3 class="cta-title" data-i18n="cta.title">今すぐクローンして使う</h3>
+            <p class="cta-sub" data-i18n="cta.description">GitHubからクローンして、すぐにパソコン作業の効率を向上させましょう。オープンソースで無料で利用できます。</p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://github.com/" class="btn btn-primary btn-lg" data-i18n="cta.button">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <div class="foot-left">
+        <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
