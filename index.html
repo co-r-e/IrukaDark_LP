@@ -127,13 +127,15 @@
             </div>
             <div class="text-demo" id="textDemo">
               <div class="text-sample">
-                <div class="text-line">Original: Your plan renews automatically each</div>
-                <div class="text-line selected">month unless you cancel at least 24 hours</div>
-                <div class="text-line">before the renewal date.</div>
+                <div class="text-line">const result = await fetchUserData().then(data => {</div>
+                <div class="text-line selected">  return data.reduce((acc, user) => ({ ...acc, [user.id]: user }), {});</div>
+                <div class="text-line">}).catch(error => console.error(error));</div>
               </div>
               <div class="explanation-bubble">
-                <div class="bubble-header" data-i18n="demo.question">Plain explanation</div>
-                <div class="bubble-content" data-i18n="demo.explanation">Plain: You'll be charged monthly until you cancel.</div>
+                <div class="bubble-header" data-i18n="demo.question">What does this mean?</div>
+                <div class="bubble-content" data-i18n="demo.explanation">
+                  This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user's ID as the key and the user object as the value.
+                </div>
               </div>
             </div>
           </div>

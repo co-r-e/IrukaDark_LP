@@ -95,13 +95,15 @@
             </div>
             <div class="text-demo" id="textDemo">
               <div class="text-sample">
-                <div class="text-line">原文: プランは解約しない限り毎月自動更新され、</div>
-                <div class="text-line selected">更新日の24時間前までに解約しないと</div>
-                <div class="text-line">次回分が請求されます。</div>
+                <div class="text-line">const result = await fetchUserData().then(data => {</div>
+                <div class="text-line selected">  return data.reduce((acc, user) => ({ ...acc, [user.id]: user }), {});</div>
+                <div class="text-line">}).catch(error => console.error(error));</div>
               </div>
               <div class="explanation-bubble">
-                <div class="bubble-header" data-i18n="demo.question">かんたんに言うと</div>
-                <div class="bubble-content" data-i18n="demo.explanation">簡単に: 解約しないと毎月課金されます。</div>
+                <div class="bubble-header" data-i18n="demo.question">これはどういう意味？</div>
+                <div class="bubble-content" data-i18n="demo.explanation">
+                  この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。
+                </div>
               </div>
             </div>
           </div>
