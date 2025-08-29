@@ -9,8 +9,8 @@ const translations = {
     'hero.title': 'Understand <span class="grad-white">any on‑screen text instantly</span> with a desktop AI assistant',
     'hero.subtitle': 'Select text in your browser, docs, or apps and press Option/Alt+A for a context‑aware explanation. Select an area and press Option/Alt+S for screenshot analysis—stay in flow.',
     'hero.cta': 'Get Started on GitHub',
-    'demo.question': 'What does this mean?',
-    'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
+    'demo.question': 'Plain explanation',
+    'demo.explanation': "Plain: You'll be charged monthly until you cancel.",
     'features.title': 'Work Faster on Your Computer',
     'features.subtitle': 'No more “I don’t get it.” Instant, context‑aware understanding keeps you moving.',
     'features.instant.title': 'Instant Explanation (Option/Alt+A)',
@@ -55,8 +55,8 @@ const translations = {
     'hero.title': 'デスクトップで<span class="grad-white">テキストを瞬時に解説</span>するAIアシスタント',
     'hero.subtitle': 'ブラウザやドキュメント、アプリ上のテキストを選択してOption/Alt+Aで文脈に沿った解説。範囲を選んでOption/Alt+Sでスクリーンショット解析。作業の流れを止めません。',
     'hero.cta': 'GitHubからクローン',
-    'demo.question': 'これどういうこと？',
-    'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
+    'demo.question': 'かんたんに言うと',
+    'demo.explanation': '簡単に: 解約しないと毎月課金されます。',
     'features.title': 'パソコン作業が高速に捗る',
     'features.subtitle': 'もう「わからない」で止まらない。瞬時理解で作業が加速します。',
     'features.instant.title': '瞬時解説（Option+A）',
@@ -92,7 +92,7 @@ const translations = {
     'cta.title': '今すぐクローンして使う',
     'cta.description': 'GitHubからクローンして、すぐにパソコン作業の効率を向上させましょう。オープンソースで無料で利用できます。',
     'cta.button': 'GitHub',
-    'footer.copyright': '© <span id="year"></span> CORe, Inc. 無断転載を禁じます'
+    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   }
 };
 
@@ -242,113 +242,113 @@ const contentPatterns = {
   en: {
     programming: {
       lines: [
-        'const result = await fetchUserData().then(data => {',
-        '  return data.reduce((acc, user) => ({ ...acc, [user.id]: user }), {});',
-        '}).catch(error => console.error(error));'
+        'Original: The function caches results to speed up,',
+        'and may briefly serve slightly stale data',
+        'while it refreshes in the background.'
       ],
       selectedIndex: 1,
-      explanation: 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.'
+      explanation: 'Plain: It saves answers to make things fast; info might be slightly out of date for a short time.'
     },
     workplace: {
       lines: [
-        '■ Q4 KPI Dashboard Review',
-        'Analyze ROI, CAC, LTV correlations and',
-        'explore churn rate improvement strategies.'
+        'Original: All expenses must be pre‑approved;',
+        'claims submitted without prior approval will be',
+        'rejected by finance.'
       ],
       selectedIndex: 1,
-      explanation: 'ROI (Return on Investment), CAC (Customer Acquisition Cost), and LTV (Lifetime Value) are key business metrics. This correlation analysis helps understand the relationship between investment efficiency and customer value, enabling more effective marketing strategies.'
+      explanation: 'Plain: Get approval first; otherwise you won’t be reimbursed.'
     },
     understanding: {
       lines: [
-        'The phenomenological approach to consciousness',
-        'emphasizes the subjective experience and',
-        'intentionality of mental states in cognition.'
+        'Original: Idempotent requests can be retried',
+        'without causing additional side effects or',
+        'changing the final outcome.'
       ],
-      selectedIndex: 0,
-      explanation: 'The phenomenological approach is a philosophical method that emphasizes the subjective experience of consciousness and the intentionality (the quality of being directed toward something) of mental states. It seeks to understand consciousness from the experiencer\'s own perspective rather than through objective observation.'
+      selectedIndex: 1,
+      explanation: 'Plain: Sending the same request again won’t change the result.'
     },
     academic: {
       lines: [
-        'The p-value indicates the probability of observing',
-        'such extreme results under the null hypothesis,',
-        'typically requiring α < 0.05 for significance.'
+        'Original: The small sample size limits the',
+        'generalizability of our findings and warrants',
+        'caution when interpreting results.'
       ],
       selectedIndex: 1,
-      explanation: 'The p-value represents the probability of obtaining the observed results (or more extreme ones) when the null hypothesis is true. Generally, the significance level α is set below 0.05, and when the p-value falls below this threshold, the result is considered statistically significant.'
+      explanation: 'Plain: Few participants; results may not apply broadly.'
     },
     english: {
       lines: [
-        'The implementation leverages microservices',
-        'architecture with eventual consistency patterns',
-        'to ensure scalable distributed computing.'
+        'Original: Your plan renews automatically each',
+        'month unless you cancel at least 24 hours',
+        'before the renewal date.'
       ],
       selectedIndex: 1,
-      explanation: '"Eventual consistency" is a distributed systems concept where not all nodes are immediately synchronized, but consistency is guaranteed over time. This architecture prioritizes availability and performance, commonly used in systems that favor these aspects.'
+      explanation: "Plain: You'll be charged monthly until you cancel."
     },
     legal: {
       lines: [
-        'Article 12 (Disclaimer)',
-        'Regarding non-performance due to force majeure,',
-        'the parties shall mutually exempt each other.'
+        'Original: We may terminate this agreement at',
+        'our sole discretion without prior notice to',
+        'the customer.'
       ],
       selectedIndex: 1,
-      explanation: 'Force majeure refers to external circumstances beyond the parties\' control or effort, such as natural disasters, wars, or legal changes. This clause exempts responsibility when contract performance becomes impossible due to such situations.'
+      explanation: 'Plain: We can end the contract when we decide.'
     }
   },
   ja: {
     programming: {
       lines: [
-        'const result = await fetchUserData().then(data => {',
-        '  return data.reduce((acc, user) => ({ ...acc, [user.id]: user }), {});',
-        '}).catch(error => console.error(error));'
+        '原文: 関数は処理を高速化するため結果をキャッシュし、',
+        '更新中は短時間、やや古い情報を返す場合が',
+        'あります。'
       ],
       selectedIndex: 1,
-      explanation: 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。'
+      explanation: '簡単に: 速くするため一時的に古い情報のことがあります。'
     },
     workplace: {
       lines: [
-        '■ KPIダッシュボードの四半期レビュー',
-        'ROI、CAC、LTVの相関性分析を実施し、',
-        'チャーンレートの改善施策を検討する。'
+        '原文: 経費は事前承認が必須で、',
+        '承認のない申請は経理により',
+        '却下されます。'
       ],
       selectedIndex: 1,
-      explanation: 'ROI（投資収益率）、CAC（顧客獲得費用）、LTV（顧客生涯価値）は重要なビジネス指標です。この相関性分析により、投資効率と顧客価値の関係性を把握し、より効果的なマーケティング戦略を立案できます。'
+      explanation: '簡単に: まず承認。ないと精算されません。'
     },
     understanding: {
       lines: [
-        '意識の現象学的アプローチは、',
-        '主観的な体験と心的状態の志向性を、',
-        '認知において重視する立場である。'
+        '原文: 冪等なリクエストは再試行しても',
+        '追加の副作用を起こさず、',
+        '最終的な結果も変わりません。'
       ],
       selectedIndex: 1,
-      explanation: '現象学的アプローチは、意識の主観的体験と心的状態の志向性（何かに向けられている性質）を重視する哲学的手法です。体験者自身の視点から意識を理解します。'
+      explanation: '簡単に: 同じ操作を繰り返しても結果は同じです。'
     },
     academic: {
       lines: [
-        'p値は帰無仮説の下で観測される、',
-        'これほど極端な結果の確率を示し、',
-        '一般に有意水準α<0.05が用いられる。'
+        '原文: サンプル数が少ないため、',
+        '研究結果の一般化には限界があり、',
+        '解釈には注意が必要です。'
       ],
       selectedIndex: 1,
-      explanation: 'p値は帰無仮説が真のときに、観測結果（またはそれ以上に極端な結果）が得られる確率です。多くの場合、α=0.05未満で統計的有意とみなします。'
+      explanation: '簡単に: 参加者が少ないので結論は限定的です。'
     },
     english: {
       lines: [
-        'この実装はマイクロサービスを採用し、',
-        '結果整合性（eventual consistency）のパターンで、',
-        'スケーラブルな分散処理を実現する。'
+        '原文: プランは解約しない限り毎月自動更新され、',
+        '更新日の24時間前までに解約しないと',
+        '次回分が請求されます。'
       ],
       selectedIndex: 1,
-      explanation: '結果整合性は、全ノードが即時同期するのではなく、時間の経過とともに整合性が満たされる方式です。可用性と性能を優先する場面で用いられます。'
+      explanation: '簡単に: 解約しないと毎月課金されます。'
     },
     legal: {
       lines: [
-        '第12条（免責事項）',
-        '不可抗力による履行不能については、',
-        '当事者は相互に免責されるものとする。'
+        '原文: 当社の裁量で、',
+        '事前の通知なく本契約を',
+        '終了できるものとします。'
       ],
       selectedIndex: 1,
-      explanation: '不可抗力とは、天災、戦争、法令の変更など、当事者の意思や努力では防ぐことができない外部的な事情を指します。このような状況で契約履行ができない場合、責任を免除する条項です。'
+      explanation: '簡単に: 判断次第で契約を終わらせられます。'
     }
   }
 };
