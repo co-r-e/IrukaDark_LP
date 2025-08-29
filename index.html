@@ -87,11 +87,6 @@
           <img src="./icons/logo.svg" alt="IrukaDark" class="brand-logo lg" />
         </a>
         <nav class="nav-actions">
-          <div class="nav-lang-links" aria-label="Languages">
-            <a href="./" lang="en">English</a>
-            <span class="muted">|</span>
-            <a href="./ja/" lang="ja">日本語</a>
-          </div>
           <div class="lang-dropdown">
             <button class="lang-trigger" id="langTrigger">
               <span class="globe-icon">🌍</span>
@@ -321,6 +316,14 @@
             <div class="card-head"><h3 class="card-title">How do I use it quickly?</h3></div>
             <p class="card-body">Select text and press Option/Alt+A for an explanation. For images and graphs, select an area and press Option/Alt+S for screenshot analysis.</p>
           </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">Is it free and open source?</h3></div>
+            <p class="card-body">Yes. IrukaDark is open source and free to use. Clone the repository on GitHub. For usage terms, please see the license in the repository.</p>
+          </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">Does it require an internet connection?</h3></div>
+            <p class="card-body">Yes. IrukaDark connects to AI services to generate explanations. Only the content you select (or capture) is sent over HTTPS; IrukaDark does not store your data.</p>
+          </article>
         </div>
       </section>
     </main>
@@ -328,12 +331,10 @@
     <footer class="container footer">
       <div class="foot-left">
         <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
-        <span class="muted"> · </span>
-        <span class="muted" aria-label="Languages">
-          <a href="./" lang="en">English</a>
-          <span> / </span>
-          <a href="./ja/" lang="ja">日本語</a>
-        </span>
+      </div>
+      <div class="foot-right">
+        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">Company</a>
+        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact</a>
       </div>
     </footer>
 
@@ -364,6 +365,16 @@
           "@type": "Question",
           "name": "How do I use it quickly?",
           "acceptedAnswer": {"@type": "Answer", "text": "Select text and press Option/Alt+A for an explanation. For images and graphs, select an area and press Option/Alt+S for screenshot analysis."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is it free and open source?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark is open source and free to use. Clone the repository on GitHub. For usage terms, please see the license in the repository."}
+        },
+        {
+          "@type": "Question",
+          "name": "Does it require an internet connection?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark connects to AI services to generate explanations. Only the content you select (or capture) is sent over HTTPS; IrukaDark does not store your data."}
         }
       ]
     }

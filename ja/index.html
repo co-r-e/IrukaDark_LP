@@ -15,7 +15,7 @@
     <meta property="og:description" content="テキストを選択して Option+A、範囲を選んで Option+S。文脈に沿った解説をその場で表示。オープンソースで無料。" />
     <meta property="og:url" content="https://co-r-e.github.io/IrukaDark_LP/ja/" />
     <meta property="og:image" content="https://co-r-e.github.io/IrukaDark_LP/icons/ogp.png" />
-    <meta property="og:image:alt" content="IrukaDark — わからないテキストを瞬時に理解するAI" />
+    <meta property="og:image:alt" content="IrukaDark — デスクトップでテキストを瞬時解説するAI" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:locale:alternate" content="en_US" />
     <link rel="canonical" href="https://co-r-e.github.io/IrukaDark_LP/ja/" />
@@ -28,7 +28,7 @@
     <meta name="twitter:title" content="IrukaDark — デスクトップでテキストを瞬時解説するAI（Option+A/Option+S対応）" />
     <meta name="twitter:description" content="テキストを選択して Option+A、範囲を選んで Option+S。文脈に沿った解説をその場で表示。オープンソースで無料。" />
     <meta name="twitter:image" content="https://co-r-e.github.io/IrukaDark_LP/icons/ogp.png" />
-    <meta name="twitter:image:alt" content="IrukaDark — わからないテキストを瞬時に理解するAI" />
+    <meta name="twitter:image:alt" content="IrukaDark — デスクトップでテキストを瞬時解説するAI" />
 
     <!-- Favicon & App Icons -->
     <link rel="icon" href="../icons/favicon.svg" type="image/svg+xml" />
@@ -55,11 +55,6 @@
           <img src="../icons/logo.svg" alt="IrukaDark" class="brand-logo lg" />
         </a>
         <nav class="nav-actions">
-          <div class="nav-lang-links" aria-label="Languages">
-            <a href="../" lang="en">English</a>
-            <span class="muted">|</span>
-            <a href="./" lang="ja">日本語</a>
-          </div>
           <div class="lang-dropdown">
             <button class="lang-trigger" id="langTrigger">
               <span class="globe-icon">🌍</span>
@@ -237,6 +232,14 @@
             <div class="card-head"><h3 class="card-title">素早く使うには？</h3></div>
             <p class="card-body">テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。</p>
           </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">無料でオープンソースですか？</h3></div>
+            <p class="card-body">はい。IrukaDark はオープンソースで無料で利用できます。GitHub のリポジトリをクローンしてご利用ください。利用条件はリポジトリのライセンスをご確認ください。</p>
+          </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">インターネット接続は必要ですか？</h3></div>
+            <p class="card-body">はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDark がデータを保存することはありません。</p>
+          </article>
         </div>
       </section>
     </main>
@@ -244,12 +247,10 @@
     <footer class="container footer">
       <div class="foot-left">
         <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
-        <span class="muted"> · </span>
-        <span class="muted" aria-label="Languages">
-          <a href="../" lang="en">English</a>
-          <span> / </span>
-          <a href="./" lang="ja">日本語</a>
-        </span>
+      </div>
+      <div class="foot-right">
+        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">会社概要</a>
+        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">お問い合わせ</a>
       </div>
     </footer>
 
@@ -314,6 +315,16 @@
           "@type": "Question",
           "name": "素早く使うには？",
           "acceptedAnswer": {"@type": "Answer", "text": "テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。"}
+        },
+        {
+          "@type": "Question",
+          "name": "無料でオープンソースですか？",
+          "acceptedAnswer": {"@type": "Answer", "text": "はい。IrukaDark はオープンソースで無料で利用できます。GitHub のリポジトリをクローンしてご利用ください。利用条件はリポジトリのライセンスをご確認ください。"}
+        },
+        {
+          "@type": "Question",
+          "name": "インターネット接続は必要ですか？",
+          "acceptedAnswer": {"@type": "Answer", "text": "はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDark がデータを保存することはありません。"}
         }
       ]
     }

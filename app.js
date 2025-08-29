@@ -49,21 +49,21 @@ const translations = {
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
-    'meta.title': 'IrukaDark — わからないテキストを瞬時に理解するAI',
-    'meta.description': 'パソコン操作中に出会うわからない文章や専門用語を選択してOption+Aを押すだけ。IrukaDarkがその場で分かりやすく解説します。GitHubからクローンして今すぐ利用開始。',
+    'meta.title': 'IrukaDark — デスクトップでテキストを瞬時解説するAI（Option+A/Option+S対応）',
+    'meta.description': 'テキストを選択して Option+A、範囲を選んで Option+S。文脈に沿った解説をその場で表示。オープンソースで無料。',
     'header.clone': 'クローンして使う',
-    'hero.title': 'わからないテキストを<span class="grad-white">瞬時に解説</span>してくれるデスクトップ常駐AIアシスタント',
-    'hero.subtitle': 'パソコン操作中に出会う難しい文章や専門用語。テキストを選択してOption+A、または範囲を選択してOption+Sでスクリーンショットを撮影し、IrukaDarkがその場で分かりやすく解説します。もう立ち止まる必要はありません。',
-    'hero.cta': 'GitHubでクローン',
+    'hero.title': 'デスクトップで<span class="grad-white">テキストを瞬時に解説</span>するAIアシスタント',
+    'hero.subtitle': 'ブラウザやドキュメント、アプリ上のテキストを選択してOption/Alt+Aで文脈に沿った解説。範囲を選んでOption/Alt+Sでスクリーンショット解析。作業の流れを止めません。',
+    'hero.cta': 'GitHubからクローン',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
     'features.title': 'パソコン作業が高速に捗る',
     'features.subtitle': 'もう「わからない」で止まらない。瞬時理解で作業が加速します。',
     'features.instant.title': '瞬時解説（Option+A）',
-    'features.instant.description': 'ウェブサイト、ドキュメント、アプリなどで難しい文章や専門用語を選択してOption+A。辞書や検索よりも速く、文脈に沿った的確な解説が得られます。',
+    'features.instant.description': 'ウェブサイト、ドキュメント、アプリなどで難しい文章や専門用語を選択してOption/Alt+A。辞書や検索よりも速く、文脈に沿った的確な解説が得られます。',
     'features.flow.title': 'フローを断ち切らない',
     'features.flow.description': 'いちいち別のウィンドウに移動して、知りたいテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ、なんてことは不要です。その場で選択してOption+Aを押すだけ。作業の流れを止めることなく、瞬時に疑問を解決できます。',
-    'features.secure.title': 'シンプル・セキュア',
+    'features.secure.title': 'シンプルで安全',
     'features.secure.description': 'IrukaDarkはデータベースを持ちません。AIの学習には使われず、プライバシーを守りながら安心して使えます。',
     'usecases.title': 'こんなシーンで活躍',
     'usecases.subtitle': '日常のパソコン作業で「これどういうこと？」と思う瞬間を、すべて即時理解できます。',
@@ -83,16 +83,16 @@ const translations = {
     'howto.subtitle': 'たった3ステップで、GitHubからクローンして即時利用開始',
     'howto.step1.title': 'GitHubからクローン',
     'howto.step1.description': 'リポジトリをローカル環境にクローンし、必要な依存関係をインストールしてセットアップを完了します。',
-    'howto.step2.title': 'テキストを選択してOption+A',
-    'howto.step2.description': 'ウェブサイト、ドキュメント、アプリなどで出会った難しいテキストを選択し、Option+Aで解説をリクエスト。',
-    'howto.step2.hint': 'テキスト → Option + A / 範囲 → Option + S',
+    'howto.step2.title': 'テキストを選択してOption/Alt+A / 範囲を選択してOption/Alt+S',
+    'howto.step2.description': 'ウェブサイト、ドキュメント、アプリで出会った難しいテキストはOption/Alt+Aで解説。画像やグラフなどの視覚コンテンツは範囲を選んでOption/Alt+Sでスクリーンショット解析。',
+    'howto.step2.hint': 'テキスト → Option/Alt+A / 範囲 → Option/Alt+S',
     'howto.screenshot.hint': 'スクリーンショット解説',
     'howto.step3.title': '文脈を踏まえた解説を受け取り',
     'howto.step3.description': 'ただの単語の意味ではなく、文脈や背景を踏まえた理解が得られ、パソコン作業がスムーズに進みます。',
     'cta.title': '今すぐクローンして使う',
     'cta.description': 'GitHubからクローンして、すぐにパソコン作業の効率を向上させましょう。オープンソースで無料で利用できます。',
     'cta.button': 'GitHub',
-    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
+    'footer.copyright': '© <span id="year"></span> CORe, Inc. 無断転載を禁じます'
   }
 };
 
@@ -199,10 +199,36 @@ document.addEventListener('DOMContentLoaded', () => {
   // Toggle dropdown
   langTrigger.addEventListener('click', toggleLanguageDropdown);
   
-  // Language option selection
+  // Language option selection -> navigate to language-specific URL for SEO
+  function getCanonicalBaseUrl() {
+    const link = document.querySelector('link[rel="canonical"]');
+    try {
+      const u = new URL(link ? link.href : window.location.href);
+      // Ensure trailing slash and strip `/ja/` if present
+      if (u.pathname.endsWith('/ja/')) {
+        u.pathname = u.pathname.replace(/ja\/$/, '');
+      }
+      if (!u.pathname.endsWith('/')) u.pathname += '/';
+      u.search = '';
+      u.hash = '';
+      return u.toString();
+    } catch (e) {
+      // Fallback to origin + path directory
+      const path = window.location.pathname.replace(/(ja\/)?[^/]*$/, '');
+      return window.location.origin + path;
+    }
+  }
+
+  function navigateToLanguage(lang) {
+    const base = getCanonicalBaseUrl();
+    const target = lang === 'ja' ? base + 'ja/' : base;
+    window.location.href = target;
+  }
+
   langOptions.forEach(option => {
-    option.addEventListener('click', () => {
-      switchLanguage(option.dataset.lang);
+    option.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateToLanguage(option.dataset.lang);
     });
   });
   
@@ -290,30 +316,30 @@ const contentPatterns = {
     },
     understanding: {
       lines: [
-        'The phenomenological approach to consciousness',
-        'emphasizes the subjective experience and',
-        'intentionality of mental states in cognition.'
+        '意識の現象学的アプローチは、',
+        '主観的な体験と心的状態の志向性を、',
+        '認知において重視する立場である。'
       ],
-      selectedIndex: 0,
-      explanation: '現象学的アプローチは、意識の主観的体験と心的状態の志向性（何かに向けられている性質）を重視する哲学的手法です。客観的観察ではなく、体験者自身の視点から意識を理解しようとする方法論です。'
+      selectedIndex: 1,
+      explanation: '現象学的アプローチは、意識の主観的体験と心的状態の志向性（何かに向けられている性質）を重視する哲学的手法です。体験者自身の視点から意識を理解します。'
     },
     academic: {
       lines: [
-        'The p-value indicates the probability of observing',
-        'such extreme results under the null hypothesis,',
-        'typically requiring α < 0.05 for significance.'
+        'p値は帰無仮説の下で観測される、',
+        'これほど極端な結果の確率を示し、',
+        '一般に有意水準α<0.05が用いられる。'
       ],
       selectedIndex: 1,
-      explanation: 'p値は帰無仮説が真である場合に、観測された結果またはそれより極端な結果が得られる確率を示します。一般的にα（有意水準）を0.05未満に設定し、p値がこれを下回る場合に統計的に有意と判定します。'
+      explanation: 'p値は帰無仮説が真のときに、観測結果（またはそれ以上に極端な結果）が得られる確率です。多くの場合、α=0.05未満で統計的有意とみなします。'
     },
     english: {
       lines: [
-        'The implementation leverages microservices',
-        'architecture with eventual consistency patterns',
-        'to ensure scalable distributed computing.'
+        'この実装はマイクロサービスを採用し、',
+        '結果整合性（eventual consistency）のパターンで、',
+        'スケーラブルな分散処理を実現する。'
       ],
       selectedIndex: 1,
-      explanation: '「eventual consistency」は結果整合性と呼ばれる分散システムの概念です。すべてのノードが即座に同期されるのではなく、最終的には整合性が保たれる仕組みで、可用性とパフォーマンスを優先したアーキテクチャで使用されます。'
+      explanation: '結果整合性は、全ノードが即時同期するのではなく、時間の経過とともに整合性が満たされる方式です。可用性と性能を優先する場面で用いられます。'
     },
     legal: {
       lines: [
