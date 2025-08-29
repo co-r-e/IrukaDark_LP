@@ -3,49 +3,49 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Multi-language support
 const translations = {
   en: {
-    'meta.title': 'IrukaDark — AI that instantly explains unknown text',
-    'meta.description': 'Simply select unknown text you encounter while using your computer and press Option+A. IrukaDark provides clear explanations on the spot. Clone from GitHub and start using immediately.',
-    'header.clone': 'Clone & Use',
-    'hero.title': 'AI assistant that <span class="grad-white">instantly explains</span> unknown text and stays on your desktop',
-    'hero.subtitle': 'Difficult sentences and technical terms you encounter while using your computer. Just select text and press Option+A for instant explanations, or select any area and press Option+S to take a screenshot and get visual explanations. No need to stop anymore.',
-    'hero.cta': 'Clone from GitHub',
+    'meta.title': 'IrukaDark — Desktop AI that instantly explains any text',
+    'meta.description': 'Select any text on your screen and press Option/Alt+A for a clear, context‑aware explanation. Capture an area with Option/Alt+S for screenshot analysis. Open‑source and free.',
+    'header.clone': 'Get Started on GitHub',
+    'hero.title': 'Understand <span class="grad-white">any on‑screen text instantly</span> with a desktop AI assistant',
+    'hero.subtitle': 'Select text in your browser, docs, or apps and press Option/Alt+A for a context‑aware explanation. Select an area and press Option/Alt+S for screenshot analysis—stay in flow.',
+    'hero.cta': 'Get Started on GitHub',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
-    'features.title': 'Accelerate Your Computer Work',
-    'features.subtitle': 'No more stopping at "I don\'t understand." Instant comprehension speeds up your workflow.',
-    'features.instant.title': 'Instant Explanation (Option+A)',
-    'features.instant.description': 'Select difficult sentences or technical terms on websites, documents, or apps and press Option+A. For images, graphs, or visual content, select the area and press Option+S for screenshot explanations. Get accurate, context-aware explanations faster than dictionaries or search engines.',
-    'features.flow.title': 'Never Break Your Flow',
-    'features.flow.description': 'No need to switch to another window, copy text you want to understand, paste it into an AI input form, and wait for an answer. Just select text and press Option+A, or select an area and press Option+S on the spot. Resolve questions instantly without disrupting your workflow.',
-    'features.secure.title': 'Simple & Secure',
-    'features.secure.description': 'IrukaDark doesn\'t maintain a database. Your data isn\'t used for AI training, ensuring privacy protection and peace of mind.',
-    'usecases.title': 'Perfect for These Scenarios',
-    'usecases.subtitle': 'Instantly understand every "What does this mean?" moment in your daily computer work.',
-    'usecases.programming.title': 'Programming Learning',
-    'usecases.programming.description': 'When encountering various methods and functions. Get explanations on the spot the moment you encounter unknown processes while reading code.',
-    'usecases.workplace.title': 'New Workplace & Industry',
-    'usecases.workplace.description': 'When job changes or transfers expose you to many technical terms. Quickly understand industry-specific words and concepts to adapt to new environments faster.',
-    'usecases.understanding.title': 'Deep Understanding Needed',
-    'usecases.understanding.description': 'When you want to know the intent and background of unfamiliar words, not just translations. Understand beyond word meanings to why certain expressions are used.',
+    'features.title': 'Work Faster on Your Computer',
+    'features.subtitle': 'No more “I don’t get it.” Instant, context‑aware understanding keeps you moving.',
+    'features.instant.title': 'Instant Explanation (Option/Alt+A)',
+    'features.instant.description': 'Select text in any website, document, or app and press Option/Alt+A to get a clear, context‑aware explanation. Faster than dictionaries or search.',
+    'features.flow.title': 'Stay in Flow',
+    'features.flow.description': 'Skip window‑switching and copy‑paste. Ask in place with Option/Alt+A, or capture an area with Option/Alt+S. Resolve questions without breaking focus.',
+    'features.secure.title': 'Simple & Private',
+    'features.secure.description': 'IrukaDark stores no data and doesn’t train on your content, helping protect your privacy.',
+    'usecases.title': 'Great For',
+    'usecases.subtitle': 'Turn every “What does this mean?” into quick, clear understanding.',
+    'usecases.programming.title': 'Programming & Code Reading',
+    'usecases.programming.description': 'Meet unfamiliar APIs or patterns while reading code? Get quick explanations right in place.',
+    'usecases.workplace.title': 'New Role or Industry',
+    'usecases.workplace.description': 'Ramp up faster by understanding domain‑specific terms and concepts when starting a new job or industry.',
+    'usecases.understanding.title': 'Deeper Understanding',
+    'usecases.understanding.description': 'Go beyond dictionary meanings to intent, nuance, and why an expression is used.',
     'usecases.academic.title': 'Academic Papers & Research',
-    'usecases.academic.description': 'When encountering complex concepts while reading papers or research materials. Get clear explanations of deep specialized content in understandable language.',
-    'usecases.english.title': 'Foreign Sites & English Resources',
-    'usecases.english.description': 'When reading English technical documents or websites and encountering expressions that translation tools can\'t fully clarify. Get natural explanations that fit the context.',
+    'usecases.academic.description': 'When complex concepts appear in papers or research, get clear explanations in plain language.',
+    'usecases.english.title': 'English Websites & Docs',
+    'usecases.english.description': 'When translation tools fall short, get natural, context‑fit explanations for English technical content.',
     'usecases.legal.title': 'Contracts & Legal Documents',
-    'usecases.legal.description': 'When reviewing important contracts or legal documents and needing to understand specialized clauses or terminology. Get support for better comprehension.',
-    'howto.title': 'How to Use',
-    'howto.subtitle': 'Just 3 steps: Clone from GitHub and start using immediately',
+    'usecases.legal.description': 'Understand specialized clauses and terminology when reviewing important legal documents.',
+    'howto.title': 'How It Works',
+    'howto.subtitle': 'Three quick steps: clone and start immediately.',
     'howto.step1.title': 'Clone from GitHub',
-    'howto.step1.description': 'Clone the repository to your local environment, install necessary dependencies, and complete the setup.',
-    'howto.step2.title': 'Select Text and Press Option+A / Select Area and Press Option+S',
-    'howto.step2.description': 'Select difficult text you encounter on websites, documents, or apps, and request explanations with Option+A. For visual content like images or graphs, select the area and press Option+S for screenshot explanations.',
-    'howto.step2.hint': 'Text → Option + A / Area → Option + S',
-    'howto.screenshot.hint': 'Screenshot Explanation',
-    'howto.step3.title': 'Receive Context-Aware Explanations',
-    'howto.step3.description': 'Get understanding based on context and background, not just word meanings, making your computer work smoother.',
-    'cta.title': 'Clone and Use Now',
-    'cta.description': 'Clone from GitHub and immediately improve your computer work efficiency. Available as open source for free.',
-    'cta.button': 'GitHub',
+    'howto.step1.description': 'Clone the repo, install dependencies, and finish setup.',
+    'howto.step2.title': 'Select Text (Option/Alt+A) or Area (Option/Alt+S)',
+    'howto.step2.description': 'Select text in websites, docs, or apps and press Option/Alt+A for explanations. Select an area and press Option/Alt+S for screenshot analysis.',
+    'howto.step2.hint': 'Text → Option/Alt+A • Area → Option/Alt+S',
+    'howto.screenshot.hint': 'Screenshot Analysis',
+    'howto.step3.title': 'Get Context‑Aware Explanations',
+    'howto.step3.description': 'Understand intent and background—not just words—so you can keep working.',
+    'cta.title': 'Get Started Free',
+    'cta.description': 'Clone from GitHub and speed up your work. Open source and free.',
+    'cta.button': 'Get Started on GitHub',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
@@ -206,8 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  // Initialize with English
-  switchLanguage('en');
+  // Initialize with page default language (falls back to 'en')
+  const initialLang = window.DEFAULT_LANG || 'en';
+  switchLanguage(initialLang);
 });
 
 // Content patterns for different use cases
@@ -413,8 +414,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  // Initialize with English
-  switchLanguage('en');
+  // Initialize with page default language (falls back to 'en')
+  const initialLang = window.DEFAULT_LANG || 'en';
+  switchLanguage(initialLang);
   
   // Initialize animation
   console.log('Available patterns:', patternKeys);
