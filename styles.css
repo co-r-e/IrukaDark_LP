@@ -290,14 +290,14 @@ body {
 
 /* FAQ tables */
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 8px; }
-.faq-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.faq-table th, .faq-table td { border: 1px solid var(--border-soft); padding: 8px 10px; vertical-align: top; }
+.faq-table { width: 100%; min-width: 1200px; border-collapse: collapse; font-size: 14px; }
+.faq-table th, .faq-table td { border: 1px solid var(--border-soft); padding: 10px 14px; vertical-align: top; }
 .faq-table thead th { background: rgba(0,0,0,0.04); color: #0b0c10; font-weight: 600; text-align: left; }
 .faq-table tbody tr:nth-child(odd) td { background: rgba(0,0,0,0.02); }
 
 @media (max-width: 720px) {
-  .faq-table { font-size: 13px; }
-  .faq-table th, .faq-table td { padding: 8px; }
+  .faq-table { font-size: 13px; min-width: 1000px; }
+  .faq-table th, .faq-table td { padding: 9px 12px; }
 }
 
 /* where it works: badges + lists */
