@@ -269,6 +269,17 @@ body {
 .section-sub { color: var(--muted); margin: 0; font-size: 18px; line-height: 1.6; font-weight: 400; }
 
 .grid.features { display: grid; gap: 24px; grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 1000px; margin: 0 auto; }
+
+/* Desktop: widen card area to match hero/container width on key sections */
+@media (min-width: 901px) {
+  #features .grid.features,
+  #where .grid.features,
+  #use-cases .grid.features,
+  #faq .grid.features {
+    max-width: none;
+    width: 100%;
+  }
+}
 .card { background: var(--card-bg); border: 1px solid var(--border-soft); border-radius: 16px; padding: 28px 24px; transition: all .3s ease; position: relative; overflow: hidden; }
 
 .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-2)); opacity: 0; transition: opacity .3s ease; }
@@ -276,6 +287,35 @@ body {
 .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .card-title { margin: 0; font-size: 20px; letter-spacing: -0.3px; font-weight: 600; line-height: 1.3; }
 .card-body { margin: 0; color: var(--muted); line-height: 1.6; font-size: 15px; }
+
+/* where it works: badges + lists */
+#where .card-head { align-items: center; justify-content: space-between; }
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(255,77,109,0.55);
+}
+
+.icon-list { list-style: none; padding-left: 0; margin: 0; }
+.icon-list li { position: relative; padding-left: 26px; margin: 10px 0; }
+.icon-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 6px;
+  top: 0.1em;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--primary);
+}
+.icon-list .li-desc { font-size: 13px; color: var(--muted); opacity: 0.95; margin-top: 2px; line-height: 1.45; }
 
 /* icons (pure CSS) */
 .icon { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, rgba(255,77,109,0.9), rgba(217,70,239,0.9)); box-shadow: 0 4px 20px rgba(255,77,109,0.25), 0 2px 10px rgba(217,70,239,0.15); transition: all .3s ease; }
@@ -487,6 +527,8 @@ body {
   .section-title { font-size: clamp(24px, 6vw, 32px); }
   .section-sub { font-size: 16px; }
   .card { padding: 24px 20px; }
+  #where .card-head { align-items: flex-start; }
+  .icon-list li { margin: 6px 0; }
   .kbd-demo {
     flex-direction: column;
     gap: 6px;
