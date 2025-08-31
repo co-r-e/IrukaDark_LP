@@ -3,8 +3,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Multi-language support
 const translations = {
   en: {
-    'meta.title': 'IrukaDarK — Instant explanations for everything on your screen',
-    'meta.description': 'IrukaDarK instantly explains and summarizes what’s on your screen—text, images, tables, PDFs. Bilingual (JA/EN). From clarity to decision, fast.',
+    'meta.title': 'IrukaDarK — AI that instantly explains your screen',
+    'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option/Alt+A/S), bilingual JA/EN, privacy‑friendly, open source.',
     'header.clone': 'Try it now',
     'hero.title': 'Everything on your screen, <span class="grad-white">explained fast</span>',
     'hero.subtitle': 'Pick anything—text, images, tables. IrukaDarK turns it into the gist. Press Option/Alt+A for text, Option/Alt+S for screenshots.',
@@ -89,8 +89,8 @@ const translations = {
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
-    'meta.title': 'IrukaDarK — 画面のぜんぶ、超高速解説。',
-    'meta.description': 'IrukaDarKは、PC画面に映るテキスト・画像・表・PDFを超高速で解説・要約するAIアシスタント。日本語/英語対応で、理解から判断までサクッと最短。',
+    'meta.title': 'IrukaDarK — 画面のすべてを超高速解説するAI',
+    'meta.description': 'テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option/Alt+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
     'header.clone': '今すぐ試す',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
     'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDarKが一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
