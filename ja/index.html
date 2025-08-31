@@ -357,18 +357,6 @@
         </div>
         <div class="grid features">
           <article class="card">
-            <div class="card-head"><h3 class="card-title">事前に必要なPCセットアップは？</h3></div>
-            <p class="card-body">必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">OSごとの許可設定は？</h3></div>
-            <p class="card-body">
-              macOS: スクリーンショット解説には「画面収録」の許可が必要（「システム設定」→「プライバシーとセキュリティ」→「画面収録」）。グローバルショートカット/アプリ横断の選択には「アクセシビリティ」の許可が必要な場合あり。フルディスクアクセスは不要です。<br />
-              Windows: 管理者権限は不要。Windows Defender ファイアウォールでHTTPSの送信を許可してください。PowerShell/Windows Terminalは通常ユーザーで実行、スクリーンキャプチャは追加のOS許可なしで動作します。<br />
-              Linux: Wayland ではスクリーンショットポータル（xdg‑desktop‑portal）の許可ダイアログを承認してください。X11 では特別な許可は不要。デスクトップ環境のグローバルショートカット設定は適宜有効化してください。
-            </p>
-          </article>
-          <article class="card">
             <div class="card-head"><h3 class="card-title">対応プラットフォームは？</h3></div>
             <p class="card-body">macOS / Windows / Linux に対応。リポジトリをクローンしてREADMEの手順に従ってセットアップします。</p>
           </article>
@@ -391,6 +379,18 @@
           <article class="card">
             <div class="card-head"><h3 class="card-title">インターネット接続は必要ですか？</h3></div>
             <p class="card-body">はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDarK がデータを保存することはありません。</p>
+          </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">OSごとの許可設定は？</h3></div>
+            <p class="card-body">
+              macOS: スクリーンショット解説には「画面収録」の許可が必要（「システム設定」→「プライバシーとセキュリティ」→「画面収録」）。グローバルショートカット/アプリ横断の選択には「アクセシビリティ」の許可が必要な場合あり。フルディスクアクセスは不要です。<br />
+              Windows: 管理者権限は不要。Windows Defender ファイアウォールでHTTPSの送信を許可してください。PowerShell/Windows Terminalは通常ユーザーで実行、スクリーンキャプチャは追加のOS許可なしで動作します。<br />
+              Linux: Wayland ではスクリーンショットポータル（xdg‑desktop‑portal）の許可ダイアログを承認してください。X11 では特別な許可は不要。デスクトップ環境のグローバルショートカット設定は適宜有効化してください。
+            </p>
+          </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">事前に必要なPCセットアップは？</h3></div>
+            <p class="card-body">必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。</p>
           </article>
         </div>
       </section>
@@ -450,16 +450,6 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "OSごとの許可設定は？",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS: 画面収録の許可が必要。アクセシビリティはグローバルショートカット等で必要な場合あり。フルディスクアクセスは不要。Windows: 管理者権限は不要、HTTPSの送信を許可。Linux: Waylandはスクリーンショットポータルを承認、X11は特別な許可不要。"}
-        },
-        {
-          "@type": "Question",
-          "name": "事前に必要なPCセットアップは？",
-          "acceptedAnswer": {"@type": "Answer", "text": "必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。"}
-        },
-        {
-          "@type": "Question",
           "name": "対応プラットフォームは？",
           "acceptedAnswer": {"@type": "Answer", "text": "macOS / Windows / Linux に対応。リポジトリをクローンしてREADMEの手順に従ってセットアップします。"}
         },
@@ -487,6 +477,16 @@
           "@type": "Question",
           "name": "インターネット接続は必要ですか？",
           "acceptedAnswer": {"@type": "Answer", "text": "はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDarK がデータを保存することはありません。"}
+        },
+        {
+          "@type": "Question",
+          "name": "OSごとの許可設定は？",
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS: 画面収録の許可が必要。アクセシビリティはグローバルショートカット等で必要な場合あり。フルディスクアクセスは不要。Windows: 管理者権限は不要、HTTPSの送信を許可。Linux: Waylandはスクリーンショットポータルを承認、X11は特別な許可不要。"}
+        },
+        {
+          "@type": "Question",
+          "name": "事前に必要なPCセットアップは？",
+          "acceptedAnswer": {"@type": "Answer", "text": "必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。"}
         }
       ]
     }
