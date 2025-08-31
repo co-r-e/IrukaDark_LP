@@ -382,15 +382,113 @@
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">OSごとの許可設定は？</h3></div>
-            <p class="card-body">
-              macOS: スクリーンショット解説には「画面収録」の許可が必要（「システム設定」→「プライバシーとセキュリティ」→「画面収録」）。グローバルショートカット/アプリ横断の選択には「アクセシビリティ」の許可が必要な場合あり。フルディスクアクセスは不要です。<br />
-              Windows: 管理者権限は不要。Windows Defender ファイアウォールでHTTPSの送信を許可してください。PowerShell/Windows Terminalは通常ユーザーで実行、スクリーンキャプチャは追加のOS許可なしで動作します。<br />
-              Linux: Wayland ではスクリーンショットポータル（xdg‑desktop‑portal）の許可ダイアログを承認してください。X11 では特別な許可は不要。デスクトップ環境のグローバルショートカット設定は適宜有効化してください。
-            </p>
+            <div class="card-body">
+              <div class="table-wrap">
+                <table class="faq-table">
+                  <thead>
+                    <tr>
+                      <th>許可/設定</th>
+                      <th>macOS</th>
+                      <th>Windows</th>
+                      <th>Linux</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>画面キャプチャ</td>
+                      <td>必須: 「画面収録」を許可</td>
+                      <td>不要</td>
+                      <td>Wayland: ポータル承認 / X11: 不要</td>
+                    </tr>
+                    <tr>
+                      <td>アクセシビリティ</td>
+                      <td>任意（ショートカット/横断選択で必要な場合）</td>
+                      <td>不要</td>
+                      <td>不要</td>
+                    </tr>
+                    <tr>
+                      <td>管理者権限</td>
+                      <td>不要</td>
+                      <td>不要</td>
+                      <td>不要</td>
+                    </tr>
+                    <tr>
+                      <td>ネットワーク（HTTPS）</td>
+                      <td>送信を許可</td>
+                      <td>Windows Defender で送信を許可</td>
+                      <td>送信を許可</td>
+                    </tr>
+                    <tr>
+                      <td>グローバルショートカット</td>
+                      <td>システム設定 → キーボード/ショートカット</td>
+                      <td>設定 → キーボードショートカット</td>
+                      <td>DE（GNOME/KDEなど）で有効化</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">事前に必要なPCセットアップは？</h3></div>
-            <p class="card-body">必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。</p>
+            <div class="card-body">
+              <div class="table-wrap">
+                <table class="faq-table">
+                  <thead>
+                    <tr>
+                      <th>項目</th>
+                      <th>macOS</th>
+                      <th>Windows</th>
+                      <th>Linux</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>GitHubアカウント</td>
+                      <td colspan="3">必須（クローンやIssueで使用）</td>
+                    </tr>
+                    <tr>
+                      <td>Git</td>
+                      <td>必須</td>
+                      <td>必須</td>
+                      <td>必須</td>
+                    </tr>
+                    <tr>
+                      <td>Node.js LTS（v18以上）</td>
+                      <td>必須</td>
+                      <td>必須</td>
+                      <td>必須</td>
+                    </tr>
+                    <tr>
+                      <td>npm</td>
+                      <td>必須</td>
+                      <td>必須</td>
+                      <td>必須</td>
+                    </tr>
+                    <tr>
+                      <td>ターミナル</td>
+                      <td>Terminal.app</td>
+                      <td>PowerShell / Windows Terminal</td>
+                      <td>Terminal</td>
+                    </tr>
+                    <tr>
+                      <td>インターネット</td>
+                      <td colspan="3">必須（依存の取得・AIサービス利用）</td>
+                    </tr>
+                    <tr>
+                      <td>エディタ（推奨）</td>
+                      <td colspan="3">VS Code など、お好みのエディタ</td>
+                    </tr>
+                    <tr>
+                      <td>パッケージマネージャ（推奨）</td>
+                      <td>Homebrew</td>
+                      <td>winget / Chocolatey</td>
+                      <td>apt / dnf / pacman など</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </article>
         </div>
       </section>

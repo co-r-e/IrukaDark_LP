@@ -432,17 +432,113 @@
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">What OS permissions are required?</h3></div>
-            <p class="card-body">
-              macOS: Screen Recording is required for screenshot analysis (System Settings → Privacy & Security → Screen Recording). Accessibility is optional for global shortcuts/in‑app selection (Privacy & Security → Accessibility). Full Disk Access is not required.<br />
-              Windows: No admin rights needed. Allow outbound HTTPS in Windows Defender Firewall. Use PowerShell/Windows Terminal as a normal user; screen capture works without extra OS prompts.<br />
-              Linux: On Wayland, approve the screenshot portal (xdg‑desktop‑portal) when prompted; on X11 no special permission. Ensure your desktop environment allows global shortcuts.
-            </p>
+            <div class="card-body">
+              <div class="table-wrap">
+                <table class="faq-table">
+                  <thead>
+                    <tr>
+                      <th>Permission</th>
+                      <th>macOS</th>
+                      <th>Windows</th>
+                      <th>Linux</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Screen capture</td>
+                      <td>Required: Screen Recording</td>
+                      <td>Not required</td>
+                      <td>Wayland: approve portal; X11: not required</td>
+                    </tr>
+                    <tr>
+                      <td>Accessibility</td>
+                      <td>Optional for global shortcuts / in‑app selection</td>
+                      <td>Not required</td>
+                      <td>Not required</td>
+                    </tr>
+                    <tr>
+                      <td>Admin rights</td>
+                      <td>Not required</td>
+                      <td>Not required</td>
+                      <td>Not required</td>
+                    </tr>
+                    <tr>
+                      <td>Network (HTTPS)</td>
+                      <td>Allow outbound HTTPS</td>
+                      <td>Allow outbound HTTPS (Windows Defender)</td>
+                      <td>Allow outbound HTTPS</td>
+                    </tr>
+                    <tr>
+                      <td>Global shortcuts</td>
+                      <td>System Settings → Keyboard/Shortcuts</td>
+                      <td>Settings → Keyboard shortcuts</td>
+                      <td>Enable in DE (GNOME/KDE, etc.)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">What setup do I need on my PC?</h3></div>
-            <p class="card-body">
-              Required: a GitHub account, Git, Node.js LTS (v18+), npm, and the ability to use a terminal (Terminal on macOS/Linux, PowerShell on Windows). Recommended: a code editor (e.g., VS Code), and a package manager (Homebrew on macOS, winget/Chocolatey on Windows, your distro’s package manager on Linux). Internet connection is required to fetch dependencies and use AI services.
-            </p>
+            <div class="card-body">
+              <div class="table-wrap">
+                <table class="faq-table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>macOS</th>
+                      <th>Windows</th>
+                      <th>Linux</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>GitHub account</td>
+                      <td colspan="3">Required (for cloning and issues)</td>
+                    </tr>
+                    <tr>
+                      <td>Git</td>
+                      <td>Required</td>
+                      <td>Required</td>
+                      <td>Required</td>
+                    </tr>
+                    <tr>
+                      <td>Node.js LTS (v18+)</td>
+                      <td>Required</td>
+                      <td>Required</td>
+                      <td>Required</td>
+                    </tr>
+                    <tr>
+                      <td>npm</td>
+                      <td>Required</td>
+                      <td>Required</td>
+                      <td>Required</td>
+                    </tr>
+                    <tr>
+                      <td>Terminal</td>
+                      <td>Terminal.app</td>
+                      <td>PowerShell / Windows Terminal</td>
+                      <td>Terminal</td>
+                    </tr>
+                    <tr>
+                      <td>Internet</td>
+                      <td colspan="3">Required for dependencies and AI services</td>
+                    </tr>
+                    <tr>
+                      <td>Editor (recommended)</td>
+                      <td colspan="3">VS Code or your preferred editor</td>
+                    </tr>
+                    <tr>
+                      <td>Package manager (recommended)</td>
+                      <td>Homebrew</td>
+                      <td>winget / Chocolatey</td>
+                      <td>apt / dnf / pacman, etc.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </article>
         </div>
       </section>
