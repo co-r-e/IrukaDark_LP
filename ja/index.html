@@ -357,6 +357,18 @@
         </div>
         <div class="grid features">
           <article class="card">
+            <div class="card-head"><h3 class="card-title">事前に必要なPCセットアップは？</h3></div>
+            <p class="card-body">
+              必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。<br />
+              推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。<br /><br />
+              かんたんインストール例：<br />
+              ・macOS: <code>brew install git node</code><br />
+              ・Windows: <code>winget install Git.Git</code> と <code>winget install OpenJS.NodeJS.LTS</code><br />
+              ・Ubuntu/Debian: <code>sudo apt install git nodejs npm</code><br />
+              ・Fedora/RHEL: <code>sudo dnf install git nodejs npm</code>
+            </p>
+          </article>
+          <article class="card">
             <div class="card-head"><h3 class="card-title">対応プラットフォームは？</h3></div>
             <p class="card-body">macOS / Windows / Linux に対応。リポジトリをクローンしてREADMEの手順に従ってセットアップします。</p>
           </article>
@@ -436,6 +448,11 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "事前に必要なPCセットアップは？",
+          "acceptedAnswer": {"@type": "Answer", "text": "必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。"}
+        },
         {
           "@type": "Question",
           "name": "対応プラットフォームは？",
