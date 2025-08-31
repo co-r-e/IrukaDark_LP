@@ -284,24 +284,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = document.querySelector('link[rel="canonical"]');
     try {
       const u = new URL(link ? link.href : window.location.href);
-      // Ensure trailing slash and strip `/ja/` if present
-      if (u.pathname.endsWith('/ja/')) {
-        u.pathname = u.pathname.replace(/ja\/$/, '');
-      }
-      if (!u.pathname.endsWith('/')) u.pathname += '/';
-      u.search = '';
-      u.hash = '';
-      return u.toString();
+      // Standardize to origin without trailing slash per site preference
+      return u.origin;
     } catch (e) {
-      // Fallback to origin + path directory
-      const path = window.location.pathname.replace(/(ja\/)?[^/]*$/, '');
-      return window.location.origin + path;
+      return window.location.origin;
     }
   }
 
   function navigateToLanguage(lang) {
     const base = getCanonicalBaseUrl();
-    const target = lang === 'ja' ? base + 'ja/' : base;
+    const target = lang === 'ja' ? base + '/ja' : base;
     window.location.href = target;
   }
 
