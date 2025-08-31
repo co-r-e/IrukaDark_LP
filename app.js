@@ -3,11 +3,11 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Multi-language support
 const translations = {
   en: {
-    'meta.title': 'IrukaDarK — AI that instantly explains your screen',
+    'meta.title': 'IrukaDark — AI that instantly explains your screen',
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option/Alt+A/S), bilingual JA/EN, privacy‑friendly, open source.',
     'header.clone': 'Try it now',
     'hero.title': 'Everything on your screen, <span class="grad-white">explained fast</span>',
-    'hero.subtitle': 'Pick anything—text, images, tables. IrukaDarK turns it into the gist. Press Option/Alt+A for text, Option/Alt+S for screenshots.',
+    'hero.subtitle': 'Pick anything—text, images, tables. IrukaDark turns it into the gist. Press Option/Alt+A for text, Option/Alt+S for screenshots.',
     'hero.cta': 'Try it now',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
@@ -18,7 +18,7 @@ const translations = {
     'features.flow.title': 'Stay in Flow',
     'features.flow.description': 'Skip window‑switching and copy‑paste. Ask in place with Option/Alt+A, or capture an area with Option/Alt+S. Resolve questions without breaking focus.',
     'features.secure.title': 'Simple & Private',
-    'features.secure.description': 'IrukaDarK stores no data and doesn’t train on your content, helping protect your privacy.',
+    'features.secure.description': 'IrukaDark stores no data and doesn’t train on your content, helping protect your privacy.',
     'usecases.title': 'Great For',
     'usecases.subtitle': 'Turn every “What does this mean?” into quick, clear understanding.',
     'usecases.programming.title': 'Programming & Code Reading',
@@ -36,7 +36,7 @@ const translations = {
 
     // Where it works
     'where.title': 'Works where you work',
-    'where.subtitle': 'IrukaDarK rides on top of your tools—no context switching.',
+    'where.subtitle': 'IrukaDark rides on top of your tools—no context switching.',
     'where.web.title': 'On websites',
     'where.web.li1': 'Programming',
     'where.web.li1.desc': 'Explain unfamiliar code, APIs, and patterns in place.',
@@ -89,11 +89,11 @@ const translations = {
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
-    'meta.title': 'IrukaDarK — 画面のすべてを超高速解説するAI',
+    'meta.title': 'IrukaDark — 画面のすべてを超高速解説するAI',
     'meta.description': 'テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option/Alt+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
     'header.clone': '今すぐ試す',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
-    'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDarKが一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
+    'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDarkが一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
     'hero.cta': '今すぐ試す',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
@@ -104,7 +104,7 @@ const translations = {
     'features.flow.title': 'フローを断ち切らない',
     'features.flow.description': 'いちいち別のウィンドウに移動して、知りたいテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ、なんてことは不要です。その場で選択してOption+Aを押すだけ。作業の流れを止めることなく、瞬時に疑問を解決できます。',
     'features.secure.title': 'シンプルで安全',
-    'features.secure.description': 'IrukaDarKはデータベースを持ちません。AIの学習には使われず、プライバシーを守りながら安心して使えます。',
+    'features.secure.description': 'IrukaDarkはデータベースを持ちません。AIの学習には使われず、プライバシーを守りながら安心して使えます。',
     'usecases.title': 'こんなシーンで活躍',
     'usecases.subtitle': '日常のパソコン作業で「これどういうこと？」と思う瞬間を、すべて即時理解できます。',
     'usecases.programming.title': 'プログラミング学習',
