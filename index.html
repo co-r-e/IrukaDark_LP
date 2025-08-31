@@ -410,16 +410,14 @@
             <div class="card-head"><h3 class="card-title">What setup do I need on my PC?</h3></div>
             <p class="card-body">
               Required: a GitHub account, Git, Node.js LTS (v18+), npm, and the ability to use a terminal (Terminal on macOS/Linux, PowerShell on Windows). Recommended: a code editor (e.g., VS Code), and a package manager (Homebrew on macOS, winget/Chocolatey on Windows, your distro’s package manager on Linux). Internet connection is required to fetch dependencies and use AI services.
-              <br /><br />
-              Quick installs:
-              <br />
-              • macOS: <code>brew install git node</code>
-              <br />
-              • Windows: <code>winget install Git.Git</code> and <code>winget install OpenJS.NodeJS.LTS</code>
-              <br />
-              • Ubuntu/Debian: <code>sudo apt install git nodejs npm</code>
-              <br />
-              • Fedora/RHEL: <code>sudo dnf install git nodejs npm</code>
+            </p>
+          </article>
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">What OS permissions are required?</h3></div>
+            <p class="card-body">
+              macOS: Screen Recording is required for screenshot analysis (System Settings → Privacy & Security → Screen Recording). Accessibility is optional for global shortcuts/in‑app selection (Privacy & Security → Accessibility). Full Disk Access is not required.<br />
+              Windows: No admin rights needed. Allow outbound HTTPS in Windows Defender Firewall. Use PowerShell/Windows Terminal as a normal user; screen capture works without extra OS prompts.<br />
+              Linux: On Wayland, approve the screenshot portal (xdg‑desktop‑portal) when prompted; on X11 no special permission. Ensure your desktop environment allows global shortcuts.
             </p>
           </article>
           <article class="card">
@@ -468,6 +466,11 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What OS permissions are required?",
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS: Screen Recording required for screenshot analysis; Accessibility optional for global shortcuts/in‑app selection; Full Disk Access not required. Windows: no admin rights needed; allow outbound HTTPS in Windows Defender Firewall. Linux: on Wayland approve the screenshot portal (xdg‑desktop‑portal); on X11 no special permission."}
+        },
         {
           "@type": "Question",
           "name": "What setup do I need on my PC?",
