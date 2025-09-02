@@ -317,6 +317,59 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize with page default language (falls back to 'en')
   const initialLang = window.DEFAULT_LANG || 'en';
   switchLanguage(initialLang);
+
+  // Demo video: autoplay only when in view
+  (function setupDemoAutoplay() {
+    const videos = document.querySelectorAll('.demo-video');
+    if (!videos.length) return;
+
+    videos.forEach(v => { v.loop = true; v.muted = true; });
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const v = entry.target;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            const p = v.play();
+            if (p && typeof p.catch === 'function') p.catch(() => {});
+          } else {
+            v.pause();
+          }
+        });
+      }, { threshold: [0, 0.5, 1] });
+
+      videos.forEach(v => io.observe(v));
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          videos.forEach(v => v.pause());
+        }
+      });
+    } else {
+      // Fallback without IntersectionObserver
+      const isInView = (el) => {
+        const r = el.getBoundingClientRect();
+        const vpH = window.innerHeight || document.documentElement.clientHeight;
+        const vpW = window.innerWidth || document.documentElement.clientWidth;
+        const visibleH = Math.min(r.bottom, vpH) - Math.max(r.top, 0);
+        const visibleW = Math.min(r.right, vpW) - Math.max(r.left, 0);
+        const area = Math.max(0, visibleH) * Math.max(0, visibleW);
+        return area >= (r.width * r.height) * 0.5;
+      };
+      const onScroll = () => {
+        videos.forEach(v => {
+          if (isInView(v)) {
+            const p = v.play();
+            if (p && typeof p.catch === 'function') p.catch(() => {});
+          } else {
+            v.pause();
+          }
+        });
+      };
+      ['scroll', 'resize', 'orientationchange', 'load'].forEach(evt => window.addEventListener(evt, onScroll, { passive: true }));
+      onScroll();
+    }
+  })();
 });
 
 // Content patterns for different use cases
