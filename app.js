@@ -370,6 +370,36 @@ document.addEventListener('DOMContentLoaded', () => {
       onScroll();
     }
   })();
+
+  // Terms modal (open/close on click, close on outside/Escape)
+  (function setupTermsModal() {
+    const modal = document.getElementById('termsModal');
+    if (!modal) return;
+    const openBtns = document.querySelectorAll('.js-open-terms-modal');
+    const closeBtns = modal.querySelectorAll('.js-close-terms-modal');
+    const dialog = modal.querySelector('.modal-dialog');
+
+    function open() {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      // Prevent background scroll
+      document.documentElement.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+    }
+
+    openBtns.forEach(btn => btn.addEventListener('click', open));
+    closeBtns.forEach(btn => btn.addEventListener('click', close));
+    modal.addEventListener('click', (e) => {
+      if (!dialog.contains(e.target)) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) close();
+    });
+  })();
 });
 
 // Content patterns for different use cases

@@ -424,6 +424,13 @@
         </div>
         <div class="grid features">
           <article class="card">
+            <div class="card-head"><h3 class="card-title">Related Terms & Commands</h3></div>
+            <p class="card-body">A quick cheat sheet of commands and terminology you’ll likely use when setting up or updating IrukaDark.</p>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline js-open-terms-modal">Open the list</button>
+            </div>
+          </article>
+          <article class="card">
             <div class="card-head"><h3 class="card-title">What platforms are supported?</h3></div>
             <p class="card-body">macOS, Windows, and Linux. Clone the repo and follow the README to set up.</p>
           </article>
@@ -560,6 +567,61 @@
         </div>
       </section>
     </main>
+
+    <!-- Terms/Commands Modal (EN) -->
+    <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="termsModalTitle" class="modal-title">Related Terms & Commands</h3>
+          <button class="modal-close js-close-terms-modal" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+          <h4>Overview</h4>
+          <p>A compact cheat sheet of must‑know terms and commands to set up and maintain IrukaDark.</p>
+
+          <h4>File/Folder Basics (Terminal)</h4>
+          <ul>
+            <li><code>cd dir</code> — Change directory (e.g., <code>cd irukadark_lp</code>).</li>
+            <li><code>ls</code> / <code>dir</code> — List contents (<code>ls</code> on macOS/Linux, <code>dir</code> on Windows).</li>
+            <li><code>pwd</code> — Print current directory path.</li>
+            <li><code>mkdir name</code> — Create a new folder.</li>
+            <li><code>cp src dest</code> — Copy file/folder.</li>
+            <li><code>mv src dest</code> — Move/rename file/folder.</li>
+            <li><code>rm -rf path</code> — Remove recursively (dangerous; no undo).</li>
+          </ul>
+
+          <h4>Git (Get/Update Latest)</h4>
+          <ul>
+            <li><code>git clone &lt;URL&gt;</code> — Get the repo the first time.</li>
+            <li><code>git pull</code> — Update to the latest in an existing folder.</li>
+            <li><code>git status</code> — Check changes.</li>
+            <li><code>git checkout -b feature-x</code> — Create/switch to a new branch.</li>
+            <li><code>git add .</code> → <code>git commit -m "msg"</code> → <code>git push</code> — Save and publish changes.</li>
+          </ul>
+
+          <h4>Node.js / npm</h4>
+          <ul>
+            <li><code>node -v</code> / <code>npm -v</code> — Check versions (prefer LTS).</li>
+            <li><code>npm install</code> — Install dependencies (required).</li>
+            <li><code>npm run dev</code> — Start the dev server (if available).</li>
+            <li><code>npm run build</code> — Create a production build (if needed).</li>
+          </ul>
+
+          <h4>Terms</h4>
+          <ul>
+            <li><b>Repository</b> — Project storage managed by Git.</li>
+            <li><b>Clone</b> — Copy the repository to your machine.</li>
+            <li><b>Pull</b> — Fetch and merge latest remote changes.</li>
+            <li><b>Branch</b> — Separate line of work per feature.</li>
+            <li><b>LTS</b> — Long‑Term Support (use LTS Node.js).</li>
+            <li><b>PATH</b> — Env var that finds executables.</li>
+            <li><b>Terminal/Shell</b> — Where you run commands (bash, zsh, PowerShell).</li>
+          </ul>
+
+          <p class="muted">Note: Destructive commands like <code>rm -rf</code> are risky. Always confirm your current directory with <code>pwd</code> before running them.</p>
+        </div>
+      </div>
+    </div>
 
     <footer class="container footer">
       <div class="foot-left">

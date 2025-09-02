@@ -146,6 +146,61 @@
           </div>
         </div>
       </section>
+      
+      <!-- Terms/Commands Modal (JA) -->
+      <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h3 id="termsModalTitle" class="modal-title">関連用語・関連コマンド</h3>
+            <button class="modal-close js-close-terms-modal" aria-label="閉じる">×</button>
+          </div>
+          <div class="modal-body">
+            <h4>概要</h4>
+            <p>IrukaDark を使う/更新する際に最低限知っておくと便利な用語とコマンドのチートシートです。</p>
+
+            <h4>ファイル/フォルダ操作（ターミナル）</h4>
+            <ul>
+              <li><code>cd dir</code> — ディレクトリを移動（例: <code>cd irukadark_lp</code>）。</li>
+              <li><code>ls</code> / <code>dir</code> — 中身を表示（macOS/Linux は <code>ls</code>、Windows は <code>dir</code>）。</li>
+              <li><code>pwd</code> — 現在のディレクトリのパスを表示。</li>
+              <li><code>mkdir name</code> — 新しいフォルダを作成。</li>
+              <li><code>cp src dest</code> — ファイル/フォルダをコピー。</li>
+              <li><code>mv src dest</code> — ファイル/フォルダを移動/リネーム。</li>
+              <li><code>rm -rf path</code> — 削除（取り消し不可・注意）。</li>
+            </ul>
+
+            <h4>Git（最新版の取得/管理）</h4>
+            <ul>
+              <li><code>git clone &lt;URL&gt;</code> — 初回の取得（例: GitHub からプロジェクトを取得）。</li>
+              <li><code>git pull</code> — 既存フォルダで最新版に更新（ご要望の「最新版を取得」）。</li>
+              <li><code>git status</code> — 変更状況を確認。</li>
+              <li><code>git checkout -b feature-x</code> — 新しい作業ブランチを作成して切替。</li>
+              <li><code>git add .</code> → <code>git commit -m "msg"</code> → <code>git push</code> — 変更を保存しリモートへ送信。</li>
+            </ul>
+
+            <h4>Node.js / npm（依存インストールと実行）</h4>
+            <ul>
+              <li><code>node -v</code> / <code>npm -v</code> — バージョン確認（LTS推奨）。</li>
+              <li><code>npm install</code> — 依存を初回/更新時に必ずインストール（必須）。</li>
+              <li><code>npm run dev</code> — 開発サーバを起動（プロジェクトによりコマンド名は異なる）。</li>
+              <li><code>npm run build</code> — 本番ビルドを作成（必要な場合）。</li>
+            </ul>
+
+            <h4>用語</h4>
+            <ul>
+              <li><b>リポジトリ（Repository）</b> — プロジェクトの保存場所（Git管理）。</li>
+              <li><b>クローン（Clone）</b> — リポジトリを手元にコピーすること。</li>
+              <li><b>プル（Pull）</b> — リモートの変更を取得してローカルを更新。</li>
+              <li><b>ブランチ（Branch）</b> — 作業ライン。機能ごとに分けると安全。</li>
+              <li><b>LTS</b> — 長期サポート版。Node.js は LTS 推奨。</li>
+              <li><b>PATH</b> — コマンド探索の環境変数。設定が誤るとコマンドが見つからない。</li>
+              <li><b>ターミナル/シェル</b> — コマンドを入力するアプリ/実行環境（例: bash, zsh, PowerShell）。</li>
+            </ul>
+
+            <p class="muted">補足: 重要操作（例: <code>rm -rf</code>）は慎重に。実行前にカレントディレクトリ（<code>pwd</code>）を確認してください。</p>
+          </div>
+        </div>
+      </div>
 
       <!-- Demo (after hero) -->
       <section id="demo" class="container section">
@@ -172,6 +227,13 @@
         </div>
 
         <div class="grid features">
+          <article class="card">
+            <div class="card-head"><h3 class="card-title">関連用語・関連コマンド</h3></div>
+            <p class="card-body">セットアップや運用でよく使う用語とコマンドをまとめました。必要なときに見返せます。</p>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline js-open-terms-modal">一覧を開く</button>
+            </div>
+          </article>
           <article class="card">
             <div class="card-head">
               <h3 class="card-title" data-i18n="features.instant.title">瞬時解説（Option+A）</h3>
