@@ -74,12 +74,12 @@ body {
 .lang-trigger {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   padding: 0;
   border: none;
   border-radius: 0;
   background: transparent;
-  color: #000000;
+  color: #4b5563; /* slate-600 */
   font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -101,18 +101,9 @@ body {
   box-shadow: none;
 }
 
-.lang-trigger .globe-icon {
-  font-size: 20px;
-  line-height: 1;
-  color: #000000;
-  filter: grayscale(100%);
-}
+.lang-trigger .globe-icon { width: 18px; height: 18px; display: inline-block; color: currentColor; }
 
-.lang-trigger .lang-text {
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  flex: 1;
-}
+.lang-trigger .lang-text { font-size: 12px; letter-spacing: 1px; font-weight: 700; }
 
 .lang-menu {
   position: absolute;
@@ -278,9 +269,7 @@ body {
 .demo-media { position: relative; border: none; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 16px 40px rgba(255,77,109,0.08), 0 6px 20px rgba(217,70,239,0.06); width: min(960px, 100%); margin: 0 auto; }
 .demo-wrap { position: relative; aspect-ratio: 16 / 9; width: 100%; border-radius: 16px; overflow: hidden; }
 .demo-video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; background: #000; border-radius: 16px; }
-.demo-notes { margin-top: 12px; color: var(--muted); font-size: 13px; text-align: center; }
-.demo-actions { margin-top: 14px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.demo-actions .btn { padding: 10px 14px; }
+/* (removed) .demo-notes, .demo-actions: no longer used */
 @media (max-width: 720px) {
   .demo-wrap { aspect-ratio: 16 / 9; }
 }
@@ -523,10 +512,7 @@ body {
     border: none;
     box-shadow: none;
   }
-  .lang-trigger .globe-icon {
-    font-size: 16px;
-    color: #000000;
-  }
+  .lang-trigger .globe-icon { width: 16px; height: 16px; }
   .lang-menu {
     min-width: 100px;
   }

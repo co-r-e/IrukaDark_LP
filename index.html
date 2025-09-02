@@ -91,8 +91,14 @@
         </a>
         <nav class="nav-actions">
           <div class="lang-dropdown">
-            <button class="lang-trigger" id="langTrigger">
-              <span class="globe-icon">🌍</span>
+            <button class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false">
+              <svg class="globe-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18"/>
+                <path d="M12 3a15 15 0 0 1 0 18"/>
+                <path d="M12 3a15 15 0 0 0 0 18"/>
+              </svg>
+              <span class="lang-text" id="langCode">EN</span>
             </button>
             <div class="lang-menu" id="langMenu">
               <button class="lang-option" data-lang="en">
@@ -557,7 +563,6 @@
               </div>
             </div>
           </article>
-          <!-- Related terms card moved to the end -->
           <article class="card">
             <div class="card-head"><h3 class="card-title">Related Terms & Commands</h3></div>
             <p class="card-body">A quick cheat sheet of commands and terminology you’ll likely use when setting up or updating IrukaDark.</p>
@@ -588,7 +593,6 @@
             <li><code>mkdir name</code> — Create a new folder.</li>
             <li><code>cp src dest</code> — Copy file/folder.</li>
             <li><code>mv src dest</code> — Move/rename file/folder.</li>
-            <li><code>rm -rf path</code> — Remove recursively (dangerous; no undo).</li>
           </ul>
 
           <h4>Git (Get/Update Latest)</h4>
@@ -596,16 +600,12 @@
             <li><code>git clone &lt;URL&gt;</code> — Get the repo the first time.</li>
             <li><code>git pull</code> — Update to the latest in an existing folder.</li>
             <li><code>git status</code> — Check changes.</li>
-            <li><code>git checkout -b feature-x</code> — Create/switch to a new branch.</li>
-            <li><code>git add .</code> → <code>git commit -m "msg"</code> → <code>git push</code> — Save and publish changes.</li>
           </ul>
 
           <h4>Node.js / npm</h4>
           <ul>
             <li><code>node -v</code> / <code>npm -v</code> — Check versions (prefer LTS).</li>
             <li><code>npm install</code> — Install dependencies (required).</li>
-            <li><code>npm run dev</code> — Start the dev server (if available).</li>
-            <li><code>npm run build</code> — Create a production build (if needed).</li>
           </ul>
 
           <h4>Terms</h4>
@@ -613,8 +613,6 @@
             <li><b>Repository</b> — Project storage managed by Git.</li>
             <li><b>Clone</b> — Copy the repository to your machine.</li>
             <li><b>Pull</b> — Fetch and merge latest remote changes.</li>
-            <li><b>Branch</b> — Separate line of work per feature.</li>
-            <li><b>LTS</b> — Long‑Term Support (use LTS Node.js).</li>
             <li><b>PATH</b> — Env var that finds executables.</li>
             <li><b>Terminal/Shell</b> — Where you run commands (bash, zsh, PowerShell).</li>
           </ul>

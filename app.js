@@ -195,6 +195,7 @@ function switchLanguage(lang) {
   // Update dropdown display
   const langTrigger = document.getElementById('langTrigger');
   const globeIcon = langTrigger.querySelector('.globe-icon');
+  const langCodeEl = langTrigger.querySelector('#langCode');
   const langOptions = document.querySelectorAll('.lang-option');
   
   // Keep the globe icon the same for both languages
@@ -205,6 +206,11 @@ function switchLanguage(lang) {
     option.classList.toggle('active', option.dataset.lang === lang);
   });
   
+  // Update compact code label next to globe
+  if (langCodeEl) {
+    langCodeEl.textContent = (lang === 'ja' ? 'JA' : 'EN');
+  }
+
   // Close dropdown
   closeLanguageDropdown();
   
@@ -233,6 +239,8 @@ function switchLanguage(lang) {
   
   // Update content patterns for animation
   updateContentPatternsLanguage(lang);
+  // Refresh pattern keys for animation to match selected language
+  patternKeys = Object.keys(contentPatterns[lang] || contentPatterns.en);
 }
 
 // Dropdown toggle functionality
@@ -255,6 +263,7 @@ function openLanguageDropdown() {
   
   trigger.classList.add('open');
   menu.classList.add('open');
+  trigger.setAttribute('aria-expanded', 'true');
   
   // Add click outside listener
   setTimeout(() => {
@@ -268,6 +277,7 @@ function closeLanguageDropdown() {
   
   trigger.classList.remove('open');
   menu.classList.remove('open');
+  trigger.setAttribute('aria-expanded', 'false');
   
   // Remove click outside listener
   document.removeEventListener('click', handleClickOutside);
@@ -530,65 +540,51 @@ let animationInterval;
 
 // Function to update text demo content with smooth animation
 function updateTextDemo(patternKey) {
-  console.log('Updating text demo with pattern:', patternKey);
   const currentContentPatterns = window.currentContentPatterns || contentPatterns[currentLang];
   const pattern = currentContentPatterns[patternKey];
   const textDemo = document.getElementById('textDemo');
   
-  if (!textDemo) {
-    console.error('textDemo element not found!');
-    return;
-  }
+  if (!textDemo) return;
   
-  console.log('Found textDemo element, applying fade-out');
   // Add fade out class
   textDemo.classList.add('fade-out');
   
   setTimeout(() => {
-    console.log('Updating content with pattern:', pattern);
     // Update content
     const textLines = textDemo.querySelectorAll('.text-line');
     const bubbleContent = textDemo.querySelector('.bubble-content');
     
-    console.log('Found text lines:', textLines.length);
-    console.log('Found bubble content:', bubbleContent);
     
     // Update text lines
     pattern.lines.forEach((line, index) => {
       if (textLines[index]) {
         textLines[index].textContent = line;
         textLines[index].classList.toggle('selected', index === pattern.selectedIndex);
-        console.log(`Updated line ${index}:`, line);
       }
     });
     
     // Update explanation
     if (bubbleContent) {
       bubbleContent.textContent = pattern.explanation;
-      console.log('Updated explanation:', pattern.explanation);
     }
     
     // Remove fade out and add fade in
     textDemo.classList.remove('fade-out');
     textDemo.classList.add('fade-in');
-    console.log('Applied fade-in effect');
     
     setTimeout(() => {
       textDemo.classList.remove('fade-in');
-      console.log('Removed fade-in class');
+      
     }, 500);
   }, 250);
 }
 
 // Start the animation cycle
 function startContentAnimation() {
-  console.log('Starting content animation...');
   // Initial delay
   setTimeout(() => {
-    console.log('Initial delay complete, starting interval');
     animationInterval = setInterval(() => {
       currentPatternIndex = (currentPatternIndex + 1) % patternKeys.length;
-      console.log('Changing to pattern index:', currentPatternIndex, 'Pattern:', patternKeys[currentPatternIndex]);
       updateTextDemo(patternKeys[currentPatternIndex]);
     }, 7000); // Change every 7 seconds
   }, 3000); // Start after 3 seconds
@@ -596,38 +592,17 @@ function startContentAnimation() {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM Content Loaded, initializing...');
   
   // Initialize language switching
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      switchLanguage(btn.dataset.lang);
-    });
-  });
+  // cleanup: .lang-btn not used
   
   // Initialize with page default language (falls back to 'en')
   const initialLang = window.DEFAULT_LANG || 'en';
   switchLanguage(initialLang);
   
   // Initialize animation
-  console.log('Available patterns:', patternKeys);
-  console.log('Text demo element:', document.getElementById('textDemo'));
   startContentAnimation();
 });
 
 // Subtle tilt effect for .tilt elements
-const maxTilt = 6;
-const cards = document.querySelectorAll('.tilt');
-cards.forEach((el) => {
-  el.addEventListener('mousemove', (e) => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const rx = ((y - rect.height / 2) / rect.height) * -maxTilt;
-    const ry = ((x - rect.width / 2) / rect.width) * maxTilt;
-    el.style.transform = `translateY(-2px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-  });
-  el.addEventListener('mouseleave', () => {
-    el.style.transform = '';
-  });
-});
+// removed: tilt effect (unused)
