@@ -272,7 +272,7 @@ body {
 .section-sub { color: var(--muted); margin: 0; font-size: 18px; line-height: 1.6; font-weight: 400; }
 
 /* demo video */
-.demo-media { position: relative; border: 1px solid var(--border-soft); border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 16px 40px rgba(255,77,109,0.08), 0 6px 20px rgba(217,70,239,0.06); width: min(960px, 100%); margin: 0 auto; }
+.demo-media { position: relative; border: none; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 16px 40px rgba(255,77,109,0.08), 0 6px 20px rgba(217,70,239,0.06); width: min(960px, 100%); margin: 0 auto; }
 .demo-wrap { position: relative; aspect-ratio: 16 / 9; width: 100%; border-radius: 16px; overflow: hidden; }
 .demo-video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; background: #000; border-radius: 16px; }
 .demo-notes { margin-top: 12px; color: var(--muted); font-size: 13px; text-align: center; }
