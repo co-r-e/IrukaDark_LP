@@ -34,6 +34,11 @@ const translations = {
     'usecases.legal.title': 'Contracts & Legal Documents',
     'usecases.legal.description': 'Understand specialized clauses and terminology when reviewing important legal documents.',
 
+    // Demo section
+    'demo.title': 'See It in Action',
+    'demo.subtitle': 'Select text or capture an area—IrukaDark explains it on‑screen.',
+    'demo.note': 'Tip: Text = Option/Alt+A · Screenshot = Option/Alt+S',
+
     // Where it works
     'where.title': 'Works where you work',
     'where.subtitle': 'IrukaDark rides on top of your tools—no context switching.',
@@ -173,6 +178,11 @@ const translations = {
     'cta.description': 'GitHubからクローンしてすぐ試せます。オープンソースで無料。',
     'cta.button': '今すぐ試す',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
+    ,
+    // Demo section
+    'demo.title': '操作デモを見る',
+    'demo.subtitle': 'テキスト選択や範囲キャプチャに反応して、その場でAIが解説します。',
+    'demo.note': 'ヒント: テキスト = Option/Alt+A ・ スクショ = Option/Alt+S'
   }
 };
 
