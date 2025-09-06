@@ -94,11 +94,11 @@ const translations = {
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
-    'meta.title': 'IrukaDark — 画面のすべてを超高速解説するAI',
-    'meta.description': 'テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option/Alt+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
+    'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
+    'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option/Alt+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
     'header.clone': '今すぐ試す',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
-    'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDarkが一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
+    'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDark（イルカダーク）が一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
     'hero.cta': '今すぐ試す',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
