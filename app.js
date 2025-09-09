@@ -693,12 +693,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('download-btn-cta')
     ].filter(Boolean);
     const navBtn = document.getElementById('download-nav');
+    const lang = (document.documentElement && document.documentElement.lang) || currentLang || window.DEFAULT_LANG || 'en';
+    const downloadBase = (lang === 'ja') ? '/ja/downloads' : '/downloads';
     const os = detectOS();
     setNote(os);
 
     // Default: point to /downloads
-    btns.forEach(b => { if (b) b.href = '/downloads'; });
-    if (navBtn) navBtn.href = '/downloads';
+    btns.forEach(b => { if (b) b.href = downloadBase; });
+    if (navBtn) navBtn.href = downloadBase;
 
     // Try to fetch latest release and update to direct asset
     const release = await fetchLatest();
