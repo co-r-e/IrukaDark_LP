@@ -263,6 +263,7 @@ body {
 .section-head { text-align: center; margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto; }
 .section-title { position: relative; font-size: clamp(32px, 4vw, 48px); margin: 0 0 20px; letter-spacing: -0.8px; font-weight: 700; line-height: 1.2; }
 .section-title::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); bottom: -12px; width: 80px; height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--primary), var(--primary-2)); box-shadow: 0 0 20px rgba(217,70,239,0.35); }
+.section-title.no-deco::after { content: none; display: none; }
 .section-sub { color: var(--muted); margin: 0; font-size: 18px; line-height: 1.6; font-weight: 400; }
 
 /* demo video */
@@ -368,6 +369,21 @@ body {
 }
 @media (max-width: 600px) {
   .grid.download-notes { grid-template-columns: 1fr; }
+}
+
+/* Downloads: OS cards */
+.grid.download-cards { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; margin-top: 10px; }
+.dl-card { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; }
+.dl-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 14px; background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); border: 1px solid var(--border-soft); }
+.dl-icon svg { width: 36px; height: 36px; color: #0b0c10; opacity: 0.9; }
+.dl-title { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; margin: 0 0 4px; }
+.dl-sub { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+.dl-actions { margin-top: 6px; }
+.dl-btn { width: 100%; justify-content: center; font-weight: 700; }
+.dl-card.active { box-shadow: 0 0 0 2px var(--ring), var(--glass-shadow); }
+
+@media (max-width: 1100px) {
+  .grid.download-cards { grid-template-columns: 1fr; }
 }
 
 /* steps */

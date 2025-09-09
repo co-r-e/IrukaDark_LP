@@ -58,18 +58,60 @@
           <p class="section-sub">お使いのOSを自動判定し、最適なインストーラをご案内します。下に全ファイル一覧も表示します。</p>
         </div>
 
-        <div class="cta glass" style="margin-top:8px;">
-          <div class="cta-copy">
-            <h3 class="cta-title" id="osDetectedTitle">OS を検出しました</h3>
-            <p class="cta-sub" id="osDetectedNote">検出結果に基づいて、適切なダウンロードを表示します。</p>
-          </div>
-          <div class="cta-actions">
-            <a id="download-primary" href="https://github.com/co-r-e/IrukaDark/releases/latest" class="btn btn-primary btn-lg">ダウンロード</a>
-          </div>
+        <div class="grid download-cards">
+          <article class="card dl-card" data-os="mac">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="currentColor" role="img" aria-label="macOS">
+                <path d="M30 9c-2.1 1.2-3.4 3.1-3.4 5.3 0 .7.1 1.3.3 1.9-1.2-.1-2.3-.5-3.2-1.1-1.3-.8-2.5-1.2-3.6-1.2-2.2 0-4.1 1.1-5.7 3-1.7 2-2.6 4.6-2.6 7.2 0 3.6 1.7 6.8 3.4 8.8 1.3 1.5 2.9 3.1 4.8 3.1 1.6 0 2.2-.9 4.1-.9s2.4.9 4.1.9c1.9 0 3.4-1.6 4.7-3.3 1.4-1.8 2.4-4.4 2.4-7.2 0-2.6-.9-4.6-2.3-6.2-1.3-1.5-3.2-2.4-5.2-2.6.3-.8.4-1.7.4-2.6 0-2-1-3.8-2.6-5.1z"></path>
+                <path d="M28 7c0 1.9-1.5 3.8-3.1 4.8"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="dl-title">macOS</div>
+              <div class="dl-sub">macOS 11.0以降</div>
+              <div class="dl-actions">
+                <a id="dl-mac-btn" class="btn btn-primary-white dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/latest">Mac ARM64（Apple Silicon）用にダウンロード</a>
+              </div>
+            </div>
+          </article>
+          <article class="card dl-card" data-os="windows">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="currentColor" role="img" aria-label="Windows">
+                <rect x="3" y="6" width="18" height="16" rx="1"></rect>
+                <rect x="27" y="6" width="18" height="16" rx="1"></rect>
+                <rect x="3" y="26" width="18" height="16" rx="1"></rect>
+                <rect x="27" y="26" width="18" height="16" rx="1"></rect>
+              </svg>
+            </div>
+            <div>
+              <div class="dl-title">ウィンドウズ</div>
+              <div class="dl-sub">Windows 10/11</div>
+              <div class="dl-actions">
+                <a id="dl-win-btn" class="btn btn-primary-white dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/latest">Windows x64 用にダウンロード</a>
+              </div>
+            </div>
+          </article>
+          <article class="card dl-card" data-os="linux">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" role="img" aria-label="Linux">
+                <rect x="9" y="12" width="30" height="24" rx="4"></rect>
+                <path d="M14 18h20"></path>
+                <path d="M14 24h20"></path>
+                <path d="M14 30h12"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="dl-title">Linux</div>
+              <div class="dl-sub">x86_64 ・ AppImage</div>
+              <div class="dl-actions">
+                <a id="dl-linux-btn" class="btn btn-primary-white dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/latest">Linux x64 用にダウンロード</a>
+              </div>
+            </div>
+          </article>
         </div>
 
         <div class="section" style="margin-top:24px;">
-          <h2 class="section-title" style="font-size:20px;">すべてのダウンロード</h2>
+          <h2 class="section-title no-deco" style="font-size:20px;">すべてのダウンロード</h2>
           <div id="assets" class="card glass" style="padding:16px;">
             <p id="assetsStatus" class="muted">最新リリースのアセットを読み込み中…</p>
             <ul id="assetList" class="icon-list"></ul>
@@ -80,7 +122,7 @@
         </div>
 
         <div class="section" style="margin-top:24px;">
-          <h2 class="section-title" style="font-size:20px;">ハッシュ値（チェックサム）</h2>
+          <h2 class="section-title no-deco" style="font-size:20px;">ハッシュ値（チェックサム）</h2>
           <div id="checksums" class="card glass" style="padding:16px;">
             <p id="checksumsStatus" class="muted">SHA256SUMS を探しています…</p>
             <pre id="checksumsPre" class="muted" style="white-space:pre-wrap; word-break:break-word;"></pre>
@@ -89,13 +131,12 @@
         </div>
 
         <div class="section" style="margin-top:24px;">
-          <h2 class="section-title" style="font-size:20px;">初回起動の注意</h2>
+          <h2 class="section-title no-deco" style="font-size:20px;">初回起動の注意</h2>
           <div class="grid download-notes">
             <article class="card download-note">
               <div>
                 <div class="card-head">
                   <h3 class="card-title">macOS（arm64）</h3>
-                  <span class="badge-tag">Gatekeeper</span>
                 </div>
                 <p class="card-body">「開発元が未確認のため開けません」等の警告が出たら、アプリをControl+クリック→「開く」で許可。もしくは「設定 → プライバシーとセキュリティ」で許可します。</p>
               </div>
@@ -104,7 +145,6 @@
               <div>
                 <div class="card-head">
                   <h3 class="card-title">Windows</h3>
-                  <span class="badge-tag">SmartScreen</span>
                 </div>
                 <p class="card-body">「WindowsによってPCが保護されました」が出た場合は「詳細情報」→「実行」を選択。将来的にコード署名で警告は軽減されます。</p>
               </div>
@@ -113,7 +153,6 @@
               <div>
                 <div class="card-head">
                   <h3 class="card-title">Linux（AppImage）</h3>
-                  <span class="badge-tag">権限</span>
                 </div>
                 <p class="card-body">実行権限を付与してから起動してください。例: <code>chmod +x IrukaDark-*.AppImage</code></p>
               </div>
@@ -122,7 +161,6 @@
               <div>
                 <div class="card-head">
                   <h3 class="card-title">macOSのスクショ解析</h3>
-                  <span class="badge-tag">プライバシー</span>
                 </div>
                 <p class="card-body">スクリーンショット解析には「画面収録」の許可が必要です（設定 → プライバシーとセキュリティ → 画面収録）。</p>
               </div>
@@ -151,11 +189,11 @@
           mac: 'IrukaDark-macOS-arm64.dmg',
           linux: 'IrukaDark-x86_64.AppImage'
         };
-        const primary = document.getElementById('download-primary');
+        const macBtn = document.getElementById('dl-mac-btn');
+        const winBtn = document.getElementById('dl-win-btn');
+        const linuxBtn = document.getElementById('dl-linux-btn');
         const statusEl = document.getElementById('assetsStatus');
         const listEl = document.getElementById('assetList');
-        const titleEl = document.getElementById('osDetectedTitle');
-        const noteEl = document.getElementById('osDetectedNote');
 
         function detectOS(){
           const ua = navigator.userAgent || navigator.platform || '';
@@ -185,34 +223,22 @@
 
         async function run(){
           const os = detectOS();
-          if (titleEl) titleEl.textContent = 'OS を検出しました';
-          if (noteEl) noteEl.textContent = os ? osLabel(os) + ' を検出しました — 最適なダウンロードを表示します。' : 'OS を判定できませんでした — 下の一覧から選択してください。';
-
-          primary.href = `https://github.com/${REPO}/releases/latest`;
+          try { const el = document.querySelector(`.dl-card[data-os="${os}"]`); if (el) el.classList.add('active'); } catch(_){}
           try{
             const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { 'Accept': 'application/vnd.github+json' } });
             if (!res.ok) throw new Error('GitHub API error');
             const rel = await res.json();
             const assets = Array.isArray(rel.assets) ? rel.assets : [];
             if (assets.length === 0){
-              if (os && STABLE[os]){
-                primary.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
-                primary.textContent = osLabel(os) + ' をダウンロード';
-              }
               statusEl.textContent = '最新リリースにアセットがありません。';
-              return;
             }
 
-            const a = os ? pickAsset(assets, os) : null;
-            if (a && a.browser_download_url){
-              primary.href = a.browser_download_url;
-              primary.textContent = osLabel(os) + ' をダウンロード';
-            } else if (os && STABLE[os]){
-              primary.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
-              primary.textContent = osLabel(os) + ' をダウンロード';
-            } else {
-              primary.textContent = '最新リリースを開く';
-            }
+            const macAsset = pickAsset(assets, 'mac');
+            const winAsset = pickAsset(assets, 'windows');
+            const linAsset = pickAsset(assets, 'linux');
+            macBtn.href = macAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.mac)}`;
+            winBtn.href = winAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.windows)}`;
+            linuxBtn.href = linAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.linux)}`;
 
             statusEl.style.display = 'none';
             listEl.innerHTML = '';
@@ -249,10 +275,9 @@
               cStatus.textContent = 'チェックサムは提供されていません（任意）。';
             }
           }catch(e){
-            if (os && STABLE[os]){
-              primary.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
-              primary.textContent = osLabel(os) + ' をダウンロード';
-            }
+            macBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.mac)}`;
+            winBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.windows)}`;
+            linuxBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.linux)}`;
             statusEl.textContent = 'リリース情報を取得できませんでした。上のボタンからダウンロードしてください。';
             const cStatus = document.getElementById('checksumsStatus');
             cStatus.textContent = 'チェックサムを読み込めませんでした。';
