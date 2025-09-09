@@ -318,7 +318,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function navigateToLanguage(lang) {
     const base = getCanonicalBaseUrl();
-    const target = lang === 'ja' ? base + '/ja' : base;
+    const path = (window.location && window.location.pathname) || '';
+    const isDownloads = /\/downloads\/?$/.test(path) || /\/ja\/downloads\/?$/.test(path);
+    let target;
+    if (isDownloads) {
+      target = lang === 'ja' ? base + '/ja/downloads' : base + '/downloads';
+    } else {
+      target = lang === 'ja' ? base + '/ja' : base;
+    }
     window.location.href = target;
   }
 

@@ -27,8 +27,26 @@
           <img src="../../icons/logo.svg" alt="IrukaDark（イルカダーク）" class="brand-logo lg" />
         </a>
         <nav class="nav-actions">
-          <a class="link" href="/ja">トップ</a>
-          <a class="btn btn-primary" href="https://github.com/co-r-e/IrukaDark/releases/latest" target="_blank" rel="noopener">リリースノート</a>
+          <div class="lang-dropdown">
+            <button class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false">
+              <svg class="globe-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18"/>
+                <path d="M12 3a15 15 0 0 1 0 18"/>
+                <path d="M12 3a15 15 0 0 0 0 18"/>
+              </svg>
+              <span class="lang-text" id="langCode">JA</span>
+            </button>
+            <div class="lang-menu" id="langMenu">
+              <button class="lang-option" data-lang="en">
+                <span class="lang-text">English</span>
+              </button>
+              <button class="lang-option" data-lang="ja">
+                <span class="lang-text">日本語</span>
+              </button>
+            </div>
+          </div>
+          <a id="download-nav" href="/ja/downloads" class="btn btn-primary" data-i18n="header.clone">ダウンロード</a>
         </nav>
       </div>
     </header>
