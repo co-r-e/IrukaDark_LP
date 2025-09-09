@@ -90,21 +90,43 @@
 
         <div class="section" style="margin-top:24px;">
           <h2 class="section-title" style="font-size:20px;">初回起動の注意</h2>
-          <div class="card glass" style="padding:16px;">
-            <ul class="icon-list">
-              <li>
-                <b>macOS（arm64）:</b> 「開発元が未確認のため開けません」等のGatekeeper警告が出たら、アプリをControl+クリック→「開く」で許可してください。もしくは「システム設定 → プライバシーとセキュリティ」で許可します。
-              </li>
-              <li>
-                <b>Windows:</b> SmartScreenの「WindowsによってPCが保護されました」が出た場合は「詳細情報」→「実行」を選びます。将来的にコード署名でこの警告は軽減されます。
-              </li>
-              <li>
-                <b>Linux AppImage:</b> 実行権限を付与（右クリック→プロパティ→権限→「プログラムとして実行を許可」または <code>chmod +x IrukaDark-*.AppImage</code>）してから起動してください。
-              </li>
-              <li>
-                <b>画面キャプチャ許可（macOS）:</b> スクリーンショット解析を使う際に「画面収録」の許可が必要です。最初の実行時に案内に従って許可してください。
-              </li>
-            </ul>
+          <div class="grid download-notes">
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">macOS（arm64）</h3>
+                  <span class="badge-tag">Gatekeeper</span>
+                </div>
+                <p class="card-body">「開発元が未確認のため開けません」等の警告が出たら、アプリをControl+クリック→「開く」で許可。もしくは「設定 → プライバシーとセキュリティ」で許可します。</p>
+              </div>
+            </article>
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">Windows</h3>
+                  <span class="badge-tag">SmartScreen</span>
+                </div>
+                <p class="card-body">「WindowsによってPCが保護されました」が出た場合は「詳細情報」→「実行」を選択。将来的にコード署名で警告は軽減されます。</p>
+              </div>
+            </article>
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">Linux（AppImage）</h3>
+                  <span class="badge-tag">権限</span>
+                </div>
+                <p class="card-body">実行権限を付与してから起動してください。例: <code>chmod +x IrukaDark-*.AppImage</code></p>
+              </div>
+            </article>
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">macOSのスクショ解析</h3>
+                  <span class="badge-tag">プライバシー</span>
+                </div>
+                <p class="card-body">スクリーンショット解析には「画面収録」の許可が必要です（設定 → プライバシーとセキュリティ → 画面収録）。</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>

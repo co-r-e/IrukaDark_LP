@@ -90,21 +90,43 @@
 
         <div class="section" style="margin-top:24px;">
           <h2 class="section-title" style="font-size:20px;">First‑run notes</h2>
-          <div class="card glass" style="padding:16px;">
-            <ul class="icon-list">
-              <li>
-                <b>macOS (arm64):</b> If you see a Gatekeeper warning like “can’t be opened” or “from an unidentified developer”, Control‑click the app → Open, then confirm. Or go to System Settings → Privacy & Security and allow the app.
-              </li>
-              <li>
-                <b>Windows:</b> SmartScreen may show “Windows protected your PC”. Click “More info” → “Run anyway”. Code signing will reduce this in future builds.
-              </li>
-              <li>
-                <b>Linux AppImage:</b> Make it executable (Right‑click → Properties → Permissions → Allow executing, or run <code>chmod +x IrukaDark-*.AppImage</code>) and then run it.
-              </li>
-              <li>
-                <b>Screen capture permission (macOS):</b> For screenshot analysis, grant Screen Recording in System Settings → Privacy & Security when prompted.
-              </li>
-            </ul>
+          <div class="grid download-notes">
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">macOS (arm64)</h3>
+                  <span class="badge-tag">Gatekeeper</span>
+                </div>
+                <p class="card-body">If you see a warning like “can’t be opened” or “from an unidentified developer”, Control‑click the app → Open, then confirm. Or allow it in System Settings → Privacy & Security.</p>
+              </div>
+            </article>
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">Windows</h3>
+                  <span class="badge-tag">SmartScreen</span>
+                </div>
+                <p class="card-body">SmartScreen may show “Windows protected your PC”. Click “More info” → “Run anyway”. Code signing will reduce this in future builds.</p>
+              </div>
+            </article>
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">Linux (AppImage)</h3>
+                  <span class="badge-tag">Permissions</span>
+                </div>
+                <p class="card-body">Make the file executable and run it. Example: <code>chmod +x IrukaDark-*.AppImage</code></p>
+              </div>
+            </article>
+            <article class="card download-note">
+              <div>
+                <div class="card-head">
+                  <h3 class="card-title">macOS Screenshots</h3>
+                  <span class="badge-tag">Privacy</span>
+                </div>
+                <p class="card-body">For screenshot analysis, grant Screen Recording when prompted (System Settings → Privacy & Security → Screen Recording).</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
