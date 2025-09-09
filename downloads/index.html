@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IrukaDark — Downloads</title>
+    <meta name="description" content="Download IrukaDark for Windows (x64), macOS (arm64), and Linux (x64)." />
+    <link rel="canonical" href="https://irukadark.com/downloads" />
+    <link rel="icon" href="../icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../icons/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../icons/icon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>window.DEFAULT_LANG = 'en';</script>
+  </head>
+  <body>
+    <div class="bg fx-grid"></div>
+    <div class="bg fx-radial fx-radial-1"></div>
+    <div class="bg fx-radial fx-radial-2"></div>
+    <div class="bg fx-noise"></div>
+
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="/">
+          <img src="../icons/icon.png" alt="IrukaDark" width="28" height="28" />
+          <span>IrukaDark</span>
+        </a>
+        <nav class="nav-right">
+          <a class="link" href="/">Home</a>
+          <a class="btn btn-primary" href="https://github.com/co-r-e/IrukaDark/releases/latest" target="_blank" rel="noopener">Release notes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section">
+        <div class="section-head">
+          <h1 class="section-title">Download IrukaDark</h1>
+          <p class="section-sub">We’ll pick the right installer for your OS. You can also choose from all assets below.</p>
+        </div>
+
+        <div class="cta glass" style="margin-top:8px;">
+          <div class="cta-copy">
+            <h3 class="cta-title" id="osDetectedTitle">Detected OS</h3>
+            <p class="cta-sub" id="osDetectedNote">We detected your OS. Click to download.</p>
+          </div>
+          <div class="cta-actions">
+            <a id="download-primary" href="https://github.com/co-r-e/IrukaDark/releases/latest" class="btn btn-primary btn-lg">Download</a>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:24px;">
+          <h2 class="section-title" style="font-size:20px;">All downloads</h2>
+          <div id="assets" class="card glass" style="padding:16px;">
+            <p id="assetsStatus" class="muted">Loading latest release assets…</p>
+            <ul id="assetList" class="icon-list"></ul>
+          </div>
+          <div style="margin-top:12px;">
+            <a class="link" href="https://github.com/co-r-e/IrukaDark/releases/latest" target="_blank" rel="noopener">View on GitHub Releases</a>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:24px;">
+          <h2 class="section-title" style="font-size:20px;">Checksums</h2>
+          <div id="checksums" class="card glass" style="padding:16px;">
+            <p id="checksumsStatus" class="muted">Looking for SHA256SUMS…</p>
+            <pre id="checksumsPre" class="muted" style="white-space:pre-wrap; word-break:break-word;"></pre>
+            <p id="sigInfo" class="muted" style="margin-top:8px;"></p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:24px;">
+          <h2 class="section-title" style="font-size:20px;">First‑run notes</h2>
+          <div class="card glass" style="padding:16px;">
+            <ul class="icon-list">
+              <li>
+                <b>macOS (arm64):</b> If you see a Gatekeeper warning like “can’t be opened” or “from an unidentified developer”, Control‑click the app → Open, then confirm. Or go to System Settings → Privacy & Security and allow the app.
+              </li>
+              <li>
+                <b>Windows:</b> SmartScreen may show “Windows protected your PC”. Click “More info” → “Run anyway”. Code signing will reduce this in future builds.
+              </li>
+              <li>
+                <b>Linux AppImage:</b> Make it executable (Right‑click → Properties → Permissions → Allow executing, or run <code>chmod +x IrukaDark-*.AppImage</code>) and then run it.
+              </li>
+              <li>
+                <b>Screen capture permission (macOS):</b> For screenshot analysis, grant Screen Recording in System Settings → Privacy & Security when prompted.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <div class="foot-left">
+        <span class="muted">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+      </div>
+      <div class="foot-right">
+        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">Company</a>
+        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact</a>
+      </div>
+    </footer>
+
+    <script src="../app.js"></script>
+    <script>
+      (function(){
+        const REPO = 'co-r-e/IrukaDark';
+        const STABLE = {
+          windows: 'IrukaDark-Setup-x64.exe',
+          mac: 'IrukaDark-macOS-arm64.dmg',
+          linux: 'IrukaDark-x86_64.AppImage'
+        };
+        const primary = document.getElementById('download-primary');
+        const statusEl = document.getElementById('assetsStatus');
+        const listEl = document.getElementById('assetList');
+        const titleEl = document.getElementById('osDetectedTitle');
+        const noteEl = document.getElementById('osDetectedNote');
+
+        function detectOS(){
+          const ua = navigator.userAgent || navigator.platform || '';
+          if (/Windows/i.test(ua)) return 'windows';
+          if (/Macintosh|Mac OS X|MacOS/i.test(ua)) return 'mac';
+          if (/Linux|X11/i.test(ua) && !/Android/i.test(ua)) return 'linux';
+          return null;
+        }
+        function osLabel(os){
+          const map = { windows: 'Windows (x64)', mac: 'macOS (arm64)', linux: 'Linux (x64)' };
+          return map[os] || 'Unknown OS';
+        }
+        function pickAsset(assets, os){
+          const byName = (re) => assets.find(a => a && a.name && re.test(a.name));
+          if (os === 'windows') return byName(/\.exe$/i) || byName(/\.msi$/i) || null;
+          if (os === 'mac') return byName(/arm64.*\.dmg$/i) || byName(/\.dmg$/i) || byName(/\.pkg$/i) || null;
+          if (os === 'linux') return byName(/x86_64.*\.AppImage$/i) || byName(/\.AppImage$/i) || byName(/amd64.*\.deb$/i) || byName(/x86_64.*\.rpm$/i) || null;
+          return null;
+        }
+        function fmtSize(bytes){
+          if (!bytes && bytes !== 0) return '';
+          const units = ['B','KB','MB','GB'];
+          let i=0, n=bytes;
+          while(n>=1024 && i<units.length-1){ n/=1024; i++; }
+          return n.toFixed(1)+' '+units[i];
+        }
+
+        async function run(){
+          const os = detectOS();
+          if (titleEl) titleEl.textContent = 'Detected OS';
+          if (noteEl) noteEl.textContent = os ? osLabel(os) + ' detected — showing the right download.' : 'OS not detected — pick from the list below.';
+
+          primary.href = `https://github.com/${REPO}/releases/latest`;
+          try{
+            const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { 'Accept': 'application/vnd.github+json' } });
+            if (!res.ok) throw new Error('GitHub API error');
+            const rel = await res.json();
+            const assets = Array.isArray(rel.assets) ? rel.assets : [];
+            if (assets.length === 0){
+              // Try stable filename links as a fallback
+              if (os && STABLE[os]){
+                primary.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
+                primary.textContent = 'Download for ' + osLabel(os);
+              }
+              statusEl.textContent = 'No assets found in the latest release.';
+              return;
+            }
+
+            // Primary button
+            const a = os ? pickAsset(assets, os) : null;
+            if (a && a.browser_download_url){
+              primary.href = a.browser_download_url;
+              primary.textContent = 'Download for ' + osLabel(os);
+            } else if (os && STABLE[os]) {
+              primary.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
+              primary.textContent = 'Download for ' + osLabel(os);
+            } else {
+              primary.textContent = 'Open latest release';
+            }
+
+            // List all assets
+            statusEl.style.display = 'none';
+            listEl.innerHTML = '';
+            assets.forEach(asset => {
+              const li = document.createElement('li');
+              const link = document.createElement('a');
+              link.href = asset.browser_download_url;
+              link.textContent = asset.name + (asset.size ? ` (${fmtSize(asset.size)})` : '');
+              link.className = 'link';
+              li.appendChild(link);
+              listEl.appendChild(li);
+            });
+
+            // Checksums (SHA256SUMS)
+            const cStatus = document.getElementById('checksumsStatus');
+            const cPre = document.getElementById('checksumsPre');
+            const sigInfo = document.getElementById('sigInfo');
+            const sumAsset = assets.find(a => /^(sha256sums(\.txt)?|checksums(\.txt)?)$/i.test(a.name));
+            const sigAsset = assets.find(a => /^(sha256sums\.sig)$/i.test(a.name));
+            if (sumAsset){
+              try{
+                const r = await fetch(sumAsset.browser_download_url);
+                if (!r.ok) throw new Error('fetch sums');
+                const text = await r.text();
+                cStatus.style.display = 'none';
+                cPre.textContent = text.trim();
+                if (sigAsset){
+                  sigInfo.innerHTML = `Signature: <a class="link" href="${sigAsset.browser_download_url}">SHA256SUMS.sig</a>`;
+                }
+              }catch(e){
+                cStatus.textContent = 'Could not load checksums.';
+              }
+            } else {
+              cStatus.textContent = 'No checksums provided (optional).';
+            }
+          }catch(e){
+            // API failure: still offer stable filename links
+            if (os && STABLE[os]){
+              primary.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
+              primary.textContent = 'Download for ' + osLabel(os);
+            }
+            statusEl.textContent = 'Could not load release info. Use the button above.';
+            const cStatus = document.getElementById('checksumsStatus');
+            cStatus.textContent = 'Could not load checksums.';
+          }
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+      })();
+    </script>
+  </body>
+  </html>

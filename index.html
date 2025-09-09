@@ -116,7 +116,7 @@
               </button>
             </div>
           </div>
-          <a href="https://github.com/co-r-e/IrukaDark.git" class="btn btn-primary" data-i18n="header.clone">Try it now</a>
+          <a id="download-nav" href="/downloads" class="btn btn-primary" data-i18n="header.clone">Download</a>
         </nav>
       </div>
     </header>
@@ -133,7 +133,8 @@
               Pick anything—text, images, tables. IrukaDark turns it into the gist. Press Option/Alt+A for text, Option/Alt+S for screenshots.
             </p>
             <div class="hero-cta">
-              <a href="https://github.com/co-r-e/IrukaDark.git" class="btn btn-primary btn-lg" data-i18n="hero.cta">Try it now</a>
+              <a id="download-btn" href="/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">Download</a>
+              <div><small id="download-note" class="muted"></small></div>
             </div>
           </div>
           <div class="hero-media glass-white">
@@ -371,8 +372,8 @@
           <li class="step">
             <span class="num">1</span>
             <div class="content">
-              <h4 data-i18n="howto.step1.title">Clone from GitHub</h4>
-              <p data-i18n="howto.step1.description">Clone the repo, install dependencies, and finish setup.</p>
+              <h4 data-i18n="howto.step1.title">Download and Install</h4>
+              <p data-i18n="howto.step1.description">Download the installer for your OS and follow the steps.</p>
             </div>
           </li>
           <li class="step">
@@ -420,11 +421,11 @@
       <section id="cta" class="container section">
         <div class="cta glass">
           <div class="cta-copy">
-            <h3 class="cta-title" data-i18n="cta.title">Try it now</h3>
-            <p class="cta-sub" data-i18n="cta.description">Clone from GitHub and get going fast. Open‑source and free.</p>
+            <h3 class="cta-title" data-i18n="cta.title">Download</h3>
+            <p class="cta-sub" data-i18n="cta.description">Download the app for your OS. Open‑source and free.</p>
           </div>
           <div class="cta-actions">
-            <a href="https://github.com/co-r-e/IrukaDark.git" class="btn btn-primary btn-lg" data-i18n="cta.button">Try it now</a>
+            <a id="download-btn-cta" href="/downloads" class="btn btn-primary btn-lg" data-i18n="cta.button">Download</a>
           </div>
         </div>
       </section>
@@ -438,7 +439,7 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head"><h3 class="card-title">What platforms are supported?</h3></div>
-            <p class="card-body">macOS, Windows, and Linux. Clone the repo and follow the README to set up.</p>
+            <p class="card-body">macOS, Windows, and Linux. Download the installer from the Downloads page or GitHub Releases.</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">How is it different from a translator?</h3></div>
@@ -449,12 +450,16 @@
             <p class="card-body">No. IrukaDark stores no data and does not train on your content, helping protect your privacy.</p>
           </article>
           <article class="card">
+            <div class="card-head"><h3 class="card-title">Do I need a GitHub account or developer tools?</h3></div>
+            <p class="card-body">No for normal use — just download and install. A GitHub account, Git, and Node.js are only needed if you want to build from source.</p>
+          </article>
+          <article class="card">
             <div class="card-head"><h3 class="card-title">How do I use it quickly?</h3></div>
             <p class="card-body">Select text and press Option/Alt+A for an explanation. For images and graphs, select an area and press Option/Alt+S for screenshot analysis.</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">Is it free and open source?</h3></div>
-            <p class="card-body">Yes. IrukaDark is open source and free to use. Clone the repository on GitHub. For usage terms, please see the license in the repository.</p>
+            <p class="card-body">Yes. IrukaDark is open source and free to use. Download prebuilt installers from GitHub Releases, or build from source if you prefer.</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">Does it require an internet connection?</h3></div>
@@ -524,46 +529,26 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>GitHub account</td>
-                      <td colspan="3">Required (for cloning and issues)</td>
+                      <td>Developer tools</td>
+                      <td>Not required for normal use</td>
+                      <td>Not required</td>
+                      <td>Not required</td>
                     </tr>
                     <tr>
-                      <td>Git</td>
-                      <td>Required</td>
-                      <td>Required</td>
-                      <td>Required</td>
-                    </tr>
-                    <tr>
-                      <td>Node.js LTS (v18+)</td>
-                      <td>Required</td>
-                      <td>Required</td>
-                      <td>Required</td>
-                    </tr>
-                    <tr>
-                      <td>npm</td>
-                      <td>Required</td>
-                      <td>Required</td>
-                      <td>Required</td>
-                    </tr>
-                    <tr>
-                      <td>Terminal</td>
-                      <td>Terminal.app</td>
-                      <td>PowerShell / Windows Terminal</td>
-                      <td>Terminal</td>
+                      <td>Screen capture</td>
+                      <td>Screen Recording permission required for screenshots</td>
+                      <td>Not required</td>
+                      <td>Wayland: approve portal; X11: not required</td>
                     </tr>
                     <tr>
                       <td>Internet</td>
-                      <td colspan="3">Required for dependencies and AI services</td>
+                      <td>Allow outbound HTTPS</td>
+                      <td>Allow outbound HTTPS</td>
+                      <td>Allow outbound HTTPS</td>
                     </tr>
                     <tr>
-                      <td>Editor (recommended)</td>
-                      <td colspan="3">VS Code or your preferred editor</td>
-                    </tr>
-                    <tr>
-                      <td>Package manager (recommended)</td>
-                      <td>Homebrew</td>
-                      <td>winget / Chocolatey</td>
-                      <td>apt / dnf / pacman, etc.</td>
+                      <td>Build from source (optional)</td>
+                      <td colspan="3">Requires Git and Node.js LTS if you choose to build yourself</td>
                     </tr>
                   </tbody>
                 </table>
@@ -650,7 +635,7 @@
         {
           "@type": "Question",
           "name": "What platforms are supported?",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS, Windows, and Linux. Clone the repo and follow the README to set up."}
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS, Windows, and Linux. Download the installer from the Downloads page or GitHub Releases."}
         },
         {
           "@type": "Question",
@@ -664,13 +649,18 @@
         },
         {
           "@type": "Question",
+          "name": "Do I need a GitHub account or developer tools?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No for normal use — just download and install. A GitHub account, Git, and Node.js are only needed if you want to build from source."}
+        },
+        {
+          "@type": "Question",
           "name": "How do I use it quickly?",
           "acceptedAnswer": {"@type": "Answer", "text": "Select text and press Option/Alt+A for an explanation. For images and graphs, select an area and press Option/Alt+S for screenshot analysis."}
         },
         {
           "@type": "Question",
           "name": "Is it free and open source?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark is open source and free to use. Clone the repository on GitHub. For usage terms, please see the license in the repository."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark is open source and free to use. Download prebuilt installers from GitHub Releases, or build from source if you prefer."}
         },
         {
           "@type": "Question",
@@ -685,7 +675,7 @@
         {
           "@type": "Question",
           "name": "What setup do I need on my PC?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Required: a GitHub account, Git, Node.js LTS (v18+), npm, and the ability to use a terminal (Terminal on macOS/Linux, PowerShell on Windows). Recommended: a code editor (e.g., VS Code), and a package manager (Homebrew on macOS, winget/Chocolatey on Windows, your distro’s package manager on Linux). Internet connection is required to fetch dependencies and use AI services."}
+          "acceptedAnswer": {"@type": "Answer", "text": "No developer tools are required for normal use. Just download and install. For optional builds from source, you’ll need Git and Node.js LTS. An internet connection is required to use AI services, and macOS needs Screen Recording permission for screenshots."}
         }
       ]
     }

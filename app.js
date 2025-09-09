@@ -5,10 +5,10 @@ const translations = {
   en: {
     'meta.title': 'IrukaDark — AI that instantly explains your screen',
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option/Alt+A/S), bilingual JA/EN, privacy‑friendly, open source.',
-    'header.clone': 'Try it now',
+    'header.clone': 'Download',
     'hero.title': 'Everything on your screen, <span class="grad-white">explained fast</span>',
     'hero.subtitle': 'Pick anything—text, images, tables. IrukaDark turns it into the gist. Press Option/Alt+A for text, Option/Alt+S for screenshots.',
-    'hero.cta': 'Try it now',
+    'hero.cta': 'Download',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
     'features.title': 'Work Faster on Your Computer',
@@ -79,27 +79,29 @@ const translations = {
     'where.apps.badge': 'Apps',
     'where.images.badge': 'Images',
     'howto.title': 'How It Works',
-    'howto.subtitle': 'Three quick steps: clone and start immediately.',
-    'howto.step1.title': 'Clone from GitHub',
-    'howto.step1.description': 'Clone the repo, install dependencies, and finish setup.',
+    'howto.subtitle': 'Three quick steps: download and start.',
+    'howto.step1.title': 'Download and Install',
+    'howto.step1.description': 'Download the installer for your OS and follow the steps.',
     'howto.step2.title': 'Select Text (Option/Alt+A) or Area (Option/Alt+S)',
     'howto.step2.description': 'Select text in websites, docs, or apps and press Option/Alt+A for explanations. Select an area and press Option/Alt+S for screenshot analysis.',
     'howto.step2.hint': 'Text → Option/Alt+A • Area → Option/Alt+S',
     'howto.screenshot.hint': 'Screenshot Analysis',
     'howto.step3.title': 'Get Context‑Aware Explanations',
     'howto.step3.description': 'Understand intent and background—not just words—so you can keep working.',
-    'cta.title': 'Try it now',
-    'cta.description': 'Clone from GitHub and get going fast. Open‑source and free.',
-    'cta.button': 'Try it now',
+    'cta.title': 'Download',
+    'cta.description': 'Download the app for your OS. Open‑source and free.',
+    'cta.button': 'Download',
+    'download.note.detected': 'Detected {os}. Showing the right download.',
+    'download.note.fallback': 'Can\u2019t detect OS. See all downloads.',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
     'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option/Alt+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
-    'header.clone': '今すぐ試す',
+    'header.clone': 'ダウンロード',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
     'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDark（イルカダーク）が一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
-    'hero.cta': '今すぐ試す',
+    'hero.cta': 'ダウンロード',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
     'features.title': 'パソコン作業が高速に捗る',
@@ -165,18 +167,20 @@ const translations = {
     'where.apps.badge': 'アプリ',
     'where.images.badge': '画像',
     'howto.title': '使い方',
-    'howto.subtitle': 'たった3ステップで、GitHubからクローンして即時利用開始',
-    'howto.step1.title': 'GitHubからクローン',
-    'howto.step1.description': 'リポジトリをローカル環境にクローンし、必要な依存関係をインストールしてセットアップを完了します。',
+    'howto.subtitle': 'たった3ステップ。ダウンロードしてすぐ使える',
+    'howto.step1.title': 'ダウンロードしてインストール',
+    'howto.step1.description': 'あなたのOS向けのインストーラをダウンロードし、案内に従ってインストールします。',
     'howto.step2.title': 'テキストを選択してOption/Alt+A / 範囲を選択してOption/Alt+S',
     'howto.step2.description': 'ウェブサイト、ドキュメント、アプリで出会った難しいテキストはOption/Alt+Aで解説。画像やグラフなどの視覚コンテンツは範囲を選んでOption/Alt+Sでスクリーンショット解析。',
     'howto.step2.hint': 'テキスト → Option/Alt+A / 範囲 → Option/Alt+S',
     'howto.screenshot.hint': 'スクリーンショット解説',
     'howto.step3.title': '文脈を踏まえた解説を受け取り',
     'howto.step3.description': 'ただの単語の意味ではなく、文脈や背景を踏まえた理解が得られ、パソコン作業がスムーズに進みます。',
-    'cta.title': '今すぐ試す',
-    'cta.description': 'GitHubからクローンしてすぐ試せます。オープンソースで無料。',
-    'cta.button': '今すぐ試す',
+    'cta.title': 'ダウンロード',
+    'cta.description': 'あなたのOS向けにダウンロード。オープンソースで無料。',
+    'cta.button': 'ダウンロード',
+    'download.note.detected': '{os} を検出。最適なダウンロードを表示しています。',
+    'download.note.fallback': 'OSを判定できませんでした。全てのダウンロードを見る',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
     ,
     // Demo section
@@ -192,19 +196,20 @@ let currentLang = 'en'; // デフォルトは英語
 function switchLanguage(lang) {
   currentLang = lang;
   
-  // Update dropdown display
+  // Update dropdown display (if present on this page)
   const langTrigger = document.getElementById('langTrigger');
-  const globeIcon = langTrigger.querySelector('.globe-icon');
-  const langCodeEl = langTrigger.querySelector('#langCode');
+  const langCodeEl = langTrigger ? langTrigger.querySelector('#langCode') : null;
   const langOptions = document.querySelectorAll('.lang-option');
   
   // Keep the globe icon the same for both languages
   // No need to change the globe icon
   
   // Update active option
-  langOptions.forEach(option => {
-    option.classList.toggle('active', option.dataset.lang === lang);
-  });
+  if (langOptions && langOptions.length) {
+    langOptions.forEach(option => {
+      option.classList.toggle('active', option.dataset.lang === lang);
+    });
+  }
   
   // Update compact code label next to globe
   if (langCodeEl) {
@@ -212,7 +217,7 @@ function switchLanguage(lang) {
   }
 
   // Close dropdown
-  closeLanguageDropdown();
+  if (langTrigger) closeLanguageDropdown();
   
   // Update HTML lang attribute
   document.documentElement.lang = lang;
@@ -297,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const langOptions = document.querySelectorAll('.lang-option');
   
   // Toggle dropdown
-  langTrigger.addEventListener('click', toggleLanguageDropdown);
+  if (langTrigger) langTrigger.addEventListener('click', toggleLanguageDropdown);
   
   // Language option selection -> navigate to language-specific URL for SEO
   function getCanonicalBaseUrl() {
@@ -317,12 +322,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = target;
   }
 
-  langOptions.forEach(option => {
-    option.addEventListener('click', (e) => {
-      e.preventDefault();
-      navigateToLanguage(option.dataset.lang);
+  if (langOptions && langOptions.length) {
+    langOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateToLanguage(option.dataset.lang);
+      });
     });
-  });
+  }
   
   // Initialize with page default language (falls back to 'en')
   const initialLang = window.DEFAULT_LANG || 'en';
@@ -606,3 +613,122 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Subtle tilt effect for .tilt elements
 // removed: tilt effect (unused)
+
+// ------------------------------
+// Download button enhancement
+// - Detect OS
+// - Fetch latest GitHub release assets
+// - Point buttons to correct installer
+// ------------------------------
+(function setupDownloadButtons(){
+  const REPO = 'co-r-e/IrukaDark';
+  const STABLE = {
+    windows: 'IrukaDark-Setup-x64.exe',
+    mac: 'IrukaDark-macOS-arm64.dmg',
+    linux: 'IrukaDark-x86_64.AppImage'
+  };
+
+  function detectOS(){
+    const ua = navigator.userAgent || navigator.platform || '';
+    if (/Windows/i.test(ua)) return 'windows';
+    if (/Macintosh|Mac OS X|MacOS/i.test(ua)) return 'mac';
+    if (/Linux|X11/i.test(ua) && !/Android/i.test(ua)) return 'linux';
+    return null;
+  }
+
+  function osLabel(lang, os){
+    const map = {
+      en: { windows: 'Windows (x64)', mac: 'macOS (arm64)', linux: 'Linux (x64)' },
+      ja: { windows: 'Windows（x64）', mac: 'macOS（arm64）', linux: 'Linux（x64）' }
+    };
+    const dict = map[lang] || map.en;
+    return dict[os] || os;
+  }
+
+  function t(key, fallback){
+    const lang = currentLang || 'en';
+    const table = (translations[lang] || translations.en || {});
+    return table[key] || fallback || key;
+  }
+
+  function setNote(os){
+    const note = document.getElementById('download-note');
+    if (!note) return;
+    const lang = currentLang || 'en';
+    if (os) {
+      note.textContent = (t('download.note.detected','Detected {os}. Showing the right download.')).replace('{os}', osLabel(lang, os));
+    } else {
+      note.textContent = t('download.note.fallback','Can\u2019t detect OS. See all downloads.');
+    }
+  }
+
+  function pickAssetForOS(assets, os){
+    if (!Array.isArray(assets)) return null;
+    const byName = (pat) => assets.find(a => a && a.name && pat.test(a.name));
+    if (os === 'windows'){
+      return byName(/\.exe$/i) || byName(/\.msi$/i) || null;
+    }
+    if (os === 'mac'){
+      return byName(/arm64.*\.dmg$/i) || byName(/\.dmg$/i) || byName(/\.pkg$/i) || null;
+    }
+    if (os === 'linux'){
+      return byName(/x86_64.*\.AppImage$/i) || byName(/\.AppImage$/i) || byName(/amd64.*\.deb$/i) || byName(/x86_64.*\.rpm$/i) || null;
+    }
+    return null;
+  }
+
+  async function fetchLatest(){
+    try{
+      const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { 'Accept': 'application/vnd.github+json' } });
+      if (!res.ok) throw new Error('GitHub API error');
+      return await res.json();
+    }catch(e){
+      return null;
+    }
+  }
+
+  async function init(){
+    const btns = [
+      document.getElementById('download-btn'),
+      document.getElementById('download-btn-cta')
+    ].filter(Boolean);
+    const navBtn = document.getElementById('download-nav');
+    const os = detectOS();
+    setNote(os);
+
+    // Default: point to /downloads
+    btns.forEach(b => { if (b) b.href = '/downloads'; });
+    if (navBtn) navBtn.href = '/downloads';
+
+    // Try to fetch latest release and update to direct asset
+    const release = await fetchLatest();
+    if (!release || !Array.isArray(release.assets)){
+      // Fallback to stable filename under latest/download if we detected OS
+      if (os && STABLE[os]){
+        const url = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
+        btns.forEach(b => { b.href = url; });
+      }
+      return;
+    }
+    const asset = pickAssetForOS(release.assets, os);
+    if (asset && asset.browser_download_url){
+      const lang = currentLang || 'en';
+      btns.forEach(b => {
+        b.href = asset.browser_download_url;
+        // Update label to include OS name
+        const label = (lang === 'ja') ? `${osLabel(lang, os)} をダウンロード` : `Download for ${osLabel(lang, os)}`;
+        b.textContent = label;
+      });
+    } else if (os && STABLE[os]){
+      // Fallback to stable latest/download
+      const url = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
+      btns.forEach(b => { b.href = url; });
+    }
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

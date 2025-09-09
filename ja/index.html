@@ -118,7 +118,7 @@
               </button>
             </div>
           </div>
-          <a href="https://github.com/co-r-e/IrukaDark.git" class="btn btn-primary" data-i18n="header.clone">今すぐ試す</a>
+          <a id="download-nav" href="/downloads" class="btn btn-primary" data-i18n="header.clone">ダウンロード</a>
         </nav>
       </div>
     </header>
@@ -135,7 +135,8 @@
               テキストも画像も表も、選ぶだけ。IrukaDarkが一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。
             </p>
             <div class="hero-cta">
-              <a href="https://github.com/co-r-e/IrukaDark.git" class="btn btn-primary btn-lg" data-i18n="hero.cta">今すぐ試す</a>
+              <a id="download-btn" href="/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">ダウンロード</a>
+              <div><small id="download-note" class="muted"></small></div>
             </div>
           </div>
           <div class="hero-media glass-white">
@@ -420,11 +421,11 @@
       <section id="cta" class="container section">
         <div class="cta glass">
           <div class="cta-copy">
-            <h3 class="cta-title" data-i18n="cta.title">GitHubで始めよう</h3>
-            <p class="cta-sub" data-i18n="cta.description">GitHubからダウンロードして、すぐにパソコン作業の効率を向上させましょう。オープンソースで無料で利用できます。</p>
+            <h3 class="cta-title" data-i18n="cta.title">ダウンロード</h3>
+            <p class="cta-sub" data-i18n="cta.description">あなたのOS向けにダウンロード。オープンソースで無料。</p>
           </div>
           <div class="cta-actions">
-            <a href="https://github.com/co-r-e/IrukaDark.git" class="btn btn-primary btn-lg" data-i18n="cta.button">今すぐ試す</a>
+            <a id="download-btn-cta" href="/downloads" class="btn btn-primary btn-lg" data-i18n="cta.button">ダウンロード</a>
           </div>
         </div>
       </section>
@@ -438,7 +439,7 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head"><h3 class="card-title">対応プラットフォームは？</h3></div>
-            <p class="card-body">macOS / Windows / Linux に対応。リポジトリをクローンしてREADMEの手順に従ってセットアップします。</p>
+            <p class="card-body">macOS / Windows / Linux に対応。ダウンロードページまたは GitHub Releases からインストーラを取得してください。</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">翻訳ツールと何が違いますか？</h3></div>
@@ -449,12 +450,16 @@
             <p class="card-body">保存しません。IrukaDarkはデータベースを保持せず、AI学習にも利用しないため、プライバシー保護に配慮しています。</p>
           </article>
           <article class="card">
+            <div class="card-head"><h3 class="card-title">GitHubアカウントや開発ツールは必要？</h3></div>
+            <p class="card-body">一般利用では不要です。インストーラをダウンロードして実行するだけで使えます。ソースからビルドしたい場合のみ、Git と Node.js が必要です。</p>
+          </article>
+          <article class="card">
             <div class="card-head"><h3 class="card-title">素早く使うには？</h3></div>
             <p class="card-body">テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">無料でオープンソースですか？</h3></div>
-            <p class="card-body">はい。IrukaDark はオープンソースで無料で利用できます。GitHub のリポジトリをクローンしてご利用ください。利用条件はリポジトリのライセンスをご確認ください。</p>
+            <p class="card-body">はい。IrukaDark はオープンソースで無料です。GitHub Releases からビルド済みインストーラをダウンロードできます（ソースからのビルドも可能）。</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">インターネット接続は必要ですか？</h3></div>
@@ -524,46 +529,26 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>GitHubアカウント</td>
-                      <td colspan="3">必須（クローンやIssueで使用）</td>
+                      <td>開発ツール</td>
+                      <td>一般利用では不要</td>
+                      <td>不要</td>
+                      <td>不要</td>
                     </tr>
                     <tr>
-                      <td>Git</td>
-                      <td>必須</td>
-                      <td>必須</td>
-                      <td>必須</td>
-                    </tr>
-                    <tr>
-                      <td>Node.js LTS（v18以上）</td>
-                      <td>必須</td>
-                      <td>必須</td>
-                      <td>必須</td>
-                    </tr>
-                    <tr>
-                      <td>npm</td>
-                      <td>必須</td>
-                      <td>必須</td>
-                      <td>必須</td>
-                    </tr>
-                    <tr>
-                      <td>ターミナル</td>
-                      <td>Terminal.app</td>
-                      <td>PowerShell / Windows Terminal</td>
-                      <td>Terminal</td>
+                      <td>画面キャプチャ</td>
+                      <td>スクショ解析に「画面収録」の許可が必要</td>
+                      <td>不要</td>
+                      <td>Wayland: ポータル承認 / X11: 不要</td>
                     </tr>
                     <tr>
                       <td>インターネット</td>
-                      <td colspan="3">必須（依存の取得・AIサービス利用）</td>
+                      <td>HTTPS通信を許可</td>
+                      <td>HTTPS通信を許可</td>
+                      <td>HTTPS通信を許可</td>
                     </tr>
                     <tr>
-                      <td>エディタ（推奨）</td>
-                      <td colspan="3">VS Code など、お好みのエディタ</td>
-                    </tr>
-                    <tr>
-                      <td>パッケージマネージャ（推奨）</td>
-                      <td>Homebrew</td>
-                      <td>winget / Chocolatey</td>
-                      <td>apt / dnf / pacman など</td>
+                      <td>ソースからのビルド（任意）</td>
+                      <td colspan="3">自分でビルドする場合のみ Git と Node.js LTS が必要</td>
                     </tr>
                   </tbody>
                 </table>
@@ -602,7 +587,7 @@
         {
           "@type": "Question",
           "name": "対応プラットフォームは？",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS / Windows / Linux に対応。リポジトリをクローンしてREADMEの手順に従ってセットアップします。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS / Windows / Linux に対応。ダウンロードページまたは GitHub Releases からインストーラを入手してください。"}
         },
         {
           "@type": "Question",
@@ -616,13 +601,18 @@
         },
         {
           "@type": "Question",
+          "name": "GitHubアカウントや開発ツールは必要？",
+          "acceptedAnswer": {"@type": "Answer", "text": "一般利用では不要です。インストーラをダウンロードして実行するだけで使えます。ソースからビルドしたい場合のみ、Git と Node.js が必要です。"}
+        },
+        {
+          "@type": "Question",
           "name": "素早く使うには？",
           "acceptedAnswer": {"@type": "Answer", "text": "テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。"}
         },
         {
           "@type": "Question",
           "name": "無料でオープンソースですか？",
-          "acceptedAnswer": {"@type": "Answer", "text": "はい。IrukaDark はオープンソースで無料で利用できます。GitHub のリポジトリをクローンしてご利用ください。利用条件はリポジトリのライセンスをご確認ください。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "はい。IrukaDark はオープンソースで無料です。GitHub Releases からビルド済みインストーラをダウンロードできます（ソースからビルドして使うことも可能）。"}
         },
         {
           "@type": "Question",
@@ -637,7 +627,7 @@
         {
           "@type": "Question",
           "name": "事前に必要なPCセットアップは？",
-          "acceptedAnswer": {"@type": "Answer", "text": "必須: GitHubアカウント、Git、Node.js LTS（v18以上）、npm、そしてターミナル操作（macOS/LinuxはTerminal、WindowsはPowerShell）。推奨: エディタ（例: VS Code）、パッケージマネージャ（macOSはHomebrew、Windowsはwinget/Chocolatey、Linuxは各ディストリの標準）。インターネット接続は依存関係の取得やAI利用に必須です。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "一般利用では開発ツールは不要です。ダウンロードしてインストールするだけで使えます。ソースからビルドする場合のみ Git と Node.js LTS が必要です。AI利用のためインターネット接続が必要で、macOSではスクリーンショット解析に『画面収録』の許可が必要です。"}
         }
       ]
     }
