@@ -55,7 +55,7 @@
       <section class="container section">
         <div class="section-head">
           <h1 class="section-title">IrukaDark をダウンロード</h1>
-          <p class="section-sub">お使いのOSを自動判定し、最適なインストーラをご案内します。下に全ファイル一覧も表示します。</p>
+          <p class="section-sub">お使いのOSを自動判定し、最適なインストーラをご案内します。</p>
         </div>
 
         <div class="grid download-cards">
@@ -91,15 +91,8 @@
           </article>
         </div>
 
-        <div class="section" style="margin-top:24px;">
-          <h2 class="section-title no-deco" style="font-size:20px;">すべてのダウンロード</h2>
-          <div id="assets" class="card glass" style="padding:16px;">
-            <p id="assetsStatus" class="muted">最新リリースのアセットを読み込み中…</p>
-            <ul id="assetList" class="icon-list"></ul>
-          </div>
-          <div style="margin-top:12px;">
-            <a class="link" href="https://github.com/co-r-e/IrukaDark/releases/latest" target="_blank" rel="noopener">GitHub Releases で見る</a>
-          </div>
+        <div style="margin-top:16px;">
+          <a class="link" href="https://github.com/co-r-e/IrukaDark/releases" target="_blank" rel="noopener">GitHub Releases で一覧を見る</a>
         </div>
 
         
@@ -166,8 +159,6 @@
         const macBtn = document.getElementById('dl-mac-btn');
         const winBtn = document.getElementById('dl-win-btn');
         const linuxBtn = document.getElementById('dl-linux-btn');
-        const statusEl = document.getElementById('assetsStatus');
-        const listEl = document.getElementById('assetList');
 
         function detectOS(){
           const ua = navigator.userAgent || navigator.platform || '';
@@ -203,9 +194,7 @@
             if (!res.ok) throw new Error('GitHub API error');
             const rel = await res.json();
             const assets = Array.isArray(rel.assets) ? rel.assets : [];
-            if (assets.length === 0){
-              statusEl.textContent = '最新リリースにアセットがありません。';
-            }
+            // リスト表示は削除済み（アセット0件時の表示は行いません）
 
             const macAsset = pickAsset(assets, 'mac');
             const winAsset = pickAsset(assets, 'windows');
@@ -214,24 +203,14 @@
             winBtn.href = winAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.windows)}`;
             linuxBtn.href = linAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.linux)}`;
 
-            statusEl.style.display = 'none';
-            listEl.innerHTML = '';
-            assets.forEach(asset => {
-              const li = document.createElement('li');
-              const link = document.createElement('a');
-              link.href = asset.browser_download_url;
-              link.textContent = asset.name + (asset.size ? `（${fmtSize(asset.size)}）` : '');
-              link.className = 'link';
-              li.appendChild(link);
-              listEl.appendChild(li);
-            });
+            // すべてのダウンロード一覧は表示しません
 
             // チェックサムのセクションは削除
           }catch(e){
             macBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.mac)}`;
             winBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.windows)}`;
             linuxBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.linux)}`;
-            statusEl.textContent = 'リリース情報を取得できませんでした。上のボタンからダウンロードしてください。';
+            // リリース情報取得失敗時も、各ボタンは安定URLを指します。
             // チェックサムのセクションは削除
           }
         }

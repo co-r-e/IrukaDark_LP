@@ -55,7 +55,7 @@
       <section class="container section">
         <div class="section-head">
           <h1 class="section-title">Download IrukaDark</h1>
-          <p class="section-sub">We’ll pick the right installer for your OS. You can also choose from all assets below.</p>
+          <p class="section-sub">We’ll pick the right installer for your OS.</p>
         </div>
 
         <div class="grid download-cards">
@@ -91,15 +91,8 @@
           </article>
         </div>
 
-        <div class="section" style="margin-top:24px;">
-          <h2 class="section-title no-deco" style="font-size:20px;">All downloads</h2>
-          <div id="assets" class="card glass" style="padding:16px;">
-            <p id="assetsStatus" class="muted">Loading latest release assets…</p>
-            <ul id="assetList" class="icon-list"></ul>
-          </div>
-          <div style="margin-top:12px;">
-            <a class="link" href="https://github.com/co-r-e/IrukaDark/releases/latest" target="_blank" rel="noopener">View on GitHub Releases</a>
-          </div>
+        <div style="margin-top:16px;">
+          <a class="link" href="https://github.com/co-r-e/IrukaDark/releases" target="_blank" rel="noopener">View the list on GitHub Releases</a>
         </div>
 
         
@@ -166,8 +159,6 @@
         const macBtn = document.getElementById('dl-mac-btn');
         const winBtn = document.getElementById('dl-win-btn');
         const linuxBtn = document.getElementById('dl-linux-btn');
-        const statusEl = document.getElementById('assetsStatus');
-        const listEl = document.getElementById('assetList');
 
         function detectOS(){
           const ua = navigator.userAgent || navigator.platform || '';
@@ -204,9 +195,7 @@
             if (!res.ok) throw new Error('GitHub API error');
             const rel = await res.json();
             const assets = Array.isArray(rel.assets) ? rel.assets : [];
-            if (assets.length === 0){
-              statusEl.textContent = 'No assets found in the latest release.';
-            }
+            // if needed we could show a message when no assets were found
 
             // Per-OS buttons
             const macAsset = pickAsset(assets, 'mac');
@@ -216,18 +205,7 @@
             winBtn.href = winAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.windows)}`;
             linuxBtn.href = linAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.linux)}`;
 
-            // List all assets
-            statusEl.style.display = 'none';
-            listEl.innerHTML = '';
-            assets.forEach(asset => {
-              const li = document.createElement('li');
-              const link = document.createElement('a');
-              link.href = asset.browser_download_url;
-              link.textContent = asset.name + (asset.size ? ` (${fmtSize(asset.size)})` : '');
-              link.className = 'link';
-              li.appendChild(link);
-              listEl.appendChild(li);
-            });
+            // All downloads list removed per request
 
             // Checksums section removed
           }catch(e){
@@ -235,7 +213,7 @@
             macBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.mac)}`;
             winBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.windows)}`;
             linuxBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.linux)}`;
-            statusEl.textContent = 'Could not load release info. Use the buttons above.';
+            // Could not load release info; per-OS buttons already point to stable URLs.
             // Checksums section removed
           }
         }
