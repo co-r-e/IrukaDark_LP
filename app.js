@@ -4,19 +4,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const translations = {
   en: {
     'meta.title': 'IrukaDark — AI that instantly explains your screen',
-    'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option/Alt+A/S), bilingual JA/EN, privacy‑friendly, open source.',
-    'header.clone': 'Download',
+    'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly, open source.',
+    'header.clone': 'Download for Mac',
     'hero.title': 'Everything on your screen, <span class="grad-white">explained fast</span>',
-    'hero.subtitle': 'Pick anything—text, images, tables. IrukaDark turns it into the gist. Press Option/Alt+A for text, Option/Alt+S for screenshots.',
-    'hero.cta': 'Download',
+    'hero.subtitle': 'Pick anything—text, images, tables. IrukaDark turns it into the gist. Press Option+A for text, Option+S for screenshots.',
+    'hero.cta': 'Download for Mac',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
     'features.title': 'Work Faster on Your Computer',
     'features.subtitle': 'No more “I don’t get it.” Instant, context‑aware understanding keeps you moving.',
-    'features.instant.title': 'Instant Explanation (Option/Alt+A)',
-    'features.instant.description': 'Select text in any website, document, or app and press Option/Alt+A to get a clear, context‑aware explanation. Faster than dictionaries or search.',
+    'features.instant.title': 'Instant Explanation (Option+A)',
+    'features.instant.description': 'Select text in any website, document, or app and press Option+A to get a clear, context‑aware explanation. Faster than dictionaries or search.',
     'features.flow.title': 'Stay in Flow',
-    'features.flow.description': 'Skip window‑switching and copy‑paste. Ask in place with Option/Alt+A, or capture an area with Option/Alt+S. Resolve questions without breaking focus.',
+    'features.flow.description': 'Skip window‑switching and copy‑paste. Ask in place with Option+A, or capture an area with Option+S. Resolve questions without breaking focus.',
     'features.secure.title': 'Simple & Private',
     'features.secure.description': 'IrukaDark stores no data and doesn’t train on your content, helping protect your privacy.',
     'usecases.title': 'Great For',
@@ -37,7 +37,7 @@ const translations = {
     // Demo section
     'demo.title': 'See It in Action',
     'demo.subtitle': 'Select text or capture an area—IrukaDark explains it on‑screen.',
-    'demo.note': 'Tip: Text = Option/Alt+A · Screenshot = Option/Alt+S',
+    'demo.note': 'Tip: Text = Option+A · Screenshot = Option+S',
 
     // Where it works
     'where.title': 'Works where you work',
@@ -81,33 +81,31 @@ const translations = {
     'howto.title': 'How It Works',
     'howto.subtitle': 'Three quick steps: download and start.',
     'howto.step1.title': 'Download and Install',
-    'howto.step1.description': 'Download the installer for your OS and follow the steps.',
-    'howto.step2.title': 'Select Text (Option/Alt+A) or Area (Option/Alt+S)',
-    'howto.step2.description': 'Select text in websites, docs, or apps and press Option/Alt+A for explanations. Select an area and press Option/Alt+S for screenshot analysis.',
-    'howto.step2.hint': 'Text → Option/Alt+A • Area → Option/Alt+S',
+    'howto.step1.description': 'Download the macOS installer and follow the steps.',
+    'howto.step2.title': 'Select Text (Option+A) or Area (Option+S)',
+    'howto.step2.description': 'Select text in websites, docs, or apps and press Option+A for explanations. Select an area and press Option+S for screenshot analysis.',
+    'howto.step2.hint': 'Text → Option+A • Area → Option+S',
     'howto.screenshot.hint': 'Screenshot Analysis',
     'howto.step3.title': 'Get Context‑Aware Explanations',
     'howto.step3.description': 'Understand intent and background—not just words—so you can keep working.',
     'cta.title': 'Download',
-    'cta.description': 'Download the app for your OS. Open‑source and free.',
-    'cta.button': 'Download',
-    'download.note.detected': 'Detected {os}. Showing the right download.',
-    'download.note.fallback': 'Can\u2019t detect OS. See all downloads.',
+    'cta.description': 'Download for macOS. Open‑source and free.',
+    'cta.button': 'Download for Mac',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
-    'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option/Alt+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
-    'header.clone': 'ダウンロード',
+    'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
+    'header.clone': 'Mac用ダウンロード',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
-    'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDark（イルカダーク）が一瞬で要点に。テキストはOption/Alt+A、スクショはOption/Alt+S。',
-    'hero.cta': 'ダウンロード',
+    'hero.subtitle': 'テキストも画像も表も、選ぶだけ。IrukaDark（イルカダーク）が一瞬で要点に。テキストはOption+A、スクショはOption+S。',
+    'hero.cta': 'Mac用ダウンロード',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
     'features.title': 'パソコン作業が高速に捗る',
     'features.subtitle': 'もう「わからない」で止まらない。瞬時理解で作業が加速します。',
     'features.instant.title': '瞬時解説（Option+A）',
-    'features.instant.description': 'ウェブサイト、ドキュメント、アプリなどで難しい文章や専門用語を選択してOption/Alt+A。辞書や検索よりも速く、文脈に沿った的確な解説が得られます。',
+    'features.instant.description': 'ウェブサイト、ドキュメント、アプリなどで難しい文章や専門用語を選択してOption+A。辞書や検索よりも速く、文脈に沿った的確な解説が得られます。',
     'features.flow.title': 'フローを断ち切らない',
     'features.flow.description': 'いちいち別のウィンドウに移動して、知りたいテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ、なんてことは不要です。その場で選択してOption+Aを押すだけ。作業の流れを止めることなく、瞬時に疑問を解決できます。',
     'features.secure.title': 'シンプルで安全',
@@ -169,24 +167,22 @@ const translations = {
     'howto.title': '使い方',
     'howto.subtitle': 'たった3ステップ。ダウンロードしてすぐ使える',
     'howto.step1.title': 'ダウンロードしてインストール',
-    'howto.step1.description': 'あなたのOS向けのインストーラをダウンロードし、案内に従ってインストールします。',
-    'howto.step2.title': 'テキストを選択してOption/Alt+A / 範囲を選択してOption/Alt+S',
-    'howto.step2.description': 'ウェブサイト、ドキュメント、アプリで出会った難しいテキストはOption/Alt+Aで解説。画像やグラフなどの視覚コンテンツは範囲を選んでOption/Alt+Sでスクリーンショット解析。',
-    'howto.step2.hint': 'テキスト → Option/Alt+A / 範囲 → Option/Alt+S',
+    'howto.step1.description': 'macOS 用インストーラをダウンロードし、案内に従ってインストールします。',
+    'howto.step2.title': 'テキストを選択してOption+A / 範囲を選択してOption+S',
+    'howto.step2.description': 'ウェブサイト、ドキュメント、アプリで出会った難しいテキストはOption+Aで解説。画像やグラフなどの視覚コンテンツは範囲を選んでOption+Sでスクリーンショット解析。',
+    'howto.step2.hint': 'テキスト → Option+A / 範囲 → Option+S',
     'howto.screenshot.hint': 'スクリーンショット解説',
     'howto.step3.title': '文脈を踏まえた解説を受け取り',
     'howto.step3.description': 'ただの単語の意味ではなく、文脈や背景を踏まえた理解が得られ、パソコン作業がスムーズに進みます。',
     'cta.title': 'ダウンロード',
-    'cta.description': 'あなたのOS向けにダウンロード。オープンソースで無料。',
-    'cta.button': 'ダウンロード',
-    'download.note.detected': '{os} を検出。最適なダウンロードを表示しています。',
-    'download.note.fallback': 'OSを判定できませんでした。全てのダウンロードを見る',
+    'cta.description': 'macOS向けにダウンロード。オープンソースで無料。',
+    'cta.button': 'Mac用ダウンロード',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
     ,
     // Demo section
     'demo.title': '操作デモを見る',
     'demo.subtitle': 'テキスト選択や範囲キャプチャに反応して、その場でAIが解説します。',
-    'demo.note': 'ヒント: テキスト = Option/Alt+A ・ スクショ = Option/Alt+S'
+    'demo.note': 'ヒント: テキスト = Option+A ・ スクショ = Option+S'
   }
 };
 
@@ -752,60 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ------------------------------
 (function setupDownloadButtons(){
   const REPO = 'co-r-e/IrukaDark';
-  const STABLE = {
-    windows: 'IrukaDark-Setup-x64.exe',
-    mac: 'IrukaDark-macOS-arm64.dmg',
-    linux: 'IrukaDark-x86_64.AppImage'
-  };
-
-  function detectOS(){
-    const ua = navigator.userAgent || navigator.platform || '';
-    if (/Windows/i.test(ua)) return 'windows';
-    if (/Macintosh|Mac OS X|MacOS/i.test(ua)) return 'mac';
-    if (/Linux|X11/i.test(ua) && !/Android/i.test(ua)) return 'linux';
-    return null;
-  }
-
-  function osLabel(lang, os){
-    const map = {
-      en: { windows: 'Windows (x64)', mac: 'macOS (arm64)', linux: 'Linux (x64)' },
-      ja: { windows: 'Windows（x64）', mac: 'macOS（arm64）', linux: 'Linux（x64）' }
-    };
-    const dict = map[lang] || map.en;
-    return dict[os] || os;
-  }
-
-  function t(key, fallback){
-    const lang = currentLang || 'en';
-    const table = (translations[lang] || translations.en || {});
-    return table[key] || fallback || key;
-  }
-
-  function setNote(os){
-    const note = document.getElementById('download-note');
-    if (!note) return;
-    const lang = currentLang || 'en';
-    if (os) {
-      note.textContent = (t('download.note.detected','Detected {os}. Showing the right download.')).replace('{os}', osLabel(lang, os));
-    } else {
-      note.textContent = t('download.note.fallback','Can\u2019t detect OS. See all downloads.');
-    }
-  }
-
-  function pickAssetForOS(assets, os){
-    if (!Array.isArray(assets)) return null;
-    const byName = (pat) => assets.find(a => a && a.name && pat.test(a.name));
-    if (os === 'windows'){
-      return byName(/\.exe$/i) || byName(/\.msi$/i) || null;
-    }
-    if (os === 'mac'){
-      return byName(/arm64.*\.dmg$/i) || byName(/\.dmg$/i) || byName(/\.pkg$/i) || null;
-    }
-    if (os === 'linux'){
-      return byName(/x86_64.*\.AppImage$/i) || byName(/\.AppImage$/i) || byName(/amd64.*\.deb$/i) || byName(/x86_64.*\.rpm$/i) || null;
-    }
-    return null;
-  }
+  const STABLE_MAC = 'IrukaDark-macOS-arm64.dmg';
 
   async function fetchLatest(){
     try{
@@ -817,6 +760,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function pickMacAsset(assets){
+    if (!Array.isArray(assets)) return null;
+    const byName = (pat) => assets.find(a => a && a.name && pat.test(a.name));
+    return byName(/arm64.*\.dmg$/i) || byName(/\.dmg$/i) || byName(/\.pkg$/i) || null;
+  }
+
   async function init(){
     const btns = [
       document.getElementById('download-btn'),
@@ -825,37 +774,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const navBtn = document.getElementById('download-nav');
     const lang = (document.documentElement && document.documentElement.lang) || currentLang || window.DEFAULT_LANG || 'en';
     const downloadBase = (lang === 'ja') ? '/ja/downloads' : '/downloads';
-    const os = detectOS();
-    setNote(os);
 
-    // Default: point to /downloads
+    // Default: point to mac downloads page
     btns.forEach(b => { if (b) b.href = downloadBase; });
     if (navBtn) navBtn.href = downloadBase;
 
-    // Try to fetch latest release and update to direct asset
+    // Try to fetch latest release and update buttons to direct mac asset
     const release = await fetchLatest();
-    if (!release || !Array.isArray(release.assets)){
-      // Fallback to stable filename under latest/download if we detected OS
-      if (os && STABLE[os]){
-        const url = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
-        btns.forEach(b => { b.href = url; });
-      }
-      return;
-    }
-    const asset = pickAssetForOS(release.assets, os);
-    if (asset && asset.browser_download_url){
-      const lang = currentLang || 'en';
-      btns.forEach(b => {
-        b.href = asset.browser_download_url;
-        // Update label to include OS name
-        const label = (lang === 'ja') ? `${osLabel(lang, os)} をダウンロード` : `Download for ${osLabel(lang, os)}`;
-        b.textContent = label;
-      });
-    } else if (os && STABLE[os]){
-      // Fallback to stable latest/download
-      const url = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE[os])}`;
-      btns.forEach(b => { b.href = url; });
-    }
+    const asset = release && pickMacAsset(release.assets);
+    const url = asset && asset.browser_download_url ? asset.browser_download_url : `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE_MAC)}`;
+    btns.forEach(b => { b.href = url; });
   }
 
   if (document.readyState === 'loading'){
