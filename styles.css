@@ -275,6 +275,17 @@ body {
   .demo-wrap { aspect-ratio: 16 / 9; }
 }
 
+/* Information section */
+.info-list { list-style: none; padding: 0; margin: 0 auto; max-width: 880px; display: grid; gap: 10px; max-height: 240px; overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.info-item { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: center; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 12px; background: transparent; box-shadow: none; }
+.info-date { color: var(--muted); font-size: 13px; letter-spacing: .2px; }
+.info-title { appearance: none; background: transparent; border: none; padding: 0; text-align: left; color: var(--text); font-weight: 700; letter-spacing: .2px; cursor: pointer; }
+.info-title:hover { color: var(--primary-2); text-decoration: underline; text-underline-offset: 2px; }
+.info-title:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(11,12,16,0.9), 0 0 0 4px var(--ring); border-radius: 6px; }
+@media (max-width: 720px) {
+  .info-item { grid-template-columns: 96px 1fr; padding: 10px 12px; }
+}
+
 /* modal (terms/commands) */
 .modal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(11,12,16,0.6); backdrop-filter: blur(2px); z-index: 1200; }
 .modal.open { display: grid; }

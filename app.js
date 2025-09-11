@@ -192,6 +192,35 @@ const translations = {
 
 let currentLang = 'en'; // デフォルトは英語
 
+// Information notices (language-specific)
+const infoNotices = {
+  ja: [
+    {
+      date: '2025-09-05',
+      title: '不具合が発生中',
+      body: '現在、一部の環境で不具合が発生しています。問題が解消されるまでダウンロードはお控えください。お問い合わせは <a href="https://co-r-e.net/contact" target="_blank" rel="noopener">こちら</a> からお願いします。'
+    },
+    {
+      date: '2025-09-01',
+      title: 'Webサイト公開',
+      body: 'IrukaDark の公式サイトを公開しました。使い方のポイントやデモ動画を用意しています。ぜひ触ってみて、フィードバックをお寄せください。'
+    }
+  ],
+  en: [
+    {
+      date: '2025-09-05',
+      title: 'Issue Ongoing',
+      body: 'We are investigating an issue affecting some environments. Please hold off on downloads until it\'s resolved. Questions? <a href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact us</a>.'
+    },
+    {
+      date: '2025-09-01',
+      title: 'Website Launched',
+      body: 'We\'ve launched the official IrukaDark site with a cleaner layout and demo video. Take a look and share your feedback!'
+    }
+  ]
+};
+window.infoNotices = infoNotices;
+
 // Language switching functionality
 function switchLanguage(lang) {
   currentLang = lang;
@@ -423,6 +452,100 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('open')) close();
     });
+  })();
+
+  // Information list: render first 3, lazy-load more on scroll
+  (function setupInformationList(){
+    const section = document.getElementById('information');
+    if (!section) return;
+    const list = section.querySelector('#infoList');
+    if (!list) return;
+
+    const lang = currentLang || window.DEFAULT_LANG || 'en';
+    const all = Array.from((infoNotices[lang] || [])).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+    let rendered = 0;
+    const firstBatch = 3;
+    const pageSize = 10;
+
+    function createItem(item){
+      const li = document.createElement('li');
+      li.className = 'info-item';
+      const time = document.createElement('time');
+      time.className = 'info-date';
+      time.setAttribute('datetime', item.date);
+      time.textContent = item.date;
+      const btn = document.createElement('button');
+      btn.className = 'info-title js-open-info-modal';
+      btn.type = 'button';
+      btn.textContent = item.title;
+      btn.setAttribute('data-info-title', item.title);
+      btn.setAttribute('data-info-body', item.body);
+      li.appendChild(time);
+      li.appendChild(btn);
+      return li;
+    }
+
+    function renderBatch(count){
+      const end = Math.min(rendered + count, all.length);
+      const frag = document.createDocumentFragment();
+      for (let i = rendered; i < end; i++) frag.appendChild(createItem(all[i]));
+      list.appendChild(frag);
+      rendered = end;
+    }
+
+    renderBatch(Math.min(firstBatch, all.length));
+
+    // Lazy append on scroll near bottom
+    let ticking = false;
+    list.addEventListener('scroll', () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const nearBottom = (list.scrollTop + list.clientHeight) >= (list.scrollHeight - 24);
+        if (nearBottom && rendered < all.length) {
+          renderBatch(pageSize);
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
+
+  // Information modal (dynamic title/body via delegation)
+  (function setupInfoModal() {
+    const modal = document.getElementById('infoModal');
+    if (!modal) return;
+    const dialog = modal.querySelector('.modal-dialog');
+    const titleEl = modal.querySelector('#infoModalTitle');
+    const bodyEl = modal.querySelector('#infoModalBody');
+    const closeBtns = modal.querySelectorAll('.js-close-info-modal');
+
+    function open(title, htmlBody) {
+      const fallbackTitle = (currentLang === 'ja') ? 'お知らせ' : 'Information';
+      if (titleEl) titleEl.textContent = title || fallbackTitle;
+      if (bodyEl) bodyEl.innerHTML = htmlBody || '';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+    }
+
+    const infoSection = document.getElementById('information');
+    if (infoSection) {
+      infoSection.addEventListener('click', (e) => {
+        const btn = e.target.closest('.js-open-info-modal');
+        if (!btn) return;
+        e.preventDefault();
+        const title = btn.getAttribute('data-info-title') || (btn.textContent || '').trim();
+        const body = btn.getAttribute('data-info-body') || '';
+        open(title, body);
+      });
+    }
+    closeBtns.forEach(btn => btn.addEventListener('click', close));
+    modal.addEventListener('click', (e) => { if (!dialog.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
   })();
 });
 

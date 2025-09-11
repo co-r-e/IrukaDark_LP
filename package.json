@@ -1,0 +1,11 @@
+{
+  "name": "irukadark-lp",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Local dev server for IrukaDark landing page",
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.mjs"
+  }
+}
+

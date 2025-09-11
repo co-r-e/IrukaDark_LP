@@ -158,6 +158,14 @@
         </div>
       </section>
 
+      <!-- Information (above demo) -->
+      <section id="information" class="container section">
+        <div class="section-head">
+          <h2 class="section-title">Information</h2>
+        </div>
+        <ul class="info-list" id="infoList"></ul>
+      </section>
+
       <!-- Demo (after hero) -->
       <section id="demo" class="container section">
         <div class="section-head">
@@ -610,6 +618,17 @@
 
           <p class="muted">Note: Destructive commands like <code>rm -rf</code> are risky. Always confirm your current directory with <code>pwd</code> before running them.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Information Modal (dynamic) -->
+    <div id="infoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="infoModalTitle" class="modal-title">Information</h3>
+          <button class="modal-close js-close-info-modal" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body" id="infoModalBody"></div>
       </div>
     </div>
 
