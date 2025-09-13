@@ -802,3 +802,27 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
   }
 })();
+
+// ---------------------------------------------
+// Mobile-only header CTA label override
+// - Header button (`#download-nav`) shows a shorter label on small screens
+// - Only affects the header; hero/CTA buttons remain unchanged
+// ---------------------------------------------
+(function mobileHeaderCtaLabel(){
+  function applyHeaderCtaResponsiveLabel(){
+    const navBtn = document.getElementById('download-nav');
+    if (!navBtn) return;
+    const lang = (document.documentElement && document.documentElement.lang) || currentLang || (window.DEFAULT_LANG || 'en');
+    const isMobile = (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) || (window.innerWidth && window.innerWidth <= 720);
+    const desktopLabel = (translations[lang] && translations[lang]['header.clone']) || navBtn.textContent || '';
+    const mobileLabel = (lang === 'ja') ? 'ダウンロード' : 'Download';
+    navBtn.textContent = isMobile ? mobileLabel : desktopLabel;
+  }
+  // Expose for reuse from elsewhere if needed
+  window.applyHeaderCtaResponsiveLabel = applyHeaderCtaResponsiveLabel;
+
+  const reapply = () => { try { applyHeaderCtaResponsiveLabel(); } catch (_) {} };
+  document.addEventListener('DOMContentLoaded', reapply);
+  window.addEventListener('resize', reapply, { passive: true });
+  window.addEventListener('orientationchange', reapply, { passive: true });
+})();
