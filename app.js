@@ -192,6 +192,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-09-13',
+      title: 'GitHubからクローンすればmacOSで利用できます',
+      body: 'GitHub の公開リポジトリをクローンすることで、macOS 上でも IrukaDark をご利用いただけます。<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code><br><code>cd IrukaDark</code><br>詳しい手順は GitHub の README をご確認ください（<a href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">co-r-e/IrukaDark</a>）。'
+    },
+    {
       date: '2025-09-05',
       title: '不具合が発生中',
       body: '現在、一部の環境で不具合が発生しています。問題が解消されるまでダウンロードはお控えください。お問い合わせは <a href="https://co-r-e.net/contact" target="_blank" rel="noopener">こちら</a> からお願いします。'
@@ -203,6 +208,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-09-13',
+      title: 'Use on macOS by cloning from GitHub',
+      body: 'You can use IrukaDark on macOS by cloning the public repository.<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code><br><code>cd IrukaDark</code><br>See the README on GitHub for details (<a href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">co-r-e/IrukaDark</a>).'
+    },
     {
       date: '2025-09-05',
       title: 'Issue Ongoing',
