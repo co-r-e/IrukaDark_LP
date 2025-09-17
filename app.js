@@ -192,6 +192,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-09-17',
+      title: 'v1.0.10 翻訳機能アップデート',
+      body: 'IrukaDark v1.0.10 で翻訳機能を強化しました。スラッシュコマンド <code>/translate</code> から様々な言語へ高速に翻訳できます。まだダウンロード配布は準備中のため、GitHub からクローンしてご利用ください。<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code>'
+    },
+    {
       date: '2025-09-13',
       title: 'GitHubからクローンすればmacOSで利用できます',
       body: 'GitHub の公開リポジトリをクローンすることで、macOS 上でも IrukaDark をご利用いただけます。<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code><br><code>cd IrukaDark</code><br>詳しい手順は GitHub の README をご確認ください（<a href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">co-r-e/IrukaDark</a>）。'
@@ -208,6 +213,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-09-17',
+      title: 'v1.0.10 Translation Upgrade',
+      body: 'IrukaDark v1.0.10 boosts translation. Use the slash command <code>/translate</code> to quickly translate into multiple languages. Installers are not ready yet—clone the project from GitHub to use it.<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code>'
+    },
     {
       date: '2025-09-13',
       title: 'Use on macOS by cloning from GitHub',
@@ -793,7 +803,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const release = await fetchLatest();
     const asset = release && pickMacAsset(release.assets);
     const url = asset && asset.browser_download_url ? asset.browser_download_url : `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE_MAC)}`;
-    btns.forEach(b => { b.href = url; });
+    // ヘッダーのボタンのみ直接インストーラへ誘導する
+    if (navBtn && url) navBtn.href = url;
   }
 
   if (document.readyState === 'loading'){
