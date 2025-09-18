@@ -479,9 +479,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const lang = currentLang || window.DEFAULT_LANG || 'en';
     const all = Array.from((infoNotices[lang] || [])).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
-    let rendered = 0;
-    const firstBatch = 3;
-    const pageSize = 10;
 
     function createItem(item){
       const li = document.createElement('li');
@@ -501,28 +498,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return li;
     }
 
-    function renderBatch(count){
-      const end = Math.min(rendered + count, all.length);
+    function renderAll(){
       const frag = document.createDocumentFragment();
-      for (let i = rendered; i < end; i++) frag.appendChild(createItem(all[i]));
+      all.forEach(item => frag.appendChild(createItem(item)));
+      list.innerHTML = '';
       list.appendChild(frag);
-      rendered = end;
+      list.scrollTop = 0;
     }
 
-    renderBatch(Math.min(firstBatch, all.length));
-
-    // Lazy append on scroll near bottom
-    let ticking = false;
-    list.addEventListener('scroll', () => {
-      if (ticking) return; ticking = true;
-      requestAnimationFrame(() => {
-        const nearBottom = (list.scrollTop + list.clientHeight) >= (list.scrollHeight - 24);
-        if (nearBottom && rendered < all.length) {
-          renderBatch(pageSize);
-        }
-        ticking = false;
-      });
-    }, { passive: true });
+    renderAll();
   })();
 
   // Information modal (dynamic title/body via delegation)
