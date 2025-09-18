@@ -745,32 +745,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // removed: tilt effect (unused)
 
 // ------------------------------
-// Download button enhancement
-// - Detect OS
-// - Fetch latest GitHub release assets
-// - Point buttons to correct installer
+// Download buttons routing
+// - Keep all CTA buttons pointing to localized downloads page
 // ------------------------------
 (function setupDownloadButtons(){
-  const REPO = 'co-r-e/IrukaDark';
-  const STABLE_MAC = 'IrukaDark-macOS-arm64.dmg';
-
-  async function fetchLatest(){
-    try{
-      const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { 'Accept': 'application/vnd.github+json' } });
-      if (!res.ok) throw new Error('GitHub API error');
-      return await res.json();
-    }catch(e){
-      return null;
-    }
-  }
-
-  function pickMacAsset(assets){
-    if (!Array.isArray(assets)) return null;
-    const byName = (pat) => assets.find(a => a && a.name && pat.test(a.name));
-    return byName(/arm64.*\.dmg$/i) || byName(/\.dmg$/i) || byName(/\.pkg$/i) || null;
-  }
-
-  async function init(){
+  function init(){
     const btns = [
       document.getElementById('download-btn'),
       document.getElementById('download-btn-cta')
@@ -779,16 +758,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const lang = (document.documentElement && document.documentElement.lang) || currentLang || window.DEFAULT_LANG || 'en';
     const downloadBase = (lang === 'ja') ? '/ja/downloads' : '/downloads';
 
-    // Default: point to mac downloads page
+    // Route all CTAs to the downloads page; header button included
     btns.forEach(b => { if (b) b.href = downloadBase; });
     if (navBtn) navBtn.href = downloadBase;
-
-    // Try to fetch latest release and update buttons to direct mac asset
-    const release = await fetchLatest();
-    const asset = release && pickMacAsset(release.assets);
-    const url = asset && asset.browser_download_url ? asset.browser_download_url : `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE_MAC)}`;
-    // ヘッダーのボタンのみ直接インストーラへ誘導する
-    if (navBtn && url) navBtn.href = url;
   }
 
   if (document.readyState === 'loading'){
