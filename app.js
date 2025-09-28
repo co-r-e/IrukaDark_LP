@@ -242,6 +242,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-09-28',
+      title: 'v1.0.13 ショートカット追加',
+      body: 'IrukaDark v1.0.13 で <code>Option+1</code>（Alt+1）が登場。選択したURLを読み込んでその場で概要を解説します。さらに <code>Option+Shift+1</code>（Alt+Shift+1）で詳細解説も可能になりました。'
+    },
+    {
       date: '2025-09-17',
       title: 'v1.0.10 翻訳機能アップデート',
       body: 'IrukaDark v1.0.10 で翻訳機能を強化しました。スラッシュコマンド <code>/translate</code> から様々な言語へ高速に翻訳できます。まだダウンロード配布は準備中のため、GitHub からクローンしてご利用ください。<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code>'
@@ -263,6 +268,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-09-28',
+      title: 'v1.0.13 Shortcut Update',
+      body: 'IrukaDark v1.0.13 introduces <code>Option+1</code> (Alt+1) for instant URL overviews. Highlight a link and get a summary on the fly. Need more detail? Use <code>Option+Shift+1</code> (Alt+Shift+1) for a deeper dive.'
+    },
     {
       date: '2025-09-17',
       title: 'v1.0.10 Translation Upgrade',
