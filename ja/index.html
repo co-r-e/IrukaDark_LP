@@ -243,9 +243,9 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="features.instant.title">瞬時解説（Option+A）</h3>
+              <h3 class="card-title" data-i18n="features.instant.title">瞬時解説ショートカット</h3>
             </div>
-            <p class="card-body" data-i18n="features.instant.description">ウェブサイト、ドキュメント、アプリなどで難しい文章や専門用語を選択してOption+A。画像やグラフの説明が欲しい範囲を選択してOption+S。辞書や検索よりも速く、文脈に沿った的確な解説が得られます。</p>
+            <p class="card-body" data-i18n="features.instant.description">テキストや画面の気になる範囲を選んで専用ショートカットを押すだけ。状況に応じて最適なコマンドを切り替えながら、文脈に沿った解説がその場で得られます。</p>
           </article>
 
           <article class="card">
@@ -373,55 +373,130 @@
       <section id="how" class="container section">
         <div class="section-head">
           <h2 class="section-title" data-i18n="howto.title">使い方</h2>
-          <p class="section-sub" data-i18n="howto.subtitle">たった3ステップ。ダウンロードしてすぐ使える</p>
+          <p class="section-sub" data-i18n="howto.subtitle">ショートカットでいつでもIrukaDarkを呼び出せます。</p>
         </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="num">1</span>
-            <div class="content">
-              <h4 data-i18n="howto.step1.title">GitHubで始めよう</h4>
-              <p data-i18n="howto.step1.description">macOS 用インストーラをダウンロードし、案内に従ってインストールします。</p>
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.instant.title">Option+A — 即解説</h3>
             </div>
-          </li>
-          <li class="step">
-            <span class="num">2</span>
-            <div class="content">
-              <h4 data-i18n="howto.step2.title">テキストを選択してOption+A / 範囲を選択してOption+S</h4>
-              <p data-i18n="howto.step2.description">ウェブサイト、ドキュメント、アプリなどで出会った難しいテキストを選択してOption+Aで解説をリクエスト。画像やグラフなどの視覚的なコンテンツは範囲を選択してOption+Sでスクリーンショット解説。</p>
-              <div class="kbd-demo">
-                <div class="keys">
-                  <span class="kbd">⌥</span>
-                  <span class="plus">+</span>
-                  <span class="kbd">A</span>
-                </div>
-                <div class="hint" data-i18n="howto.step2.hint">テキスト → Option + A / 範囲 → Option + S</div>
-                <div class="selection-demo">
-                  <div class="line"></div>
-                  <div class="line highlight"></div>
-                  <div class="line"></div>
-                </div>
-              </div>
-              <div class="kbd-demo">
-                <div class="keys">
-                  <span class="kbd">⌥</span>
-                  <span class="plus">+</span>
-                  <span class="kbd">S</span>
-                </div>
-                <div class="hint" data-i18n="howto.screenshot.hint">スクリーンショット解説</div>
-                <div class="selection-demo screenshot-demo">
-                  <div class="screenshot-area"></div>
-                </div>
-              </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">A</span>
             </div>
-          </li>
-          <li class="step">
-            <span class="num">3</span>
-            <div class="content">
-              <h4 data-i18n="howto.step3.title">文脈を踏まえた解説を受け取り</h4>
-              <p data-i18n="howto.step3.description">ただの単語の意味ではなく、文脈や背景を踏まえた理解が得られ、パソコン作業がスムーズに進みます。</p>
+            <p class="shortcut-caption" data-i18n="howto.cards.instant.caption">Mac: Option+A / Win・Linux: Alt+A</p>
+            <p class="card-body" data-i18n="howto.cards.instant.description">テキストを選択してOption+A（Windows/LinuxはAlt+A）。その場で要点を押さえた短い解説を表示します。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.detail.title">Option+Shift+A — 詳細解説</h3>
             </div>
-          </li>
-        </ol>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">A</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.detail.caption">Mac: Option+Shift+A / Win・Linux: Alt+Shift+A</p>
+            <p class="card-body" data-i18n="howto.cards.detail.description">背景説明や手順が欲しいときはOption+Shift+A（Alt+Shift+A）。より深い情報を含むロングアンサーを得られます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.translate.title">Option+R — 翻訳・言い換え</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">R</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.translate.caption">Mac: Option+R / Win・Linux: Alt+R</p>
+            <p class="card-body" data-i18n="howto.cards.translate.description">選択したテキストを自然な日本語・英語に翻訳、または噛み砕いて言い換え。Option+R（Alt+R）で即座に切り替えできます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.linkQuick.title">Option+1 — URL概要</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">1</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.linkQuick.caption">Mac: Option+1 / Win・Linux: Alt+1</p>
+            <p class="card-body" data-i18n="howto.cards.linkQuick.description">URLテキストを選択してOption+1（Alt+1）。ページを読み込んで要点だけを素早く解説します。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.linkDetail.title">Option+Shift+1 — URL詳細解説</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">1</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.linkDetail.caption">Mac: Option+Shift+1 / Win・Linux: Alt+Shift+1</p>
+            <p class="card-body" data-i18n="howto.cards.linkDetail.description">Option+Shift+1（Alt+Shift+1）で選択したリンクを詳しく読み込み、重要セクションやポイントまで整理して届けます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.screenshot.title">Option+S — スクショ解説</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">S</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.screenshot.caption">Mac: Option+S / Win・Linux: Alt+S</p>
+            <p class="card-body" data-i18n="howto.cards.screenshot.description">画像・グラフ・PDFなどを範囲選択してOption+S（Alt+S）。画面上の内容をそのまま読み取って要約します。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.screenshotDetail.title">Option+Shift+S — スクショ詳細解説</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">S</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.screenshotDetail.caption">Mac: Option+Shift+S / Win・Linux: Alt+Shift+S</p>
+            <p class="card-body" data-i18n="howto.cards.screenshotDetail.description">情報量の多いスライドや図解はOption+Shift+S（Alt+Shift+S）で詳細版を。細部まで丁寧に解説を受け取れます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how2" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="howto2.title">使い方2</h2>
+          <p class="section-sub" data-i18n="howto2.subtitle">スラッシュコマンドで直前の解説をさらに活用。</p>
+        </div>
+
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.next.title">/next</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.table.title">/table</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.translate.description">直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.web.title">/web</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。</p>
+          </article>
+        </div>
       </section>
 
       <!-- CTA -->

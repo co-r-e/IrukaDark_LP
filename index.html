@@ -193,9 +193,9 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="features.instant.title">Instant Explanation (Option+A)</h3>
+              <h3 class="card-title" data-i18n="features.instant.title">Instant Explanation Shortcuts</h3>
             </div>
-            <p class="card-body" data-i18n="features.instant.description">Select text in any website, document, or app and press Option+A to get a clear, context‑aware explanation. Faster than dictionaries or search.</p>
+            <p class="card-body" data-i18n="features.instant.description">Highlight text or a region and trigger the shortcut that fits the moment. IrukaDark responds in place with fast, context‑aware explanations—no extra windows.</p>
           </article>
 
           <article class="card">
@@ -373,55 +373,130 @@
       <section id="how" class="container section">
         <div class="section-head">
           <h2 class="section-title" data-i18n="howto.title">How It Works</h2>
-          <p class="section-sub" data-i18n="howto.subtitle">Three quick steps: download and start.</p>
+          <p class="section-sub" data-i18n="howto.subtitle">Use global shortcuts to trigger IrukaDark instantly.</p>
         </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="num">1</span>
-            <div class="content">
-              <h4 data-i18n="howto.step1.title">Download and Install</h4>
-              <p data-i18n="howto.step1.description">Download the macOS installer and follow the steps.</p>
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.instant.title">Option+A — Quick Explain</h3>
             </div>
-          </li>
-          <li class="step">
-            <span class="num">2</span>
-            <div class="content">
-              <h4 data-i18n="howto.step2.title">Select Text (Option+A) or Area (Option+S)</h4>
-              <p data-i18n="howto.step2.description">Select text in websites, docs, or apps and press Option+A for explanations. Select an area and press Option+S for screenshot analysis.</p>
-              <div class="kbd-demo">
-                <div class="keys">
-                  <span class="kbd">⌥</span>
-                  <span class="plus">+</span>
-                  <span class="kbd">A</span>
-                </div>
-                <div class="hint" data-i18n="howto.step2.hint">Text → Option+A • Area → Option+S</div>
-                <div class="selection-demo">
-                  <div class="line"></div>
-                  <div class="line highlight"></div>
-                  <div class="line"></div>
-                </div>
-              </div>
-              <div class="kbd-demo">
-                <div class="keys">
-                  <span class="kbd">⌥</span>
-                  <span class="plus">+</span>
-                  <span class="kbd">S</span>
-                </div>
-                <div class="hint" data-i18n="howto.screenshot.hint">Screenshot Analysis</div>
-                <div class="selection-demo screenshot-demo">
-                  <div class="screenshot-area"></div>
-                </div>
-              </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">A</span>
             </div>
-          </li>
-          <li class="step">
-            <span class="num">3</span>
-            <div class="content">
-              <h4 data-i18n="howto.step3.title">Get Context‑Aware Explanations</h4>
-              <p data-i18n="howto.step3.description">Understand intent and background—not just words—so you can keep working.</p>
+            <p class="shortcut-caption" data-i18n="howto.cards.instant.caption">Mac: Option+A / Windows/Linux: Alt+A</p>
+            <p class="card-body" data-i18n="howto.cards.instant.description">Select text in any app and press Option+A (Alt+A on Windows/Linux) for a concise explanation that keeps you in flow.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.detail.title">Option+Shift+A — Deep Dive</h3>
             </div>
-          </li>
-        </ol>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">A</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.detail.caption">Mac: Option+Shift+A / Windows/Linux: Alt+Shift+A</p>
+            <p class="card-body" data-i18n="howto.cards.detail.description">Need extra context or step-by-step reasoning? Press Option+Shift+A (Alt+Shift+A) to request a more thorough breakdown.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.translate.title">Option+R — Translate &amp; Rephrase</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">R</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.translate.caption">Mac: Option+R / Windows/Linux: Alt+R</p>
+            <p class="card-body" data-i18n="howto.cards.translate.description">Turn the selection into natural Japanese or English with Option+R (Alt+R). Perfect for quick translations or rewrites.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.linkQuick.title">Option+1 — URL Quick Summary</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">1</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.linkQuick.caption">Mac: Option+1 / Windows/Linux: Alt+1</p>
+            <p class="card-body" data-i18n="howto.cards.linkQuick.description">Select a URL in any document, hit Option+1 (Alt+1), and IrukaDark fetches the page to deliver an on-the-spot overview.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.linkDetail.title">Option+Shift+1 — URL Deep Summary</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">1</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.linkDetail.caption">Mac: Option+Shift+1 / Windows/Linux: Alt+Shift+1</p>
+            <p class="card-body" data-i18n="howto.cards.linkDetail.description">Press Option+Shift+1 (Alt+Shift+1) on a highlighted link for a richer breakdown with key sections and takeaways.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.screenshot.title">Option+S — Screenshot Explain</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">S</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.screenshot.caption">Mac: Option+S / Windows/Linux: Alt+S</p>
+            <p class="card-body" data-i18n="howto.cards.screenshot.description">Drag over images, charts, or PDFs and press Option+S (Alt+S) to explain what is on screen without leaving your app.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto.cards.screenshotDetail.title">Option+Shift+S — Screenshot Deep Dive</h3>
+            </div>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">S</span>
+            </div>
+            <p class="shortcut-caption" data-i18n="howto.cards.screenshotDetail.caption">Mac: Option+Shift+S / Windows/Linux: Alt+Shift+S</p>
+            <p class="card-body" data-i18n="howto.cards.screenshotDetail.description">Press Option+Shift+S (Alt+Shift+S) for a more detailed analysis of the region you capture—ideal for dense visuals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how2" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="howto2.title">How It Works 2</h2>
+          <p class="section-sub" data-i18n="howto2.subtitle">Slash commands that build on your latest explanation.</p>
+        </div>
+
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.next.title">/next</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.table.title">/table</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="howto2.commands.web.title">/web</h3>
+            </div>
+            <p class="card-body" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</p>
+          </article>
+        </div>
       </section>
 
       <!-- Pricing / CTA -->
