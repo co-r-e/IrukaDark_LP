@@ -242,6 +242,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-10-03',
+      title: 'v1.0.17 内部最適化',
+      body: 'IrukaDark v1.0.17 でコードのリファクタリングを実施し、応答速度をこれまで以上に高速化しました。より快適にご利用いただけます。'
+    },
+    {
       date: '2025-09-28',
       title: 'v1.0.13 ショートカット追加',
       body: 'IrukaDark v1.0.13 で <code>Option+1</code>（Alt+1）が登場。選択したURLを読み込んでその場で概要を解説します。さらに <code>Option+Shift+1</code>（Alt+Shift+1）で詳細解説も可能になりました。'
@@ -268,6 +273,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-10-03',
+      title: 'v1.0.17 Performance Boost',
+      body: 'IrukaDark v1.0.17 delivers broad refactoring across the codebase and faster response times, keeping conversations snappy and reliable.'
+    },
     {
       date: '2025-09-28',
       title: 'v1.0.13 Shortcut Update',
