@@ -7,7 +7,7 @@ const translations = {
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly, open source.',
     'header.clone': 'Download for Mac',
     'hero.title': 'Everything on your screen, <span class="grad-white">explained fast</span>',
-    'hero.subtitle': 'Stop copying, switching screens, pasting, and waiting for output. Skip turning everything into a chat box. Text, code, images, tables, URLs—IrukaDark explains them instantly so you move faster.',
+    'hero.subtitle': 'No more wasting time copying, switching screens, pasting, and waiting for output. Text, code, images, tables, URLs—IrukaDark explains every bit instantly and keeps you moving fast.',
     'hero.cta': 'Download for Mac',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
@@ -123,7 +123,7 @@ const translations = {
     'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
     'header.clone': 'Mac用ダウンロード',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
-    'hero.subtitle': 'もう「コピーして、画面遷移して、貼り付けて、出力を待つ」なんてことは今すぐやめましょう。でチャット欄にする手間は必要ありません。テキストも、コードも、画像も、図表も、URLも。IrukaDarkが一瞬で解説してあなたの作業を超高速にします。',
+    'hero.subtitle': 'もう「コピーして、画面遷移して、貼り付けて、出力を待つ」なんて無駄な手間は不要です。テキスト、コード、画像、図表、URL。あらゆる情報を一瞬で解説。あなたの作業を超高速にします。',
     'hero.cta': 'Mac用ダウンロード',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
@@ -242,6 +242,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-10-16',
+      title: 'macOS インストーラー配布を再開しました',
+      body: 'IrukaDark v1.0.24 から、macOS 向けのインストーラー（Apple Silicon / Intel）を公式サイトのダウンロードページで提供しています。<br><a href="/ja/downloads" class="link">こちらからダウンロード</a>して、すぐにインストールしてご利用いただけます。'
+    },
+    {
       date: '2025-10-03',
       title: 'v1.0.17 内部最適化',
       body: 'IrukaDark v1.0.17 でコードのリファクタリングを実施し、応答速度をこれまで以上に高速化しました。より快適にご利用いただけます。'
@@ -254,17 +259,7 @@ const infoNotices = {
     {
       date: '2025-09-17',
       title: 'v1.0.10 翻訳機能アップデート',
-      body: 'IrukaDark v1.0.10 で翻訳機能を強化しました。スラッシュコマンド <code>/translate</code> から様々な言語へ高速に翻訳できます。まだダウンロード配布は準備中のため、GitHub からクローンしてご利用ください。<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code>'
-    },
-    {
-      date: '2025-09-13',
-      title: 'GitHubからクローンすればmacOSで利用できます',
-      body: 'GitHub の公開リポジトリをクローンすることで、macOS 上でも IrukaDark をご利用いただけます。<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code><br><code>cd IrukaDark</code><br>詳しい手順は GitHub の README をご確認ください（<a href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">co-r-e/IrukaDark</a>）。'
-    },
-    {
-      date: '2025-09-05',
-      title: '不具合が発生中',
-      body: '現在、一部の環境で不具合が発生しています。問題が解消されるまでダウンロードはお控えください。お問い合わせは <a href="https://co-r-e.net/contact" target="_blank" rel="noopener">こちら</a> からお願いします。'
+      body: 'IrukaDark v1.0.10 で翻訳機能を強化しました。スラッシュコマンド <code>/translate</code> から様々な言語へ高速に翻訳できます。現在は公式サイトから macOS インストーラーをダウンロードしてご利用いただけます。'
     },
     {
       date: '2025-09-01',
@@ -273,6 +268,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-10-16',
+      title: 'macOS Installers Are Back',
+      body: 'Starting with IrukaDark v1.0.24, we are shipping official macOS installers for both Apple Silicon and Intel. Grab them from the <a href="/downloads" class="link">downloads page</a> and start using IrukaDark right away.'
+    },
     {
       date: '2025-10-03',
       title: 'v1.0.17 Performance Boost',
@@ -286,17 +286,7 @@ const infoNotices = {
     {
       date: '2025-09-17',
       title: 'v1.0.10 Translation Upgrade',
-      body: 'IrukaDark v1.0.10 boosts translation. Use the slash command <code>/translate</code> to quickly translate into multiple languages. Installers are not ready yet—clone the project from GitHub to use it.<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code>'
-    },
-    {
-      date: '2025-09-13',
-      title: 'Use on macOS by cloning from GitHub',
-      body: 'You can use IrukaDark on macOS by cloning the public repository.<br><code>git clone https://github.com/co-r-e/IrukaDark.git</code><br><code>cd IrukaDark</code><br>See the README on GitHub for details (<a href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">co-r-e/IrukaDark</a>).'
-    },
-    {
-      date: '2025-09-05',
-      title: 'Issue Ongoing',
-      body: 'We are investigating an issue affecting some environments. Please hold off on downloads until it\'s resolved. Questions? <a href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact us</a>.'
+      body: 'IrukaDark v1.0.10 boosts translation. Use the slash command <code>/translate</code> to quickly translate into multiple languages. You can now install the app directly from our macOS installers on the downloads page.'
     },
     {
       date: '2025-09-01',

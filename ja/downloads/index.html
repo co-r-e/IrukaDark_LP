@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IrukaDark — Mac用ダウンロード</title>
-    <meta name="description" content="IrukaDark をダウンロード（macOS arm64）。" />
+    <meta name="description" content="IrukaDark をダウンロード（macOS Apple Silicon / Intel）。" />
     <link rel="canonical" href="https://irukadark.com/ja/downloads" />
     <link rel="icon" href="../../icons/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="../../icons/icon.png" type="image/png" />
@@ -59,28 +59,26 @@
         </div>
 
         <div class="grid download-cards">
-          <article class="card dl-card" data-os="mac">
+          <article class="card dl-card" data-os="mac-arm">
             <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/apple.svg" alt="Apple ロゴ" /></div>
             <div>
-              <div class="dl-title">macOS</div>
-              <div class="dl-sub">macOS 11.0以降</div>
+              <div class="dl-title">macOS（Apple Silicon）</div>
+              <div class="dl-sub">macOS 11.0以降 · arm64</div>
               <div class="dl-actions">
-                <a id="dl-mac-btn" class="btn btn-primary-white dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/latest">Mac ARM64（Apple Silicon）用にダウンロード</a>
+                <a class="btn btn-primary-white dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.0.24/IrukaDark-1.0.24-arm64-mac.zip">v1.0.24 をダウンロード（arm64）</a>
               </div>
+              <p class="muted">ZIPインストーラー</p>
             </div>
           </article>
-          <article class="card dl-card" data-os="github">
-            <div class="dl-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.746.083-.73.083-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.382 1.235-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.005-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.912 1.235 3.223 0 4.61-2.803 5.625-5.475 5.921.431.372.815 1.102.815 2.222 0 1.606-.014 2.896-.014 3.286 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/>
-              </svg>
-            </div>
+          <article class="card dl-card" data-os="mac-intel">
+            <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/apple.svg" alt="Apple ロゴ" /></div>
             <div>
-              <div class="dl-title">Git Clone で取得</div>
-              <div class="dl-sub">ローカルにリポジトリを複製</div>
+              <div class="dl-title">macOS（Intel）</div>
+              <div class="dl-sub">macOS 11.0以降 · x64</div>
               <div class="dl-actions">
-                <a class="btn btn-outline dl-btn" href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">リポジトリを開く</a>
+                <a class="btn btn-primary-white dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.0.24/IrukaDark-1.0.24-mac.zip">v1.0.24 をダウンロード（x64）</a>
               </div>
+              <p class="muted">ZIPインストーラー</p>
             </div>
           </article>
         </div>
@@ -97,7 +95,7 @@
             <article class="card download-note">
               <div>
                 <div class="card-head">
-                  <h3 class="card-title">macOS（arm64）</h3>
+                  <h3 class="card-title">macOSインストールのコツ</h3>
                 </div>
                 <p class="card-body">「開発元が未確認のため開けません」等の警告が出たら、アプリをControl+クリック→「開く」で許可。もしくは「設定 → プライバシーとセキュリティ」で許可します。</p>
               </div>
@@ -115,23 +113,6 @@
       </section>
     </main>
 
-    <div id="installerNoticeModal" class="modal" role="alertdialog" aria-modal="true" aria-labelledby="installerNoticeTitle" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-header">
-          <h3 id="installerNoticeTitle" class="modal-title">インストーラーについてのお知らせ</h3>
-          <button class="modal-close" type="button" aria-label="閉じる" data-action="close-notice">×</button>
-        </div>
-        <div class="modal-body">
-          <p>現在はインストーラーを利用してのインストールができません。GitHubよりダウンロードしてご利用ください。</p>
-          <div class="cta-actions">
-            <a id="installerNoticeLink" class="btn btn-primary" href="https://github.com/co-r-e/IrukaDark" target="_blank" rel="noopener">GitHubを開く</a>
-            <button type="button" class="btn btn-outline" data-action="close-notice">閉じる</button>
-          </div>
-          <p class="muted">GitHubリンク：https://github.com/co-r-e/IrukaDark</p>
-        </div>
-      </div>
-    </div>
-
     <footer class="container footer">
       <div class="foot-left">
         <span class="muted">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
@@ -143,100 +124,5 @@
     </footer>
 
     <script src="../../app.js"></script>
-    <script>
-      (function(){
-        const INSTALLER_SUSPENDED = true; // 一時対応: インストーラーダウンロードを告知モーダルに切り替え
-        const REPO = 'co-r-e/IrukaDark';
-        const STABLE = { mac: 'IrukaDark-macOS-arm64.dmg' };
-        const macBtn = document.getElementById('dl-mac-btn');
-        const noticeModal = document.getElementById('installerNoticeModal');
-        const noticeLink = document.getElementById('installerNoticeLink');
-        const closeNoticeButtons = noticeModal ? noticeModal.querySelectorAll('[data-action="close-notice"]') : [];
-        const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-        let lastFocused = null;
-
-        function pickMacAsset(assets){
-          const byName = (re) => assets.find(a => a && a.name && re.test(a.name));
-          return byName(/arm64.*\.dmg$/i) || byName(/\.dmg$/i) || byName(/\.pkg$/i) || null;
-        }
-        function fmtSize(bytes){
-          if (!bytes && bytes !== 0) return '';
-          const units = ['B','KB','MB','GB'];
-          let i=0, n=bytes;
-          while(n>=1024 && i<units.length-1){ n/=1024; i++; }
-          return n.toFixed(1)+' '+units[i];
-        }
-
-        function openNotice(event){
-          if (!INSTALLER_SUSPENDED || !noticeModal) return;
-          event.preventDefault();
-          lastFocused = document.activeElement;
-          noticeModal.classList.add('open');
-          noticeModal.setAttribute('aria-hidden', 'false');
-          const focusTarget = noticeLink || noticeModal.querySelector(FOCUSABLE_SELECTOR);
-          if (focusTarget) focusTarget.focus({ preventScroll: true });
-          document.addEventListener('keydown', handleKeydown, true);
-        }
-
-        function closeNotice(){
-          if (!noticeModal) return;
-          noticeModal.classList.remove('open');
-          noticeModal.setAttribute('aria-hidden', 'true');
-          document.removeEventListener('keydown', handleKeydown, true);
-          const target = (lastFocused && typeof lastFocused.focus === 'function') ? lastFocused : macBtn;
-          if (target) target.focus({ preventScroll: true });
-        }
-
-        function handleKeydown(event){
-          if (event.key === 'Escape'){
-            event.preventDefault();
-            closeNotice();
-            return;
-          }
-          if (event.key === 'Tab' && noticeModal && noticeModal.classList.contains('open')){
-            const focusable = Array.from(noticeModal.querySelectorAll(FOCUSABLE_SELECTOR));
-            if (!focusable.length) return;
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            if (event.shiftKey && document.activeElement === first){
-              event.preventDefault();
-              last.focus({ preventScroll: true });
-            } else if (!event.shiftKey && document.activeElement === last){
-              event.preventDefault();
-              first.focus({ preventScroll: true });
-            }
-          }
-        }
-
-        if (noticeModal){
-          noticeModal.addEventListener('click', (event) => {
-            if (event.target === noticeModal) closeNotice();
-          });
-          closeNoticeButtons.forEach(btn => btn.addEventListener('click', closeNotice));
-        }
-
-        async function run(){
-          try { const el = document.querySelector(`.dl-card[data-os="mac"]`); if (el) el.classList.add('active'); } catch(_){}
-          try{
-            const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { 'Accept': 'application/vnd.github+json' } });
-            if (!res.ok) throw new Error('GitHub API error');
-            const rel = await res.json();
-            const assets = Array.isArray(rel.assets) ? rel.assets : [];
-            const macAsset = pickMacAsset(assets);
-            macBtn.href = macAsset?.browser_download_url || `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.mac)}`;
-          }catch(e){
-            macBtn.href = `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(STABLE.mac)}`;
-          }
-
-          if (INSTALLER_SUSPENDED && macBtn && !macBtn.dataset.noticeBound){
-            macBtn.dataset.originalHref = macBtn.href;
-            macBtn.href = 'https://github.com/co-r-e/IrukaDark';
-            macBtn.addEventListener('click', openNotice);
-            macBtn.dataset.noticeBound = 'true';
-          }
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
-      })();
-    </script>
   </body>
   </html>
