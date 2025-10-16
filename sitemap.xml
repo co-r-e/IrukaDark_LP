@@ -30,5 +30,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://irukadark.com/user-gaide</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://irukadark.com/user-gaide"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://irukadark.com/ja/user-gaide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://irukadark.com/user-gaide"/>
+  </url>
+  <url>
+    <loc>https://irukadark.com/ja/user-gaide</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://irukadark.com/user-gaide"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://irukadark.com/ja/user-gaide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://irukadark.com/user-gaide"/>
+  </url>
 </urlset>

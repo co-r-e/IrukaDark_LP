@@ -431,16 +431,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function normalizePathname(path) {
+    if (!path) return '/';
+    let cleaned = path.replace(/\/index\.html?$/i, '');
+    cleaned = cleaned.replace(/\/+$/, '');
+    if (cleaned === '') return '/';
+    return cleaned;
+  }
+
   function navigateToLanguage(lang) {
     const base = getCanonicalBaseUrl();
-    const path = (window.location && window.location.pathname) || '';
-    const isDownloads = /\/downloads\/?$/.test(path) || /\/ja\/downloads\/?$/.test(path);
-    let target;
-    if (isDownloads) {
-      target = lang === 'ja' ? base + '/ja/downloads' : base + '/downloads';
-    } else {
-      target = lang === 'ja' ? base + '/ja' : base;
-    }
+    const rawPath = (window.location && window.location.pathname) || '';
+    const path = normalizePathname(rawPath);
+    const routeMap = {
+      '/': { en: '/', ja: '/ja' },
+      '/ja': { en: '/', ja: '/ja' },
+      '/downloads': { en: '/downloads', ja: '/ja/downloads' },
+      '/ja/downloads': { en: '/downloads', ja: '/ja/downloads' },
+      '/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' },
+      '/ja/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' }
+    };
+
+    const fallback = routeMap['/'];
+    const match = routeMap[path] || fallback;
+    const targetPath = lang === 'ja' ? match.ja : match.en;
+    const target = base + (targetPath === '/' ? '' : targetPath);
     window.location.href = target;
   }
 

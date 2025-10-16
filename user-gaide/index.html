@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IrukaDark — User Guide</title>
+    <meta name="description" content="Set up IrukaDark and learn the essential shortcuts, slash commands, and chat tips for everyday use." />
+    <link rel="canonical" href="https://irukadark.com/user-gaide" />
+    <link rel="icon" href="../icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../icons/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../icons/icon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>window.DEFAULT_LANG = 'en';</script>
+  </head>
+  <body>
+    <div class="bg fx-grid"></div>
+    <div class="bg fx-radial fx-radial-1"></div>
+    <div class="bg fx-radial fx-radial-2"></div>
+    <div class="bg fx-noise"></div>
+
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="/">
+          <img src="../icons/logo.svg" alt="IrukaDark" class="brand-logo lg" />
+        </a>
+        <nav class="nav-actions">
+          <div class="lang-dropdown">
+            <button class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false">
+              <svg class="globe-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M3 12h18"></path>
+                <path d="M12 3a15 15 0 0 1 0 18"></path>
+                <path d="M12 3a15 15 0 0 0 0 18"></path>
+              </svg>
+              <span class="lang-text" id="langCode">EN</span>
+            </button>
+            <div class="lang-menu" id="langMenu">
+              <button class="lang-option" data-lang="en">
+                <span class="lang-text">English</span>
+              </button>
+              <button class="lang-option" data-lang="ja">
+                <span class="lang-text">日本語</span>
+              </button>
+            </div>
+          </div>
+          <a id="download-nav" href="/downloads" class="btn btn-primary" data-i18n="header.clone">Download for Mac</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section">
+        <div class="section-head" style="text-align:left;">
+          <h1 class="section-title">User Guide</h1>
+          <p class="section-sub" style="max-width:720px;">Follow this guide to configure IrukaDark, learn every global shortcut, master slash commands, and keep conversations flowing.</p>
+        </div>
+
+        <div class="section" style="padding-top:32px; padding-bottom:24px;">
+          <div class="section-head" style="text-align:left; margin-bottom:28px;">
+            <h2 class="section-title no-deco" style="font-size:32px;">Initial Setup</h2>
+            <p class="section-sub" style="max-width:720px;">Complete these first steps so shortcuts, screenshots, and chat feel instant every time you launch the app.</p>
+          </div>
+          <div class="grid features">
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">API Key Settings</h3>
+              </div>
+              <div class="card-body">
+                <ol>
+                  <li style="margin:6px 0;">Visit Google AI Studio and create a Gemini API key (Studio keys only; Vertex keys are not supported).</li>
+                  <li style="margin:6px 0;">Open IrukaDark and go to <strong>IrukaDark → AI Settings → Set GEMINI_API_KEY</strong>.</li>
+                  <li style="margin:6px 0;">Paste the key without quotes or spaces. IrukaDark validates it immediately and stores it securely on your Mac.</li>
+                  <li style="margin:6px 0;">If you prefer environment variables, set <code>GEMINI_API_KEY</code> (or <code>GOOGLE_GENAI_API_KEY</code>) before launching.</li>
+                </ol>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Model Settings</h3>
+              </div>
+              <div class="card-body">
+                <ol>
+                  <li style="margin:6px 0;">In the same AI Settings menu, choose <strong>gemini-flash-lite-latest</strong> for the fastest everyday responses.</li>
+                  <li style="margin:6px 0;">Keep <strong>gemini-flash-latest</strong> as your backup when you need a fuller answer or web-grounded lookup.</li>
+                  <li style="margin:6px 0;">Advanced users can set <code>GEMINI_MODEL</code> or <code>WEB_SEARCH_MODEL</code> environment variables to persist model overrides.</li>
+                  <li style="margin:6px 0;">If a model call fails, switch back to the lite recommendation or retry—IrukaDark shows the error reason in chat.</li>
+                </ol>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Accessibility Permissions</h3>
+              </div>
+              <div class="card-body">
+                <ol>
+                  <li style="margin:6px 0;">The first time you trigger Option+A, macOS prompts for <strong>Accessibility</strong> access. Approve it so the helper can read selected text.</li>
+                  <li style="margin:6px 0;">When you capture an area (Option+S), macOS requests <strong>Screen Recording</strong>; allow the IrukaAutomation helper in System Settings → Privacy &amp; Security.</li>
+                  <li style="margin:6px 0;">If shortcuts stop working, revisit Privacy &amp; Security → Accessibility/Screen Recording and confirm IrukaDark plus “IrukaAutomation” stay enabled.</li>
+                  <li style="margin:6px 0;">Restart IrukaDark after granting permissions so macOS applies the change to the helper process.</li>
+                </ol>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="section" style="padding-top:32px; padding-bottom:24px;">
+          <div class="section-head" style="text-align:left; margin-bottom:28px;">
+            <h2 class="section-title no-deco" style="font-size:32px;">Shortcut Keys</h2>
+            <p class="section-sub" style="max-width:720px;">All shortcuts work system-wide. IrukaDark pops into view, keeps focus on your current app, and shows the answer inline.</p>
+          </div>
+          <div class="grid features howto-grid">
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+A — Quick Explain</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">A</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+A</p>
+              <p class="card-body">Explains highlighted text with a concise summary that fits on-screen. Ideal for quick clarifications.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+Shift+A — Deep Explain</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">A</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+Shift+A</p>
+              <p class="card-body">Requests additional context, examples, and follow-up steps. Perfect when you need full reasoning.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+1 — URL Summary</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">1</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+1</p>
+              <p class="card-body">Fetches the highlighted URL, sanitises the page, and returns a four-sentence digest ordered by impact.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+Shift+1 — URL Deep Dive</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">1</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+Shift+1</p>
+              <p class="card-body">Builds a structured breakdown (overview, key points, risks, next actions) from the same URL fetch workflow.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+R — Translate</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">R</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+R</p>
+              <p class="card-body">Translates the selected text into the UI language, keeping technical terms intact when possible.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+S — Screenshot Explain</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">S</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+S</p>
+              <p class="card-body">Lets you drag an on-screen region. IrukaDark extracts text/visual context and summarises what you selected.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">Option+Shift+S — Detailed Screenshot</h3>
+              </div>
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">S</span>
+              </div>
+              <p class="shortcut-caption">Windows/Linux: Alt+Shift+S</p>
+              <p class="card-body">Requests a richer explanation from the captured region, including background, implications, and suggested next steps.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section" style="padding-top:32px; padding-bottom:24px;">
+          <div class="section-head" style="text-align:left; margin-bottom:28px;">
+            <h2 class="section-title no-deco" style="font-size:32px;">Slash Commands</h2>
+            <p class="section-sub" style="max-width:720px;">Type a slash (<code>/</code>) in the chat box to open the command palette. Commands run against your latest conversation state.</p>
+          </div>
+          <div class="grid features">
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/clear</h3>
+              </div>
+              <p class="card-body">Wipe the current conversation, keeping the window open so you can start fresh without reloading the app.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/compact</h3>
+              </div>
+              <p class="card-body">Summarises recent turns into a tighter history so the next answer stays on-topic with less token usage.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/next</h3>
+              </div>
+              <p class="card-body">Asks IrukaDark to continue the last reply—useful when a generated answer ends early or you want more depth.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/table</h3>
+              </div>
+              <p class="card-body">Reformats the previous AI output into a table, perfect for comparing pros/cons, steps, or key metrics quickly.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/what do you mean?</h3>
+              </div>
+              <p class="card-body">Requests a simpler restatement of the previous answer so complex explanations become easier to follow.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/translate</h3>
+              </div>
+              <p class="card-body">Opens a submenu with locale-specific commands (for example <code>/translate_ja</code>, <code>/translate_fr</code>) to translate the last AI reply.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/web</h3>
+              </div>
+              <p class="card-body">Toggle grounded web search with <code>/web on</code>, <code>/web off</code>, or check status via <code>/web status</code>. Requires a model that supports Google Search.</p>
+            </article>
+            <article class="card">
+              <div class="card-head">
+                <h3 class="card-title">/contact</h3>
+              </div>
+              <p class="card-body">Opens the contact page so you can report feedback, bugs, or request features directly from the app.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section" style="padding-top:32px;">
+          <div class="section-head" style="text-align:left; margin-bottom:20px;">
+            <h2 class="section-title no-deco" style="font-size:32px;">Normal Chat</h2>
+            <p class="section-sub" style="max-width:720px;">Use IrukaDark like any AI assistant—shortcuts and slash commands are optional. Everything runs in a single, always-on-top window.</p>
+          </div>
+          <article class="card">
+            <div class="card-head card-head--stack">
+              <h3 class="card-title">Everyday Flow</h3>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li style="margin:6px 0;">Type in the message box and press <strong>Return</strong> to send your prompt.</li>
+                <li style="margin:6px 0;">IrukaDark keeps the current thread active until you reset it—use <code>/clear</code> or the menu&rsquo;s <strong>New Chat</strong> option when you want a blank slate.</li>
+                <li style="margin:6px 0;">Right-click anywhere to open the application menu at the cursor for quick access to pinning, accessibility helpers, and settings.</li>
+                <li style="margin:6px 0;">Links in answers open in your default browser so research continues in the right place.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <div class="foot-left">
+        <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+      </div>
+      <div class="foot-right">
+        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">Company</a>
+        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact</a>
+      </div>
+    </footer>
+
+    <script src="../app.js"></script>
+  </body>
+</html>
