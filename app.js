@@ -36,8 +36,13 @@ const translations = {
 
     // Demo section
     'demo.title': 'See It in Action',
-    'demo.subtitle': 'Select text or capture an area—IrukaDark explains it on‑screen.',
+    'demo.subtitle': 'Select text or capture an area—IrukaDark explains it on-screen.',
     'demo.note': 'Tip: Text = Option+A · Screenshot = Option+S',
+
+    // Languages section
+    'languages.title': 'Supported Languages',
+    'languages.subtitle': 'IrukaDark delivers explanations in 17 languages worldwide.',
+    'languages.note': 'Languages:',
 
     // Where it works
     'where.title': 'Works where you work',
@@ -110,7 +115,7 @@ const translations = {
     'howto2.commands.table.title': '/table',
     'howto2.commands.table.description': 'Reformat the previous response into a clean table to compare points at a glance.',
     'howto2.commands.translate.title': '/translate',
-    'howto2.commands.translate.description': 'Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.',
+    'howto2.commands.translate.description': 'Translate the last explanation into 17 supported languages—or paraphrase in the same language—just by naming the target.',
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Toggle web search mode so IrukaDark pulls in fresh results while it explains.',
     'cta.title': 'Download',
@@ -221,7 +226,7 @@ const translations = {
     'howto2.commands.table.title': '/table',
     'howto2.commands.table.description': '直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。',
     'howto2.commands.translate.title': '/translate',
-    'howto2.commands.translate.description': '直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。',
+    'howto2.commands.translate.description': '直前の解説を指定した言語に翻訳。対応言語は17種類で、言い換えにも使えます。',
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。',
     'cta.title': 'ダウンロード',
@@ -232,7 +237,12 @@ const translations = {
     // Demo section
     'demo.title': '操作デモを見る',
     'demo.subtitle': 'テキスト選択や範囲キャプチャに反応して、その場でAIが解説します。',
-    'demo.note': 'ヒント: テキスト = Option+A ・ スクショ = Option+S'
+    'demo.note': 'ヒント: テキスト = Option+A ・ スクショ = Option+S',
+
+    // Languages section
+    'languages.title': '対応言語',
+    'languages.subtitle': 'IrukaDark は世界17言語でそのまま解説を返します。',
+    'languages.note': 'サポート言語：'
   }
 };
 
@@ -513,36 +523,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ['scroll', 'resize', 'orientationchange', 'load'].forEach(evt => window.addEventListener(evt, onScroll, { passive: true }));
       onScroll();
     }
-  })();
-
-  // Terms modal (open/close on click, close on outside/Escape)
-  (function setupTermsModal() {
-    const modal = document.getElementById('termsModal');
-    if (!modal) return;
-    const openBtns = document.querySelectorAll('.js-open-terms-modal');
-    const closeBtns = modal.querySelectorAll('.js-close-terms-modal');
-    const dialog = modal.querySelector('.modal-dialog');
-
-    function open() {
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      // Prevent background scroll
-      document.documentElement.style.overflow = 'hidden';
-    }
-    function close() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.documentElement.style.overflow = '';
-    }
-
-    openBtns.forEach(btn => btn.addEventListener('click', open));
-    closeBtns.forEach(btn => btn.addEventListener('click', close));
-    modal.addEventListener('click', (e) => {
-      if (!dialog.contains(e.target)) close();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('open')) close();
-    });
   })();
 
   // Information list: render first 3, lazy-load more on scroll

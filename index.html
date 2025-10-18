@@ -501,15 +501,50 @@
         </div>
       </section>
 
+      <!-- Supported Languages -->
+      <section id="languages" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="languages.title">Supported Languages</h2>
+          <p class="section-sub" data-i18n="languages.subtitle">IrukaDark delivers explanations in 17 languages worldwide.</p>
+        </div>
+        <div class="card glass languages-card">
+          <p class="card-body" data-i18n="languages.note">Languages:</p>
+          <ul class="inline-list">
+            <li>English (en)</li>
+            <li>日本語 (ja)</li>
+            <li>Español (es)</li>
+            <li>简体中文 (zh-Hans)</li>
+            <li>繁體中文 (zh-Hant)</li>
+            <li>हिन्दी (hi)</li>
+            <li>Português (Brasil) (pt-BR)</li>
+            <li>Français (fr)</li>
+            <li>Deutsch (de)</li>
+            <li>العربية (ar)</li>
+            <li>Русский (ru)</li>
+            <li>한국어 (ko)</li>
+            <li>Bahasa Indonesia (id)</li>
+            <li>Tiếng Việt (vi)</li>
+            <li>ภาษาไทย (th)</li>
+            <li>Italiano (it)</li>
+            <li>Türkçe (tr)</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Pricing / CTA -->
       <section id="cta" class="container section">
         <div class="cta glass">
-          <div class="cta-copy">
-            <h3 class="cta-title" data-i18n="cta.title">Download</h3>
-            <p class="cta-sub" data-i18n="cta.description">Download for macOS. Open‑source and free.</p>
-          </div>
-          <div class="cta-actions">
-            <a id="download-btn-cta" href="/downloads" class="btn btn-primary btn-lg" data-i18n="cta.button">Download</a>
+          <a class="cta-hero-link" href="/downloads">
+            <img class="cta-hero-img" src="./media/irukadark_downloar.png" alt="IrukaDark download preview" loading="lazy" />
+          </a>
+          <div class="cta-content">
+            <div class="cta-copy">
+              <h3 class="cta-title" data-i18n="cta.title">Download</h3>
+              <p class="cta-sub" data-i18n="cta.description">Download for macOS. Open‑source and free.</p>
+            </div>
+            <div class="cta-actions">
+              <a id="download-btn-cta" href="/downloads" class="btn btn-primary btn-lg" data-i18n="cta.button">Download</a>
+            </div>
           </div>
         </div>
       </section>
@@ -523,7 +558,7 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head"><h3 class="card-title">What platforms are supported?</h3></div>
-            <p class="card-body">macOS. Download the installer from the Downloads page or GitHub Releases.</p>
+            <p class="card-body">macOS. Download the installer directly from the Downloads page.</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">How is it different from a translator?</h3></div>
@@ -534,8 +569,8 @@
             <p class="card-body">No. IrukaDark stores no data and does not train on your content, helping protect your privacy.</p>
           </article>
           <article class="card">
-            <div class="card-head"><h3 class="card-title">Do I need a GitHub account or developer tools?</h3></div>
-            <p class="card-body">No for normal use — just download and install. A GitHub account, Git, and Node.js are only needed if you want to build from source.</p>
+            <div class="card-head"><h3 class="card-title">Do I need any developer tools?</h3></div>
+            <p class="card-body">No. Just download the installer from the Downloads page and follow the setup prompts.</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">How do I use it quickly?</h3></div>
@@ -543,7 +578,7 @@
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">Is it free and open source?</h3></div>
-            <p class="card-body">Yes. IrukaDark is open source and free to use. Download prebuilt installers from GitHub Releases, or build from source if you prefer.</p>
+            <p class="card-body">Yes. IrukaDark is open source and free to use. Install it via the Downloads page anytime.</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">Does it require an internet connection?</h3></div>
@@ -567,7 +602,7 @@
                     </tr>
                     <tr>
                       <td>Accessibility</td>
-                      <td>Optional for global shortcuts / in‑app selection</td>
+                      <td>Required: Accessibility (enables on‑screen selection and global shortcuts)</td>
                     </tr>
                     <tr>
                       <td>Admin rights</td>
@@ -610,73 +645,14 @@
                       <td>Internet</td>
                       <td>Allow outbound HTTPS</td>
                     </tr>
-                    <tr>
-                      <td>Build from source (optional)</td>
-                      <td>Requires Git and Node.js LTS if you choose to build yourself</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">Related Terms & Commands</h3></div>
-            <p class="card-body">A quick cheat sheet of commands and terminology you’ll likely use when setting up or updating IrukaDark.</p>
-            <div class="card-actions">
-              <button type="button" class="btn btn-outline js-open-terms-modal">Open the list</button>
-            </div>
-          </article>
         </div>
       </section>
     </main>
-
-    <!-- Terms/Commands Modal (EN) -->
-    <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-header">
-          <h3 id="termsModalTitle" class="modal-title">Related Terms & Commands</h3>
-          <button class="modal-close js-close-terms-modal" aria-label="Close">×</button>
-        </div>
-        <div class="modal-body">
-          <h4>Overview</h4>
-          <p>A compact cheat sheet of must‑know terms and commands to set up and maintain IrukaDark.</p>
-
-          <h4>File/Folder Basics (Terminal)</h4>
-          <ul>
-            <li><code>cd dir</code> — Change directory (e.g., <code>cd irukadark_lp</code>).</li>
-            <li><code>ls</code> — List contents.</li>
-            <li><code>pwd</code> — Print current directory path.</li>
-            <li><code>mkdir name</code> — Create a new folder.</li>
-            <li><code>cp src dest</code> — Copy file/folder.</li>
-            <li><code>mv src dest</code> — Move/rename file/folder.</li>
-          </ul>
-
-          <h4>Git (Get/Update Latest)</h4>
-          <ul>
-            <li><code>git clone &lt;URL&gt;</code> — Get the repo the first time.</li>
-            <li><code>git pull</code> — Update to the latest in an existing folder.</li>
-            <li><code>git status</code> — Check changes.</li>
-          </ul>
-
-          <h4>Node.js / npm</h4>
-          <ul>
-            <li><code>node -v</code> / <code>npm -v</code> — Check versions (prefer LTS).</li>
-            <li><code>npm install</code> — Install dependencies (required).</li>
-          </ul>
-
-          <h4>Terms</h4>
-          <ul>
-            <li><b>Repository</b> — Project storage managed by Git.</li>
-            <li><b>Clone</b> — Copy the repository to your machine.</li>
-            <li><b>Pull</b> — Fetch and merge latest remote changes.</li>
-            <li><b>PATH</b> — Env var that finds executables.</li>
-            <li><b>Terminal/Shell</b> — Where you run commands (bash, zsh).</li>
-          </ul>
-
-          <p class="muted">Note: Destructive commands like <code>rm -rf</code> are risky. Always confirm your current directory with <code>pwd</code> before running them.</p>
-        </div>
-      </div>
-    </div>
 
     <!-- Information Modal (dynamic) -->
     <div id="infoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle" aria-hidden="true">
@@ -710,7 +686,7 @@
         {
           "@type": "Question",
           "name": "What platforms are supported?",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS. Download the installer from the Downloads page or GitHub Releases."}
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS. Download the installer directly from the Downloads page."}
         },
         {
           "@type": "Question",
@@ -724,8 +700,8 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need a GitHub account or developer tools?",
-          "acceptedAnswer": {"@type": "Answer", "text": "No for normal use — just download and install. A GitHub account, Git, and Node.js are only needed if you want to build from source."}
+          "name": "Do I need any developer tools?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. Just download the installer from the Downloads page and follow the setup prompts."}
         },
         {
           "@type": "Question",
@@ -735,7 +711,7 @@
         {
           "@type": "Question",
           "name": "Is it free and open source?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark is open source and free to use. Download prebuilt installers from GitHub Releases, or build from source if you prefer."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark is open source and free to use. Install it via the Downloads page anytime."}
         },
         {
           "@type": "Question",
@@ -745,12 +721,12 @@
         {
           "@type": "Question",
           "name": "What OS permissions are required?",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS: Screen Recording required for screenshot analysis; Accessibility optional for global shortcuts/in‑app selection; Full Disk Access not required."}
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS: Screen Recording is required for screenshot analysis, Accessibility is required for global shortcuts and on-screen selection, and outbound HTTPS must be allowed. No Full Disk Access is needed."}
         },
         {
           "@type": "Question",
-          "name": "What setup do I need on my PC?",
-          "acceptedAnswer": {"@type": "Answer", "text": "No developer tools are required for normal use. Just download and install. For optional builds from source, you’ll need Git and Node.js LTS. An internet connection is required to use AI services, and macOS needs Screen Recording permission for screenshots."}
+          "name": "What setup do I need on my Mac?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No developer tools are required for normal use—just download and install. Allow Screen Recording for screenshots, Accessibility for shortcuts, and outbound HTTPS for AI services."}
         }
       ]
     }

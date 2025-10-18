@@ -158,54 +158,6 @@
           </div>
         </div>
       </section>
-      
-      <!-- Terms/Commands Modal (JA) -->
-      <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-header">
-            <h3 id="termsModalTitle" class="modal-title">関連用語・関連コマンド</h3>
-            <button class="modal-close js-close-terms-modal" aria-label="閉じる">×</button>
-          </div>
-          <div class="modal-body">
-            <h4>概要</h4>
-            <p>IrukaDark を使う/更新する際に最低限知っておくと便利な用語とコマンドのチートシートです。</p>
-
-            <h4>ファイル/フォルダ操作（ターミナル）</h4>
-            <ul>
-              <li><code>cd dir</code> — ディレクトリを移動（例: <code>cd irukadark_lp</code>）。</li>
-              <li><code>ls</code> — 中身を表示。</li>
-              <li><code>pwd</code> — 現在のディレクトリのパスを表示。</li>
-              <li><code>mkdir name</code> — 新しいフォルダを作成。</li>
-              <li><code>cp src dest</code> — ファイル/フォルダをコピー。</li>
-              <li><code>mv src dest</code> — ファイル/フォルダを移動/リネーム。</li>
-            </ul>
-
-            <h4>Git（最新版の取得/管理）</h4>
-            <ul>
-              <li><code>git clone &lt;URL&gt;</code> — 初回の取得（例: GitHub からプロジェクトを取得）。</li>
-              <li><code>git pull</code> — 既存フォルダで最新版に更新（ご要望の「最新版を取得」）。</li>
-              <li><code>git status</code> — 変更状況を確認。</li>
-            </ul>
-
-            <h4>Node.js / npm（依存インストールと実行）</h4>
-            <ul>
-              <li><code>node -v</code> / <code>npm -v</code> — バージョン確認（LTS推奨）。</li>
-              <li><code>npm install</code> — 依存を初回/更新時に必ずインストール（必須）。</li>
-            </ul>
-
-            <h4>用語</h4>
-            <ul>
-              <li><b>リポジトリ（Repository）</b> — プロジェクトの保存場所（Git管理）。</li>
-              <li><b>クローン（Clone）</b> — リポジトリを手元にコピーすること。</li>
-              <li><b>プル（Pull）</b> — リモートの変更を取得してローカルを更新。</li>
-              <li><b>PATH</b> — コマンド探索の環境変数。設定が誤るとコマンドが見つからない。</li>
-              <li><b>ターミナル/シェル</b> — コマンドを入力するアプリ/実行環境（例: bash, zsh）。</li>
-            </ul>
-
-            <p class="muted">補足: 重要操作（例: <code>rm -rf</code>）は慎重に。実行前にカレントディレクトリ（<code>pwd</code>）を確認してください。</p>
-          </div>
-        </div>
-      </div>
 
       <!-- Information (above demo) -->
       <section id="information" class="container section">
@@ -501,15 +453,49 @@
         </div>
       </section>
 
-      <!-- CTA -->
+      <!-- 対応言語 -->
+      <section id="languages" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="languages.title">対応言語</h2>
+          <p class="section-sub" data-i18n="languages.subtitle">IrukaDark は世界17言語でそのまま解説を返します。</p>
+        </div>
+        <div class="card glass languages-card">
+          <p class="card-body" data-i18n="languages.note">サポート言語：</p>
+          <ul class="inline-list">
+            <li>English (en)</li>
+            <li>日本語 (ja)</li>
+            <li>Español (es)</li>
+            <li>简体中文 (zh-Hans)</li>
+            <li>繁體中文 (zh-Hant)</li>
+            <li>हिन्दी (hi)</li>
+            <li>Português (Brasil) (pt-BR)</li>
+            <li>Français (fr)</li>
+            <li>Deutsch (de)</li>
+            <li>العربية (ar)</li>
+            <li>Русский (ru)</li>
+            <li>한국어 (ko)</li>
+            <li>Bahasa Indonesia (id)</li>
+            <li>Tiếng Việt (vi)</li>
+            <li>ภาษาไทย (th)</li>
+            <li>Italiano (it)</li>
+            <li>Türkçe (tr)</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="cta" class="container section">
         <div class="cta glass">
-          <div class="cta-copy">
-            <h3 class="cta-title" data-i18n="cta.title">ダウンロード</h3>
-            <p class="cta-sub" data-i18n="cta.description">macOS向けにダウンロード。オープンソースで無料。</p>
-          </div>
-          <div class="cta-actions">
-            <a id="download-btn-cta" href="/ja/downloads" class="btn btn-primary btn-lg" data-i18n="cta.button">Mac用ダウンロード</a>
+          <a class="cta-hero-link" href="/ja/downloads">
+            <img class="cta-hero-img" src="../media/irukadark_downloar.png" alt="IrukaDarkのダウンロードイメージ" loading="lazy" />
+          </a>
+          <div class="cta-content">
+            <div class="cta-copy">
+              <h3 class="cta-title" data-i18n="cta.title">ダウンロード</h3>
+              <p class="cta-sub" data-i18n="cta.description">macOS向けにダウンロード。オープンソースで無料。</p>
+            </div>
+            <div class="cta-actions">
+              <a id="download-btn-cta" href="/ja/downloads" class="btn btn-primary btn-lg" data-i18n="cta.button">Mac用ダウンロード</a>
+            </div>
           </div>
         </div>
       </section>
@@ -523,7 +509,7 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head"><h3 class="card-title">対応プラットフォームは？</h3></div>
-            <p class="card-body">macOS に対応。ダウンロードページまたは GitHub Releases からインストーラを取得できます。</p>
+            <p class="card-body">macOS に対応。ダウンロードページからインストーラを取得してそのまま使えます。</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">翻訳ツールと何が違いますか？</h3></div>
@@ -534,8 +520,8 @@
             <p class="card-body">保存しません。IrukaDarkはデータベースを保持せず、AI学習にも利用しないため、プライバシー保護に配慮しています。</p>
           </article>
           <article class="card">
-            <div class="card-head"><h3 class="card-title">GitHubアカウントや開発ツールは必要？</h3></div>
-            <p class="card-body">一般利用では不要です。インストーラをダウンロードして実行するだけで使えます。ソースからビルドしたい場合のみ、Git と Node.js が必要です。</p>
+            <div class="card-head"><h3 class="card-title">開発ツールは必要ですか？</h3></div>
+            <p class="card-body">不要です。ダウンロードページからインストーラを入手し、案内に沿ってセットアップするだけで利用できます。</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">素早く使うには？</h3></div>
@@ -543,7 +529,7 @@
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">無料でオープンソースですか？</h3></div>
-            <p class="card-body">はい。IrukaDark はオープンソースで無料です。GitHub Releases からビルド済みインストーラをダウンロードできます（ソースからのビルドも可能）。</p>
+            <p class="card-body">はい。IrukaDark はオープンソースで無料です。ダウンロードページからいつでもインストールできます。</p>
           </article>
           <article class="card">
             <div class="card-head"><h3 class="card-title">インターネット接続は必要ですか？</h3></div>
@@ -567,7 +553,7 @@
                     </tr>
                     <tr>
                       <td>アクセシビリティ</td>
-                      <td>任意（ショートカット/横断選択で必要な場合）</td>
+                      <td>必須（ショートカットや画面上選択の操作に必要）</td>
                     </tr>
                     <tr>
                       <td>管理者権限</td>
@@ -610,20 +596,9 @@
                       <td>インターネット</td>
                       <td>HTTPS通信を許可</td>
                     </tr>
-                    <tr>
-                      <td>ソースからのビルド（任意）</td>
-                      <td>自分でビルドする場合のみ Git と Node.js LTS が必要</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">関連用語・関連コマンド</h3></div>
-            <p class="card-body">セットアップや運用でよく使う用語とコマンドをまとめました。必要なときに見返せます。</p>
-            <div class="card-actions">
-              <button type="button" class="btn btn-outline js-open-terms-modal">一覧を開く</button>
             </div>
           </article>
         </div>
@@ -662,7 +637,7 @@
         {
           "@type": "Question",
           "name": "対応プラットフォームは？",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS に対応。ダウンロードページまたは GitHub Releases からインストーラを入手できます。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS に対応。ダウンロードページからインストーラを入手してそのまま使えます。"}
         },
         {
           "@type": "Question",
@@ -676,8 +651,8 @@
         },
         {
           "@type": "Question",
-          "name": "GitHubアカウントや開発ツールは必要？",
-          "acceptedAnswer": {"@type": "Answer", "text": "一般利用では不要です。インストーラをダウンロードして実行するだけで使えます。ソースからビルドしたい場合のみ、Git と Node.js が必要です。"}
+          "name": "開発ツールは必要ですか？",
+          "acceptedAnswer": {"@type": "Answer", "text": "いいえ。ダウンロードページからインストーラを取得し、案内に従ってセットアップするだけで利用できます。"}
         },
         {
           "@type": "Question",
@@ -687,7 +662,7 @@
         {
           "@type": "Question",
           "name": "無料でオープンソースですか？",
-          "acceptedAnswer": {"@type": "Answer", "text": "はい。IrukaDark はオープンソースで無料です。GitHub Releases からビルド済みインストーラをダウンロードできます（ソースからビルドして使うことも可能）。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "はい。IrukaDark はオープンソースで無料です。ダウンロードページからいつでもインストールできます。"}
         },
         {
           "@type": "Question",
@@ -697,12 +672,12 @@
         {
           "@type": "Question",
           "name": "OSごとの許可設定は？",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS: 画面収録の許可が必要。アクセシビリティはグローバルショートカット等で必要な場合あり。フルディスクアクセスは不要。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "macOS: 画面収録の許可が必要。アクセシビリティもショートカット操作のため必須。フルディスクアクセスは不要。"}
         },
         {
           "@type": "Question",
           "name": "事前に必要なPCセットアップは？",
-          "acceptedAnswer": {"@type": "Answer", "text": "一般利用では開発ツールは不要です。ダウンロードしてインストールするだけで使えます。ソースからビルドする場合のみ Git と Node.js LTS が必要です。AI利用のためインターネット接続が必要で、macOSではスクリーンショット解析に『画面収録』の許可が必要です。"}
+          "acceptedAnswer": {"@type": "Answer", "text": "一般利用では開発ツールは不要です。ダウンロードしてインストールするだけで利用できます。スクリーンショット解析には『画面収録』、ショートカット操作には『アクセシビリティ』の許可、そしてAI利用のためにインターネット接続が必要です。"}
         }
       ]
     }
