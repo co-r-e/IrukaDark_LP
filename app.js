@@ -254,7 +254,7 @@ const infoNotices = {
     {
       date: '2025-10-16',
       title: 'macOS インストーラー配布を再開しました',
-      body: 'IrukaDark v1.0.24 から、macOS 向けのインストーラー（Apple Silicon / Intel）を公式サイトのダウンロードページで提供しています。<br><a href="/ja/downloads" class="link">こちらからダウンロード</a>して、すぐにインストールしてご利用いただけます。'
+      body: 'IrukaDark v1.0.64 から、macOS 向けのインストーラー（Apple Silicon / Intel）を公式サイトのダウンロードページで提供しています。<br><a href="/ja/downloads" class="link">こちらからダウンロード</a>して、すぐにインストールしてご利用いただけます。'
     },
     {
       date: '2025-10-03',
@@ -281,7 +281,7 @@ const infoNotices = {
     {
       date: '2025-10-16',
       title: 'macOS Installers Are Back',
-      body: 'Starting with IrukaDark v1.0.24, we are shipping official macOS installers for both Apple Silicon and Intel. Grab them from the <a href="/downloads" class="link">downloads page</a> and start using IrukaDark right away.'
+      body: 'Starting with IrukaDark v1.0.64, we are shipping official macOS installers for both Apple Silicon and Intel. Grab them from the <a href="/downloads" class="link">downloads page</a> and start using IrukaDark right away.'
     },
     {
       date: '2025-10-03',
