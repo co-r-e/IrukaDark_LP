@@ -412,6 +412,66 @@ function handleClickOutside(event) {
 
 // Add event listeners for language buttons
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile navigation toggle
+  const nav = document.querySelector('.nav');
+  const navToggle = document.getElementById('navToggle');
+  const navActions = document.getElementById('navActions');
+
+  if (nav && navToggle && navActions) {
+    const setNavMenuState = (isOpen) => {
+      nav.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    };
+
+    const closeNavMenu = () => {
+      setNavMenuState(false);
+      if (typeof closeLanguageDropdown === 'function') {
+        try {
+          closeLanguageDropdown();
+        } catch (err) {
+          // Ignore if dropdown helpers are unavailable on this page
+        }
+      }
+    };
+
+    // Ensure initial state reflects desktop/mobile on load
+    setNavMenuState(false);
+
+    navToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const nextState = !nav.classList.contains('is-open');
+      setNavMenuState(nextState);
+    });
+
+    navActions.addEventListener('click', (event) => {
+      const interactiveTarget = event.target instanceof Element ? event.target.closest('a, button') : null;
+      if (!interactiveTarget) return;
+      if (interactiveTarget.closest('.lang-dropdown')) return;
+      if (nav.classList.contains('is-open')) {
+        closeNavMenu();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!nav.classList.contains('is-open')) return;
+      if (event.target instanceof Element && nav.contains(event.target)) return;
+      closeNavMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+        closeNavMenu();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 720 && nav.classList.contains('is-open')) {
+        closeNavMenu();
+      }
+    });
+  }
+
   // Language dropdown functionality
   const langTrigger = document.getElementById('langTrigger');
   const langOptions = document.querySelectorAll('.lang-option');
