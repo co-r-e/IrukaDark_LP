@@ -147,23 +147,11 @@
               <a id="download-btn" href="/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">Download for Mac</a>
             </div>
           </div>
-          <div class="hero-media glass-white">
-            <div class="media-bar">
-              <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
-            </div>
-            <div class="text-demo" id="textDemo">
-              <div class="text-sample">
-                <div class="text-line">const result = await fetchUserData().then(data => {</div>
-                <div class="text-line selected">  return data.reduce((acc, user) => ({ ...acc, [user.id]: user }), {});</div>
-                <div class="text-line">}).catch(error => console.error(error));</div>
-              </div>
-              <div class="explanation-bubble">
-                <div class="bubble-header" data-i18n="demo.question">What does this mean?</div>
-                <div class="bubble-content" data-i18n="demo.explanation">
-                  This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user's ID as the key and the user object as the value.
-                </div>
-              </div>
-            </div>
+          <div class="hero-video">
+            <video class="demo-video" controls playsinline muted loop preload="metadata" aria-label="IrukaDark usage demo video (English)">
+              <source src="./media/irukadark_programming_en.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
@@ -174,23 +162,6 @@
           <h2 class="section-title">Information</h2>
         </div>
         <ul class="info-list" id="infoList"></ul>
-      </section>
-
-      <!-- Demo (after hero) -->
-      <section id="demo" class="container section">
-        <div class="section-head">
-          <h2 class="section-title" data-i18n="demo.title">See It in Action</h2>
-          <p class="section-sub" data-i18n="demo.subtitle">Select text or capture an area—IrukaDark explains it on‑screen.</p>
-        </div>
-        <div class="demo-media">
-          <div class="demo-wrap">
-            <video class="demo-video" controls playsinline muted loop preload="metadata" aria-label="IrukaDark usage demo video (English)">
-              <source src="./media/irukadark_programming_en.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        
       </section>
 
       <!-- Features -->

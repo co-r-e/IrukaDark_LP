@@ -127,7 +127,7 @@ const translations = {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
     'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
     'header.clone': 'Mac用ダウンロード',
-    'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>。',
+    'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>',
     'hero.subtitle': 'もう「コピーして、画面遷移して、貼り付けて、出力を待つ」なんて無駄な手間は不要です。テキスト、コード、画像、図表、URL。あらゆる情報を一瞬で解説。あなたの作業を超高速にします。',
     'hero.cta': 'Mac用ダウンロード',
     'demo.question': 'これどういうこと？',
