@@ -252,6 +252,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-10-30',
+      title: 'v1.0.34 画像生成機能を追加',
+      body: 'IrukaDark v1.0.34 で画像生成機能が追加されました。<code>/image</code> コマンドで同時生成枚数やアスペクト比を調整できます。クリエイティブな作業がさらに便利になりました。'
+    },
+    {
       date: '2025-10-16',
       title: 'macOS インストーラー配布を再開しました',
       body: 'IrukaDark v1.0.64 から、macOS 向けのインストーラー（Apple Silicon / Intel）を公式サイトのダウンロードページで提供しています。<br><a href="/ja/downloads" class="link">こちらからダウンロード</a>して、すぐにインストールしてご利用いただけます。'
@@ -278,6 +283,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-10-30',
+      title: 'v1.0.34 Image Generation Feature',
+      body: 'IrukaDark v1.0.34 introduces image generation capability. Use the <code>/image</code> command to adjust batch size and aspect ratio for your creative workflows.'
+    },
     {
       date: '2025-10-16',
       title: 'macOS Installers Are Back',
