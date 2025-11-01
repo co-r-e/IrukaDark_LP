@@ -228,7 +228,8 @@ body {
 
 .languages-card { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
 .inline-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 14px; }
-.inline-list li { padding: 7px 14px; border-radius: 999px; background: rgba(0,0,0,0.05); border: 1px solid var(--border-soft); font-weight: 500; letter-spacing: 0.2px; }
+.inline-list li { padding: 7px 14px; border-radius: 999px; background: rgba(0,0,0,0.05); border: 1px solid var(--border-soft); font-weight: 500; letter-spacing: 0.2px; display: flex; align-items: center; gap: 8px; }
+.flag-icon { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: #ffffff; filter: brightness(1.1) contrast(1.05); }
 
 /* hero */
 .hero { padding: var(--space-hero-t) 0 var(--space-hero-b); }
