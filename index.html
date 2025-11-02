@@ -135,25 +135,23 @@
     <main>
       <!-- Hero -->
       <section class="container hero">
-        <div class="hero-card">
-          <div class="hero-content">
-            <div class="hero-tagline" data-i18n="hero.tagline"><span class="grad-white">AI to master AI</span></div>
-            <h1 class="hero-title" data-i18n="hero.title">
-              Everything on your screen, <span class="grad-white">explained fast</span>
-            </h1>
-            <p class="hero-sub" data-i18n="hero.subtitle">
-              No more wasting time copying, switching screens, pasting, and waiting for output. Text, code, images, tables, URLs—IrukaDark explains every bit instantly and keeps you moving fast.
-            </p>
-            <div class="hero-cta">
-              <a id="download-btn" href="/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">Download for Mac</a>
-            </div>
+        <div class="hero-content">
+          <div class="hero-tagline" data-i18n="hero.tagline"><span class="grad-white">Desktop AI to master AI</span></div>
+          <h1 class="hero-title" data-i18n="hero.title">
+            Everything on your screen, <span class="grad-white">explained fast</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.subtitle">
+            No more wasting time copying, switching screens, pasting, and waiting for output. Text, code, images, tables, URLs—IrukaDark explains every bit instantly and keeps you moving fast.
+          </p>
+          <div class="hero-cta">
+            <a id="download-btn" href="/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">Download for Mac</a>
           </div>
-          <div class="hero-video">
-            <video class="demo-video" controls playsinline muted loop preload="metadata" aria-label="IrukaDark usage demo video (English)">
-              <source src="./media/irukadark_programming_en.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+        </div>
+        <div class="hero-video">
+          <video class="demo-video" controls playsinline muted loop preload="metadata" aria-label="IrukaDark usage demo video (English)">
+            <source src="./media/irukadark_programming_en.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
@@ -161,32 +159,38 @@
       <section id="features" class="container section">
         <div class="section-head">
           <h2 class="section-title" data-i18n="features.title">Work Faster on Your Computer</h2>
-          <p class="section-sub" data-i18n="features.subtitle">No more “I don’t get it.” Instant, context‑aware understanding keeps you moving.</p>
+          <p class="section-sub" data-i18n="features.subtitle">No more "I don't get it." Instant, context‑aware understanding keeps you moving.</p>
         </div>
 
-        <div class="grid features">
-          <article class="card">
-            <div class="card-head card-head--stack">
-              <img src="./media/irukadark_key.png" alt="Keyboard shortcut icon" class="card-icon" />
-              <h3 class="card-title" data-i18n="features.instant.title">Instant Explanation Shortcuts</h3>
+        <div class="features-list">
+          <article class="feature-item">
+            <div class="feature-content">
+              <h3 class="feature-title" data-i18n="features.instant.title">Ultra-Fast Smart Explanations Without Prompts</h3>
+              <p class="feature-description" data-i18n="features.instant.description">No need to type prompts like "explain this error code." Just highlight what's on your screen and hit the shortcut. IrukaDark instantly delivers context-aware explanations right where you are.</p>
             </div>
-            <p class="card-body" data-i18n="features.instant.description">Highlight text or a region and trigger the shortcut that fits the moment. IrukaDark responds in place with fast, context‑aware explanations—no extra windows.</p>
+            <div class="feature-image">
+              <img src="./media/irukadark_key.png" alt="Keyboard shortcut icon" />
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-head card-head--stack">
-              <img src="./media/irukadark_onestop.png" alt="All-in-one workflow icon" class="card-icon" />
-              <h3 class="card-title" data-i18n="features.flow.title">Stay in Flow</h3>
+          <article class="feature-item">
+            <div class="feature-content">
+              <h3 class="feature-title" data-i18n="features.flow.title">Real-Time Screen Analysis AI</h3>
+              <p class="feature-description" data-i18n="features.flow.description">No more switching between windows. No need to copy text, paste it into an AI input form, and wait for answers. Resolve questions stress-free without breaking your flow.</p>
             </div>
-            <p class="card-body" data-i18n="features.flow.description">Skip window‑switching and copy‑paste. Ask in place with Option+A, or capture an area with Option+S. Resolve questions without breaking focus.</p>
+            <div class="feature-image">
+              <img src="./media/irukadark_onestop.png" alt="All-in-one workflow icon" />
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-head card-head--stack">
-              <img src="./media/irukadark_guard.png" alt="Privacy shield icon" class="card-icon" />
-              <h3 class="card-title" data-i18n="features.secure.title">Simple & Private</h3>
+          <article class="feature-item">
+            <div class="feature-content">
+              <h3 class="feature-title" data-i18n="features.secure.title">Works with Any Digital Tool</h3>
+              <p class="feature-description" data-i18n="features.secure.description">IrukaDark works with any tool. Of course, it works alongside the latest AI products. It can also be used with legacy business systems.</p>
             </div>
-            <p class="card-body" data-i18n="features.secure.description">IrukaDark stores no data and doesn’t train on your content, helping protect your privacy.</p>
+            <div class="feature-image">
+              <img src="./media/irukadark_connecttools.png" alt="Connect with any digital tool" />
+            </div>
           </article>
         </div>
       </section>
@@ -253,95 +257,86 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="where.web.title">On websites</h3>
-              <span class="badge-tag" data-i18n="where.web.badge">Web</span>
+              <h3 class="card-title" data-i18n="where.chatgpt.title">On ChatGPT, Gemini & Claude</h3>
             </div>
-            <div class="card-body">
-              <ul class="icon-list">
-                <li>
-                  <span data-i18n="where.web.li1">Programming</span>
-                  <div class="li-desc" data-i18n="where.web.li1.desc">Explain unfamiliar code, APIs, and patterns in place.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li2">Marketing jargon</span>
-                  <div class="li-desc" data-i18n="where.web.li2.desc">Turn buzzwords into clear, plain‑language meaning.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li3">Academic papers</span>
-                  <div class="li-desc" data-i18n="where.web.li3.desc">Summarize concepts, formulas, and study context.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li4">Foreign websites & materials</span>
-                  <div class="li-desc" data-i18n="where.web.li4.desc">Get natural explanations beyond literal translation.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li5">Contracts & legal documents</span>
-                  <div class="li-desc" data-i18n="where.web.li5.desc">Clarify clauses, terms, and what they imply.</div>
-                </li>
-              </ul>
-            </div>
+            <p class="card-body" data-i18n="where.chatgpt.desc">Explain AI outputs with AI. Review and refine prompts in place.</p>
           </article>
 
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="where.apps.title">On apps</h3>
-              <span class="badge-tag" data-i18n="where.apps.badge">Apps</span>
+              <h3 class="card-title" data-i18n="where.cursor.title">On Cursor</h3>
             </div>
-            <div class="card-body">
-              <ul class="icon-list">
-                <li>
-                  <span data-i18n="where.apps.li1">Other AI tools</span>
-                  <div class="li-desc" data-i18n="where.apps.li1.desc">Summarize outputs or prompts without switching windows.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li2">Terminal</span>
-                  <div class="li-desc" data-i18n="where.apps.li2.desc">Explain commands, flags, and errors instantly.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li3">Social media</span>
-                  <div class="li-desc" data-i18n="where.apps.li3.desc">Unpack threads, acronyms, and context at a glance.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li4">Editors</span>
-                  <div class="li-desc" data-i18n="where.apps.li4.desc">Understand code or docs as you write.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li5">Design tools</span>
-                  <div class="li-desc" data-i18n="where.apps.li5.desc">Describe layers, components, and UI copy quickly.</div>
-                </li>
-              </ul>
-            </div>
+            <p class="card-body" data-i18n="where.cursor.desc">Understand AI-generated code instantly. Speed up code reviews.</p>
           </article>
 
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="where.images.title">For complex images</h3>
-              <span class="badge-tag" data-i18n="where.images.badge">Images</span>
+              <h3 class="card-title" data-i18n="where.terminal.title">On Terminal</h3>
             </div>
-            <div class="card-body">
-              <ul class="icon-list">
-                <li>
-                  <span data-i18n="where.images.li1">Diagram explanations</span>
-                  <div class="li-desc" data-i18n="where.images.li1.desc">Label parts and walk through flows.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li2">Map reading</span>
-                  <div class="li-desc" data-i18n="where.images.li2.desc">Interpret routes, legends, and points of interest.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li3">Uncopyable text</span>
-                  <div class="li-desc" data-i18n="where.images.li3.desc">Select text in images to read and explain.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li4">Photo explanations</span>
-                  <div class="li-desc" data-i18n="where.images.li4.desc">Explain what’s shown and key details.</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li5">Online meeting screens</span>
-                  <div class="li-desc" data-i18n="where.images.li5.desc">Summarize slides and screen shares as they appear.</div>
-                </li>
-              </ul>
+            <p class="card-body" data-i18n="where.terminal.desc">Select complex commands or flags for instant explanations. Decode error messages on the spot.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.paircoding.title">For Vibe Coding</h3>
             </div>
+            <p class="card-body" data-i18n="where.paircoding.desc">Instantly explain errors in unfamiliar languages or frameworks. Understand code intent on the fly.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.error.title">For Error Codes</h3>
+            </div>
+            <p class="card-body" data-i18n="where.error.desc">Select unfamiliar error messages to get causes and solutions instantly.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.github.title">On GitHub</h3>
+            </div>
+            <p class="card-body" data-i18n="where.github.desc">Quickly understand PRs, issues, and code review comments. Speed up your workflow.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.figma.title">On Figma</h3>
+            </div>
+            <p class="card-body" data-i18n="where.figma.desc">Select design comments or component names to quickly grasp intent.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.workflow.title">For Workflow Diagrams</h3>
+            </div>
+            <p class="card-body" data-i18n="where.workflow.desc">Capture complex flow charts to clearly understand structure and process.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.paper.title">In AI Research Papers</h3>
+            </div>
+            <p class="card-body" data-i18n="where.paper.desc">Select cutting-edge methods or formulas to explain concepts in plain language.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.x.title">On X (Twitter)</h3>
+            </div>
+            <p class="card-body" data-i18n="where.x.desc">Select long threads or technical terms to instantly grasp context and key points.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.producthunt.title">On Product Hunt</h3>
+            </div>
+            <p class="card-body" data-i18n="where.producthunt.desc">Select product descriptions to quickly understand features and value.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.lovable.title">On Lovable</h3>
+            </div>
+            <p class="card-body" data-i18n="where.lovable.desc">Explain generated code or prompts in place. Develop smoothly.</p>
           </article>
         </div>
       </section>

@@ -137,25 +137,23 @@
     <main>
       <!-- Hero -->
       <section class="container hero">
-        <div class="hero-card">
-          <div class="hero-content">
-            <div class="hero-tagline" data-i18n="hero.tagline"><span class="grad-white">AIを使いこなすためのAI</span></div>
-            <h1 class="hero-title" data-i18n="hero.title">
-              画面のぜんぶ、<span class="grad-white">超高速解説</span>
-            </h1>
-            <p class="hero-sub" data-i18n="hero.subtitle">
-              もう「コピーして、画面遷移して、貼り付けて、出力を待つ」なんて無駄な手間は不要です。テキスト、コード、画像、図表、URL。あらゆる情報を一瞬で解説。あなたの作業を超高速にします。
-            </p>
-            <div class="hero-cta">
-              <a id="download-btn" href="/ja/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">Mac用ダウンロード</a>
-            </div>
+        <div class="hero-content">
+          <div class="hero-tagline" data-i18n="hero.tagline"><span class="grad-white">AIを使いこなすためのデスクトップAI</span></div>
+          <h1 class="hero-title" data-i18n="hero.title">
+            画面のぜんぶ、<span class="grad-white">超高速解説</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.subtitle">
+            もう「コピーして、画面遷移して、貼り付けて、出力を待つ」なんて無駄な手間は不要です。テキスト、コード、画像、図表、URL。あらゆる情報を一瞬で解説。あなたの作業を超高速にします。
+          </p>
+          <div class="hero-cta">
+            <a id="download-btn" href="/ja/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">Mac用ダウンロード</a>
           </div>
-          <div class="hero-video">
-            <video class="demo-video" controls playsinline muted loop preload="metadata" aria-label="IrukaDark の操作デモ動画（日本語）">
-              <source src="../media/irukadark_programming_ja.mp4" type="video/mp4" />
-              このブラウザは video タグに対応していません。
-            </video>
-          </div>
+        </div>
+        <div class="hero-video">
+          <video class="demo-video" controls playsinline muted loop preload="metadata" aria-label="IrukaDark の操作デモ動画（日本語）">
+            <source src="../media/irukadark_programming_ja.mp4" type="video/mp4" />
+            このブラウザは video タグに対応していません。
+          </video>
         </div>
       </section>
 
@@ -166,31 +164,36 @@
           <p class="section-sub" data-i18n="features.subtitle">もう「わからない」で止まらない。瞬時理解で作業が加速します。</p>
         </div>
 
-        <div class="grid features">
-          <article class="card">
-            <div class="card-head card-head--stack">
-              <img src="../media/irukadark_key.png" alt="キーボードショートカットのアイコン" class="card-icon" />
-              <h3 class="card-title" data-i18n="features.instant.title">瞬時解説ショートカット</h3>
+        <div class="features-list">
+          <article class="feature-item">
+            <div class="feature-content">
+              <h3 class="feature-title" data-i18n="features.instant.title">プロンプト不要の超高速スマート解説</h3>
+              <p class="feature-description" data-i18n="features.instant.description">わざわざ「このエラーコードの意味を教えて」なんてプロンプトを入力する必要はありません。画面に映っている気になる箇所で専用ショートカットを押すだけ。状況に応じて最適なコマンドを切り替えながら、文脈に沿った解説がその場で瞬時に得られます。</p>
             </div>
-            <p class="card-body" data-i18n="features.instant.description">テキストや画面の気になる範囲を選んで専用ショートカットを押すだけ。状況に応じて最適なコマンドを切り替えながら、文脈に沿った解説がその場で得られます。</p>
+            <div class="feature-image">
+              <img src="../media/irukadark_key.png" alt="キーボードショートカットのアイコン" />
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-head card-head--stack">
-              <img src="../media/irukadark_onestop.png" alt="ワークフローのアイコン" class="card-icon" />
-              <h3 class="card-title" data-i18n="features.flow.title">フローを断ち切らない</h3>
+          <article class="feature-item">
+            <div class="feature-content">
+              <h3 class="feature-title" data-i18n="features.flow.title">リアルタイム画面解析AI</h3>
+              <p class="feature-description" data-i18n="features.flow.description">もう、いちいちウィンドウを行き来する必要はありません。「AIに質問するためにテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ」なんてことは不要です。作業の流れを止めることなく、ストレスフリーに疑問を解決できます。</p>
             </div>
-            <p class="card-body" data-i18n="features.flow.description">いちいち別のウィンドウに移動して、知りたいテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ、なんてことは不要です。その場でテキストを選択してOption+A、または範囲を選択してOption+Sを押すだけ。作業の流れを止めることなく、瞬時に疑問を解決できます。</p>
+            <div class="feature-image">
+              <img src="../media/irukadark_onestop.png" alt="ワークフローのアイコン" />
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-head card-head--stack">
-              <img src="../media/irukadark_guard.png" alt="プライバシー保護のアイコン" class="card-icon" />
-              <h3 class="card-title" data-i18n="features.secure.title">シンプルで安全</h3>
+          <article class="feature-item">
+            <div class="feature-content">
+              <h3 class="feature-title" data-i18n="features.secure.title">あらゆるデジタルツールと一緒に</h3>
+              <p class="feature-description" data-i18n="features.secure.description">IrukaDarkはあらゆるツールと併用できます。最新AIプロダクトと一緒に使うことはもちろん。業務用のレガシーなシステムと一緒に使うこともできます。</p>
             </div>
-            <p class="card-body" data-i18n="features.secure.description">IrukaDarkはデータベースを保持しません。あなたのデータはAIの学習に利用されず、プライバシーが守られます。</p>
+            <div class="feature-image">
+              <img src="../media/irukadark_connecttools.png" alt="あらゆるデジタルツールと連携" />
+            </div>
           </article>
-          
         </div>
       </section>
 
@@ -204,97 +207,87 @@
         <div class="grid features">
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="where.web.title">Webサイトの上で使う</h3>
-              <span class="badge-tag" data-i18n="where.web.badge">Web</span>
+              <h3 class="card-title" data-i18n="where.chatgpt.title">ChatGPT・Gemini・Claudeの上で</h3>
             </div>
-            <div class="card-body">
-              <ul class="icon-list">
-                <li>
-                  <span data-i18n="where.web.li1">プログラミング学習</span>
-                  <div class="li-desc" data-i18n="where.web.li1.desc">知らないコードやAPI/パターンをその場で解説。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li2">マーケティング専門用語</span>
-                  <div class="li-desc" data-i18n="where.web.li2.desc">バズワードを噛み砕いて、平易な日本語に。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li3">学術論文</span>
-                  <div class="li-desc" data-i18n="where.web.li3.desc">概念・数式・研究の文脈を手短に要約。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li4">海外サイト・海外資料</span>
-                  <div class="li-desc" data-i18n="where.web.li4.desc">直訳を超えて、自然で文脈に合う説明。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.web.li5">契約書・法的文書</span>
-                  <div class="li-desc" data-i18n="where.web.li5.desc">条項や用語の意味と含意を明確に。</div>
-                </li>
-              </ul>
-            </div>
+            <p class="card-body" data-i18n="where.chatgpt.desc">AIの出力をさらにAIで要約・解説。プロンプトの見直しもその場で。</p>
           </article>
 
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="where.apps.title">アプリの上で使う</h3>
-              <span class="badge-tag" data-i18n="where.apps.badge">アプリ</span>
+              <h3 class="card-title" data-i18n="where.cursor.title">Cursorの上で</h3>
             </div>
-            <div class="card-body">
-              <ul class="icon-list">
-                <li>
-                  <span data-i18n="where.apps.li1">他AIツール</span>
-                  <div class="li-desc" data-i18n="where.apps.li1.desc">出力やプロンプトをその場で要点整理。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li2">ターミナル</span>
-                  <div class="li-desc" data-i18n="where.apps.li2.desc">コマンド・フラグ・エラーを即解説。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li3">SNS</span>
-                  <div class="li-desc" data-i18n="where.apps.li3.desc">スレ・略語・文脈をサクッと把握。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li4">エディタ</span>
-                  <div class="li-desc" data-i18n="where.apps.li4.desc">書きながらコード/文章の理解を補助。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.apps.li5">デザインツール</span>
-                  <div class="li-desc" data-i18n="where.apps.li5.desc">レイヤーやコンポーネント、UI文言を素早く説明。</div>
-                </li>
-              </ul>
-            </div>
+            <p class="card-body" data-i18n="where.cursor.desc">AI生成コードの意図を即座に理解。コードレビューが加速します。</p>
           </article>
 
           <article class="card">
             <div class="card-head">
-              <h3 class="card-title" data-i18n="where.images.title">複雑な画像に使う</h3>
-              <span class="badge-tag" data-i18n="where.images.badge">画像</span>
+              <h3 class="card-title" data-i18n="where.terminal.title">ターミナルの上で</h3>
             </div>
-            <div class="card-body">
-              <ul class="icon-list">
-                <li>
-                  <span data-i18n="where.images.li1">図の説明</span>
-                  <div class="li-desc" data-i18n="where.images.li1.desc">構成要素にラベル付けして流れを解説。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li2">地図の読み取り</span>
-                  <div class="li-desc" data-i18n="where.images.li2.desc">ルートや凡例、ランドマークを読み解く。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li3">コピーできない文字</span>
-                  <div class="li-desc" data-i18n="where.images.li3.desc">画像内の文字を読み取り、意味を説明。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li4">写真の解説</span>
-                  <div class="li-desc" data-i18n="where.images.li4.desc">写っている内容やポイントを簡潔に整理。</div>
-                </li>
-                <li>
-                  <span data-i18n="where.images.li5">オンラインmtg画面</span>
-                  <div class="li-desc" data-i18n="where.images.li5.desc">スライドや画面共有をその場で要約。</div>
-                </li>
-              </ul>
-            </div>
+            <p class="card-body" data-i18n="where.terminal.desc">複雑なコマンドやフラグを選択して即解説。エラーメッセージも瞬時に理解。</p>
           </article>
-          
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.paircoding.title">バイブコーディングで</h3>
+            </div>
+            <p class="card-body" data-i18n="where.paircoding.desc">未知の言語やフレームワークのエラーも即座に解説。コードの意図を瞬時に理解。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.error.title">エラーコードの解説で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.error.desc">見慣れないエラーメッセージを選択して原因と対処法を即座に取得。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.github.title">GitHubの上で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.github.desc">PR・Issue・コードレビューコメントを素早く理解。レビューが捗ります。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.figma.title">Figmaの上で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.figma.desc">デザインコメントやコンポーネント名を選択して意図を素早く把握。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.workflow.title">ワークフロー図の解説で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.workflow.desc">複雑なフロー図をキャプチャして構造と流れを明確に理解。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.paper.title">AI関連の学術論文で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.paper.desc">最新の研究手法や数式を選択して概念を平易に解説。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.x.title">Xの上で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.x.desc">長いスレッドや専門用語を選択して文脈と要点を即座に把握。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.producthunt.title">ProductHuntの上で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.producthunt.desc">新しいプロダクトの説明を選択して機能と価値を素早く理解。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="where.lovable.title">Lovableの上で</h3>
+            </div>
+            <p class="card-body" data-i18n="where.lovable.desc">生成されたコードやプロンプトをその場で解説。開発がスムーズに。</p>
+          </article>
         </div>
       </section>
 
