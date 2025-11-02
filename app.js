@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const translations = {
   en: {
     'meta.title': 'IrukaDark — AI that instantly explains your screen',
-    'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly, open source.',
+    'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly.',
     'header.clone': 'Download for Mac',
     'hero.title': 'Everything on your screen, <span class="grad-white">explained fast</span>',
     'hero.subtitle': 'No more wasting time copying, switching screens, pasting, and waiting for output. Text, code, images, tables, URLs—IrukaDark explains every bit instantly and keeps you moving fast.',
@@ -119,13 +119,13 @@ const translations = {
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Toggle web search mode so IrukaDark pulls in fresh results while it explains.',
     'cta.title': 'Download',
-    'cta.description': 'Download for macOS. Open‑source and free.',
+    'cta.description': 'Download for macOS. Free to use.',
     'cta.button': 'Download for Mac',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
-    'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮、オープンソース。',
+    'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮。',
     'header.clone': 'Mac用ダウンロード',
     'hero.title': '画面のぜんぶ、<span class="grad-white">超高速解説</span>',
     'hero.subtitle': 'もう「コピーして、画面遷移して、貼り付けて、出力を待つ」なんて無駄な手間は不要です。テキスト、コード、画像、図表、URL。あらゆる情報を一瞬で解説。あなたの作業を超高速にします。',
@@ -230,7 +230,7 @@ const translations = {
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。',
     'cta.title': 'ダウンロード',
-    'cta.description': 'macOS向けにダウンロード。オープンソースで無料。',
+    'cta.description': 'macOS向けに無料でダウンロード。',
     'cta.button': 'Mac用ダウンロード',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
     ,
