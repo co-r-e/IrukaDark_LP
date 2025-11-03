@@ -262,7 +262,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 11;
   object-fit: cover;
   background: #000;
   border-radius: 16px;
@@ -334,11 +334,11 @@ body {
 
 /* demo video */
 .demo-media { position: relative; border: none; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 16px 40px rgba(255,77,109,0.08), 0 6px 20px rgba(217,70,239,0.06); width: min(960px, 100%); margin: 0 auto; }
-.demo-wrap { position: relative; aspect-ratio: 16 / 9; width: 100%; border-radius: 16px; overflow: hidden; }
+.demo-wrap { position: relative; aspect-ratio: 16 / 11; width: 100%; border-radius: 16px; overflow: hidden; }
 .demo-video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; background: #000; border-radius: 16px; }
 /* (removed) .demo-notes, .demo-actions: no longer used */
 @media (max-width: 720px) {
-  .demo-wrap { aspect-ratio: 16 / 9; }
+  .demo-wrap { aspect-ratio: 16 / 11; }
 }
 
 /* Information section */
