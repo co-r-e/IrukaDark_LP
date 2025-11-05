@@ -5,10 +5,10 @@ const translations = {
   en: {
     'meta.title': 'IrukaDark — AI that instantly explains your screen',
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly.',
-    'header.clone': 'Free Download for Mac',
+    'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
     'hero.title': 'Thinking without interruption, <span class="grad-white">your full-screen AI assistant</span>',
     'hero.subtitle': 'Code, errors, PRs, charts, papers, tech sites. Instantly understand anything on your screen with a single shortcut.',
-    'hero.cta': 'Free Download for Mac',
+    'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
     'features.title': 'AI that accelerates AI utilization',
@@ -45,10 +45,17 @@ const translations = {
     'languages.note': 'Languages:',
 
     // Where it works
-    'where.title': 'Works where you work',
-    'where.subtitle': 'IrukaDark rides on top of your tools—no context switching.',
-    'where.chatgpt.title': 'On ChatGPT, Gemini & Claude',
+    'where.title': 'Everything You See is Within Reach',
+    'where.subtitle': 'IrukaDark works with all visible content on your screen—no limitations.',
+    'where.engineering': 'Engineering',
+    'where.design': 'Design',
+    'where.productivity': 'Productivity',
+    'where.chatgpt.title': 'On ChatGPT',
     'where.chatgpt.desc': 'Explain AI outputs with AI. Review and refine prompts in place.',
+    'where.gemini.title': 'On Gemini',
+    'where.gemini.desc': 'Quickly understand complex responses and refine your queries for better results.',
+    'where.claude.title': 'On Claude',
+    'where.claude.desc': 'Analyze detailed explanations and improve conversation flow effortlessly.',
     'where.cursor.title': 'On Cursor',
     'where.cursor.desc': 'Understand AI-generated code instantly. Speed up code reviews.',
     'where.terminal.title': 'On Terminal',
@@ -61,10 +68,32 @@ const translations = {
     'where.github.desc': 'Quickly understand PRs, issues, and code review comments. Speed up your workflow.',
     'where.figma.title': 'On Figma',
     'where.figma.desc': 'Select design comments or component names to quickly grasp intent.',
+    'where.canva.title': 'On Canva',
+    'where.canva.desc': 'Understand template structures, design elements, and layout principles instantly.',
+    'where.adobe.title': 'On Adobe',
+    'where.adobe.desc': 'Quickly learn tool functions, effects, and design techniques across Adobe Creative Cloud.',
+    'where.pinterest.title': 'On Pinterest',
+    'where.pinterest.desc': 'Analyze design trends, style references, and visual inspiration boards efficiently.',
+    'where.midjourney.title': 'On Midjourney',
+    'where.midjourney.desc': 'Decode complex prompts and understand AI-generated image variations instantly.',
+    'where.runway.title': 'On Runway',
+    'where.runway.desc': 'Grasp AI video editing techniques and creative workflows with quick explanations.',
     'where.workflow.title': 'For Workflow Diagrams',
     'where.workflow.desc': 'Capture complex flow charts to clearly understand structure and process.',
     'where.paper.title': 'In AI Research Papers',
     'where.paper.desc': 'Select cutting-edge methods or formulas to explain concepts in plain language.',
+    'where.sheets.title': 'On Google Spreadsheet',
+    'where.sheets.desc': 'Understand complex formulas, data patterns, and spreadsheet structures instantly.',
+    'where.excel.title': 'On Excel',
+    'where.excel.desc': 'Decode advanced functions, pivot tables, and data analysis techniques quickly.',
+    'where.powerpoint.title': 'On PowerPoint',
+    'where.powerpoint.desc': 'Grasp presentation structures, design principles, and storytelling approaches efficiently.',
+    'where.notion.title': 'On Notion',
+    'where.notion.desc': 'Navigate databases, templates, and workspace organization with ease.',
+    'where.tldv.title': 'On tl;dv',
+    'where.tldv.desc': 'Quickly summarize meeting insights and action items from video transcripts.',
+    'where.zoom.title': 'On Zoom',
+    'where.zoom.desc': 'Understand meeting features, settings, and collaboration tools in real-time.',
     'where.x.title': 'On X (Twitter)',
     'where.x.desc': 'Select long threads or technical terms to instantly grasp context and key points.',
     'where.producthunt.title': 'On Product Hunt',
@@ -106,18 +135,20 @@ const translations = {
     'howto2.commands.translate.description': 'Translate the last explanation into 17 supported languages—or paraphrase in the same language—just by naming the target.',
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Toggle web search mode so IrukaDark pulls in fresh results while it explains.',
+    'howto2.commands.image.title': '/image',
+    'howto2.commands.image.description': 'Type <code>@image</code> followed by a space and your prompt in the chat to generate images. Use <code>/image</code> to configure image size and the number of images to generate in parallel.',
     'cta.title': 'Download',
     'cta.description': 'Download for macOS. Free to use.',
-    'cta.button': 'Free Download for Mac',
+    'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
   },
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
     'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮。',
-    'header.clone': 'Mac用無料ダウンロード',
+    'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
     'hero.title': '思考を止めない、<br><span class="grad-white">全画面AIアシスタント</span>',
     'hero.subtitle': 'コードも、エラーも、PRも、図表も、論文も、技術サイトも。画面に映るあらゆる情報をショートカット一発で瞬間理解。',
-    'hero.cta': 'Mac用無料ダウンロード',
+    'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
     'features.title': 'AI活用を加速するAI',
@@ -144,10 +175,17 @@ const translations = {
     'usecases.legal.description': '重要な契約書や法的文書を確認していて、専門的な条項や用語の意味を把握したいとき。理解をサポートします。',
 
     // どこで使えるか
-    'where.title': 'いつもの画面でそのまま',
-    'where.subtitle': 'いつものツールの上に重ねて、すぐ使えます。',
-    'where.chatgpt.title': 'ChatGPT・Gemini・Claudeの上で',
+    'where.title': 'あなたに見えているものは全部対象',
+    'where.subtitle': '画面に表示されているあらゆるコンテンツで、IrukaDarkが使えます。',
+    'where.engineering': 'Engineering',
+    'where.design': 'Design',
+    'where.productivity': 'Productivity',
+    'where.chatgpt.title': 'ChatGPTの上で',
     'where.chatgpt.desc': 'AIの出力をさらにAIで要約・解説。プロンプトの見直しもその場で。',
+    'where.gemini.title': 'Geminiの上で',
+    'where.gemini.desc': '複雑なレスポンスを素早く理解し、クエリを改善してより良い結果を。',
+    'where.claude.title': 'Claudeの上で',
+    'where.claude.desc': '詳細な説明を分析し、会話の流れをスムーズに改善。',
     'where.cursor.title': 'Cursorの上で',
     'where.cursor.desc': 'AI生成コードの意図を即座に理解。コードレビューが加速します。',
     'where.terminal.title': 'ターミナルの上で',
@@ -160,10 +198,32 @@ const translations = {
     'where.github.desc': 'PR・Issue・コードレビューコメントを素早く理解。レビューが捗ります。',
     'where.figma.title': 'Figmaの上で',
     'where.figma.desc': 'デザインコメントやコンポーネント名を選択して意図を素早く把握。',
+    'where.canva.title': 'Canvaの上で',
+    'where.canva.desc': 'テンプレートの構造やデザイン要素、レイアウト原則を即座に理解。',
+    'where.adobe.title': 'Adobeの上で',
+    'where.adobe.desc': 'Adobe Creative Cloudのツール機能、エフェクト、デザインテクニックを素早く学習。',
+    'where.pinterest.title': 'Pinterestの上で',
+    'where.pinterest.desc': 'デザイントレンドやスタイルリファレンス、ビジュアルインスピレーションボードを効率的に分析。',
+    'where.midjourney.title': 'Midjourneyの上で',
+    'where.midjourney.desc': '複雑なプロンプトを解読し、AI生成画像のバリエーションを即座に理解。',
+    'where.runway.title': 'Runwayの上で',
+    'where.runway.desc': 'AI動画編集テクニックやクリエイティブワークフローを素早く把握。',
     'where.workflow.title': 'ワークフロー図の解説で',
     'where.workflow.desc': '複雑なフロー図をキャプチャして構造と流れを明確に理解。',
     'where.paper.title': 'AI関連の学術論文で',
     'where.paper.desc': '最新の研究手法や数式を選択して概念を平易に解説。',
+    'where.sheets.title': 'Google Spreadsheetの上で',
+    'where.sheets.desc': '複雑な数式やデータパターン、スプレッドシート構造を即座に理解。',
+    'where.excel.title': 'Excelの上で',
+    'where.excel.desc': '高度な関数、ピボットテーブル、データ分析手法を素早く解読。',
+    'where.powerpoint.title': 'PowerPointの上で',
+    'where.powerpoint.desc': 'プレゼン構造、デザイン原則、ストーリーテリング手法を効率的に把握。',
+    'where.notion.title': 'Notionの上で',
+    'where.notion.desc': 'データベース、テンプレート、ワークスペース構成を簡単にナビゲート。',
+    'where.tldv.title': 'tl;dvの上で',
+    'where.tldv.desc': 'ビデオトランスクリプトから会議の洞察とアクションアイテムを素早く要約。',
+    'where.zoom.title': 'Zoomの上で',
+    'where.zoom.desc': '会議機能、設定、コラボレーションツールをリアルタイムで理解。',
     'where.x.title': 'Xの上で',
     'where.x.desc': '長いスレッドや専門用語を選択して文脈と要点を即座に把握。',
     'where.producthunt.title': 'ProductHuntの上で',
@@ -205,9 +265,11 @@ const translations = {
     'howto2.commands.translate.description': '直前の解説を指定した言語に翻訳。対応言語は17種類で、言い換えにも使えます。',
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。',
+    'howto2.commands.image.title': '/image',
+    'howto2.commands.image.description': 'チャット欄に <code>@image</code> と打って半角スペースを入れてからプロンプトを入力すると画像を生成できます。<code>/image</code> では生成する画像のサイズや並列同時生成する画像の枚数を設定できます。',
     'cta.title': 'ダウンロード',
     'cta.description': 'macOS向けに無料でダウンロード。',
-    'cta.button': 'Mac用無料ダウンロード',
+    'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
     ,
     // Demo section
@@ -227,6 +289,11 @@ let currentLang = 'en'; // デフォルトは英語
 // Information notices (language-specific)
 const infoNotices = {
   ja: [
+    {
+      date: '2025-11-05',
+      title: 'v1.1.0 クリップボードワークスペース',
+      body: 'IrukaDark v1.1.0 で履歴/スニペットタブ付きのクリップボードワークスペースが登場しました。最大30件を自動で記録し、重複除去・検索・再コピー・削除に対応。スニペット管理もフォルダとインライン編集、永続化に対応し、よく使う定型文を整理できます。ウィンドウ制御も改善され、グローバルショートカットで常にチャットを最前面に表示し、透明度設定も維持されるようになりました。配布物には AGPL-3.0 の全文ライセンスも同梱しています。'
+    },
     {
       date: '2025-10-30',
       title: 'v1.0.34 画像生成機能を追加',
@@ -259,6 +326,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-11-05',
+      title: 'v1.1.0 Clipboard Workspace',
+      body: 'IrukaDark v1.1.0 debuts a clipboard workspace with History/Snippet tabs that captures up to 30 entries automatically, deduplicates them, persists between launches, and lets you search, re-copy, or delete on the spot. A new snippet manager adds nested folders, inline edits, and persistent storage so common phrases stay organized. Window handling now always brings the chat to the foreground with global shortcuts, keeps custom opacity intact, and returns focus to the composer with blank-space clicks. The bundle now includes the full AGPL-3.0 license text.'
+    },
     {
       date: '2025-10-30',
       title: 'v1.0.34 Image Generation Feature',
@@ -891,9 +963,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!navBtn) return;
     const lang = (document.documentElement && document.documentElement.lang) || currentLang || (window.DEFAULT_LANG || 'en');
     const isMobile = (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) || (window.innerWidth && window.innerWidth <= 720);
-    const desktopLabel = (translations[lang] && translations[lang]['header.clone']) || navBtn.textContent || '';
-    const mobileLabel = (lang === 'ja') ? 'ダウンロード' : 'Download';
-    navBtn.textContent = isMobile ? mobileLabel : desktopLabel;
+    const svgIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>';
+    const desktopLabel = (translations[lang] && translations[lang]['header.clone']) || (svgIcon + (lang === 'ja' ? 'Mac用ダウンロード' : 'Download for Mac'));
+    const mobileLabel = svgIcon + (lang === 'ja' ? 'ダウンロード' : 'Download');
+    navBtn.innerHTML = isMobile ? mobileLabel : desktopLabel;
   }
   // Expose for reuse from elsewhere if needed
   window.applyHeaderCtaResponsiveLabel = applyHeaderCtaResponsiveLabel;
