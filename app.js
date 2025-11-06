@@ -66,6 +66,8 @@ const translations = {
     'where.error.desc': 'Select unfamiliar error messages to get causes and solutions instantly.',
     'where.github.title': 'On GitHub',
     'where.github.desc': 'Quickly understand PRs, issues, and code review comments. Speed up your workflow.',
+    'where.aws.title': 'On AWS',
+    'where.aws.desc': 'Understand complex AWS services and error messages instantly. Select console screens or logs for explanations.',
     'where.figma.title': 'On Figma',
     'where.figma.desc': 'Select design comments or component names to quickly grasp intent.',
     'where.canva.title': 'On Canva',
@@ -196,6 +198,8 @@ const translations = {
     'where.error.desc': '見慣れないエラーメッセージを選択して原因と対処法を即座に取得。',
     'where.github.title': 'GitHubの上で',
     'where.github.desc': 'PR・Issue・コードレビューコメントを素早く理解。レビューが捗ります。',
+    'where.aws.title': 'AWSの上で',
+    'where.aws.desc': '複雑なAWSサービスやエラーメッセージを即座に理解。コンソール画面やログを選択して解説。',
     'where.figma.title': 'Figmaの上で',
     'where.figma.desc': 'デザインコメントやコンポーネント名を選択して意図を素早く把握。',
     'where.canva.title': 'Canvaの上で',
@@ -212,7 +216,7 @@ const translations = {
     'where.workflow.desc': '複雑なフロー図をキャプチャして構造と流れを明確に理解。',
     'where.paper.title': 'AI関連の学術論文で',
     'where.paper.desc': '最新の研究手法や数式を選択して概念を平易に解説。',
-    'where.sheets.title': 'Google Spreadsheetの上で',
+    'where.sheets.title': 'Googleスプレッドシートの上で',
     'where.sheets.desc': '複雑な数式やデータパターン、スプレッドシート構造を即座に理解。',
     'where.excel.title': 'Excelの上で',
     'where.excel.desc': '高度な関数、ピボットテーブル、データ分析手法を素早く解読。',
@@ -290,9 +294,14 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
-      date: '2025-11-05',
-      title: 'v1.1.0 クリップボードワークスペース',
-      body: 'IrukaDark v1.1.0 で履歴/スニペットタブ付きのクリップボードワークスペースが登場しました。最大30件を自動で記録し、重複除去・検索・再コピー・削除に対応。スニペット管理もフォルダとインライン編集、永続化に対応し、よく使う定型文を整理できます。ウィンドウ制御も改善され、グローバルショートカットで常にチャットを最前面に表示し、透明度設定も維持されるようになりました。配布物には AGPL-3.0 の全文ライセンスも同梱しています。'
+      date: '2025-11-06',
+      title: 'v1.1.4 ランチャー刷新 & Spotlight検索',
+      body: 'IrukaDark v1.1.4 ではランチャーを単一ビューに再設計し、アプリ・ファイル・システムアクションをフィルターやショートカットで横断検索できます。Spotlight（mdfind）連携で最近開いたファイルを素早く見つけ、スリープや再起動などの操作も確認付きで直接実行可能に。Gemini 画像生成も参照画像の複数投入と詳細ログに対応しました。'
+    },
+    {
+      date: '2025-11-06',
+      title: 'v1.1.3 タブナビ & 翻訳リフレッシュ',
+      body: 'IrukaDark v1.1.3 では Chat / Clipboard / Snippet / Memo が Tab・Shift+Tab で切り替えられるようになり、小さなウィンドウでもアクティブタブが自動スクロールで見失われません。タイトルバーのタブストリップも横スクロール対応となり、表示幅が狭くてもラベルが欠けません。さらにクリップボードワークスペースの翻訳を全言語で見直し、新しいタブ名や「添付を追加」のアクションが自然な表現に揃いました。'
     },
     {
       date: '2025-10-30',
@@ -327,9 +336,14 @@ const infoNotices = {
   ],
   en: [
     {
-      date: '2025-11-05',
-      title: 'v1.1.0 Clipboard Workspace',
-      body: 'IrukaDark v1.1.0 debuts a clipboard workspace with History/Snippet tabs that captures up to 30 entries automatically, deduplicates them, persists between launches, and lets you search, re-copy, or delete on the spot. A new snippet manager adds nested folders, inline edits, and persistent storage so common phrases stay organized. Window handling now always brings the chat to the foreground with global shortcuts, keeps custom opacity intact, and returns focus to the composer with blank-space clicks. The bundle now includes the full AGPL-3.0 license text.'
+      date: '2025-11-06',
+      title: 'v1.1.4 Launcher redesign & Spotlight search',
+      body: 'IrukaDark v1.1.4 redesigns the launcher into a single view that searches apps, files, and system commands with filters and keyboard control. Spotlight-powered quick file search surfaces up to 15 recent documents, while sleep, restart, and other system actions can run directly with confirmation. Gemini image generation now accepts multiple reference images and ships richer response logging.'
+    },
+    {
+      date: '2025-11-06',
+      title: 'v1.1.3 Tab navigation & refreshed copy',
+      body: 'IrukaDark v1.1.3 lets you cycle across Chat, Clipboard, Snippet, and Memo with Tab / Shift+Tab while auto-scrolling the active tab into view so the clipboard window stays keyboard-friendly on compact displays. The titlebar tab strip now scrolls horizontally with hidden scrollbars, preventing clipped labels on narrow windows. Clipboard workspace translations have also been refreshed across every locale, covering the updated Clipboard tab name and “Add attachment” action.'
     },
     {
       date: '2025-10-30',
