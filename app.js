@@ -1,5 +1,3 @@
-document.getElementById('year').textContent = new Date().getFullYear();
-
 // Multi-language support
 const translations = {
   en: {
@@ -42,7 +40,6 @@ const translations = {
     // Languages section
     'languages.title': 'Supported Languages',
     'languages.subtitle': 'IrukaDark delivers explanations in 17 languages worldwide.',
-    'languages.note': 'Languages:',
 
     // Where it works
     'where.title': 'Everything You See is Within Reach',
@@ -68,6 +65,8 @@ const translations = {
     'where.github.desc': 'Quickly understand PRs, issues, and code review comments. Speed up your workflow.',
     'where.aws.title': 'On AWS',
     'where.aws.desc': 'Understand complex AWS services and error messages instantly. Select console screens or logs for explanations.',
+    'where.huggingface.title': 'On Hugging Face',
+    'where.huggingface.desc': 'Quickly understand model architectures, parameters, and documentation. Get instant explanations of datasets and model cards.',
     'where.figma.title': 'On Figma',
     'where.figma.desc': 'Select design comments or component names to quickly grasp intent.',
     'where.canva.title': 'On Canva',
@@ -102,7 +101,7 @@ const translations = {
     'where.producthunt.desc': 'Select product descriptions to quickly understand features and value.',
     'where.lovable.title': 'On Lovable',
     'where.lovable.desc': 'Explain generated code or prompts in place. Develop smoothly.',
-    'howto.title': 'How It Works',
+    'howto.title': 'Shortcuts',
     'howto.subtitle': 'Use global shortcuts to trigger IrukaDark instantly.',
     'howto.cards.instant.title': 'Option+A — Quick Explain',
     'howto.cards.instant.caption': 'Mac: Option+A / Windows/Linux: Alt+A',
@@ -125,7 +124,7 @@ const translations = {
     'howto.cards.screenshotDetail.title': 'Option+Shift+S — Screenshot Deep Dive',
     'howto.cards.screenshotDetail.caption': 'Mac: Option+Shift+S / Windows/Linux: Alt+Shift+S',
     'howto.cards.screenshotDetail.description': 'Press Option+Shift+S (Alt+Shift+S) for a more detailed analysis of the region you capture—ideal for dense visuals.',
-    'howto2.title': 'How It Works 2',
+    'howto2.title': 'Slash Commands',
     'howto2.subtitle': 'Slash commands that build on your latest explanation.',
     'howto2.commands.what.title': '/what do you mean?',
     'howto2.commands.what.description': 'Ask for a deeper dive on the previous answer, adding missing context or nuance.',
@@ -142,7 +141,8 @@ const translations = {
     'cta.title': 'Download',
     'cta.description': 'Download for macOS. Free to use.',
     'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download',
-    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
+    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.',
+    'footer.terms': 'Terms of Service'
   },
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
@@ -200,6 +200,8 @@ const translations = {
     'where.github.desc': 'PR・Issue・コードレビューコメントを素早く理解。レビューが捗ります。',
     'where.aws.title': 'AWSの上で',
     'where.aws.desc': '複雑なAWSサービスやエラーメッセージを即座に理解。コンソール画面やログを選択して解説。',
+    'where.huggingface.title': 'Hugging Faceの上で',
+    'where.huggingface.desc': 'モデルのアーキテクチャやパラメータ、ドキュメントを素早く理解。データセットやモデルカードの説明も即座に取得。',
     'where.figma.title': 'Figmaの上で',
     'where.figma.desc': 'デザインコメントやコンポーネント名を選択して意図を素早く把握。',
     'where.canva.title': 'Canvaの上で',
@@ -234,7 +236,7 @@ const translations = {
     'where.producthunt.desc': '新しいプロダクトの説明を選択して機能と価値を素早く理解。',
     'where.lovable.title': 'Lovableの上で',
     'where.lovable.desc': '生成されたコードやプロンプトをその場で解説。開発がスムーズに。',
-    'howto.title': '使い方',
+    'howto.title': 'ショートカット',
     'howto.subtitle': 'ショートカットでいつでもIrukaDarkを呼び出せます。',
     'howto.cards.instant.title': 'Option+A — 即解説',
     'howto.cards.instant.caption': 'Mac: Option+A / Win・Linux: Alt+A',
@@ -257,7 +259,7 @@ const translations = {
     'howto.cards.screenshotDetail.title': 'Option+Shift+S — スクショ詳細解説',
     'howto.cards.screenshotDetail.caption': 'Mac: Option+Shift+S / Win・Linux: Alt+Shift+S',
     'howto.cards.screenshotDetail.description': '情報量の多いスライドや図解はOption+Shift+S（Alt+Shift+S）で詳細版を。細部まで丁寧に解説を受け取れます。',
-    'howto2.title': '使い方2',
+    'howto2.title': 'スラッシュコマンド',
     'howto2.subtitle': 'スラッシュコマンドで直前の解説をさらに活用。',
     'howto2.commands.what.title': '/what do you mean?',
     'howto2.commands.what.description': '直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。',
@@ -274,7 +276,8 @@ const translations = {
     'cta.title': 'ダウンロード',
     'cta.description': 'macOS向けに無料でダウンロード。',
     'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
-    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.'
+    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.',
+    'footer.terms': '利用規約'
     ,
     // Demo section
     'demo.title': '操作デモを見る',
@@ -283,8 +286,7 @@ const translations = {
 
     // Languages section
     'languages.title': '対応言語',
-    'languages.subtitle': 'IrukaDark は世界17言語でそのまま解説を返します。',
-    'languages.note': 'サポート言語：'
+    'languages.subtitle': 'IrukaDark は世界17言語でそのまま解説を返します。'
   }
 };
 
@@ -493,6 +495,12 @@ function handleClickOutside(event) {
 
 // Add event listeners for language buttons
 document.addEventListener('DOMContentLoaded', () => {
+  // Set year in footer
+  const yearElement = document.getElementById('year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
   // Mobile navigation toggle
   const nav = document.querySelector('.nav');
   const navToggle = document.getElementById('navToggle');
@@ -590,7 +598,9 @@ document.addEventListener('DOMContentLoaded', () => {
       '/downloads': { en: '/downloads', ja: '/ja/downloads' },
       '/ja/downloads': { en: '/downloads', ja: '/ja/downloads' },
       '/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' },
-      '/ja/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' }
+      '/ja/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' },
+      '/terms': { en: '/terms', ja: '/ja/terms' },
+      '/ja/terms': { en: '/terms', ja: '/ja/terms' }
     };
 
     const fallback = routeMap['/'];
