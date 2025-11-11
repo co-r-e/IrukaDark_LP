@@ -605,13 +605,14 @@ body:has([href*="user-gaide"]) .grid.features {
 .feature-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .feature-title {
   font-size: 36px;
   font-weight: 700;
   letter-spacing: -0.8px;
+  line-height: 1.15;
   margin: 0;
   background: linear-gradient(90deg, var(--primary), var(--primary-2));
   -webkit-background-clip: text;
@@ -621,7 +622,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
 .feature-description {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--muted);
   margin: 0;
 }
@@ -663,14 +664,6 @@ body:has([href*="user-gaide"]) .grid.features {
 .card-icon-wrapper { width: 32px; height: 32px; margin-bottom: 16px; display: flex; align-items: center; justify-content: flex-start; }
 .card-icon { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; display: block; }
 .card-icon-placeholder { border: 1px solid var(--border-soft); border-radius: 6px; background: transparent; }
-
-/* X logo styling - black background with white logo */
-.card-icon-wrapper img[src*="x-logo"] {
-  background: #000000;
-  padding: 6px;
-  border-radius: 6px;
-  filter: brightness(0) invert(1);
-}
 .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .card-head--stack { flex-direction: column; align-items: stretch; gap: 16px; }
 .card-head--stack .card-title { text-align: left; }
@@ -841,9 +834,11 @@ body:has([href*="user-gaide"]) .grid.features {
   }
   .feature-title {
     font-size: 32px;
+    line-height: 1.15;
   }
   .feature-description {
     font-size: 15px;
+    line-height: 1.5;
   }
   .hero {
     flex-direction: column;
@@ -989,11 +984,13 @@ body:has([href*="user-gaide"]) .grid.features {
   }
   .feature-title {
     font-size: 26px;
+    line-height: 1.15;
     order: 1;
     text-align: center;
   }
   .feature-description {
     font-size: 15px;
+    line-height: 1.5;
     order: 3;
   }
   .feature-image {
@@ -1173,6 +1170,20 @@ body:has([href*="user-gaide"]) .grid.features {
     gap: 8px;
     margin: 0 0 14px;
   }
+  /* Languages: 2 columns on mobile */
+  .inline-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .inline-list li {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .flag-icon {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1257,6 +1268,20 @@ body:has([href*="user-gaide"]) .grid.features {
   }
   .shortcut-keys .plus {
     font-size: 16px;
+  }
+  /* Languages: 2 columns on mobile */
+  .inline-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .inline-list li {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .flag-icon {
+    width: 16px;
+    height: 16px;
   }
 }
 
