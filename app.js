@@ -144,7 +144,12 @@ const translations = {
     'cta.description': 'Download for macOS. Free to use.',
     'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.',
-    'footer.terms': 'Terms of Service'
+    'footer.terms': 'Terms of Service',
+    'footer.privacy': 'Privacy Policy',
+    'terms.title': 'Terms of Service',
+    'terms.updated': 'Last updated: September 3, 2025',
+    'privacy.title': 'Privacy Policy',
+    'privacy.updated': 'Last updated: December 22, 2021'
   },
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
@@ -281,8 +286,12 @@ const translations = {
     'cta.description': 'macOS向けに無料でダウンロード。',
     'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
     'footer.copyright': '© <span id="year"></span> コーレ株式会社 All rights reserved.',
-    'footer.terms': '利用規約'
-    ,
+    'footer.terms': '利用規約',
+    'footer.privacy': 'プライバシーポリシー',
+    'terms.title': '利用規約',
+    'terms.updated': '最終更新日: 2025年9月3日',
+    'privacy.title': 'プライバシーポリシー',
+    'privacy.updated': '最終更新日: 2021年12月22日',
     // Demo section
     'demo.title': '操作デモを見る',
     'demo.subtitle': 'テキスト選択や範囲キャプチャに反応して、その場でAIが解説します。',
@@ -614,7 +623,9 @@ document.addEventListener('DOMContentLoaded', () => {
       '/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' },
       '/ja/user-gaide': { en: '/user-gaide', ja: '/ja/user-gaide' },
       '/terms': { en: '/terms', ja: '/ja/terms' },
-      '/ja/terms': { en: '/terms', ja: '/ja/terms' }
+      '/ja/terms': { en: '/terms', ja: '/ja/terms' },
+      '/privacy': { en: '/privacy', ja: '/ja/privacy' },
+      '/ja/privacy': { en: '/privacy', ja: '/ja/privacy' }
     };
 
     const fallback = routeMap['/'];
