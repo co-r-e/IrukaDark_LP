@@ -347,23 +347,24 @@ body {
 .hero {
   padding: var(--space-hero-t) 0 var(--space-hero-b);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: 48px;
+  gap: 60px;
   min-height: 600px;
 }
-.hero-content { position: relative; z-index: 2; text-align: center; max-width: 1000px; }
-.hero-title { font-size: clamp(44px, 6vw, 72px); line-height: 1.1; letter-spacing: -1.2px; margin: 0 0 20px; color: var(--text); text-align: center; }
-.hero-tagline { font-size: clamp(24px, 3.5vw, 36px); line-height: 1.3; letter-spacing: -0.5px; margin: 0 0 20px; color: var(--text); text-align: center; font-weight: 700; }
+.hero-content { position: relative; z-index: 2; text-align: left; flex: 1; max-width: 600px; }
+.hero-title { font-size: clamp(36px, 4.5vw, 54px); line-height: 1.1; letter-spacing: -1.2px; margin: 0 0 20px; color: var(--text); text-align: left; }
+.hero-tagline { font-size: clamp(24px, 3.5vw, 36px); line-height: 1.3; letter-spacing: -0.5px; margin: 0 0 20px; color: var(--text); text-align: left; font-weight: 700; }
 .grad-white { background: linear-gradient(90deg, var(--primary), var(--primary-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero-sub { max-width: 800px; margin: 0 auto 36px; color: var(--text); font-size: 18px; line-height: 1.6; text-align: center; }
-.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.hero-sub { max-width: 100%; margin: 0 0 36px; color: var(--text); font-size: 18px; line-height: 1.6; text-align: left; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
 .hero-video {
   position: relative;
   z-index: 2;
+  flex: 1;
   width: 100%;
-  max-width: 1120px;
+  max-width: 640px;
   border-radius: 16px;
   overflow: hidden;
   background: #000;
@@ -477,19 +478,77 @@ body {
 .modal-body p { margin: 6px 0 10px; color: var(--muted); }
 .modal-body ul { margin: 6px 0 16px 18px; }
 .modal-body li { margin: 4px 0; }
-.kbd { display: inline-block; padding: 2px 6px; border: 1px solid var(--border-strong); border-radius: 4px; background: rgba(255,255,255,0.9); font-family: 'SF Mono', ui-monospace, monospace; font-size: 12px; }
-.shortcut-keys { display: inline-flex; align-items: center; gap: 6px; margin: 12px 0 4px; flex-wrap: wrap; }
-.shortcut-keys .kbd { min-width: 28px; text-align: center; }
-.shortcut-keys .plus { color: var(--muted); font-weight: 600; }
+.kbd {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid #ff1493;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff4d6d 0%, #ff69b4 100%);
+  box-shadow: 0 4px 16px rgba(255,77,109,0.5), 0 2px 8px rgba(255,105,180,0.4);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  gap: 2px;
+  min-width: 70px;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+.kbd:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 8px rgba(255,77,109,0.4), 0 1px 4px rgba(255,105,180,0.3);
+}
+.kbd-symbol {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+.kbd-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.kbd:not(:has(.kbd-label)) {
+  min-width: 70px;
+  min-height: 62px;
+  padding: 10px 16px;
+}
+.kbd:not(:has(.kbd-label)) .kbd-symbol {
+  font-size: 24px;
+}
+.shortcut-keys { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 16px; flex-wrap: wrap; justify-content: center; }
+.shortcut-keys .kbd { min-width: 70px; }
+.shortcut-keys .plus { color: var(--muted); font-weight: 600; font-size: 18px; }
 .shortcut-caption { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
 
 .grid.features { display: grid; gap: 24px; grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 1000px; margin: 0 auto; }
 
 /* User Guide: single column layout */
-body:has([href*="user-gaide"]) .grid.features,
-.grid.features.howto-grid {
+body:has([href*="user-gaide"]) .grid.features {
   grid-template-columns: 1fr;
-  max-width: 800px;
+}
+
+/* Howto section groups */
+.howto-group {
+  margin-bottom: 60px;
+}
+.howto-group:last-child {
+  margin-bottom: 0;
+}
+.howto-group-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 24px;
+  text-align: left;
+}
+.grid.features.howto-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: 0;
 }
 
 /* Vertical cards for where section */
@@ -604,11 +663,27 @@ body:has([href*="user-gaide"]) .grid.features,
 .card-icon-wrapper { width: 32px; height: 32px; margin-bottom: 16px; display: flex; align-items: center; justify-content: flex-start; }
 .card-icon { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; display: block; }
 .card-icon-placeholder { border: 1px solid var(--border-soft); border-radius: 6px; background: transparent; }
+
+/* X logo styling - black background with white logo */
+.card-icon-wrapper img[src*="x-logo"] {
+  background: #000000;
+  padding: 6px;
+  border-radius: 6px;
+  filter: brightness(0) invert(1);
+}
 .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .card-head--stack { flex-direction: column; align-items: stretch; gap: 16px; }
 .card-head--stack .card-title { text-align: left; }
 .card-title { margin: 0; font-size: 20px; letter-spacing: -0.3px; font-weight: 600; line-height: 1.3; }
 .card-body { margin: 0; color: var(--muted); line-height: 1.6; font-size: 15px; }
+
+/* Slash command cards gradient styling */
+#how2 .card .card-title {
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 /* FAQ tables */
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 8px; }
@@ -771,17 +846,25 @@ body:has([href*="user-gaide"]) .grid.features,
     font-size: 15px;
   }
   .hero {
+    flex-direction: column;
     text-align: center;
     min-height: auto;
     gap: 40px;
   }
-  .hero-content { max-width: 800px; margin: 0 auto; }
-  .hero-title { font-size: clamp(38px, 5.5vw, 60px); text-align: center; }
+  .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+  .hero-title { font-size: clamp(36px, 5vw, 54px); text-align: center; }
   .hero-tagline { font-size: clamp(22px, 3.5vw, 30px); text-align: center; }
   .hero-sub { max-width: 700px; margin: 0 auto 32px; text-align: center; font-size: 17px; }
   .hero-cta { justify-content: center; }
+  .hero-video { max-width: 1120px; }
   .section-title { font-size: clamp(28px, 4vw, 40px); }
   .section-head { margin-bottom: 40px; }
+  .grid.features.howto-grid {
+    grid-template-columns: 1fr;
+  }
+  .howto-group-title {
+    text-align: center;
+  }
 }
 
 /* Shortcut mini tutorial */
@@ -852,13 +935,18 @@ body:has([href*="user-gaide"]) .grid.features,
 }
 @media (max-width: 900px) and (min-width: 721px) {
   .hero {
+    flex-direction: column;
     gap: 36px;
   }
+  .hero-content { text-align: center; }
+  .hero-title { text-align: center; }
+  .hero-sub { text-align: center; }
+  .hero-cta { justify-content: center; }
   .hero-video {
     max-width: 850px;
   }
   .hero-title {
-    font-size: clamp(36px, 6.5vw, 56px);
+    font-size: clamp(34px, 6vw, 50px);
   }
   .hero-tagline {
     font-size: clamp(20px, 3.5vw, 28px);
@@ -870,6 +958,12 @@ body:has([href*="user-gaide"]) .grid.features,
   }
   .text-demo {
     padding: 18px;
+  }
+  .grid.features.howto-grid {
+    grid-template-columns: 1fr;
+  }
+  .howto-group-title {
+    text-align: center;
   }
 }
 
@@ -978,11 +1072,12 @@ body:has([href*="user-gaide"]) .grid.features,
   }
   /* Mobile hero: match other card area width (container default 92%) */
   .hero {
+    flex-direction: column;
     gap: 32px;
   }
-  .hero-content { max-width: 100%; margin: 0 auto; }
+  .hero-content { max-width: 100%; margin: 0 auto; text-align: center; }
   .hero-title {
-    font-size: clamp(32px, 8.5vw, 52px);
+    font-size: clamp(30px, 7.5vw, 46px);
     text-align: center;
     line-height: 1.15;
     margin-bottom: 16px;
@@ -1054,6 +1149,30 @@ body:has([href*="user-gaide"]) .grid.features,
   .kbd-demo .keys { flex-wrap: wrap; }
   .kbd-demo .kbd { min-width: 24px; height: 24px; font-size: 12px; }
   .selection-demo { width: 100px; height: 32px; }
+  .howto-group { margin-bottom: 48px; }
+  .howto-group-title { font-size: 20px; margin-bottom: 20px; }
+  .kbd {
+    padding: 8px 12px;
+    min-width: 60px;
+  }
+  .kbd-symbol {
+    font-size: 20px;
+  }
+  .kbd-label {
+    font-size: 10px;
+  }
+  .kbd:not(:has(.kbd-label)) {
+    min-width: 60px;
+    min-height: 54px;
+    padding: 8px 12px;
+  }
+  .kbd:not(:has(.kbd-label)) .kbd-symbol {
+    font-size: 20px;
+  }
+  .shortcut-keys {
+    gap: 8px;
+    margin: 0 0 14px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1070,11 +1189,14 @@ body:has([href*="user-gaide"]) .grid.features,
     right: 12px;
   }
   .hero {
+    flex-direction: column;
     gap: 28px;
   }
+  .hero-content { text-align: center; }
   .hero-title {
-    font-size: clamp(28px, 9.5vw, 42px);
+    font-size: clamp(26px, 8.5vw, 38px);
     margin-bottom: 12px;
+    text-align: center;
   }
   .hero-tagline {
     font-size: clamp(16px, 5vw, 22px);
@@ -1109,6 +1231,33 @@ body:has([href*="user-gaide"]) .grid.features,
   }
   .faq-table { font-size: 10px; min-width: 900px; }
   .faq-table th, .faq-table td { padding: 7px 8px; }
+  .howto-group { margin-bottom: 40px; }
+  .howto-group-title { font-size: 18px; margin-bottom: 16px; }
+  .kbd {
+    padding: 7px 10px;
+    min-width: 54px;
+  }
+  .kbd-symbol {
+    font-size: 18px;
+  }
+  .kbd-label {
+    font-size: 9px;
+  }
+  .kbd:not(:has(.kbd-label)) {
+    min-width: 54px;
+    min-height: 48px;
+    padding: 7px 10px;
+  }
+  .kbd:not(:has(.kbd-label)) .kbd-symbol {
+    font-size: 18px;
+  }
+  .shortcut-keys {
+    gap: 6px;
+    margin: 0 0 12px;
+  }
+  .shortcut-keys .plus {
+    font-size: 16px;
+  }
 }
 
 /* Text Demo Animation Styles */
