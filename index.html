@@ -1023,101 +1023,186 @@
           <h2 class="section-title">FAQ</h2>
           <p class="section-sub">Answers to common questions about IrukaDark</p>
         </div>
-        <div class="grid features">
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">What platforms are supported?</h3></div>
-            <p class="card-body">macOS. Download the installer directly from the Downloads page.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">How is it different from a translator?</h3></div>
-            <p class="card-body">It explains text in context—beyond word‑for‑word translation—so you get intent, background, and plain‑language explanations instantly.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">Is my data used for AI training?</h3></div>
-            <p class="card-body">IrukaDark does not use your data for training. However, whether your data is used for training depends on the settings of the LLM API providers that you configure in the app.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">Do I need any developer tools?</h3></div>
-            <p class="card-body">No. Just download the installer from the Downloads page and follow the setup prompts.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">How do I use it quickly?</h3></div>
-            <p class="card-body">Select text and press Option+A for an explanation. For images and graphs, select an area and press Option+S for screenshot analysis.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">Is it free to use?</h3></div>
-            <p class="card-body">Yes. IrukaDark is free to use. Install it via the Downloads page anytime.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">Does it require an internet connection?</h3></div>
-            <p class="card-body">Yes. IrukaDark connects to AI services to generate explanations. Only the content you select (or capture) is sent over HTTPS; IrukaDark does not store your data.</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">What OS permissions are required?</h3></div>
-            <div class="card-body">
-              <div class="table-wrap">
-                <table class="faq-table">
-                  <thead>
-                    <tr>
-                      <th>Permission</th>
-                      <th>macOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Screen capture</td>
-                      <td>Required: Screen Recording</td>
-                    </tr>
-                    <tr>
-                      <td>Accessibility</td>
-                      <td>Required: Accessibility (enables on‑screen selection and global shortcuts)</td>
-                    </tr>
-                    <tr>
-                      <td>Admin rights</td>
-                      <td>Not required</td>
-                    </tr>
-                    <tr>
-                      <td>Network (HTTPS)</td>
-                      <td>Allow outbound HTTPS</td>
-                    </tr>
-                    <tr>
-                      <td>Global shortcuts</td>
-                      <td>System Settings → Keyboard/Shortcuts</td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">What platforms are supported?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>macOS. Download the installer directly from the Downloads page.</p>
               </div>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">What setup do I need on my Mac?</h3></div>
-            <div class="card-body">
-              <div class="table-wrap">
-                <table class="faq-table">
-                  <thead>
-                    <tr>
-                      <th>Item</th>
-                      <th>macOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Developer tools</td>
-                      <td>Not required for normal use</td>
-                    </tr>
-                    <tr>
-                      <td>Screen capture</td>
-                      <td>Screen Recording permission required for screenshots</td>
-                    </tr>
-                    <tr>
-                      <td>Internet</td>
-                      <td>Allow outbound HTTPS</td>
-                    </tr>
-                  </tbody>
-                </table>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">How is it different from a translator?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>It explains text in context—beyond word‑for‑word translation—so you get intent, background, and plain‑language explanations instantly.</p>
               </div>
             </div>
-          </article>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Is my data used for AI training?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>IrukaDark does not use your data for training. However, whether your data is used for training depends on the settings of the LLM API providers that you configure in the app.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Do I need any developer tools?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>No. Just download the installer from the Downloads page and follow the setup prompts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">How do I use it quickly?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Select text and press Option+A for an explanation. For images and graphs, select an area and press Option+S for screenshot analysis.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Is it free to use?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Yes. IrukaDark is free to use. Install it via the Downloads page anytime.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Does it require an internet connection?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Yes. IrukaDark connects to AI services to generate explanations. Only the content you select (or capture) is sent over HTTPS; IrukaDark does not store your data.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">What OS permissions are required?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <div class="table-wrap">
+                  <table class="faq-table">
+                    <thead>
+                      <tr>
+                        <th>Permission</th>
+                        <th>macOS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Screen capture</td>
+                        <td>Required: Screen Recording</td>
+                      </tr>
+                      <tr>
+                        <td>Accessibility</td>
+                        <td>Required: Accessibility (enables on‑screen selection and global shortcuts)</td>
+                      </tr>
+                      <tr>
+                        <td>Admin rights</td>
+                        <td>Not required</td>
+                      </tr>
+                      <tr>
+                        <td>Network (HTTPS)</td>
+                        <td>Allow outbound HTTPS</td>
+                      </tr>
+                      <tr>
+                        <td>Global shortcuts</td>
+                        <td>System Settings → Keyboard/Shortcuts</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">What setup do I need on my Mac?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <div class="table-wrap">
+                  <table class="faq-table">
+                    <thead>
+                      <tr>
+                        <th>Item</th>
+                        <th>macOS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Developer tools</td>
+                        <td>Not required for normal use</td>
+                      </tr>
+                      <tr>
+                        <td>Screen capture</td>
+                        <td>Screen Recording permission required for screenshots</td>
+                      </tr>
+                      <tr>
+                        <td>Internet</td>
+                        <td>Allow outbound HTTPS</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -1134,14 +1219,19 @@
     </div>
 
     <footer class="container footer">
-      <div class="foot-left">
-        <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+      <div class="footer-logo">
+        <img src="./icons/logo.svg" alt="IrukaDark" class="footer-logo-img" />
       </div>
-      <div class="foot-right">
-        <a class="link" href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
-        <a class="link" href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">Company</a>
-        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact</a>
+      <div class="footer-content">
+        <div class="foot-left">
+          <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+        </div>
+        <div class="foot-right">
+          <a class="link" href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
+          <a class="link" href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">Company</a>
+          <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact</a>
+        </div>
       </div>
     </footer>
 

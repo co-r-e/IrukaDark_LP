@@ -1024,101 +1024,186 @@
           <h2 class="section-title">よくある質問</h2>
           <p class="section-sub">IrukaDarkに関するFAQ</p>
         </div>
-        <div class="grid features">
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">対応プラットフォームは？</h3></div>
-            <p class="card-body">macOS に対応。ダウンロードページからインストーラを取得してそのまま使えます。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">翻訳ツールと何が違いますか？</h3></div>
-            <p class="card-body">単語の置き換えではなく、文脈を踏まえた解説を提供します。意図や背景まで含めて、その場で自然な説明が得られます。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">データは学習に利用されますか？</h3></div>
-            <p class="card-body">IrukaDarkはユーザーの利用データを学習に使用しません。ただし、アプリ内で設定するLLM APIプロバイダーの設定によって、データが学習に利用されるかどうかが決まります。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">開発ツールは必要ですか？</h3></div>
-            <p class="card-body">不要です。ダウンロードページからインストーラを入手し、案内に沿ってセットアップするだけで利用できます。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">素早く使うには？</h3></div>
-            <p class="card-body">テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">無料で使えますか？</h3></div>
-            <p class="card-body">はい。IrukaDark は無料でご利用いただけます。ダウンロードページからいつでもインストールできます。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">インターネット接続は必要ですか？</h3></div>
-            <p class="card-body">はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDark がデータを保存することはありません。</p>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">OSごとの許可設定は？</h3></div>
-            <div class="card-body">
-              <div class="table-wrap">
-                <table class="faq-table">
-                  <thead>
-                    <tr>
-                      <th>許可/設定</th>
-                      <th>macOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>画面キャプチャ</td>
-                      <td>必須: 「画面収録」を許可</td>
-                    </tr>
-                    <tr>
-                      <td>アクセシビリティ</td>
-                      <td>必須（ショートカットや画面上選択の操作に必要）</td>
-                    </tr>
-                    <tr>
-                      <td>管理者権限</td>
-                      <td>不要</td>
-                    </tr>
-                    <tr>
-                      <td>ネットワーク（HTTPS）</td>
-                      <td>送信を許可</td>
-                    </tr>
-                    <tr>
-                      <td>グローバルショートカット</td>
-                      <td>システム設定 → キーボード/ショートカット</td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">対応プラットフォームは？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>macOS に対応。ダウンロードページからインストーラを取得してそのまま使えます。</p>
               </div>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-head"><h3 class="card-title">事前に必要なMacの設定は？</h3></div>
-            <div class="card-body">
-              <div class="table-wrap">
-                <table class="faq-table">
-                  <thead>
-                    <tr>
-                      <th>項目</th>
-                      <th>macOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>開発ツール</td>
-                      <td>一般利用では不要</td>
-                    </tr>
-                    <tr>
-                      <td>画面キャプチャ</td>
-                      <td>スクショ解析に「画面収録」の許可が必要</td>
-                    </tr>
-                    <tr>
-                      <td>インターネット</td>
-                      <td>HTTPS通信を許可</td>
-                    </tr>
-                  </tbody>
-                </table>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">翻訳ツールと何が違いますか？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>単語の置き換えではなく、文脈を踏まえた解説を提供します。意図や背景まで含めて、その場で自然な説明が得られます。</p>
               </div>
             </div>
-          </article>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">データは学習に利用されますか？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>IrukaDarkはユーザーの利用データを学習に使用しません。ただし、アプリ内で設定するLLM APIプロバイダーの設定によって、データが学習に利用されるかどうかが決まります。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">開発ツールは必要ですか？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>不要です。ダウンロードページからインストーラを入手し、案内に沿ってセットアップするだけで利用できます。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">素早く使うには？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">無料で使えますか？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>はい。IrukaDark は無料でご利用いただけます。ダウンロードページからいつでもインストールできます。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">インターネット接続は必要ですか？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDark がデータを保存することはありません。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">OSごとの許可設定は？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <div class="table-wrap">
+                  <table class="faq-table">
+                    <thead>
+                      <tr>
+                        <th>許可/設定</th>
+                        <th>macOS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>画面キャプチャ</td>
+                        <td>必須: 「画面収録」を許可</td>
+                      </tr>
+                      <tr>
+                        <td>アクセシビリティ</td>
+                        <td>必須（ショートカットや画面上選択の操作に必要）</td>
+                      </tr>
+                      <tr>
+                        <td>管理者権限</td>
+                        <td>不要</td>
+                      </tr>
+                      <tr>
+                        <td>ネットワーク（HTTPS）</td>
+                        <td>送信を許可</td>
+                      </tr>
+                      <tr>
+                        <td>グローバルショートカット</td>
+                        <td>システム設定 → キーボード/ショートカット</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">事前に必要なMacの設定は？</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <div class="table-wrap">
+                  <table class="faq-table">
+                    <thead>
+                      <tr>
+                        <th>項目</th>
+                        <th>macOS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>開発ツール</td>
+                        <td>一般利用では不要</td>
+                      </tr>
+                      <tr>
+                        <td>画面キャプチャ</td>
+                        <td>スクショ解析に「画面収録」の許可が必要</td>
+                      </tr>
+                      <tr>
+                        <td>インターネット</td>
+                        <td>HTTPS通信を許可</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -1135,14 +1220,19 @@
     </div>
 
     <footer class="container footer">
-      <div class="foot-left">
-        <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+      <div class="footer-logo">
+        <img src="../icons/logo.svg" alt="IrukaDark（イルカダーク）" class="footer-logo-img" />
       </div>
-      <div class="foot-right">
-        <a class="link" href="./terms.html" data-i18n="footer.terms">利用規約</a>
-        <a class="link" href="./privacy.html" data-i18n="footer.privacy">プライバシーポリシー</a>
-        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">会社概要</a>
-        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">お問い合わせ</a>
+      <div class="footer-content">
+        <div class="foot-left">
+          <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
+        </div>
+        <div class="foot-right">
+          <a class="link" href="./terms.html" data-i18n="footer.terms">利用規約</a>
+          <a class="link" href="./privacy.html" data-i18n="footer.privacy">プライバシーポリシー</a>
+          <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">会社概要</a>
+          <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">お問い合わせ</a>
+        </div>
       </div>
     </footer>
 
