@@ -1528,6 +1528,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
 @media (max-width: 720px) {
   :root {
+    --nav-height: 58px;
     --space-hero-t: 40px;
     --space-hero-b: 20px;
     --space-sec-t: 56px;
@@ -1563,8 +1564,11 @@ body:has([href*="user-gaide"]) .grid.features {
   .feature-image img {
     max-width: 280px;
   }
+  .nav {
+    padding: 14px 0;
+  }
   .brand-logo.lg {
-    height: 32px;
+    height: 30px;
   }
   .nav .container {
     width: 100%;
@@ -1581,6 +1585,12 @@ body:has([href*="user-gaide"]) .grid.features {
   }
   .nav-toggle {
     display: inline-flex;
+    width: 38px;
+    height: 38px;
+  }
+  .nav-toggle-icon {
+    width: 20px;
+    height: 20px;
   }
   .nav-actions {
     position: absolute;
@@ -1770,14 +1780,25 @@ body:has([href*="user-gaide"]) .grid.features {
 }
 
 @media (max-width: 480px) {
-  :root { --nav-height: 72px; }
+  :root { --nav-height: 54px; }
+  .nav {
+    padding: 12px 0;
+  }
   .brand-logo.lg {
-    height: 28px;
+    height: 26px;
   }
   .nav .container {
     width: 100%;
     padding: 0 12px;
     justify-content: flex-end;
+  }
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  .nav-toggle-icon {
+    width: 18px;
+    height: 18px;
   }
   .brand {
     position: absolute;
