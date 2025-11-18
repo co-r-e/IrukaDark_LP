@@ -285,7 +285,7 @@ const translations = {
     'cta.title': 'ダウンロード',
     'cta.description': 'macOS向けに無料でダウンロード。',
     'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
-    'footer.copyright': '© <span id="year"></span> コーレ株式会社 All rights reserved.',
+    'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.',
     'footer.terms': '利用規約',
     'footer.privacy': 'プライバシーポリシー',
     'terms.title': '利用規約',
@@ -1024,4 +1024,96 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', reapply);
   window.addEventListener('resize', reapply, { passive: true });
   window.addEventListener('orientationchange', reapply, { passive: true });
+})();
+
+// ---------------------------------------------
+// Merge subsections and infinite scroll for vertical cards
+// ---------------------------------------------
+(function infiniteScrollCards(){
+  function mergeSubsections(){
+    const whereSection = document.querySelector('#where');
+    if (!whereSection) return;
+
+    const subsections = whereSection.querySelectorAll('.where-subsection');
+    if (subsections.length === 0) return;
+
+    // Collect all cards from all subsections
+    const allCards = [];
+    subsections.forEach(subsection => {
+      const container = subsection.querySelector('.grid.features.vertical-cards');
+      if (container) {
+        const cards = Array.from(container.children);
+        allCards.push(...cards);
+      }
+    });
+
+    // Keep only the first subsection, remove title
+    const firstSubsection = subsections[0];
+    const title = firstSubsection.querySelector('.where-subsection-title');
+    if (title) title.remove();
+
+    // Remove other subsections
+    for (let i = 1; i < subsections.length; i++) {
+      subsections[i].remove();
+    }
+
+    // Get the first container and replace it with a wrapper container
+    const firstContainer = firstSubsection.querySelector('.grid.features.vertical-cards');
+    if (!firstContainer) return;
+
+    // Create wrapper container
+    const wrapperContainer = document.createElement('div');
+    wrapperContainer.className = 'where-cards-container';
+
+    // Create two rows
+    const row1 = document.createElement('div');
+    row1.className = 'grid features vertical-cards';
+
+    const row2 = document.createElement('div');
+    row2.className = 'grid features vertical-cards reverse';
+
+    // Split cards into two rows
+    const midpoint = Math.ceil(allCards.length / 2);
+    const firstHalf = allCards.slice(0, midpoint);
+    const secondHalf = allCards.slice(midpoint);
+
+    firstHalf.forEach(card => row1.appendChild(card));
+    secondHalf.forEach(card => row2.appendChild(card));
+
+    wrapperContainer.appendChild(row1);
+    wrapperContainer.appendChild(row2);
+
+    // Replace the first container with the wrapper
+    firstContainer.parentNode.replaceChild(wrapperContainer, firstContainer);
+  }
+
+  function setupInfiniteScroll(){
+    const cardContainers = document.querySelectorAll('.grid.features.vertical-cards');
+
+    cardContainers.forEach(container => {
+      const cards = Array.from(container.children);
+      if (cards.length === 0) return;
+
+      // Create wrapper
+      const wrapper = document.createElement('div');
+      wrapper.className = 'scroll-wrapper';
+
+      // Move original cards to wrapper
+      cards.forEach(card => wrapper.appendChild(card));
+
+      // Clone cards for infinite effect
+      cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        wrapper.appendChild(clone);
+      });
+
+      // Add wrapper to container
+      container.appendChild(wrapper);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    mergeSubsections();
+    setupInfiniteScroll();
+  });
 })();
