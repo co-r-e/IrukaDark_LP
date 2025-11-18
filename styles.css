@@ -982,6 +982,11 @@ body:has([href*="user-gaide"]) .grid.features {
   margin-right: calc(50% - 50vw);
 }
 
+#where .section-head {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
 .grid.features.vertical-cards {
   display: flex;
   gap: 20px;
@@ -1000,9 +1005,10 @@ body:has([href*="user-gaide"]) .grid.features {
   animation: scroll-right 40s linear infinite;
 }
 
-.grid.features.vertical-cards .scroll-wrapper:hover {
+/* Hover pause disabled - cards scroll continuously */
+/* .grid.features.vertical-cards .scroll-wrapper:hover {
   animation-play-state: paused;
-}
+} */
 
 @keyframes scroll-left {
   0% {
@@ -1417,6 +1423,10 @@ body:has([href*="user-gaide"]) .grid.features {
   .hero-sub { max-width: 700px; font-size: 17px; }
   .section-title { font-size: clamp(28px, 4vw, 40px); }
   .section-head { margin-bottom: 40px; }
+  #where .section-head {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
   .grid.features.howto-grid {
     grid-template-columns: 1fr;
   }
@@ -1722,6 +1732,10 @@ body:has([href*="user-gaide"]) .grid.features {
   .where-subsection { margin-bottom: 36px; }
   .where-subsection-title { font-size: 22px; margin-bottom: 16px; }
   .section-head { margin-bottom: 32px; }
+  #where .section-head {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
   .section-title { font-size: clamp(24px, 6vw, 32px); }
   .section-sub { font-size: 16px; }
   .card { padding: 24px 20px; }

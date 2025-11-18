@@ -28,11 +28,7 @@ const translations = {
     'languages.subtitle': 'IrukaDark delivers explanations in 17 languages worldwide.',
 
     // Where it works
-    'where.title': 'Everything You See is Within Reach',
-    'where.subtitle': 'IrukaDark works with all visible content on your screen—no limitations.',
-    'where.engineering': 'Engineering',
-    'where.design': 'Design',
-    'where.productivity': 'Productivity',
+    'where.title': 'Everything You See<br>is Within Reach',
     'where.chatgpt.title': 'On ChatGPT',
     'where.chatgpt.desc': 'Explain AI outputs with AI. Review and refine prompts in place.',
     'where.gemini.title': 'On Gemini',
@@ -170,11 +166,7 @@ const translations = {
     'features.secure.description': 'IrukaDarkはあらゆるツールと併用できます。最新AIプロダクトと一緒に使うことはもちろん。業務用のレガシーなシステムと一緒に使うこともできます。',
 
     // どこで使えるか
-    'where.title': 'あなたに見えているものは全部対象',
-    'where.subtitle': '画面に表示されているあらゆるコンテンツで、IrukaDarkが使えます。',
-    'where.engineering': 'Engineering',
-    'where.design': 'Design',
-    'where.productivity': 'Productivity',
+    'where.title': 'いつもの画面で<br>そのまま',
     'where.chatgpt.title': 'ChatGPTの上で',
     'where.chatgpt.desc': 'AIの出力をさらにAIで要約・解説。プロンプトの見直しもその場で。',
     'where.gemini.title': 'Geminiの上で',
@@ -1027,66 +1019,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ---------------------------------------------
-// Merge subsections and infinite scroll for vertical cards
+// Infinite scroll for vertical cards
 // ---------------------------------------------
 (function infiniteScrollCards(){
-  function mergeSubsections(){
-    const whereSection = document.querySelector('#where');
-    if (!whereSection) return;
-
-    const subsections = whereSection.querySelectorAll('.where-subsection');
-    if (subsections.length === 0) return;
-
-    // Collect all cards from all subsections
-    const allCards = [];
-    subsections.forEach(subsection => {
-      const container = subsection.querySelector('.grid.features.vertical-cards');
-      if (container) {
-        const cards = Array.from(container.children);
-        allCards.push(...cards);
-      }
-    });
-
-    // Keep only the first subsection, remove title
-    const firstSubsection = subsections[0];
-    const title = firstSubsection.querySelector('.where-subsection-title');
-    if (title) title.remove();
-
-    // Remove other subsections
-    for (let i = 1; i < subsections.length; i++) {
-      subsections[i].remove();
-    }
-
-    // Get the first container and replace it with a wrapper container
-    const firstContainer = firstSubsection.querySelector('.grid.features.vertical-cards');
-    if (!firstContainer) return;
-
-    // Create wrapper container
-    const wrapperContainer = document.createElement('div');
-    wrapperContainer.className = 'where-cards-container';
-
-    // Create two rows
-    const row1 = document.createElement('div');
-    row1.className = 'grid features vertical-cards';
-
-    const row2 = document.createElement('div');
-    row2.className = 'grid features vertical-cards reverse';
-
-    // Split cards into two rows
-    const midpoint = Math.ceil(allCards.length / 2);
-    const firstHalf = allCards.slice(0, midpoint);
-    const secondHalf = allCards.slice(midpoint);
-
-    firstHalf.forEach(card => row1.appendChild(card));
-    secondHalf.forEach(card => row2.appendChild(card));
-
-    wrapperContainer.appendChild(row1);
-    wrapperContainer.appendChild(row2);
-
-    // Replace the first container with the wrapper
-    firstContainer.parentNode.replaceChild(wrapperContainer, firstContainer);
-  }
-
   function setupInfiniteScroll(){
     const cardContainers = document.querySelectorAll('.grid.features.vertical-cards');
 
@@ -1144,7 +1079,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    mergeSubsections();
     setupInfiniteScroll();
     setupFAQAccordion();
   });
