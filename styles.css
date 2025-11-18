@@ -586,26 +586,29 @@ body {
 
 /* hero */
 .hero {
-  padding: var(--space-hero-t) 0 var(--space-hero-b);
+  padding: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 60px;
-  min-height: 600px;
+  gap: 40px;
+  min-height: calc(100vh - var(--nav-height));
 }
-.hero-content { position: relative; z-index: 2; text-align: left; flex: 1; max-width: 600px; }
-.hero-title { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -1.2px; margin: 0 0 20px; color: var(--text); text-align: left; }
-.hero-tagline { font-size: clamp(24px, 3.5vw, 36px); line-height: 1.3; letter-spacing: -0.5px; margin: 0 0 20px; color: var(--text); text-align: left; font-weight: 700; }
+.hero-content { position: relative; z-index: 2; text-align: center; width: 100%; max-width: 800px; }
+.hero-title { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -1.2px; margin: 0 0 20px; color: var(--text); text-align: center; }
+.hero-tagline { font-size: clamp(24px, 3.5vw, 36px); line-height: 1.3; letter-spacing: -0.5px; margin: 0 0 20px; color: var(--text); text-align: center; font-weight: 700; }
 .grad-white { background: linear-gradient(90deg, var(--primary), var(--primary-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero-sub { max-width: 100%; margin: 0 0 36px; color: var(--text); font-size: 18px; line-height: 1.6; text-align: left; }
-.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+.hero-sub { max-width: 100%; margin: 0 0 36px; color: var(--text); font-size: 18px; line-height: 1.6; text-align: center; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.demo-section {
+  padding: 0 0 var(--space-hero-b);
+}
 .hero-video {
   position: relative;
   z-index: 2;
-  flex: 1;
   width: 100%;
-  max-width: 640px;
+  max-width: 960px;
+  margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
   background: #000;
@@ -1170,18 +1173,9 @@ body:has([href*="user-gaide"]) .grid.features {
     font-size: 15px;
     line-height: 1.5;
   }
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    min-height: auto;
-    gap: 40px;
-  }
-  .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
-  .hero-title { font-size: clamp(32px, 4.5vw, 48px); text-align: center; }
-  .hero-tagline { font-size: clamp(22px, 3.5vw, 30px); text-align: center; }
-  .hero-sub { max-width: 700px; margin: 0 auto 32px; text-align: center; font-size: 17px; }
-  .hero-cta { justify-content: center; }
-  .hero-video { max-width: 1120px; }
+  .hero-title { font-size: clamp(32px, 4.5vw, 48px); }
+  .hero-tagline { font-size: clamp(22px, 3.5vw, 30px); }
+  .hero-sub { max-width: 700px; font-size: 17px; }
   .section-title { font-size: clamp(28px, 4vw, 40px); }
   .section-head { margin-bottom: 40px; }
   .grid.features.howto-grid {
@@ -1272,17 +1266,6 @@ body:has([href*="user-gaide"]) .grid.features {
   opacity: 0.7;
 }
 @media (max-width: 900px) and (min-width: 721px) {
-  .hero {
-    flex-direction: column;
-    gap: 36px;
-  }
-  .hero-content { text-align: center; }
-  .hero-title { text-align: center; }
-  .hero-sub { text-align: center; }
-  .hero-cta { justify-content: center; }
-  .hero-video {
-    max-width: 850px;
-  }
   .hero-title {
     font-size: clamp(30px, 5.5vw, 46px);
   }
@@ -1292,7 +1275,6 @@ body:has([href*="user-gaide"]) .grid.features {
   .hero-sub {
     font-size: 17px;
     max-width: 650px;
-    margin: 0 auto 32px;
   }
   .text-demo {
     padding: 18px;
@@ -1412,19 +1394,16 @@ body:has([href*="user-gaide"]) .grid.features {
   }
   /* Mobile hero: match other card area width (container default 92%) */
   .hero {
-    flex-direction: column;
     gap: 32px;
   }
-  .hero-content { max-width: 100%; margin: 0 auto; text-align: center; }
+  .hero-content { max-width: 100%; }
   .hero-title {
     font-size: clamp(28px, 7vw, 42px);
-    text-align: center;
     line-height: 1.15;
     margin-bottom: 16px;
   }
   .hero-tagline {
     font-size: clamp(18px, 4.5vw, 24px);
-    text-align: center;
     line-height: 1.3;
     margin-bottom: 14px;
     font-weight: 800;
@@ -1434,7 +1413,6 @@ body:has([href*="user-gaide"]) .grid.features {
     line-height: 1.5;
     max-width: 100%;
     margin-bottom: 28px;
-    text-align: center;
   }
   .hero-cta {
     flex-direction: column;
@@ -1543,14 +1521,11 @@ body:has([href*="user-gaide"]) .grid.features {
     right: 12px;
   }
   .hero {
-    flex-direction: column;
     gap: 28px;
   }
-  .hero-content { text-align: center; }
   .hero-title {
     font-size: clamp(24px, 8vw, 36px);
     margin-bottom: 12px;
-    text-align: center;
   }
   .hero-tagline {
     font-size: clamp(16px, 5vw, 22px);
