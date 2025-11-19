@@ -1,4 +1,4 @@
-import * as THREE from './node_modules/three/build/three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.181.1/build/three.module.js';
 
 // Wait for DOM to be ready
 if (document.readyState === 'loading') {
