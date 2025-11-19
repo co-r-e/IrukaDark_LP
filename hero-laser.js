@@ -29,7 +29,8 @@ function initLaserAnimation() {
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     alpha: true,
-    antialias: true
+    antialias: false, // Disable antialiasing for better performance
+    powerPreference: 'high-performance'
   });
 
   // Set canvas size to match hero section
@@ -45,17 +46,20 @@ function initLaserAnimation() {
 
   // Create laser system
   const lasers = [];
-  const maxLasers = 100; // Maximum number of lasers at once
-  const laserLength = 8; // Length of each laser beam (increased from 3 to 8)
-  const laserSpeed = 0.4; // Speed of laser travel
+  const maxLasers = 50; // Maximum number of lasers at once (reduced from 100)
+  const laserLength = 8; // Length of each laser beam
+  const laserSpeed = 0.5; // Speed of laser travel (faster to clear screen quicker)
+  const laserOriginY = 1; // Offset Y position slightly above center
 
+  // Reusable geometries (create once, reuse for all lasers)
+  const laserWidth = 0.05;
+  const glowWidth = 0.12;
+  const sharedLaserGeometry = new THREE.PlaneGeometry(laserLength, laserWidth);
+  const sharedGlowGeometry = new THREE.PlaneGeometry(laserLength, glowWidth);
 
   // Function to create a new laser (mesh-based)
   function createLaser() {
     const angle = Math.random() * Math.PI * 2;
-
-    const laserWidth = 0.08; // Width of the laser beam
-    const glowWidth = 0.20;  // Width of the glow effect
 
     // Color palette: Pink gradient only
     const hue = 300 + Math.random() * 40; // 300-340 (pink-magenta range)
@@ -63,8 +67,7 @@ function initLaserAnimation() {
     const color = new THREE.Color().setHSL(hue / 360, 0.8, lightness);
     const glowColor = new THREE.Color().setHSL(hue / 360, 0.7, Math.min(lightness * 1.2, 0.9));
 
-    // Create main laser mesh
-    const geometry = new THREE.PlaneGeometry(laserLength, laserWidth);
+    // Create main laser mesh (reuse geometry)
 
     const material = new THREE.MeshBasicMaterial({
       color: color,
@@ -75,12 +78,10 @@ function initLaserAnimation() {
       depthWrite: false
     });
 
-    const mesh = new THREE.Mesh(geometry, material);
+    const mesh = new THREE.Mesh(sharedLaserGeometry, material);
     mesh.rotation.z = angle;
 
-    // Create glow mesh
-    const glowGeometry = new THREE.PlaneGeometry(laserLength, glowWidth);
-
+    // Create glow mesh (reuse geometry)
     const glowMaterial = new THREE.MeshBasicMaterial({
       color: glowColor,
       transparent: true,
@@ -90,7 +91,7 @@ function initLaserAnimation() {
       depthWrite: false
     });
 
-    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+    const glowMesh = new THREE.Mesh(sharedGlowGeometry, glowMaterial);
     glowMesh.rotation.z = angle;
     glowMesh.position.z = -0.01; // Slightly behind
 
@@ -110,7 +111,7 @@ function initLaserAnimation() {
   // Animation variables
   let time = 0;
   let lastLaserTime = 0;
-  const laserInterval = 0.05; // Spawn a laser every 0.05 seconds
+  const laserInterval = 0.08; // Spawn a laser every 0.08 seconds (reduced frequency)
 
   // Animation loop
   function animate() {
@@ -138,9 +139,8 @@ function initLaserAnimation() {
         // Remove laser and glow
         scene.remove(laser.mesh);
         scene.remove(laser.glowMesh);
-        laser.mesh.geometry.dispose();
+        // Only dispose materials (geometry is shared, don't dispose)
         laser.mesh.material.dispose();
-        laser.glowMesh.geometry.dispose();
         laser.glowMesh.material.dispose();
         lasers.splice(i, 1);
         continue;
@@ -149,7 +149,7 @@ function initLaserAnimation() {
       // Update laser position (center of the beam moves outward)
       const centerDistance = laser.distance + laserLength / 2;
       const x = Math.cos(laser.angle) * centerDistance;
-      const y = Math.sin(laser.angle) * centerDistance;
+      const y = Math.sin(laser.angle) * centerDistance + laserOriginY;
 
       laser.mesh.position.x = x;
       laser.mesh.position.y = y;
@@ -181,10 +181,11 @@ function initLaserAnimation() {
     lasers.forEach(laser => {
       scene.remove(laser.mesh);
       scene.remove(laser.glowMesh);
-      laser.mesh.geometry.dispose();
       laser.mesh.material.dispose();
-      laser.glowMesh.geometry.dispose();
       laser.glowMesh.material.dispose();
     });
+    // Dispose shared geometries
+    sharedLaserGeometry.dispose();
+    sharedGlowGeometry.dispose();
   });
 }
