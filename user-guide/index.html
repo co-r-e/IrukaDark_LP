@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>IrukaDark — ユーザーガイド</title>
-    <meta name="description" content="IrukaDark の初期設定、ショートカット、スラッシュコマンド、通常チャットの使い方をまとめたガイドです。" />
-    <link rel="canonical" href="https://irukadark.com/ja/user-gaide" />
-    <link rel="icon" href="../../icons/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../../icons/icon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="../../icons/icon.png" />
+    <title>IrukaDark — User Guide</title>
+    <meta name="description" content="Set up IrukaDark and learn the essential shortcuts, slash commands, and chat tips for everyday use." />
+    <link rel="canonical" href="https://irukadark.com/user-guide" />
+    <link rel="icon" href="../icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../icons/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../icons/icon.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../styles.css" />
-    <script>window.DEFAULT_LANG = 'ja';</script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script>window.DEFAULT_LANG = 'en';</script>
   </head>
   <body>
     <div class="bg fx-grid"></div>
@@ -23,8 +23,8 @@
 
     <header class="nav">
       <div class="container">
-        <a class="brand" href="/ja">
-          <img src="../../icons/logo.svg" alt="IrukaDark（イルカダーク）" class="brand-logo lg" />
+        <a class="brand" href="/">
+          <img src="../icons/logo.svg" alt="IrukaDark" class="brand-logo lg" />
         </a>
         <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navActions" aria-label="Open navigation">
           <svg class="nav-toggle-icon nav-toggle-icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -46,7 +46,7 @@
                 <path d="M12 3a15 15 0 0 1 0 18"></path>
                 <path d="M12 3a15 15 0 0 0 0 18"></path>
               </svg>
-              <span class="lang-text" id="langCode">JA</span>
+              <span class="lang-text" id="langCode">EN</span>
             </button>
             <div class="lang-menu" id="langMenu">
               <button class="lang-option" data-lang="en">
@@ -57,11 +57,11 @@
               </button>
             </div>
           </div>
-          <a id="download-nav" href="/ja/downloads" class="btn btn-primary" data-i18n="header.clone">
+          <a id="download-nav" href="/downloads" class="btn btn-primary" data-i18n="header.clone">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;">
               <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
             </svg>
-            Mac用ダウンロード
+            Download for Mac
           </a>
         </nav>
       </div>
@@ -70,52 +70,52 @@
     <main>
       <section class="container section">
         <div class="section-head" style="text-align:left;">
-          <h1 class="section-title">ユーザーガイド</h1>
-          <p class="section-sub" style="max-width:720px;">IrukaDark をはじめて使うときから、ショートカット・スラッシュコマンド・通常チャットの活用まで、必要なポイントをまとめました。</p>
+          <h1 class="section-title">User Guide</h1>
+          <p class="section-sub" style="max-width:720px;">Follow this guide to configure IrukaDark, learn every global shortcut, master slash commands, and keep conversations flowing.</p>
         </div>
 
         <div class="section" style="padding-top:32px; padding-bottom:24px;">
           <div class="section-head" style="text-align:left; margin-bottom:28px;">
-            <h2 class="section-title no-deco" style="font-size:32px;">初期設定</h2>
-            <p class="section-sub" style="max-width:720px;">ショートカットやスクリーンショット解説をスムーズに使えるよう、最初に次の設定を済ませてください。</p>
+            <h2 class="section-title no-deco" style="font-size:32px;">Initial Setup</h2>
+            <p class="section-sub" style="max-width:720px;">Complete these first steps so shortcuts, screenshots, and chat feel instant every time you launch the app.</p>
           </div>
           <div class="grid features">
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">APIキー設定</h3>
+                <h3 class="card-title">API Key Settings</h3>
               </div>
               <div class="card-body">
                 <ol>
-                  <li style="margin:6px 0;">Google AI Studio で Gemini API キーを発行します（Vertex の鍵は非対応）。</li>
-                  <li style="margin:6px 0;">IrukaDark を開き、<strong>IrukaDark → AI Settings → Set GEMINI_API_KEY</strong> を選びます。</li>
-                  <li style="margin:6px 0;">余分なスペースや引用符を付けずにキーを貼り付け、保存します。入力直後に検証が行われます。</li>
-                  <li style="margin:6px 0;">環境変数で管理したい場合は、起動前に <code>GEMINI_API_KEY</code>（または <code>GOOGLE_GENAI_API_KEY</code>）を設定してください。</li>
+                  <li style="margin:6px 0;">Visit Google AI Studio and create a Gemini API key (Studio keys only; Vertex keys are not supported).</li>
+                  <li style="margin:6px 0;">Open IrukaDark and go to <strong>IrukaDark → AI Settings → Set GEMINI_API_KEY</strong>.</li>
+                  <li style="margin:6px 0;">Paste the key without quotes or spaces. IrukaDark validates it immediately and stores it securely on your Mac.</li>
+                  <li style="margin:6px 0;">If you prefer environment variables, set <code>GEMINI_API_KEY</code> (or <code>GOOGLE_GENAI_API_KEY</code>) before launching.</li>
                 </ol>
               </div>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">モデル設定</h3>
+                <h3 class="card-title">Model Settings</h3>
               </div>
               <div class="card-body">
                 <ol>
-                  <li style="margin:6px 0;">同じ AI Settings メニューで、まずは <strong>gemini-flash-lite-latest</strong> を選択するのがおすすめです（応答が最速）。</li>
-                  <li style="margin:6px 0;">より厚めの解説やウェブ検索が欲しいときは <strong>gemini-flash-latest</strong> に切り替えてください。</li>
-                  <li style="margin:6px 0;">モデルを固定したい場合は、環境変数 <code>GEMINI_MODEL</code> や <code>WEB_SEARCH_MODEL</code> を設定しておけます。</li>
-                  <li style="margin:6px 0;">呼び出しが失敗した場合は、再度 lite 推奨モデルに戻すか、時間をおいてリトライすればエラー理由がチャットに表示されます。</li>
+                  <li style="margin:6px 0;">In the same AI Settings menu, choose <strong>gemini-flash-lite-latest</strong> for the fastest everyday responses.</li>
+                  <li style="margin:6px 0;">Keep <strong>gemini-flash-latest</strong> as your backup when you need a fuller answer or web-grounded lookup.</li>
+                  <li style="margin:6px 0;">Advanced users can set <code>GEMINI_MODEL</code> or <code>WEB_SEARCH_MODEL</code> environment variables to persist model overrides.</li>
+                  <li style="margin:6px 0;">If a model call fails, switch back to the lite recommendation or retry—IrukaDark shows the error reason in chat.</li>
                 </ol>
               </div>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">アクセシビリティ許可</h3>
+                <h3 class="card-title">Accessibility Permissions</h3>
               </div>
               <div class="card-body">
                 <ol>
-                  <li style="margin:6px 0;">初めて Option+A を使うと、macOS から <strong>アクセシビリティ</strong> 許可のダイアログが表示されます。有効にすると選択テキストを読み取れます。</li>
-                  <li style="margin:6px 0;">Option+S で領域を切り取る際は <strong>画面収録</strong> の許可が必要です。「設定 → プライバシーとセキュリティ → 画面収録」で IrukaAutomation を許可してください。</li>
-                  <li style="margin:6px 0;">もしショートカットが効かなくなったら、アクセシビリティ／画面収録のリストで IrukaDark と IrukaAutomation が有効か確認します。</li>
-                  <li style="margin:6px 0;">許可後は IrukaDark を再起動すると、ヘルパープロセスに設定が確実に反映されます。</li>
+                  <li style="margin:6px 0;">The first time you trigger Option+A, macOS prompts for <strong>Accessibility</strong> access. Approve it so the helper can read selected text.</li>
+                  <li style="margin:6px 0;">When you capture an area (Option+S), macOS requests <strong>Screen Recording</strong>; allow the IrukaAutomation helper in System Settings → Privacy &amp; Security.</li>
+                  <li style="margin:6px 0;">If shortcuts stop working, revisit Privacy &amp; Security → Accessibility/Screen Recording and confirm IrukaDark plus “IrukaAutomation” stay enabled.</li>
+                  <li style="margin:6px 0;">Restart IrukaDark after granting permissions so macOS applies the change to the helper process.</li>
                 </ol>
               </div>
             </article>
@@ -124,8 +124,8 @@
 
         <div class="section" style="padding-top:32px; padding-bottom:24px;">
           <div class="section-head" style="text-align:left; margin-bottom:28px;">
-            <h2 class="section-title no-deco" style="font-size:32px;">ショートカットキー</h2>
-            <p class="section-sub" style="max-width:720px;">ショートカットは macOS 全体で動作し、現在のアプリのフォーカスを保ったまま IrukaDark が結果を表示します。</p>
+            <h2 class="section-title no-deco" style="font-size:32px;">Shortcut Keys</h2>
+            <p class="section-sub" style="max-width:720px;">All shortcuts work system-wide. IrukaDark pops into view, keeps focus on your current app, and shows the answer inline.</p>
           </div>
 
           <!-- Keyboard Visualization -->
@@ -218,142 +218,142 @@
           <div class="grid features howto-grid">
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+A — クイック解説</h3>
+                <h3 class="card-title">Option+A — Quick Explain</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">A</span>
               </div>
-              <p class="card-body">選択したテキストを短く要約します。ちょっとした疑問をすぐ確認したいときに便利です。</p>
+              <p class="card-body">Explains highlighted text with a concise summary that fits on-screen. Ideal for quick clarifications.</p>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+Shift+A — 詳細解説</h3>
+                <h3 class="card-title">Option+Shift+A — Deep Explain</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">A</span>
               </div>
-              <p class="card-body">背景や追加情報を含めて丁寧に説明します。深い理解や手順が欲しいときに。</p>
+              <p class="card-body">Requests additional context, examples, and follow-up steps. Perfect when you need full reasoning.</p>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+Q — URLサマリー</h3>
+                <h3 class="card-title">Option+Q — URL Summary</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">Q</span>
               </div>
-              <p class="card-body">選択した URL を取得して整形し、重要度順に4文構成でサマリーを返します。</p>
+              <p class="card-body">Fetches the highlighted URL, sanitises the page, and returns a four-sentence digest ordered by impact.</p>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+Shift+Q — URLディープダイブ</h3>
+                <h3 class="card-title">Option+Shift+Q — URL Deep Dive</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">Q</span>
               </div>
-              <p class="card-body">同じ URL 取得プロセスから、概要・重要ポイント・リスク・推奨アクションを含む構造化レポートを作成します。</p>
+              <p class="card-body">Builds a structured breakdown (overview, key points, risks, next actions) from the same URL fetch workflow.</p>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+R — 翻訳</h3>
+                <h3 class="card-title">Option+R — Translate</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">R</span>
               </div>
-              <p class="card-body">選択テキストを UI 言語へ自然に翻訳します。専門用語はなるべく残したままです。</p>
+              <p class="card-body">Translates the selected text into the UI language, keeping technical terms intact when possible.</p>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+S — スクショ解説</h3>
+                <h3 class="card-title">Option+S — Screenshot Explain</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">S</span>
               </div>
-              <p class="card-body">画面の任意領域をドラッグで選択し、画像内テキストや文脈を抜き出して要約します。</p>
+              <p class="card-body">Lets you drag an on-screen region. IrukaDark extracts text/visual context and summarises what you selected.</p>
             </article>
             <article class="card">
               <div class="card-head">
-                <h3 class="card-title">Option+Shift+S — 詳細スクショ</h3>
+                <h3 class="card-title">Option+Shift+S — Detailed Screenshot</h3>
               </div>
               <div class="shortcut-keys" aria-hidden="true">
                 <span class="kbd">⌥</span><span class="plus">+</span><span class="kbd">⇧</span><span class="plus">+</span><span class="kbd">S</span>
               </div>
-              <p class="card-body">選択領域の背景や意味、推奨アクションまで掘り下げた解説をリクエストします。</p>
+              <p class="card-body">Requests a richer explanation from the captured region, including background, implications, and suggested next steps.</p>
             </article>
           </div>
         </div>
 
         <div class="section" style="padding-top:32px; padding-bottom:24px;">
           <div class="section-head" style="text-align:left; margin-bottom:28px;">
-            <h2 class="section-title no-deco" style="font-size:32px;">スラッシュコマンド</h2>
-            <p class="section-sub" style="max-width:720px;">チャット入力欄で <code>/</code> を押すとコマンドパレットが開き、直前までの会話に対して各コマンドが動作します。</p>
+            <h2 class="section-title no-deco" style="font-size:32px;">Slash Commands</h2>
+            <p class="section-sub" style="max-width:720px;">Type a slash (<code>/</code>) in the chat box to open the command palette. Commands run against your latest conversation state.</p>
           </div>
           <div class="grid features">
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/clear</h3>
               </div>
-              <p class="card-body">現在の会話履歴をリセットします。ウィンドウはそのままなのですぐに新しい質問を続けられます。</p>
+              <p class="card-body">Wipe the current conversation, keeping the window open so you can start fresh without reloading the app.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/compact</h3>
               </div>
-              <p class="card-body">直近の履歴を短く圧縮し、次の回答がブレずに進むようトークンを節約します。</p>
+              <p class="card-body">Summarises recent turns into a tighter history so the next answer stays on-topic with less token usage.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/next</h3>
               </div>
-              <p class="card-body">前回の回答の続きを生成します。途中で切れたときや、さらに深掘りしたいときに。</p>
+              <p class="card-body">Asks IrukaDark to continue the last reply—useful when a generated answer ends early or you want more depth.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/table</h3>
               </div>
-              <p class="card-body">直前の出力を表形式に変換します。比較・整理が必要なときに便利です。</p>
+              <p class="card-body">Reformats the previous AI output into a table, perfect for comparing pros/cons, steps, or key metrics quickly.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/what do you mean?</h3>
               </div>
-              <p class="card-body">前の回答をより平易な言い回しで説明し直します。難しい内容の理解に。</p>
+              <p class="card-body">Requests a simpler restatement of the previous answer so complex explanations become easier to follow.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/translate</h3>
               </div>
-              <p class="card-body">サブメニューが開き、<code>/translate_ja</code> や <code>/translate_fr</code> など言語別コマンドで直前の返信を翻訳できます。</p>
+              <p class="card-body">Opens a submenu with locale-specific commands (for example <code>/translate_ja</code>, <code>/translate_fr</code>) to translate the last AI reply.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/web</h3>
               </div>
-              <p class="card-body"><code>/web on</code> と <code>/web off</code> でウェブ検索モードを切り替え、<code>/web status</code> で状態を確認します（Google 検索対応モデルが必要）。</p>
+              <p class="card-body">Toggle grounded web search with <code>/web on</code>, <code>/web off</code>, or check status via <code>/web status</code>. Requires a model that supports Google Search.</p>
             </article>
             <article class="card">
               <div class="card-head">
                 <h3 class="card-title">/contact</h3>
               </div>
-              <p class="card-body">問い合わせページを開き、フィードバックや不具合報告をすぐに送信できます。</p>
+              <p class="card-body">Opens the contact page so you can report feedback, bugs, or request features directly from the app.</p>
             </article>
           </div>
         </div>
 
         <div class="section" style="padding-top:32px;">
           <div class="section-head" style="text-align:left; margin-bottom:20px;">
-            <h2 class="section-title no-deco" style="font-size:32px;">通常チャット</h2>
-            <p class="section-sub" style="max-width:720px;">ショートカットやコマンドを使わなくても、常駐する IrukaDark ウィンドウで通常のチャットとして利用できます。</p>
+            <h2 class="section-title no-deco" style="font-size:32px;">Normal Chat</h2>
+            <p class="section-sub" style="max-width:720px;">Use IrukaDark like any AI assistant—shortcuts and slash commands are optional. Everything runs in a single, always-on-top window.</p>
           </div>
           <article class="card">
             <div class="card-head card-head--stack">
-              <h3 class="card-title">日常的な使い方</h3>
+              <h3 class="card-title">Everyday Flow</h3>
             </div>
             <div class="card-body">
               <ul>
-                <li style="margin:6px 0;">テキストボックスに入力し、<strong>Return</strong> で送信します。</li>
-                <li style="margin:6px 0;">会話はリセットするまで保持されます。新しく始めたいときは <code>/clear</code> またはメニューの <strong>New Chat</strong> を使います。</li>
-                <li style="margin:6px 0;">画面上の任意の場所を右クリックすると、カーソル位置にアプリケーションメニューが開きます。</li>
-                <li style="margin:6px 0;">回答内のリンクはデフォルトブラウザで開きます。必要に応じてブラウザ側で続きを確認してください。</li>
+                <li style="margin:6px 0;">Type in the message box and press <strong>Return</strong> to send your prompt.</li>
+                <li style="margin:6px 0;">IrukaDark keeps the current thread active until you reset it—use <code>/clear</code> or the menu&rsquo;s <strong>New Chat</strong> option when you want a blank slate.</li>
+                <li style="margin:6px 0;">Right-click anywhere to open the application menu at the cursor for quick access to pinning, accessibility helpers, and settings.</li>
+                <li style="margin:6px 0;">Links in answers open in your default browser so research continues in the right place.</li>
               </ul>
             </div>
           </article>
@@ -366,13 +366,13 @@
         <span class="muted" data-i18n="footer.copyright">© <span id="year"></span> CORe, Inc. All rights reserved.</span>
       </div>
       <div class="foot-right">
-        <a class="link" href="../terms.html" data-i18n="footer.terms">利用規約</a>
-        <a class="link" href="../privacy.html" data-i18n="footer.privacy">プライバシーポリシー</a>
-        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">会社概要</a>
-        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">お問い合わせ</a>
+        <a class="link" href="../terms.html" data-i18n="footer.terms">Terms of Service</a>
+        <a class="link" href="../privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a class="link" href="https://co-r-e.net" target="_blank" rel="noopener">Company</a>
+        <a class="link" href="https://co-r-e.net/contact" target="_blank" rel="noopener">Contact</a>
       </div>
     </footer>
 
-    <script src="../../app.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>
