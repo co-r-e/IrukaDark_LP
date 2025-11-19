@@ -44,12 +44,22 @@ function initLaserAnimation() {
 
   updateCanvasSize();
 
+  // Performance detection
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const isLowPerformance = isMobile || navigator.hardwareConcurrency <= 4;
+
+  // Animation control
+  let isVisible = true;
+  let isInViewport = true;
+  let animationFrameId = null;
+
   // Create laser system
   const lasers = [];
-  const maxLasers = 50; // Maximum number of lasers at once (reduced from 100)
+  const maxLasers = isLowPerformance ? 25 : 35; // Reduced from 50
   const laserLength = 8; // Length of each laser beam
   const laserSpeed = 0.5; // Speed of laser travel (faster to clear screen quicker)
   const laserOriginY = 1; // Offset Y position slightly above center
+  const enableGlow = !isLowPerformance; // Disable glow on low-performance devices
 
   // Reusable geometries (create once, reuse for all lasers)
   const laserWidth = 0.05;
@@ -81,21 +91,24 @@ function initLaserAnimation() {
     const mesh = new THREE.Mesh(sharedLaserGeometry, material);
     mesh.rotation.z = angle;
 
-    // Create glow mesh (reuse geometry)
-    const glowMaterial = new THREE.MeshBasicMaterial({
-      color: glowColor,
-      transparent: true,
-      opacity: 0.3,
-      side: THREE.DoubleSide,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false
-    });
+    // Create glow mesh (reuse geometry) - only if enabled
+    let glowMesh = null;
+    if (enableGlow) {
+      const glowMaterial = new THREE.MeshBasicMaterial({
+        color: glowColor,
+        transparent: true,
+        opacity: 0.3,
+        side: THREE.DoubleSide,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
 
-    const glowMesh = new THREE.Mesh(sharedGlowGeometry, glowMaterial);
-    glowMesh.rotation.z = angle;
-    glowMesh.position.z = -0.01; // Slightly behind
+      glowMesh = new THREE.Mesh(sharedGlowGeometry, glowMaterial);
+      glowMesh.rotation.z = angle;
+      glowMesh.position.z = -0.01; // Slightly behind
+      scene.add(glowMesh);
+    }
 
-    scene.add(glowMesh);
     scene.add(mesh);
 
     return {
@@ -111,11 +124,17 @@ function initLaserAnimation() {
   // Animation variables
   let time = 0;
   let lastLaserTime = 0;
-  const laserInterval = 0.08; // Spawn a laser every 0.08 seconds (reduced frequency)
+  const laserInterval = isLowPerformance ? 0.12 : 0.10; // Slower spawn on low-performance devices
 
   // Animation loop
   function animate() {
-    requestAnimationFrame(animate);
+    // Only continue if visible and in viewport
+    if (!isVisible || !isInViewport) {
+      animationFrameId = null;
+      return;
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
 
     time += 0.016; // Approximately 60fps
 
@@ -138,10 +157,12 @@ function initLaserAnimation() {
       if (laser.life <= 0 || laser.distance > 40) {
         // Remove laser and glow
         scene.remove(laser.mesh);
-        scene.remove(laser.glowMesh);
+        if (laser.glowMesh) {
+          scene.remove(laser.glowMesh);
+          laser.glowMesh.material.dispose();
+        }
         // Only dispose materials (geometry is shared, don't dispose)
         laser.mesh.material.dispose();
-        laser.glowMesh.material.dispose();
         lasers.splice(i, 1);
         continue;
       }
@@ -153,12 +174,16 @@ function initLaserAnimation() {
 
       laser.mesh.position.x = x;
       laser.mesh.position.y = y;
-      laser.glowMesh.position.x = x;
-      laser.glowMesh.position.y = y;
+      if (laser.glowMesh) {
+        laser.glowMesh.position.x = x;
+        laser.glowMesh.position.y = y;
+      }
 
       // Update opacity based on life
       laser.mesh.material.opacity = laser.life * 0.9;
-      laser.glowMesh.material.opacity = laser.life * 0.3;
+      if (laser.glowMesh) {
+        laser.glowMesh.material.opacity = laser.life * 0.3;
+      }
     }
 
     renderer.render(scene, camera);
@@ -171,21 +196,55 @@ function initLaserAnimation() {
 
   window.addEventListener('resize', handleResize);
 
+  // Intersection Observer - pause when out of viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      isInViewport = entry.isIntersecting;
+      if (isInViewport && isVisible && !animationFrameId) {
+        animate(); // Resume animation
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(heroSection);
+
+  // Page Visibility API - pause when tab is not active
+  function handleVisibilityChange() {
+    isVisible = !document.hidden;
+    if (isVisible && isInViewport && !animationFrameId) {
+      animate(); // Resume animation
+    }
+  }
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+
   // Start animation
   animate();
 
   // Cleanup function
   window.addEventListener('beforeunload', () => {
+    // Cancel animation frame
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+    // Remove event listeners
     window.removeEventListener('resize', handleResize);
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+    observer.disconnect();
+    // Dispose resources
     renderer.dispose();
     lasers.forEach(laser => {
       scene.remove(laser.mesh);
-      scene.remove(laser.glowMesh);
+      if (laser.glowMesh) {
+        scene.remove(laser.glowMesh);
+        laser.glowMesh.material.dispose();
+      }
       laser.mesh.material.dispose();
-      laser.glowMesh.material.dispose();
     });
     // Dispose shared geometries
     sharedLaserGeometry.dispose();
-    sharedGlowGeometry.dispose();
+    if (enableGlow) {
+      sharedGlowGeometry.dispose();
+    }
   });
 }

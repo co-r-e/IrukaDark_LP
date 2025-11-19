@@ -551,7 +551,104 @@ body {
 
 @media (max-width: 768px) {
   .keyboard-showcase {
-    display: none;
+    padding: 32px 0 40px 0;
+    perspective: 1200px;
+  }
+
+  .keyboard {
+    padding: 20px 16px 22px 16px;
+    gap: 4px;
+    max-width: 100%;
+    border-radius: 16px;
+    transform: rotateX(2deg) translateY(-6px) translateZ(0);
+  }
+
+  .keyboard:hover {
+    transform: rotateX(1deg) translateY(-3px) translateZ(0);
+  }
+
+  .keyboard-row {
+    gap: 3px;
+  }
+
+  .key {
+    min-width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    font-size: 9px;
+    box-shadow:
+      0 0 0 0.5px rgba(255, 255, 255, 0.06),
+      0 1px 0 0 rgba(0, 0, 0, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.02),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .key-symbol {
+    font-size: 6px;
+    margin-bottom: 1px;
+  }
+
+  .key-main {
+    font-size: 9px;
+  }
+
+  .key.large {
+    font-size: 8px;
+  }
+
+  .key.xlarge {
+    font-size: 7px;
+  }
+
+  .key.modifier {
+    font-size: 7px;
+    padding: 0 3px;
+  }
+
+  .key.highlighted {
+    box-shadow:
+      0 0 0 0.5px rgba(255, 61, 102, 0.8),
+      0 0 0 1px rgba(255, 61, 102, 0.4),
+      0 0 0 2px rgba(255, 61, 102, 0.2),
+      0 1px 0 0 rgba(180, 0, 40, 0.9),
+      0 3px 8px rgba(255, 61, 102, 0.5),
+      0 6px 16px rgba(255, 61, 102, 0.3),
+      0 0 40px rgba(255, 61, 102, 0.2),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .key.highlighted::after {
+    inset: -15px;
+    filter: blur(10px);
+  }
+
+  @keyframes key-glow-premium {
+    0%, 100% {
+      box-shadow:
+        0 0 0 0.5px rgba(255, 61, 102, 0.8),
+        0 0 0 1px rgba(255, 61, 102, 0.4),
+        0 0 0 2px rgba(255, 61, 102, 0.2),
+        0 1px 0 0 rgba(180, 0, 40, 0.9),
+        0 3px 8px rgba(255, 61, 102, 0.5),
+        0 6px 16px rgba(255, 61, 102, 0.3),
+        0 0 40px rgba(255, 61, 102, 0.2),
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 0 0 0.5px rgba(255, 61, 102, 1),
+        0 0 0 1.5px rgba(255, 61, 102, 0.5),
+        0 0 0 2.5px rgba(255, 61, 102, 0.25),
+        0 1px 0 0 rgba(180, 0, 40, 0.9),
+        0 4px 10px rgba(255, 61, 102, 0.6),
+        0 8px 20px rgba(255, 61, 102, 0.4),
+        0 0 50px rgba(255, 61, 102, 0.3),
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
   }
 }
 
