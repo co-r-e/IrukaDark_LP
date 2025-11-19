@@ -552,19 +552,32 @@ body {
 @media (max-width: 768px) {
   .keyboard-showcase {
     padding: 32px 0 40px 0;
-    perspective: 1200px;
+    perspective: none;
   }
 
   .keyboard {
-    padding: 20px 16px 22px 16px;
+    padding: 0;
     gap: 4px;
     max-width: 100%;
-    border-radius: 16px;
-    transform: rotateX(2deg) translateY(-6px) translateZ(0);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .keyboard::before,
+  .keyboard::after {
+    display: none;
   }
 
   .keyboard:hover {
-    transform: rotateX(1deg) translateY(-3px) translateZ(0);
+    transform: none;
+  }
+
+  .keyboard:hover::after {
+    opacity: 0;
   }
 
   .keyboard-row {
@@ -604,6 +617,89 @@ body {
   .key.modifier {
     font-size: 7px;
     padding: 0 3px;
+  }
+
+  /* Hide text and show icons for specific keys on mobile */
+  .key.large,
+  .key.xlarge,
+  .key.modifier {
+    font-size: 0;
+    text-indent: -9999px;
+  }
+
+  .key.large::before,
+  .key.xlarge::before,
+  .key.modifier::before {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    text-indent: 0;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: none;
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+
+  /* Specific key icons */
+  .keyboard-row:nth-child(1) .key.xlarge::before {
+    content: '⌫'; /* delete */
+  }
+
+  .keyboard-row:nth-child(2) .key.large:first-child::before {
+    content: '⇥'; /* tab */
+  }
+
+  .keyboard-row:nth-child(2) .key.large:last-child::before {
+    content: '\\'; /* backslash - keep text */
+    font-size: 10px;
+  }
+
+  .keyboard-row:nth-child(3) .key.xlarge:first-child::before {
+    content: '⇪'; /* caps lock */
+  }
+
+  .keyboard-row:nth-child(3) .key.xlarge:last-child::before {
+    content: '⏎'; /* return */
+  }
+
+  .keyboard-row:nth-child(4) .key.xlarge::before {
+    content: '⇧'; /* shift */
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(1)::before {
+    content: 'fn'; /* fn */
+    font-size: 8px;
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(2)::before {
+    content: '⌃'; /* control */
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(3)::before {
+    content: '⌥'; /* option */
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(4)::before,
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(6)::before {
+    content: '⌘'; /* command */
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(7)::before {
+    content: '⌥'; /* option */
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(8)::before {
+    content: '◀'; /* left arrow */
+    font-size: 8px;
+  }
+
+  .keyboard-row:nth-child(5) .key.modifier:nth-child(9)::before {
+    content: '▶'; /* right arrow */
+    font-size: 8px;
   }
 
   .key.highlighted {
