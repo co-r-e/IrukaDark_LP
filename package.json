@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "node dev-server.mjs"
+  },
+  "dependencies": {
+    "three": "^0.181.1"
   }
 }
-
