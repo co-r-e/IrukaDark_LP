@@ -992,7 +992,27 @@ body {
 }
 
 /* Information section */
-.info-list { list-style: none; padding: 0; margin: 0 auto; max-width: 880px; display: grid; gap: 10px; max-height: 240px; overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 880px;
+  display: grid;
+  gap: 10px;
+  max-height: 240px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar for all browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+.info-list::-webkit-scrollbar {
+  display: none;
+}
 .info-item { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: center; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 12px; background: transparent; box-shadow: none; }
 .info-date { color: var(--muted); font-size: 13px; letter-spacing: .2px; }
 .info-title { appearance: none; background: transparent; border: none; padding: 0; text-align: left; color: var(--text); font-weight: 700; letter-spacing: .2px; cursor: pointer; }
