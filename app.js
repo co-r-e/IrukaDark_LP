@@ -1083,3 +1083,62 @@ document.addEventListener('DOMContentLoaded', () => {
     setupFAQAccordion();
   });
 })();
+
+// ---------------------------------------------
+// Google Analytics (GA4) Download Tracking
+// ---------------------------------------------
+(function setupDownloadTracking(){
+  function trackDownloadClick(element) {
+    // GA4が読み込まれているか確認
+    if (typeof gtag === 'undefined') {
+      console.warn('GA4 (gtag) is not loaded');
+      return;
+    }
+
+    // ダウンロードボタンの情報を取得
+    const osType = element.closest('.dl-card')?.dataset.os || 'unknown';
+    const buttonId = element.id || 'unknown';
+    const downloadUrl = element.href || '';
+    const buttonLocation = element.closest('section')?.id || 'unknown';
+    const lang = currentLang || window.DEFAULT_LANG || 'en';
+
+    // GA4にイベント送信
+    gtag('event', 'download_click', {
+      'event_category': 'downloads',
+      'event_label': osType,
+      'download_os': osType,
+      'button_id': buttonId,
+      'button_location': buttonLocation,
+      'download_url': downloadUrl,
+      'page_language': lang,
+      'value': 1
+    });
+
+    console.log('Download click tracked:', {
+      os: osType,
+      buttonId: buttonId,
+      location: buttonLocation,
+      url: downloadUrl,
+      language: lang
+    });
+  }
+
+  function init() {
+    // 全てのダウンロードボタンを取得
+    const downloadButtons = document.querySelectorAll('.dl-btn, #download-btn, #download-btn-cta, #download-nav');
+
+    downloadButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        trackDownloadClick(this);
+        // リンクの遷移は妨げない（トラッキング後に通常通り遷移）
+      });
+    });
+  }
+
+  // DOMContentLoadedイベントで初期化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
