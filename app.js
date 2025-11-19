@@ -1099,7 +1099,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const osType = element.closest('.dl-card')?.dataset.os || 'unknown';
     const buttonId = element.id || 'unknown';
     const downloadUrl = element.href || '';
-    const buttonLocation = element.closest('section')?.id || 'unknown';
+
+    // ページの場所を判定
+    let buttonLocation = 'unknown';
+    const pathname = window.location.pathname;
+
+    if (pathname.includes('/downloads')) {
+      buttonLocation = 'downloads_page';
+    } else if (element.closest('#hero') || element.closest('.hero')) {
+      buttonLocation = 'hero';
+    } else if (element.closest('#cta') || element.closest('.cta')) {
+      buttonLocation = 'cta';
+    } else if (element.closest('header') || element.closest('.nav')) {
+      buttonLocation = 'header';
+    }
+
     const lang = currentLang || window.DEFAULT_LANG || 'en';
 
     // GA4にイベント送信
@@ -1111,6 +1125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'button_location': buttonLocation,
       'download_url': downloadUrl,
       'page_language': lang,
+      'page_path': pathname,
       'value': 1
     });
 
@@ -1119,7 +1134,8 @@ document.addEventListener('DOMContentLoaded', () => {
       buttonId: buttonId,
       location: buttonLocation,
       url: downloadUrl,
-      language: lang
+      language: lang,
+      path: pathname
     });
   }
 
