@@ -675,7 +675,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const videos = document.querySelectorAll('.demo-video');
     if (!videos.length) return;
 
+    const prefersReduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     videos.forEach(v => { v.loop = true; v.muted = true; });
+
+    if (prefersReduceMotion) {
+      videos.forEach(v => v.pause());
+      return;
+    }
 
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {

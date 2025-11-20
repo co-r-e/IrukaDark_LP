@@ -1,15 +1,55 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.181.1/build/three.module.js';
+const THREE_MODULE_URL = 'https://cdn.jsdelivr.net/npm/three@0.181.1/build/three.module.js';
 
-// Wait for DOM to be ready
+// 遅延ロード用のヘルパー（ビューポートに入ってから / アイドル時に three.js を取得）
+const loadThree = () => import(THREE_MODULE_URL);
+let started = false;
+
+const startIfNeeded = () => {
+  if (started) return;
+  started = true;
+  loadThree().then(({ default: _, ...mod }) => initLaserAnimation(mod)).catch(() => {
+    // 読み込み失敗時は演出をスキップ（機能に影響しない）
+  });
+};
+
+// DOM 準備 + ビューポート監視で初期化を遅延
+const ready = () => {
+  const canvas = document.getElementById('hero-laser-canvas');
+  if (!canvas) return; // 対象がないページでは何もしない
+
+  // 動きの少ない環境では演出をスキップ
+  const prefersReduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduceMotion) return;
+
+  const heroSection = canvas.parentElement;
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        io.disconnect();
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(startIfNeeded, { timeout: 1200 });
+        } else {
+          setTimeout(startIfNeeded, 150);
+        }
+      }
+    }, { rootMargin: '80px' });
+    io.observe(heroSection);
+  } else {
+    // フォールバック：少し遅らせて実行
+    setTimeout(startIfNeeded, 200);
+  }
+};
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initLaserAnimation);
+  document.addEventListener('DOMContentLoaded', ready);
 } else {
-  initLaserAnimation();
+  ready();
 }
 
-function initLaserAnimation() {
+function initLaserAnimation(THREE) {
   const canvas = document.getElementById('hero-laser-canvas');
-  if (!canvas) return;
+  if (!canvas) return; // DOM 遅延で要素がなくなっていた場合
 
   const heroSection = canvas.parentElement;
 
@@ -33,20 +73,22 @@ function initLaserAnimation() {
     powerPreference: 'high-performance'
   });
 
+  // Performance detection
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const coreCount = typeof navigator.hardwareConcurrency === 'number' ? navigator.hardwareConcurrency : 8;
+  const isLowPerformance = isMobile || coreCount <= 4;
+
   // Set canvas size to match hero section
   const updateCanvasSize = () => {
     const rect = heroSection.getBoundingClientRect();
+    const pixelRatio = isLowPerformance ? Math.min(window.devicePixelRatio, 1.5) : Math.min(window.devicePixelRatio, 2);
     renderer.setSize(rect.width, rect.height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(pixelRatio);
     camera.aspect = rect.width / rect.height;
     camera.updateProjectionMatrix();
   };
 
   updateCanvasSize();
-
-  // Performance detection
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  const isLowPerformance = isMobile || navigator.hardwareConcurrency <= 4;
 
   // Animation control
   let isVisible = true;
