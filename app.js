@@ -93,6 +93,19 @@ const translations = {
     'where.dify.desc': 'Understand AI workflow settings and node configurations instantly. Grasp complex flow designs smoothly.',
     'where.copilot.title': 'On Microsoft Copilot',
     'where.copilot.desc': 'Instantly understand AI-generated content and suggestions. Maximize productivity.',
+
+    // Terminal section
+    'terminal.title': 'Terminal Features',
+    'terminal.subtitle': 'Control your terminal from IrukaDark. IrukaDark generates and executes commands for you.',
+    'terminal.generate.title': 'AI-Generated Commands',
+    'terminal.generate.description': 'Simply describe what you want to do in natural language, and IrukaDark generates the appropriate terminal command. No need to remember complex syntax or flags.',
+    'terminal.execute.title': 'Direct Execution',
+    'terminal.execute.description': 'Execute generated commands directly from IrukaDark. Review the command before running, and see the output in real-time within the app.',
+    'terminal.history.title': 'Command History',
+    'terminal.history.description': 'All executed commands are saved to history. Quickly rerun previous commands or modify them for new tasks, improving your workflow efficiency.',
+    'terminal.safe.title': 'Safe Execution Mode',
+    'terminal.safe.description': 'IrukaDark highlights potentially destructive commands and requires explicit confirmation. This prevents accidental execution of dangerous operations like rm -rf.',
+
     'howto.title': 'Shortcuts',
     'howto.subtitle': 'Use global shortcuts to trigger IrukaDark instantly.',
     'howto.group.screenshot': 'Screen Explanation',
@@ -122,6 +135,8 @@ const translations = {
     'howto.cards.screenshotDetail.description': 'Press Option+Shift+S for a more detailed analysis of the region you capture—ideal for dense visuals.',
     'howto2.title': 'Slash Commands',
     'howto2.subtitle': 'Slash commands that build on your latest explanation.',
+    'howto2.group.extend': 'Extend Explanations',
+    'howto2.group.generate': 'Generate Content',
     'howto2.commands.what.title': '/what do you mean?',
     'howto2.commands.what.description': 'Ask for a deeper dive on the previous answer, adding missing context or nuance.',
     'howto2.commands.next.title': '/next',
@@ -231,6 +246,19 @@ const translations = {
     'where.dify.desc': 'AIワークフローの設定やノード構成を即座に理解。複雑なフロー設計をスムーズに把握。',
     'where.copilot.title': 'Microsoft Copilotの上で',
     'where.copilot.desc': 'AI生成コンテンツや提案内容を即座に理解。作業効率を最大化。',
+
+    // Terminal section
+    'terminal.title': 'ターミナル機能',
+    'terminal.subtitle': 'IrukaDarkからターミナルを操作できます。しかも、ターミナルのコマンド自体をIrukaDarkがつくってくれます。',
+    'terminal.generate.title': 'AI生成コマンド',
+    'terminal.generate.description': '自然言語で「やりたいこと」を伝えるだけで、IrukaDarkが適切なターミナルコマンドを生成。複雑な構文やフラグを覚える必要はありません。',
+    'terminal.execute.title': '直接実行機能',
+    'terminal.execute.description': '生成されたコマンドをIrukaDarkから直接実行できます。実行前にコマンドを確認でき、出力結果もアプリ内でリアルタイムに確認できます。',
+    'terminal.history.title': 'コマンド履歴',
+    'terminal.history.description': '実行したコマンドはすべて履歴に保存されます。以前のコマンドを素早く再実行したり、修正して新しいタスクに応用でき、作業効率が向上します。',
+    'terminal.safe.title': '安全実行モード',
+    'terminal.safe.description': 'IrukaDarkは破壊的な可能性のあるコマンドをハイライト表示し、明示的な確認を要求します。rm -rfのような危険な操作の誤実行を防ぎます。',
+
     'howto.title': 'ショートカット',
     'howto.subtitle': 'ショートカットでいつでもIrukaDarkを呼び出せます。',
     'howto.group.screenshot': '画面解説',
@@ -260,6 +288,8 @@ const translations = {
     'howto.cards.screenshotDetail.description': '情報量の多いスライドや図解はOption+Shift+Sで詳細版を。細部まで丁寧に解説を受け取れます。',
     'howto2.title': 'スラッシュコマンド',
     'howto2.subtitle': 'スラッシュコマンドで直前の解説をさらに活用。',
+    'howto2.group.extend': '解説を拡張',
+    'howto2.group.generate': 'コンテンツ生成',
     'howto2.commands.what.title': '/what do you mean?',
     'howto2.commands.what.description': '直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。',
     'howto2.commands.next.title': '/next',
@@ -399,22 +429,22 @@ window.infoNotices = infoNotices;
 // Language switching functionality
 function switchLanguage(lang) {
   currentLang = lang;
-  
+
   // Update dropdown display (if present on this page)
   const langTrigger = document.getElementById('langTrigger');
   const langCodeEl = langTrigger ? langTrigger.querySelector('#langCode') : null;
   const langOptions = document.querySelectorAll('.lang-option');
-  
+
   // Keep the globe icon the same for both languages
   // No need to change the globe icon
-  
+
   // Update active option
   if (langOptions && langOptions.length) {
     langOptions.forEach(option => {
       option.classList.toggle('active', option.dataset.lang === lang);
     });
   }
-  
+
   // Update compact code label next to globe
   if (langCodeEl) {
     langCodeEl.textContent = (lang === 'ja' ? 'JA' : 'EN');
@@ -422,10 +452,10 @@ function switchLanguage(lang) {
 
   // Close dropdown
   if (langTrigger) closeLanguageDropdown();
-  
+
   // Update HTML lang attribute
   document.documentElement.lang = lang;
-  
+
   // Update all elements with data-i18n attributes
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
@@ -442,19 +472,19 @@ function switchLanguage(lang) {
       element.innerHTML = translation;
     }
   });
-  
+
   // Update meta tags
   const titleMeta = document.querySelector('title');
   const descMeta = document.querySelector('meta[name="description"]');
-  
+
   if (titleMeta && translations[lang]['meta.title']) {
     titleMeta.textContent = translations[lang]['meta.title'];
   }
-  
+
   if (descMeta && translations[lang]['meta.description']) {
     descMeta.setAttribute('content', translations[lang]['meta.description']);
   }
-  
+
   // Update content patterns for animation
   updateContentPatternsLanguage(lang);
   // Refresh pattern keys for animation to match selected language
@@ -465,9 +495,9 @@ function switchLanguage(lang) {
 function toggleLanguageDropdown() {
   const trigger = document.getElementById('langTrigger');
   const menu = document.getElementById('langMenu');
-  
+
   const isOpen = menu.classList.contains('open');
-  
+
   if (isOpen) {
     closeLanguageDropdown();
   } else {
@@ -478,11 +508,11 @@ function toggleLanguageDropdown() {
 function openLanguageDropdown() {
   const trigger = document.getElementById('langTrigger');
   const menu = document.getElementById('langMenu');
-  
+
   trigger.classList.add('open');
   menu.classList.add('open');
   trigger.setAttribute('aria-expanded', 'true');
-  
+
   // Add click outside listener
   setTimeout(() => {
     document.addEventListener('click', handleClickOutside);
@@ -492,11 +522,11 @@ function openLanguageDropdown() {
 function closeLanguageDropdown() {
   const trigger = document.getElementById('langTrigger');
   const menu = document.getElementById('langMenu');
-  
+
   trigger.classList.remove('open');
   menu.classList.remove('open');
   trigger.setAttribute('aria-expanded', 'false');
-  
+
   // Remove click outside listener
   document.removeEventListener('click', handleClickOutside);
 }
@@ -579,10 +609,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Language dropdown functionality
   const langTrigger = document.getElementById('langTrigger');
   const langOptions = document.querySelectorAll('.lang-option');
-  
+
   // Toggle dropdown
   if (langTrigger) langTrigger.addEventListener('click', toggleLanguageDropdown);
-  
+
   // Language option selection -> navigate to language-specific URL for SEO
   function getCanonicalBaseUrl() {
     const link = document.querySelector('link[rel="canonical"]');
@@ -635,7 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  
+
   // Initialize with page default language (falls back to 'en')
   const initialLang = window.DEFAULT_LANG || 'en';
   switchLanguage(initialLang);
@@ -653,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const v = entry.target;
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
             const p = v.play();
-            if (p && typeof p.catch === 'function') p.catch(() => {});
+            if (p && typeof p.catch === 'function') p.catch(() => { });
           } else {
             v.pause();
           }
@@ -682,7 +712,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videos.forEach(v => {
           if (isInView(v)) {
             const p = v.play();
-            if (p && typeof p.catch === 'function') p.catch(() => {});
+            if (p && typeof p.catch === 'function') p.catch(() => { });
           } else {
             v.pause();
           }
@@ -694,16 +724,16 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // Information list: render first 3, lazy-load more on scroll
-  (function setupInformationList(){
+  (function setupInformationList() {
     const section = document.getElementById('information');
     if (!section) return;
     const list = section.querySelector('#infoList');
     if (!list) return;
 
     const lang = currentLang || window.DEFAULT_LANG || 'en';
-    const all = Array.from((infoNotices[lang] || [])).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+    const all = Array.from((infoNotices[lang] || [])).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
-    function createItem(item){
+    function createItem(item) {
       const li = document.createElement('li');
       li.className = 'info-item';
       const time = document.createElement('time');
@@ -721,7 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return li;
     }
 
-    function renderAll(){
+    function renderAll() {
       const frag = document.createDocumentFragment();
       all.forEach(item => frag.appendChild(createItem(item)));
       list.innerHTML = '';
@@ -903,18 +933,18 @@ function updateTextDemo(patternKey) {
   const currentContentPatterns = window.currentContentPatterns || contentPatterns[currentLang];
   const pattern = currentContentPatterns[patternKey];
   const textDemo = document.getElementById('textDemo');
-  
+
   if (!textDemo) return;
-  
+
   // Add fade out class
   textDemo.classList.add('fade-out');
-  
+
   setTimeout(() => {
     // Update content
     const textLines = textDemo.querySelectorAll('.text-line');
     const bubbleContent = textDemo.querySelector('.bubble-content');
-    
-    
+
+
     // Update text lines
     pattern.lines.forEach((line, index) => {
       if (textLines[index]) {
@@ -922,19 +952,19 @@ function updateTextDemo(patternKey) {
         textLines[index].classList.toggle('selected', index === pattern.selectedIndex);
       }
     });
-    
+
     // Update explanation
     if (bubbleContent) {
       bubbleContent.textContent = pattern.explanation;
     }
-    
+
     // Remove fade out and add fade in
     textDemo.classList.remove('fade-out');
     textDemo.classList.add('fade-in');
-    
+
     setTimeout(() => {
       textDemo.classList.remove('fade-in');
-      
+
     }, 500);
   }, 250);
 }
@@ -952,14 +982,14 @@ function startContentAnimation() {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   // Initialize language switching
   // cleanup: .lang-btn not used
-  
+
   // Initialize with page default language (falls back to 'en')
   const initialLang = window.DEFAULT_LANG || 'en';
   switchLanguage(initialLang);
-  
+
   // Initialize animation
   startContentAnimation();
 });
@@ -971,8 +1001,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Download buttons routing
 // - Keep all CTA buttons pointing to localized downloads page
 // ------------------------------
-(function setupDownloadButtons(){
-  function init(){
+(function setupDownloadButtons() {
+  function init() {
     const btns = [
       document.getElementById('download-btn'),
       document.getElementById('download-btn-cta')
@@ -986,7 +1016,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navBtn) navBtn.href = downloadBase;
   }
 
-  if (document.readyState === 'loading'){
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
@@ -998,8 +1028,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // - Header button (`#download-nav`) shows a shorter label on small screens
 // - Only affects the header; hero/CTA buttons remain unchanged
 // ---------------------------------------------
-(function mobileHeaderCtaLabel(){
-  function applyHeaderCtaResponsiveLabel(){
+(function mobileHeaderCtaLabel() {
+  function applyHeaderCtaResponsiveLabel() {
     const navBtn = document.getElementById('download-nav');
     if (!navBtn) return;
     const lang = (document.documentElement && document.documentElement.lang) || currentLang || (window.DEFAULT_LANG || 'en');
@@ -1012,7 +1042,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Expose for reuse from elsewhere if needed
   window.applyHeaderCtaResponsiveLabel = applyHeaderCtaResponsiveLabel;
 
-  const reapply = () => { try { applyHeaderCtaResponsiveLabel(); } catch (_) {} };
+  const reapply = () => { try { applyHeaderCtaResponsiveLabel(); } catch (_) { } };
   document.addEventListener('DOMContentLoaded', reapply);
   window.addEventListener('resize', reapply, { passive: true });
   window.addEventListener('orientationchange', reapply, { passive: true });
@@ -1021,8 +1051,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------------------
 // Infinite scroll for vertical cards
 // ---------------------------------------------
-(function infiniteScrollCards(){
-  function setupInfiniteScroll(){
+(function infiniteScrollCards() {
+  function setupInfiniteScroll() {
     const cardContainers = document.querySelectorAll('.grid.features.vertical-cards');
 
     cardContainers.forEach(container => {
@@ -1078,7 +1108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     setupInfiniteScroll();
     setupFAQAccordion();
   });
@@ -1087,7 +1117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------------------
 // Google Analytics (GA4) Download Tracking
 // ---------------------------------------------
-(function setupDownloadTracking(){
+(function setupDownloadTracking() {
   function trackDownloadClick(element) {
     // GA4が読み込まれているか確認
     if (typeof gtag === 'undefined') {
@@ -1144,7 +1174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadButtons = document.querySelectorAll('.dl-btn, #download-btn, #download-btn-cta, #download-nav');
 
     downloadButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
+      button.addEventListener('click', function (e) {
         trackDownloadClick(this);
         // リンクの遷移は妨げない（トラッキング後に通常通り遷移）
       });

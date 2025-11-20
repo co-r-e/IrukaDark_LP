@@ -108,6 +108,7 @@
           <a href="#features" class="nav-link">機能</a>
           <a href="#how" class="nav-link">ショートカット</a>
           <a href="#how3" class="nav-link">クリップボード</a>
+          <a href="#terminal" class="nav-link">ターミナル</a>
           <a href="#faq" class="nav-link">FAQ</a>
         </nav>
         <a class="brand" href="/ja">
@@ -798,55 +799,63 @@
           <p class="section-sub" data-i18n="howto2.subtitle">スラッシュコマンドで直前の解説をさらに活用。</p>
         </div>
 
-        <div class="grid features howto-grid">
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</p>
-          </article>
+        <div class="howto-group">
+          <h3 class="howto-group-title" data-i18n="howto2.group.extend">解説を拡張</h3>
+          <div class="grid features howto-grid">
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.next.title">/next</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.next.title">/next</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.table.title">/table</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.table.title">/table</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.translate.description">直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.translate.description">直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</p>
+            </article>
+          </div>
+        </div>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.web.title">/web</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。</p>
-          </article>
+        <div class="howto-group">
+          <h3 class="howto-group-title" data-i18n="howto2.group.generate">コンテンツ生成</h3>
+          <div class="grid features howto-grid">
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.web.title">/web</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.image.title">/image</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.image.description">チャット欄に <code>@image</code> と打って半角スペースを入れてからプロンプトを入力すると画像を生成できます。<code>/image</code> では生成する画像のサイズや並列同時生成する画像の枚数を設定できます。</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.image.title">/image</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.image.description">チャット欄に <code>@image</code> と打って半角スペースを入れてからプロンプトを入力すると画像を生成できます。<code>/image</code> では生成する画像のサイズや並列同時生成する画像の枚数を設定できます。</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.video.title">/video</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.video.description">チャット欄に <code>@video</code> と打って半角スペースを入れてからプロンプトを入力すると動画を生成できます。<code>/video</code> では生成する動画のサイズ、時間、品質、本数を設定できます。</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.video.title">/video</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.video.description">チャット欄に <code>@video</code> と打って半角スペースを入れてからプロンプトを入力すると動画を生成できます。<code>/video</code> では生成する動画のサイズ、時間、品質、本数を設定できます。</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -956,6 +965,110 @@
               <h3 class="card-title" data-i18n="howto3.snippet.title">スニペット機能</h3>
             </div>
             <p class="card-body" data-i18n="howto3.snippet.description">よく使うフレーズやコード断片を登録しておくと、いつでも瞬時に引き出せます。繰り返し入力する定型文やコマンドを保存しておけば、タイピングの手間が大幅に減ります。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ターミナル機能 -->
+      <section id="terminal" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="terminal.title">ターミナル機能</h2>
+          <p class="section-sub" data-i18n="terminal.subtitle">IrukaDarkからターミナルを操作できます。しかも、ターミナルのコマンド自体をIrukaDarkがつくってくれます。</p>
+        </div>
+
+        <!-- Terminal Visualization -->
+        <div class="terminal-showcase">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="terminal-btn terminal-btn-close"></span>
+                <span class="terminal-btn terminal-btn-minimize"></span>
+                <span class="terminal-btn terminal-btn-maximize"></span>
+              </div>
+              <div class="terminal-title">irukadark-terminal</div>
+            </div>
+            <div class="terminal-body vim-editor">
+              <div class="vim-line">
+                <span class="vim-linenum">1</span>
+                <span class="vim-keyword">def</span>
+                <span class="vim-function">search_files</span><span class="vim-text">(pattern, days):</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">2</span>
+                <span class="vim-text">    </span><span class="vim-string">"""指定されたパターンと日数でファイルを検索"""</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">3</span>
+                <span class="vim-text">    </span><span class="vim-keyword">import</span>
+                <span class="vim-module">subprocess</span>
+              </div>
+              <div class="vim-line vim-ai-generated">
+                <span class="vim-linenum">4</span>
+                <span class="vim-text">    cmd = </span><span class="vim-string">f"find . -name '{pattern}' -mtime -{days}"</span>
+                <span class="terminal-badge">AI生成</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">5</span>
+                <span class="vim-text">    result = subprocess.run(cmd, shell=</span><span class="vim-constant">True</span><span class="vim-text">, capture_output=</span><span class="vim-constant">True</span><span class="vim-text">)</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">6</span>
+                <span class="vim-text">    </span><span class="vim-keyword">return</span>
+                <span class="vim-text"> result.stdout.decode().split(</span><span class="vim-string">'\n'</span><span class="vim-text">)</span>
+              </div>
+              <div class="vim-line vim-empty">
+                <span class="vim-linenum">7</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">8</span>
+                <span class="vim-comment"># ╔═══════════════════════════════════╗</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">9</span>
+                <span class="vim-comment"># ║   ✨ IrukaDark AI 搭載           ║</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">10</span>
+                <span class="vim-comment"># ║                                   ║</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">11</span>
+                <span class="vim-comment"># ║   ⚡ 高速  •  🎯 賢い  •  🔒 安全  ║</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">12</span>
+                <span class="vim-comment"># ╚═══════════════════════════════════╝</span>
+              </div>
+              <div class="vim-statusbar">
+                <span class="vim-mode">-- 挿入 --</span>
+                <span class="vim-file">src/search.py</span>
+                <span class="vim-position">4,17</span>
+                <span class="vim-percentage">67%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="terminal.generate.title">AI生成コマンド</h3>
+            </div>
+            <p class="card-body" data-i18n="terminal.generate.description">自然言語で「やりたいこと」を伝えるだけで、IrukaDarkが適切なターミナルコマンドを生成。複雑な構文やフラグを覚える必要はありません。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="terminal.execute.title">直接実行機能</h3>
+            </div>
+            <p class="card-body" data-i18n="terminal.execute.description">生成されたコマンドをIrukaDarkから直接実行できます。実行前にコマンドを確認でき、出力結果もアプリ内でリアルタイムに確認できます。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="terminal.safe.title">安全実行モード</h3>
+            </div>
+            <p class="card-body" data-i18n="terminal.safe.description">IrukaDarkは破壊的な可能性のあるコマンドをハイライト表示し、明示的な確認を要求します。rm -rfのような危険な操作の誤実行を防ぎます。</p>
           </article>
         </div>
       </section>

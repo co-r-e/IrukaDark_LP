@@ -106,6 +106,7 @@
           <a href="#features" class="nav-link">Features</a>
           <a href="#how" class="nav-link">Shortcuts</a>
           <a href="#how3" class="nav-link">Clipboard</a>
+          <a href="#terminal" class="nav-link">Terminal</a>
           <a href="#faq" class="nav-link">FAQ</a>
         </nav>
         <a class="brand" href="/">
@@ -796,55 +797,63 @@
           <p class="section-sub" data-i18n="howto2.subtitle">Slash commands that build on your latest explanation.</p>
         </div>
 
-        <div class="grid features howto-grid">
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</p>
-          </article>
+        <div class="howto-group">
+          <h3 class="howto-group-title" data-i18n="howto2.group.extend">Extend Explanations</h3>
+          <div class="grid features howto-grid">
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.next.title">/next</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.next.title">/next</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.table.title">/table</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.table.title">/table</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</p>
+            </article>
+          </div>
+        </div>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.web.title">/web</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</p>
-          </article>
+        <div class="howto-group">
+          <h3 class="howto-group-title" data-i18n="howto2.group.generate">Generate Content</h3>
+          <div class="grid features howto-grid">
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.web.title">/web</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.image.title">/image</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.image.description">Type <code>@image</code> followed by a space and your prompt in the chat to generate images. Use <code>/image</code> to configure image size and the number of images to generate in parallel.</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.image.title">/image</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.image.description">Type <code>@image</code> followed by a space and your prompt in the chat to generate images. Use <code>/image</code> to configure image size and the number of images to generate in parallel.</p>
+            </article>
 
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto2.commands.video.title">/video</h3>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.video.description">Type <code>@video</code> followed by a space and your prompt in the chat to generate videos. Use <code>/video</code> to configure video size, duration, quality, and the number of videos to generate.</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto2.commands.video.title">/video</h4>
+              </div>
+              <p class="card-body" data-i18n="howto2.commands.video.description">Type <code>@video</code> followed by a space and your prompt in the chat to generate videos. Use <code>/video</code> to configure video size, duration, quality, and the number of videos to generate.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -954,6 +963,110 @@
               <h3 class="card-title" data-i18n="howto3.snippet.title">Snippet Feature</h3>
             </div>
             <p class="card-body" data-i18n="howto3.snippet.description">Register frequently-used phrases or code fragments to retrieve them instantly at any time. Saving repetitive boilerplate text or commands significantly reduces typing effort.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Terminal Features -->
+      <section id="terminal" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="terminal.title">Terminal Features</h2>
+          <p class="section-sub" data-i18n="terminal.subtitle">Control your terminal from IrukaDark. IrukaDark generates and executes commands for you.</p>
+        </div>
+
+        <!-- Terminal Visualization -->
+        <div class="terminal-showcase">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="terminal-btn terminal-btn-close"></span>
+                <span class="terminal-btn terminal-btn-minimize"></span>
+                <span class="terminal-btn terminal-btn-maximize"></span>
+              </div>
+              <div class="terminal-title">irukadark-terminal</div>
+            </div>
+            <div class="terminal-body vim-editor">
+              <div class="vim-line">
+                <span class="vim-linenum">1</span>
+                <span class="vim-keyword">def</span>
+                <span class="vim-function">search_files</span><span class="vim-text">(pattern, days):</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">2</span>
+                <span class="vim-text">    </span><span class="vim-string">"""Find files matching pattern modified in last N days"""</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">3</span>
+                <span class="vim-text">    </span><span class="vim-keyword">import</span>
+                <span class="vim-module">subprocess</span>
+              </div>
+              <div class="vim-line vim-ai-generated">
+                <span class="vim-linenum">4</span>
+                <span class="vim-text">    cmd = </span><span class="vim-string">f"find . -name '{pattern}' -mtime -{days}"</span>
+                <span class="terminal-badge">AI Generated</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">5</span>
+                <span class="vim-text">    result = subprocess.run(cmd, shell=</span><span class="vim-constant">True</span><span class="vim-text">, capture_output=</span><span class="vim-constant">True</span><span class="vim-text">)</span>
+              </div>
+              <div class="vim-line">
+                <span class="vim-linenum">6</span>
+                <span class="vim-text">    </span><span class="vim-keyword">return</span>
+                <span class="vim-text"> result.stdout.decode().split(</span><span class="vim-string">'\n'</span><span class="vim-text">)</span>
+              </div>
+              <div class="vim-line vim-empty">
+                <span class="vim-linenum">7</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">8</span>
+                <span class="vim-comment"># ╔═══════════════════════════════════╗</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">9</span>
+                <span class="vim-comment"># ║   ✨ Powered by IrukaDark AI     ║</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">10</span>
+                <span class="vim-comment"># ║                                   ║</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">11</span>
+                <span class="vim-comment"># ║   ⚡ Fast  •  🎯 Smart  •  🔒 Safe ║</span>
+              </div>
+              <div class="vim-line vim-ascii-art">
+                <span class="vim-linenum">12</span>
+                <span class="vim-comment"># ╚═══════════════════════════════════╝</span>
+              </div>
+              <div class="vim-statusbar">
+                <span class="vim-mode">-- INSERT --</span>
+                <span class="vim-file">src/search.py</span>
+                <span class="vim-position">4,17</span>
+                <span class="vim-percentage">67%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="terminal.generate.title">AI-Generated Commands</h3>
+            </div>
+            <p class="card-body" data-i18n="terminal.generate.description">Simply describe what you want to do in natural language, and IrukaDark generates the appropriate terminal command. No need to remember complex syntax or flags.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="terminal.execute.title">Direct Execution</h3>
+            </div>
+            <p class="card-body" data-i18n="terminal.execute.description">Execute generated commands directly from IrukaDark. Review the command before running, and see the output in real-time within the app.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="card-title" data-i18n="terminal.safe.title">Safe Execution Mode</h3>
+            </div>
+            <p class="card-body" data-i18n="terminal.safe.description">IrukaDark highlights potentially destructive commands and requires explicit confirmation. This prevents accidental execution of dangerous operations like rm -rf.</p>
           </article>
         </div>
       </section>
