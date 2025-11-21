@@ -331,6 +331,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-11-21',
+      title: 'v1.2.29 ターミナル機能を追加',
+      body: 'IrukaDark v1.2.29 でターミナル機能が追加されました。自然言語でコマンドを生成し、アプリ内から直接実行できます。詳しくは<a href="#terminal" class="link">ターミナル機能</a>セクションをご覧ください。'
+    },
+    {
       date: '2025-11-11',
       title: 'v1.2.0 クリップボードHUD & ワークスペース2.0',
       body: 'IrukaDark v1.2.0 ではネイティブ自動化ブリッジ（IrukaAutomation）により、<code>Alt+C</code> でクリップボード履歴の上位20件をHUD表示できます。クリップボードワークスペース2.0ではリッチテキスト、base64画像、サムネイル、ネストされたフォルダー構成に対応。新しいランチャータブ（ベータ版）では、アプリ、ファイル、システムコマンドをキーボードナビゲーションで検索でき、ソース別フィルターとお気に入りバーも利用可能です。'
@@ -377,6 +382,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-11-21',
+      title: 'v1.2.29 Terminal Features Added',
+      body: 'IrukaDark v1.2.29 introduces terminal features. Generate commands in natural language and execute them directly from the app. Learn more in the <a href="#terminal" class="link">Terminal Features</a> section.'
+    },
     {
       date: '2025-11-11',
       title: 'v1.2.0 Clipboard HUD & Workspace 2.0',
