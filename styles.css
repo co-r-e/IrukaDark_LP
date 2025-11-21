@@ -2572,6 +2572,39 @@ body:has([href*="user-gaide"]) .grid.features {
   justify-content: space-between;
   gap: 18px;
   padding: 20px;
+  text-decoration: none;
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-radius: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 32px;
+}
+
+.cta-gradient .cta-hero-link {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  background: #FFFFFF;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: none;
+}
+
+.cta-gradient .cta-hero-link:hover,
+.cta-gradient .cta-hero-link:focus-visible {
+  transform: none;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.cta-headline {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 1.3;
 }
 
 .cta-content {
@@ -3108,12 +3141,27 @@ body:has([href*="user-gaide"]) .grid.features {
     text-align: left;
   }
 
+  .cta-gradient {
+    align-items: center;
+    text-align: center;
+    padding: 32px 20px;
+    gap: 24px;
+  }
+
+  .cta-headline {
+    font-size: clamp(22px, 5vw, 32px);
+  }
+
   .cta-hero-link {
     width: 100%;
     max-width: none;
     padding: 0;
     margin-bottom: 16px;
     background: none;
+  }
+
+  .cta-gradient .cta-hero-link {
+    margin-bottom: 0;
   }
 
   .cta-hero-img {
@@ -3125,6 +3173,10 @@ body:has([href*="user-gaide"]) .grid.features {
     width: 100%;
     gap: 12px;
     align-items: flex-start;
+  }
+
+  .cta-gradient .cta-content {
+    align-items: center;
   }
 
   .cta-actions {
