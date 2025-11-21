@@ -332,8 +332,8 @@ const infoNotices = {
   ja: [
     {
       date: '2025-11-21',
-      title: 'v1.2.29 ターミナル機能を追加',
-      body: 'IrukaDark v1.2.29 でターミナル機能が追加されました。自然言語でコマンドを生成し、アプリ内から直接実行できます。詳しくは<a href="#terminal" class="link">ターミナル機能</a>セクションをご覧ください。'
+      title: 'v1.2.9 ターミナル機能を追加',
+      body: 'IrukaDark v1.2.9 でターミナル機能が追加されました。自然言語でコマンドを生成し、アプリ内から直接実行できます。詳しくは<a href="#terminal" class="link">ターミナル機能</a>セクションをご覧ください。'
     },
     {
       date: '2025-11-11',
@@ -384,8 +384,8 @@ const infoNotices = {
   en: [
     {
       date: '2025-11-21',
-      title: 'v1.2.29 Terminal Features Added',
-      body: 'IrukaDark v1.2.29 introduces terminal features. Generate commands in natural language and execute them directly from the app. Learn more in the <a href="#terminal" class="link">Terminal Features</a> section.'
+      title: 'v1.2.9 Terminal Features Added',
+      body: 'IrukaDark v1.2.9 introduces terminal features. Generate commands in natural language and execute them directly from the app. Learn more in the <a href="#terminal" class="link">Terminal Features</a> section.'
     },
     {
       date: '2025-11-11',

@@ -1080,8 +1080,7 @@ body {
       rgba(180, 50, 200, 0.3) 70%,
       rgba(140, 40, 160, 0.2) 85%,
       rgba(100, 30, 120, 0.1) 95%,
-      transparent 100%
-    );
+      transparent 100%);
   box-shadow:
     0 0 80px 30px rgba(255, 77, 109, 0.4),
     0 0 150px 60px rgba(217, 70, 239, 0.3),
@@ -1100,16 +1099,20 @@ body {
   0% {
     filter: blur(40px) hue-rotate(0deg);
   }
+
   100% {
     filter: blur(40px) hue-rotate(15deg);
   }
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.05);
