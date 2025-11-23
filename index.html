@@ -1227,6 +1227,35 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Why do I see an Accessibility error?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>IrukaDark ships a helper binary named <strong>IrukaAutomation</strong> that uses the macOS Accessibility API. macOS manages permissions per binary; after an update replaces the binary and its code-signing hash changes, the previous permission can be invalidated and an Accessibility error may appear.</p>
+                <p><strong>Fix 1 (recommended): Re-add in Settings</strong></p>
+                <ol>
+                  <li>Open System Settings → Privacy &amp; Security → Accessibility.</li>
+                  <li>Select IrukaDark and remove it (−).</li>
+                  <li>Add it again (+) and choose <code>/Applications/IrukaDark.app</code>.</li>
+                  <li>Restart the app.</li>
+                </ol>
+                <p><strong>Fix 2: Reset via Terminal</strong></p>
+                <pre><code>tccutil reset Accessibility com.core.irukadark
+# Restart the app and allow the permission dialog when prompted
+</code></pre>
+                <p><strong>Fix 3: Full reset (if the above fails)</strong></p>
+                <pre><code>sudo tccutil reset Accessibility
+</code></pre>
+                <p class="muted">Note: This is due to macOS security behavior; even signed apps can be affected when binaries are updated.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
               <span class="faq-question-text">What OS permissions are required?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -1381,6 +1410,11 @@
           "@type": "Question",
           "name": "Does it require an internet connection?",
           "acceptedAnswer": {"@type": "Answer", "text": "Yes. IrukaDark connects to AI services to generate explanations. Only the content you select (or capture) is sent over HTTPS; IrukaDark does not store your data."}
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I see an Accessibility error?",
+          "acceptedAnswer": {"@type": "Answer", "text": "IrukaDark ships a helper binary (IrukaAutomation) that uses macOS Accessibility. After an update the binary hash changes, so macOS may drop the previous permission. Re-add IrukaDark in System Settings → Privacy & Security → Accessibility, or run `tccutil reset Accessibility com.core.irukadark` (and allow the dialog). If it still fails, `sudo tccutil reset Accessibility` resets all Accessibility permissions."}
         },
         {
           "@type": "Question",

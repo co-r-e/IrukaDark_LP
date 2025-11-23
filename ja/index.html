@@ -1300,6 +1300,38 @@
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">アクセシビリティのエラーが出る</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>IrukaDark アプリ内の <strong>IrukaAutomation</strong> という別バイナリがアクセシビリティAPIを使用しています。macOSはバイナリ単位で権限を管理しており、アップデートでバイナリが置き換わるとコード署名のハッシュが変わり、権限が無効化されてアクセシビリティエラーが出ることがあります。</p>
+              <p><strong>解決方法1: 設定から再追加（推奨）</strong></p>
+              <ol>
+                <li>システム設定 → プライバシーとセキュリティ → アクセシビリティ を開く</li>
+                <li>IrukaDark を一度削除（−ボタン）</li>
+                <li>再度追加（＋ボタン）して <code>/Applications/IrukaDark.app</code> を選択</li>
+                <li>アプリを再起動</li>
+              </ol>
+              <p><strong>解決方法2: ターミナルでリセット</strong></p>
+              <pre><code># IrukaDarkのアクセシビリティ権限をリセット
+tccutil reset Accessibility com.core.irukadark
+# アプリを再起動後、権限ダイアログが表示されるので許可
+</code></pre>
+              <p><strong>解決方法3: 完全リセット（上記で解決しない場合）</strong></p>
+              <pre><code># すべてのアクセシビリティ権限をリセット（他のアプリにも影響するので注意）
+sudo tccutil reset Accessibility
+</code></pre>
+              <p class="muted">この問題はmacOSのセキュリティ仕様によるもので、署名付きアプリでもバイナリ更新時に発生することがあります。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">OSごとの許可設定は？</span>
             <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1457,6 +1489,11 @@
           "@type": "Question",
           "name": "インターネット接続は必要ですか？",
           "acceptedAnswer": {"@type": "Answer", "text": "はい。解説を生成するためAIサービスに接続します。送信されるのは選択したテキストやキャプチャ範囲のみで、IrukaDark がデータを保存することはありません。"}
+        },
+        {
+          "@type": "Question",
+          "name": "アクセシビリティのエラーが出る",
+          "acceptedAnswer": {"@type": "Answer", "text": "IrukaDark内のIrukaAutomationバイナリがアクセシビリティAPIを使用します。アップデートでバイナリの署名ハッシュが変わると、macOSが以前の許可を無効化しエラーが出ることがあります。システム設定→プライバシーとセキュリティ→アクセシビリティでIrukaDarkを削除・再追加するか、`tccutil reset Accessibility com.core.irukadark` を実行して再許可してください。解決しない場合は `sudo tccutil reset Accessibility` ですべてのアクセシビリティ許可をリセットします（他アプリに影響するので注意）。"}
         },
         {
           "@type": "Question",

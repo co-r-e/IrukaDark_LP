@@ -2657,7 +2657,6 @@ body:has([href*="user-gaide"]) .grid.features {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.9;
 }
 
 .footer-logo-img {
