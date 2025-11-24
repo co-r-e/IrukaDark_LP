@@ -3082,6 +3082,11 @@ body:has([href*="user-gaide"]) .grid.features {
     margin-bottom: 16px;
   }
 
+  /* Japanese hero headline: slightly smaller on mobile */
+  html[lang="ja"] .hero-title {
+    font-size: clamp(26px, 6.5vw, 38px);
+  }
+
   .hero-tagline {
     font-size: clamp(18px, 4.5vw, 24px);
     line-height: 1.3;
