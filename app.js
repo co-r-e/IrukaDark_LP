@@ -331,6 +331,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-11-26',
+      title: 'v1.2.17 スニペットに画像を保存',
+      body: 'IrukaDark v1.2.17 でスニペットに画像を保存できるようになりました。テキストだけでなく、画像もスニペットとして管理・再利用できます。'
+    },
+    {
       date: '2025-11-21',
       title: 'v1.2.9 ターミナル機能を追加',
       body: 'IrukaDark v1.2.9 でターミナル機能が追加されました。自然言語でコマンドを生成し、アプリ内から直接実行できます。詳しくは<a href="#terminal" class="link">ターミナル機能</a>セクションをご覧ください。'
@@ -382,6 +387,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-11-26',
+      title: 'v1.2.17 Save Images to Snippets',
+      body: 'IrukaDark v1.2.17 now allows you to save images to snippets. Manage and reuse not only text but also images as snippets.'
+    },
     {
       date: '2025-11-21',
       title: 'v1.2.9 Terminal Features Added',
