@@ -332,6 +332,11 @@ const infoNotices = {
   ja: [
     {
       date: '2025-11-26',
+      title: 'v1.2.19 クリップボードの高速化',
+      body: 'IrukaDark v1.2.19 でクリップボードがバックグラウンドプロセスに常駐するようになり、より高速に動作するようになりました。'
+    },
+    {
+      date: '2025-11-26',
       title: 'v1.2.17 スニペットに画像を保存',
       body: 'IrukaDark v1.2.17 でスニペットに画像を保存できるようになりました。テキストだけでなく、画像もスニペットとして管理・再利用できます。'
     },
@@ -387,6 +392,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-11-26',
+      title: 'v1.2.19 Faster Clipboard',
+      body: 'IrukaDark v1.2.19 now runs the clipboard as a background process, enabling faster and more responsive performance.'
+    },
     {
       date: '2025-11-26',
       title: 'v1.2.17 Save Images to Snippets',
