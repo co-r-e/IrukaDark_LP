@@ -47,6 +47,63 @@ if (document.readyState === 'loading') {
   ready();
 }
 
+/**
+ * Generate a meteor-like gradient texture using an offscreen canvas.
+ * The texture has a bright head on the right and fades out to the left.
+ */
+function createMeteorTexture(THREE) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+
+  // Clear background
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Coordinates
+  const w = canvas.width;
+  const h = canvas.height;
+  const cy = h / 2;
+  const headX = w - 10; // Slightly offset from right edge
+  const tailX = 0;
+  const headRadius = 6;
+
+  // Create gradient for the trail
+  const gradient = ctx.createLinearGradient(tailX, 0, headX, 0);
+  gradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
+  gradient.addColorStop(0.2, 'rgba(255, 255, 255, 0.1)');
+  gradient.addColorStop(0.8, 'rgba(255, 255, 255, 0.8)');
+  gradient.addColorStop(1, 'rgba(255, 255, 255, 1)');
+
+  // Draw glowing trail and head
+  ctx.fillStyle = gradient;
+  
+  // Draw trail (tear-drop shape)
+  ctx.beginPath();
+  ctx.moveTo(tailX, cy);
+  ctx.lineTo(headX, cy - headRadius * 0.8);
+  ctx.lineTo(headX + headRadius, cy);
+  ctx.lineTo(headX, cy + headRadius * 0.8);
+  ctx.closePath();
+  
+  // Add glow effect
+  ctx.shadowBlur = 15;
+  ctx.shadowColor = 'white';
+  ctx.fill();
+
+  // Draw bright core at the head
+  ctx.beginPath();
+  ctx.arc(headX, cy, headRadius * 0.6, 0, Math.PI * 2);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.shadowBlur = 20;
+  ctx.shadowColor = 'white';
+  ctx.fill();
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return texture;
+}
+
 function initLaserAnimation(THREE) {
   const canvas = document.getElementById('hero-laser-canvas');
   if (!canvas) return; // DOM 遅延で要素がなくなっていた場合
@@ -97,34 +154,35 @@ function initLaserAnimation(THREE) {
 
   // Create laser system
   const lasers = [];
-  const maxLasers = isLowPerformance ? 25 : 35; // Reduced from 50
-  const laserLength = 8; // Length of each laser beam
-  const laserSpeed = 0.5; // Speed of laser travel (faster to clear screen quicker)
-  const laserOriginY = 1; // Offset Y position slightly above center
-  const enableGlow = !isLowPerformance; // Disable glow on low-performance devices
+  const maxLasers = isLowPerformance ? 20 : 30; // Reduced count as textures are more visible
+  const laserLength = 10; // Slightly longer
+  const laserSpeed = 0.25; 
+  const laserOriginY = 1;
 
-  // Reusable geometries (create once, reuse for all lasers)
-  const laserWidth = 0.05;
-  const glowWidth = 0.12;
+  // Generate texture
+  const meteorTexture = createMeteorTexture(THREE);
+
+  // Reusable geometry
+  // Widen geometry to accommodate the glow in texture (64px height texture vs 256px width ~ 1:4 ratio)
+  // If length is 10, height should be around 2.5 to match texture aspect ratio
+  const laserWidth = 2.0; 
   const sharedLaserGeometry = new THREE.PlaneGeometry(laserLength, laserWidth);
-  const sharedGlowGeometry = new THREE.PlaneGeometry(laserLength, glowWidth);
 
   // Function to create a new laser (mesh-based)
   function createLaser() {
     const angle = Math.random() * Math.PI * 2;
 
-    // Color palette: Pink gradient only
-    const hue = 300 + Math.random() * 40; // 300-340 (pink-magenta range)
-    const lightness = 0.5 + Math.random() * 0.3; // 0.5-0.8
-    const color = new THREE.Color().setHSL(hue / 360, 0.8, lightness);
-    const glowColor = new THREE.Color().setHSL(hue / 360, 0.7, Math.min(lightness * 1.2, 0.9));
-
-    // Create main laser mesh (reuse geometry)
+    // Color palette: Pink/Purple/Cyan gradient
+    // More variation for "meteor" look
+    const hue = 280 + Math.random() * 60; // 280-340 (purple to pink)
+    const lightness = 0.6 + Math.random() * 0.3; // Bright
+    const color = new THREE.Color().setHSL(hue / 360, 0.9, lightness);
 
     const material = new THREE.MeshBasicMaterial({
+      map: meteorTexture,
       color: color,
       transparent: true,
-      opacity: 0.9,
+      opacity: 1.0,
       side: THREE.DoubleSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false
@@ -133,32 +191,13 @@ function initLaserAnimation(THREE) {
     const mesh = new THREE.Mesh(sharedLaserGeometry, material);
     mesh.rotation.z = angle;
 
-    // Create glow mesh (reuse geometry) - only if enabled
-    let glowMesh = null;
-    if (enableGlow) {
-      const glowMaterial = new THREE.MeshBasicMaterial({
-        color: glowColor,
-        transparent: true,
-        opacity: 0.3,
-        side: THREE.DoubleSide,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-      });
-
-      glowMesh = new THREE.Mesh(sharedGlowGeometry, glowMaterial);
-      glowMesh.rotation.z = angle;
-      glowMesh.position.z = -0.01; // Slightly behind
-      scene.add(glowMesh);
-    }
-
     scene.add(mesh);
 
     return {
       mesh: mesh,
-      glowMesh: glowMesh,
       angle: angle,
-      distance: 0,
-      speed: laserSpeed * (0.8 + Math.random() * 0.4),
+      distance: 2, // Start slightly away from center
+      speed: laserSpeed * (0.8 + Math.random() * 0.6),
       life: 1.0
     };
   }
@@ -166,7 +205,7 @@ function initLaserAnimation(THREE) {
   // Animation variables
   let time = 0;
   let lastLaserTime = 0;
-  const laserInterval = isLowPerformance ? 0.12 : 0.10; // Slower spawn on low-performance devices
+  const laserInterval = isLowPerformance ? 0.15 : 0.12;
 
   // Animation loop
   function animate() {
@@ -194,16 +233,11 @@ function initLaserAnimation(THREE) {
       laser.distance += laser.speed;
 
       // Fade out as it travels
-      laser.life -= 0.008;
+      laser.life -= 0.003; // Last longer
 
-      if (laser.life <= 0 || laser.distance > 40) {
-        // Remove laser and glow
+      if (laser.life <= 0 || laser.distance > 45) {
+        // Remove laser
         scene.remove(laser.mesh);
-        if (laser.glowMesh) {
-          scene.remove(laser.glowMesh);
-          laser.glowMesh.material.dispose();
-        }
-        // Only dispose materials (geometry is shared, don't dispose)
         laser.mesh.material.dispose();
         lasers.splice(i, 1);
         continue;
@@ -216,16 +250,13 @@ function initLaserAnimation(THREE) {
 
       laser.mesh.position.x = x;
       laser.mesh.position.y = y;
-      if (laser.glowMesh) {
-        laser.glowMesh.position.x = x;
-        laser.glowMesh.position.y = y;
-      }
 
       // Update opacity based on life
-      laser.mesh.material.opacity = laser.life * 0.9;
-      if (laser.glowMesh) {
-        laser.glowMesh.material.opacity = laser.life * 0.3;
-      }
+      laser.mesh.material.opacity = laser.life;
+      
+      // Optional: scale down slightly as it dies
+      // const scale = 0.5 + 0.5 * laser.life;
+      // laser.mesh.scale.set(1, scale, 1);
     }
 
     renderer.render(scene, camera);
@@ -265,28 +296,18 @@ function initLaserAnimation(THREE) {
 
   // Cleanup function
   window.addEventListener('beforeunload', () => {
-    // Cancel animation frame
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId);
     }
-    // Remove event listeners
     window.removeEventListener('resize', handleResize);
     document.removeEventListener('visibilitychange', handleVisibilityChange);
     observer.disconnect();
-    // Dispose resources
     renderer.dispose();
     lasers.forEach(laser => {
       scene.remove(laser.mesh);
-      if (laser.glowMesh) {
-        scene.remove(laser.glowMesh);
-        laser.glowMesh.material.dispose();
-      }
       laser.mesh.material.dispose();
     });
-    // Dispose shared geometries
     sharedLaserGeometry.dispose();
-    if (enableGlow) {
-      sharedGlowGeometry.dispose();
-    }
+    meteorTexture.dispose();
   });
 }
