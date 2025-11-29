@@ -331,6 +331,31 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-11-29',
+      title: 'v1.3.1 スライドテンプレート&カスタムロゴ',
+      body: 'v1.3.1でスライドテンプレート管理（カスタムプロンプト/参照画像の保存・編集・削除）とスライド枚数設定(1–4枚)を追加しました。/slide template や /slide count で即アクセスできます。ロゴポップアップのアイコンも設定>外観から70x70px推奨で差し替え可能になり、テンプレートのサジェスト改善やi18n更新、パフォーマンス最適化も含まれています。'
+    },
+    {
+      date: '2025-11-27',
+      title: 'v1.2.22 スライド画像ショートカット強化',
+      body: 'スライド画像生成のショートカット設定を追加し、i18nを更新しました。生成中はローディングアニメーションが表示され、進行状況が分かりやすくなっています。'
+    },
+    {
+      date: '2025-11-27',
+      title: 'v1.2.21 安定性アップデート',
+      body: '細かなバグ修正と安定性向上を実施しました。'
+    },
+    {
+      date: '2025-11-26',
+      title: 'v1.2.20 CIランナー更新',
+      body: 'macOS x64のCIランナーをmacos-15-intelへ更新し、ビルド環境を最新化しました。'
+    },
+    {
+      date: '2025-11-25',
+      title: 'v1.2.18 起動ウィンドウ改善',
+      body: '起動時ウィンドウを刷新し、全体的な使い勝手を改善しました。'
+    },
+    {
       date: '2025-11-26',
       title: 'v1.2.19 クリップボードの高速化',
       body: 'IrukaDark v1.2.19 でクリップボードがバックグラウンドプロセスに常駐するようになり、より高速に動作するようになりました。'
@@ -392,6 +417,31 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-11-29',
+      title: 'v1.3.1 Slide Templates & Custom Logo',
+      body: 'Added a slide template manager (save/edit/delete custom prompts and reference images) and a slide count setting (1–4 slides) accessible via /slide template or /slide count. The popup logo icon can now be customized from Settings > Appearance (70x70px recommended). Slash-command suggestions, i18n, and performance have also been improved.'
+    },
+    {
+      date: '2025-11-27',
+      title: 'v1.2.22 Slide image shortcut & loading',
+      body: 'Added shortcut configuration and i18n updates for slide image generation, plus a loading animation while images render.'
+    },
+    {
+      date: '2025-11-27',
+      title: 'v1.2.21 Stability update',
+      body: 'Bug fixes and stability improvements.'
+    },
+    {
+      date: '2025-11-26',
+      title: 'v1.2.20 macOS-15 CI runner',
+      body: 'Updated the macOS x64 CI runner to macos-15-intel to modernize the build environment.'
+    },
+    {
+      date: '2025-11-25',
+      title: 'v1.2.18 Startup window improvements',
+      body: 'Refreshed the initial window and delivered general usability improvements.'
+    },
     {
       date: '2025-11-26',
       title: 'v1.2.19 Faster Clipboard',
