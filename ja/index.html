@@ -773,6 +773,21 @@
             <p class="card-body" data-i18n="howto.cards.detail.description">
               背景説明や手順が欲しいときはOption+Shift+A。より深い情報を含むロングアンサーを得られます。</p>
           </article>
+
+          <article class="card">
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd"><span class="kbd-symbol">⌥</span><span class="kbd-label">Option</span></span>
+              <span class="plus">+</span>
+              <span class="kbd"><span class="kbd-symbol">⌃</span><span class="kbd-label">Control</span></span>
+              <span class="plus">+</span>
+              <span class="kbd"><span class="kbd-symbol">A</span></span>
+            </div>
+            <div class="card-head">
+              <h4 class="card-title" data-i18n="howto.cards.diagram.title">Option+Control+A — 図解</h4>
+            </div>
+            <p class="card-body" data-i18n="howto.cards.diagram.description">
+              選択したテキストを図解画像にします。概念や関係性を視覚的に理解したいときに。</p>
+          </article>
         </div>
       </div>
 
@@ -828,72 +843,75 @@
       </div>
     </section>
 
-    <section id="how2" class="container section">
+    <section id="chat" class="container section">
       <div class="section-head">
-        <h2 class="section-title" data-i18n="howto2.title">使い方2 — スラッシュコマンド</h2>
-        <p class="section-sub" data-i18n="howto2.subtitle">スラッシュコマンドで直前の解説をさらに活用。</p>
+        <h2 class="section-title" data-i18n="chat.title">チャット機能</h2>
+        <p class="section-sub" data-i18n="chat.subtitle">@コマンドとスラッシュコマンドでコンテンツ生成や会話の拡張ができます。</p>
       </div>
 
-      <div class="howto-group">
-        <h3 class="howto-group-title" data-i18n="howto2.group.extend">解説を拡張</h3>
-        <div class="grid features howto-grid">
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</p>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.next.title">/next</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</p>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.table.title">/table</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</p>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.translate.description">
-              直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</p>
-          </article>
+      <!-- @ Commands -->
+      <div class="command-section">
+        <h3 class="command-section-title" data-i18n="chat.atcommand.title">@コマンド</h3>
+        <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.atcommand.subtitle">@に続けてコマンド名とプロンプトを入力すると、チャット内で直接コンテンツを生成できます。</p>
+        <div class="command-list">
+          <div class="command-item">
+            <span class="command-name">@image</span>
+            <span class="command-desc" data-i18n="atcommand.image.description"><code>@image</code> に続けてプロンプトを入力すると画像を生成できます。サイズや同時生成枚数は <code>/image</code> で設定します。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">@video</span>
+            <span class="command-desc" data-i18n="atcommand.video.description"><code>@video</code> に続けてプロンプトを入力すると動画を生成できます。サイズ、秒数、画質、本数は <code>/video</code> で設定します。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">@slide</span>
+            <span class="command-desc" data-i18n="atcommand.slide.description"><code>@slide</code> に続けてプロンプトを入力するとスライド画像を生成できます。テンプレートや設定は <code>/slide</code> で管理します。</span>
+          </div>
         </div>
       </div>
 
-      <div class="howto-group">
-        <h3 class="howto-group-title" data-i18n="howto2.group.generate">コンテンツ生成</h3>
-        <div class="grid features howto-grid">
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.web.title">/web</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。
-            </p>
-          </article>
+      <!-- Slash Commands -->
+      <div class="command-section">
+        <h3 class="command-section-title" data-i18n="chat.slash.title">スラッシュコマンド</h3>
+        <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.slash.subtitle">チャット欄で <code>/</code> を入力するとコマンドパレットが開きます。現在の会話に対して各コマンドが動作します。</p>
 
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.image.title">/image</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.image.description">チャット欄に <code>@image</code>
-              と打って半角スペースを入れてからプロンプトを入力すると画像を生成できます。<code>/image</code> では生成する画像のサイズや並列同時生成する画像の枚数を設定できます。</p>
-          </article>
+        <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">解説を拡張</h4>
+        <div class="command-list">
+          <div class="command-item">
+            <span class="command-name">/what do you mean?</span>
+            <span class="command-desc" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/next</span>
+            <span class="command-desc" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/table</span>
+            <span class="command-desc" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/translate</span>
+            <span class="command-desc" data-i18n="howto2.commands.translate.description">直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</span>
+          </div>
+        </div>
 
-          <article class="card">
-            <div class="card-head">
-              <h4 class="card-title" data-i18n="howto2.commands.video.title">/video</h4>
-            </div>
-            <p class="card-body" data-i18n="howto2.commands.video.description">チャット欄に <code>@video</code>
-              と打って半角スペースを入れてからプロンプトを入力すると動画を生成できます。<code>/video</code> では生成する動画のサイズ、時間、品質、本数を設定できます。</p>
-          </article>
+        <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.settings">設定・モード切替</h4>
+        <div class="command-list">
+          <div class="command-item">
+            <span class="command-name">/web</span>
+            <span class="command-desc" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/image</span>
+            <span class="command-desc" data-i18n="howto2.commands.image.description">画像生成の設定：サイズや同時生成枚数を調整できます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/video</span>
+            <span class="command-desc" data-i18n="howto2.commands.video.description">動画生成の設定：サイズ、秒数、画質、本数を調整できます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/slide</span>
+            <span class="command-desc" data-i18n="howto2.commands.slide.description">スライド生成の設定：テンプレート、枚数、スタイルを調整できます。</span>
+          </div>
         </div>
       </div>
     </section>

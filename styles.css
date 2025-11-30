@@ -4185,3 +4185,124 @@ body:has([href*="user-gaide"]) .grid.features {
     display: inline-block;
   }
 }
+
+/* Command List Styles */
+.command-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.01) 100%);
+  border: 1px solid var(--border-soft);
+}
+
+.command-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-soft);
+  transition: background 0.2s ease;
+}
+
+.command-item:last-child {
+  border-bottom: none;
+}
+
+.command-item:hover {
+  background: rgba(255, 77, 109, 0.04);
+}
+
+.command-name {
+  flex-shrink: 0;
+  min-width: 140px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.12) 0%, rgba(217, 70, 239, 0.08) 100%);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 77, 109, 0.15);
+}
+
+.command-desc {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.command-desc code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+/* Command Section Styles */
+.command-section {
+  margin-bottom: 40px;
+}
+
+.command-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-left: 4px;
+}
+
+.command-section-title::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  border-radius: 2px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .command-list {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .command-item {
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .command-item:hover {
+    background: rgba(255, 77, 109, 0.08);
+  }
+
+  .command-name {
+    background: linear-gradient(135deg, rgba(255, 77, 109, 0.2) 0%, rgba(217, 70, 239, 0.12) 100%);
+    border-color: rgba(255, 77, 109, 0.25);
+  }
+
+  .command-desc code {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .command-item {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 18px;
+  }
+
+  .command-name {
+    min-width: auto;
+    align-self: flex-start;
+  }
+}

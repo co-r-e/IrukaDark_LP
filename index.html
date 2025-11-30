@@ -739,6 +739,20 @@
               </div>
               <p class="card-body" data-i18n="howto.cards.detail.description">Need extra context or step-by-step reasoning? Press Option+Shift+A to request a more thorough breakdown.</p>
             </article>
+
+            <article class="card">
+              <div class="shortcut-keys" aria-hidden="true">
+                <span class="kbd"><span class="kbd-symbol">⌥</span><span class="kbd-label">Option</span></span>
+                <span class="plus">+</span>
+                <span class="kbd"><span class="kbd-symbol">⌃</span><span class="kbd-label">Control</span></span>
+                <span class="plus">+</span>
+                <span class="kbd"><span class="kbd-symbol">A</span></span>
+              </div>
+              <div class="card-head">
+                <h4 class="card-title" data-i18n="howto.cards.diagram.title">Option+Control+A — Diagram</h4>
+              </div>
+              <p class="card-body" data-i18n="howto.cards.diagram.description">Converts selected text into a visual diagram. Great for understanding concepts and relationships visually.</p>
+            </article>
           </div>
         </div>
 
@@ -791,68 +805,75 @@
         </div>
       </section>
 
-      <section id="how2" class="container section">
+      <section id="chat" class="container section">
         <div class="section-head">
-          <h2 class="section-title" data-i18n="howto2.title">How It Works 2 — Slash Commands</h2>
-          <p class="section-sub" data-i18n="howto2.subtitle">Slash commands that build on your latest explanation.</p>
+          <h2 class="section-title" data-i18n="chat.title">Chat Features</h2>
+          <p class="section-sub" data-i18n="chat.subtitle">Generate content and extend conversations with @ commands and slash commands.</p>
         </div>
 
-        <div class="howto-group">
-          <h3 class="howto-group-title" data-i18n="howto2.group.extend">Extend Explanations</h3>
-          <div class="grid features howto-grid">
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.what.title">/what do you mean?</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</p>
-            </article>
-
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.next.title">/next</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</p>
-            </article>
-
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.table.title">/table</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</p>
-            </article>
-
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.translate.title">/translate</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</p>
-            </article>
+        <!-- @ Commands -->
+        <div class="command-section">
+          <h3 class="command-section-title" data-i18n="chat.atcommand.title">@ Commands</h3>
+          <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.atcommand.subtitle">Type @ followed by a command name and your prompt to generate content directly in chat.</p>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="command-name">@image</span>
+              <span class="command-desc" data-i18n="atcommand.image.description">Type <code>@image</code> followed by a space and your prompt to generate images. Configure size and parallel generation count with <code>/image</code>.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">@video</span>
+              <span class="command-desc" data-i18n="atcommand.video.description">Type <code>@video</code> followed by a space and your prompt to generate videos. Configure size, duration, quality, and count with <code>/video</code>.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">@slide</span>
+              <span class="command-desc" data-i18n="atcommand.slide.description">Type <code>@slide</code> followed by a space and your prompt to generate slide images. Configure templates and settings with <code>/slide</code>.</span>
+            </div>
           </div>
         </div>
 
-        <div class="howto-group">
-          <h3 class="howto-group-title" data-i18n="howto2.group.generate">Generate Content</h3>
-          <div class="grid features howto-grid">
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.web.title">/web</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</p>
-            </article>
+        <!-- Slash Commands -->
+        <div class="command-section">
+          <h3 class="command-section-title" data-i18n="chat.slash.title">Slash Commands</h3>
+          <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.slash.subtitle">Type / in the chat to open the command palette. Commands operate on your current conversation.</p>
 
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.image.title">/image</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.image.description">Type <code>@image</code> followed by a space and your prompt in the chat to generate images. Use <code>/image</code> to configure image size and the number of images to generate in parallel.</p>
-            </article>
+          <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">Extend Explanations</h4>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="command-name">/what do you mean?</span>
+              <span class="command-desc" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/next</span>
+              <span class="command-desc" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/table</span>
+              <span class="command-desc" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/translate</span>
+              <span class="command-desc" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</span>
+            </div>
+          </div>
 
-            <article class="card">
-              <div class="card-head">
-                <h4 class="card-title" data-i18n="howto2.commands.video.title">/video</h4>
-              </div>
-              <p class="card-body" data-i18n="howto2.commands.video.description">Type <code>@video</code> followed by a space and your prompt in the chat to generate videos. Use <code>/video</code> to configure video size, duration, quality, and the number of videos to generate.</p>
-            </article>
+          <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.settings">Settings & Modes</h4>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="command-name">/web</span>
+              <span class="command-desc" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/image</span>
+              <span class="command-desc" data-i18n="howto2.commands.image.description">Configure image generation settings: size and number of images to generate in parallel.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/video</span>
+              <span class="command-desc" data-i18n="howto2.commands.video.description">Configure video generation settings: size, duration, quality, and number of videos.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/slide</span>
+              <span class="command-desc" data-i18n="howto2.commands.slide.description">Configure slide generation settings: templates, count, and visual style.</span>
+            </div>
           </div>
         </div>
       </section>
