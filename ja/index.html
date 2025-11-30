@@ -849,10 +849,59 @@
         <p class="section-sub" data-i18n="chat.subtitle">@コマンドとスラッシュコマンドでコンテンツ生成や会話の拡張ができます。</p>
       </div>
 
+      <!-- Chat Window Visualization -->
+      <div class="chat-showcase">
+        <div class="chat-window">
+          <div class="chat-body">
+            <div class="chat-messages">
+              <div class="chat-message chat-message-user">
+                <div class="chat-bubble chat-bubble-user">
+                  <span class="chat-command">@image</span> 夕焼けの日本庭園と桜
+                </div>
+              </div>
+              <div class="chat-message chat-message-ai">
+                <div class="chat-bubble chat-bubble-ai">
+                  <div class="chat-image-grid">
+                    <div class="chat-image-placeholder">
+                      <div class="chat-image-shimmer"></div>
+                    </div>
+                    <div class="chat-image-placeholder">
+                      <div class="chat-image-shimmer"></div>
+                    </div>
+                  </div>
+                  <span class="chat-generating">画像を生成中...</span>
+                </div>
+              </div>
+              <div class="chat-message chat-message-user">
+                <div class="chat-bubble chat-bubble-user">
+                  <span class="chat-command">/next</span>
+                </div>
+              </div>
+              <div class="chat-message chat-message-ai">
+                <div class="chat-bubble chat-bubble-ai">
+                  <div class="chat-typing">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <div class="chat-input-container">
+                <input type="text" class="chat-input" placeholder="メッセージを入力..." disabled>
+                <button class="chat-send-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- @ Commands -->
       <div class="command-section">
         <h3 class="command-section-title" data-i18n="chat.atcommand.title">@コマンド</h3>
-        <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.atcommand.subtitle">@に続けてコマンド名とプロンプトを入力すると、チャット内で直接コンテンツを生成できます。</p>
         <div class="command-list">
           <div class="command-item">
             <span class="command-name">@image</span>
@@ -872,7 +921,6 @@
       <!-- Slash Commands -->
       <div class="command-section">
         <h3 class="command-section-title" data-i18n="chat.slash.title">スラッシュコマンド</h3>
-        <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.slash.subtitle">チャット欄で <code>/</code> を入力するとコマンドパレットが開きます。現在の会話に対して各コマンドが動作します。</p>
 
         <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">解説を拡張</h4>
         <div class="command-list">
@@ -1012,19 +1060,33 @@
 
       <div class="grid features howto-grid">
         <article class="card">
-          <div class="card-head">
-            <h3 class="card-title" data-i18n="howto3.clipboard.title">コピー履歴</h3>
+          <div class="shortcut-keys" aria-hidden="true">
+            <span class="kbd"><span class="kbd-symbol">⌘</span><span class="kbd-label">Command</span></span>
+            <span class="plus">+</span>
+            <span class="kbd"><span class="kbd-symbol">⇧</span><span class="kbd-label">Shift</span></span>
+            <span class="plus">+</span>
+            <span class="kbd"><span class="kbd-symbol">V</span></span>
           </div>
-          <p class="card-body" data-i18n="howto3.clipboard.description">IrukaDark は macOS
-            のクリップボードと連携し、コピーしたテキストを自動で記録します。最新30件まで永続保存され、アプリを再起動しても履歴は残ります。過去にコピーしたテキストをすばやく呼び出して再利用できます。</p>
+          <div class="card-head">
+            <h4 class="card-title" data-i18n="howto3.clipboardPopup.title">Command+Shift+V — クリップボードポップアップ</h4>
+          </div>
+          <h5 class="card-subtitle" data-i18n="howto3.clipboard.title">コピー履歴</h5>
+          <p class="card-body" data-i18n="howto3.clipboard.description">IrukaDark は macOS のクリップボードと連携し、コピーしたテキストや画像を自動で記録します。テキストは最新1000件、画像は最新30件まで永続保存され、アプリを再起動しても履歴は残ります。過去にコピーした内容をすばやく呼び出して再利用できます。</p>
         </article>
 
         <article class="card">
-          <div class="card-head">
-            <h3 class="card-title" data-i18n="howto3.snippet.title">スニペット機能</h3>
+          <div class="shortcut-keys" aria-hidden="true">
+            <span class="kbd"><span class="kbd-symbol">⌥</span><span class="kbd-label">Option</span></span>
+            <span class="plus">+</span>
+            <span class="kbd"><span class="kbd-symbol">⇧</span><span class="kbd-label">Shift</span></span>
+            <span class="plus">+</span>
+            <span class="kbd"><span class="kbd-symbol">V</span></span>
           </div>
-          <p class="card-body" data-i18n="howto3.snippet.description">
-            よく使うフレーズやコード断片を登録しておくと、いつでも瞬時に引き出せます。繰り返し入力する定型文やコマンドを保存しておけば、タイピングの手間が大幅に減ります。</p>
+          <div class="card-head">
+            <h4 class="card-title" data-i18n="howto3.snippetPopup.title">Option+Shift+V — スニペットポップアップ</h4>
+          </div>
+          <h5 class="card-subtitle" data-i18n="howto3.snippet.title">スニペット機能</h5>
+          <p class="card-body" data-i18n="howto3.snippet.description">よく使うフレーズやコード断片を登録しておくと、いつでも瞬時に引き出せます。繰り返し入力する定型文やコマンドを保存しておけば、タイピングの手間が大幅に減ります。</p>
         </article>
       </div>
     </section>

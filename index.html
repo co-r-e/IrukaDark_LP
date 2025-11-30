@@ -811,10 +811,59 @@
           <p class="section-sub" data-i18n="chat.subtitle">Generate content and extend conversations with @ commands and slash commands.</p>
         </div>
 
+        <!-- Chat Window Visualization -->
+        <div class="chat-showcase">
+          <div class="chat-window">
+            <div class="chat-body">
+              <div class="chat-messages">
+                <div class="chat-message chat-message-user">
+                  <div class="chat-bubble chat-bubble-user">
+                    <span class="chat-command">@image</span> A serene Japanese garden at sunset with cherry blossoms
+                  </div>
+                </div>
+                <div class="chat-message chat-message-ai">
+                  <div class="chat-bubble chat-bubble-ai">
+                    <div class="chat-image-grid">
+                      <div class="chat-image-placeholder">
+                        <div class="chat-image-shimmer"></div>
+                      </div>
+                      <div class="chat-image-placeholder">
+                        <div class="chat-image-shimmer"></div>
+                      </div>
+                    </div>
+                    <span class="chat-generating">Generating images...</span>
+                  </div>
+                </div>
+                <div class="chat-message chat-message-user">
+                  <div class="chat-bubble chat-bubble-user">
+                    <span class="chat-command">/next</span>
+                  </div>
+                </div>
+                <div class="chat-message chat-message-ai">
+                  <div class="chat-bubble chat-bubble-ai">
+                    <div class="chat-typing">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-input-area">
+                <div class="chat-input-container">
+                  <input type="text" class="chat-input" placeholder="Type a message..." disabled>
+                  <button class="chat-send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- @ Commands -->
         <div class="command-section">
           <h3 class="command-section-title" data-i18n="chat.atcommand.title">@ Commands</h3>
-          <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.atcommand.subtitle">Type @ followed by a command name and your prompt to generate content directly in chat.</p>
           <div class="command-list">
             <div class="command-item">
               <span class="command-name">@image</span>
@@ -834,7 +883,6 @@
         <!-- Slash Commands -->
         <div class="command-section">
           <h3 class="command-section-title" data-i18n="chat.slash.title">Slash Commands</h3>
-          <p class="section-sub" style="max-width:720px; margin-bottom:20px;" data-i18n="chat.slash.subtitle">Type / in the chat to open the command palette. Commands operate on your current conversation.</p>
 
           <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">Extend Explanations</h4>
           <div class="command-list">
@@ -973,16 +1021,32 @@
 
         <div class="grid features howto-grid">
           <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto3.clipboard.title">Copy History</h3>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd"><span class="kbd-symbol">⌘</span><span class="kbd-label">Command</span></span>
+              <span class="plus">+</span>
+              <span class="kbd"><span class="kbd-symbol">⇧</span><span class="kbd-label">Shift</span></span>
+              <span class="plus">+</span>
+              <span class="kbd"><span class="kbd-symbol">V</span></span>
             </div>
-            <p class="card-body" data-i18n="howto3.clipboard.description">IrukaDark integrates with the macOS clipboard and automatically records copied text. The latest 30 items are persistently saved and remain available even after restarting the app. You can quickly recall and reuse previously copied text.</p>
+            <div class="card-head">
+              <h4 class="card-title" data-i18n="howto3.clipboardPopup.title">Command+Shift+V — Clipboard Popup</h4>
+            </div>
+            <h5 class="card-subtitle" data-i18n="howto3.clipboard.title">Copy History</h5>
+            <p class="card-body" data-i18n="howto3.clipboard.description">IrukaDark integrates with the macOS clipboard and automatically records copied text and images. Up to 1000 text items and 30 images are persistently saved and remain available even after restarting the app. You can quickly recall and reuse previously copied content.</p>
           </article>
 
           <article class="card">
-            <div class="card-head">
-              <h3 class="card-title" data-i18n="howto3.snippet.title">Snippet Feature</h3>
+            <div class="shortcut-keys" aria-hidden="true">
+              <span class="kbd"><span class="kbd-symbol">⌥</span><span class="kbd-label">Option</span></span>
+              <span class="plus">+</span>
+              <span class="kbd"><span class="kbd-symbol">⇧</span><span class="kbd-label">Shift</span></span>
+              <span class="plus">+</span>
+              <span class="kbd"><span class="kbd-symbol">V</span></span>
             </div>
+            <div class="card-head">
+              <h4 class="card-title" data-i18n="howto3.snippetPopup.title">Option+Shift+V — Snippet Popup</h4>
+            </div>
+            <h5 class="card-subtitle" data-i18n="howto3.snippet.title">Snippet Feature</h5>
             <p class="card-body" data-i18n="howto3.snippet.description">Register frequently-used phrases or code fragments to retrieve them instantly at any time. Saving repetitive boilerplate text or commands significantly reduces typing effort.</p>
           </article>
         </div>
