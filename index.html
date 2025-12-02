@@ -102,13 +102,9 @@
 
     <header class="nav">
       <div class="container">
-        <nav class="nav-menu">
-          <a href="#features" class="nav-link">Features</a>
-          <a href="#how" class="nav-link">Shortcuts</a>
-          <a href="#how3" class="nav-link">Clipboard</a>
-          <a href="#terminal" class="nav-link">Terminal</a>
-          <a href="#faq" class="nav-link">FAQ</a>
-        </nav>
+        <div class="nav-menu">
+          <span class="nav-tagline">The Screen-Aware AI Assistant</span>
+        </div>
         <a class="brand" href="/">
           <img src="./icons/logo.svg" alt="IrukaDark" class="brand-logo lg" />
         </a>
@@ -1182,6 +1178,83 @@
             <li><img src="https://hatscripts.github.io/circle-flags/flags/it.svg" alt="IT" class="flag-icon">Italiano (it)</li>
             <li><img src="https://hatscripts.github.io/circle-flags/flags/tr.svg" alt="TR" class="flag-icon">Türkçe (tr)</li>
           </ul>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="pricing.title">Pricing</h2>
+          <p class="section-sub" data-i18n="pricing.subtitle">Choose the plan that fits your needs.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card pricing-card-featured">
+            <div class="pricing-badge" data-i18n="pricing.free.badge">Recommended</div>
+            <div class="pricing-header">
+              <h3 class="pricing-plan-name" data-i18n="pricing.free.name">Free</h3>
+              <div class="pricing-price">
+                <span class="pricing-amount">$0</span>
+              </div>
+            </div>
+            <div class="pricing-body">
+              <p class="pricing-description" data-i18n="pricing.free.description">All features included. Bring your own Gemini API key.</p>
+              <ul class="pricing-features">
+                <li class="pricing-feature" data-i18n="pricing.free.feature1">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Clipboard tools
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.free.feature2">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Snippet management
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.free.feature3">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Text explanations
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.free.feature4">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Screenshot explanations
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.free.feature5">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Terminal AI assistant
+                </li>
+              </ul>
+              <p class="pricing-note" data-i18n="pricing.free.note">* Image/video generation may be limited on Gemini API free tier.</p>
+            </div>
+            <div class="pricing-footer">
+              <a href="/downloads" class="btn btn-primary btn-block" data-i18n="pricing.free.cta">Download Free</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-plan-name" data-i18n="pricing.team.name">Team</h3>
+              <div class="pricing-price">
+                <span class="pricing-amount" data-i18n="pricing.team.price">Custom</span>
+              </div>
+            </div>
+            <div class="pricing-body">
+              <p class="pricing-description" data-i18n="pricing.team.description">Everything in Free, plus team collaboration features.</p>
+              <ul class="pricing-features">
+                <li class="pricing-feature" data-i18n="pricing.team.feature1">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  All Free features
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.team.feature2">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Shared snippets across team
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.team.feature3">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Settings onboarding support
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="mailto:support@irukadark.com" class="btn btn-secondary btn-block" data-i18n="pricing.team.cta">Contact Us</a>
+            </div>
+          </div>
         </div>
       </section>
 

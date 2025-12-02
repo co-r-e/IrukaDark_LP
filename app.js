@@ -367,6 +367,11 @@ let currentLang = 'en'; // デフォルトは英語
 const infoNotices = {
   ja: [
     {
+      date: '2025-12-02',
+      title: 'v1.3.4 クリップボード機能強化',
+      body: 'クリップボードにカラーコード表示ができるようになりました。また、クリップボードの表示速度が向上し、より高速に動作するようになりました。'
+    },
+    {
       date: '2025-11-29',
       title: 'v1.3.1 スライドテンプレート&カスタムロゴ',
       body: 'v1.3.1でスライドテンプレート管理（カスタムプロンプト/参照画像の保存・編集・削除）とスライド枚数設定(1–4枚)を追加しました。/slide template や /slide count で即アクセスできます。ロゴポップアップのアイコンも設定>外観から70x70px推奨で差し替え可能になり、テンプレートのサジェスト改善やi18n更新、パフォーマンス最適化も含まれています。'
@@ -453,6 +458,11 @@ const infoNotices = {
     }
   ],
   en: [
+    {
+      date: '2025-12-02',
+      title: 'v1.3.4 Clipboard Enhancements',
+      body: 'Clipboard now displays color codes. Additionally, clipboard rendering is now faster for improved performance.'
+    },
     {
       date: '2025-11-29',
       title: 'v1.3.1 Slide Templates & Custom Logo',
