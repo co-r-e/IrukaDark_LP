@@ -4,7 +4,7 @@ const translations = {
     'meta.title': 'IrukaDark — AI that instantly explains your screen',
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly.',
     'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
-    'hero.title': '<span class="grad-white">The Screen-Aware AI Assistant</span><br>for Any App.',
+    'hero.title': '<span class="grad-white">High-Speed Desktop AI</span><br>That Boosts Your Productivity.',
     'hero.subtitle': '<strong>Instant explanations, terminal, and clipboard tools, all in one. A compact AI utility summoned by a single shortcut, packed with powerful features to accelerate your workflow.</strong>',
     'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
     'demo.question': 'What does this mean?',
@@ -186,7 +186,7 @@ const translations = {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
     'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮。',
     'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
-    'hero.title': 'あらゆるアプリを横断する<br><span class="grad-white">画面認識型AIアシスタント</span>',
+    'hero.title': '作業効率が大幅に向上する<br><span class="grad-white">高速デスクトップAI</span>',
     'hero.subtitle': '<strong>画面の「瞬間解説」も、ターミナルも、クリップボード拡張もこれひとつ。ショートカット一発で現れる小さなAIに、デスクワークを加速させる強力な機能を凝縮したオールインワン・ユーティリティ。</strong>',
     'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
     'demo.question': 'これどういうこと？',
@@ -281,7 +281,7 @@ const translations = {
     'terminal.safe.title': '安全実行モード',
     'terminal.safe.description': 'IrukaDarkは破壊的な可能性のあるコマンドをハイライト表示し、明示的な確認を要求します。rm -rfのような危険な操作の誤実行を防ぎます。',
 
-    'howto.title': '瞬間AI起動。',
+    'howto.title': '瞬間AI起動',
     'howto.subtitle': 'ショートカットでいつでもIrukaDarkを呼び出せます。',
     'howto.group.screenshot': '見えているもの全てを、AIが読み解く。',
     'howto.group.text': '選択したテキストを、即座に解説。',
@@ -1318,6 +1318,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // DOMContentLoadedイベントで初期化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+// ---------------------------------------------
+// Howto Fullscreen Section Animations
+// ---------------------------------------------
+(function setupHowtoAnimations() {
+  function init() {
+    // Key cycling animation
+    const cyclingKey = document.getElementById('cycling-key');
+    if (cyclingKey) {
+      const keyChar = cyclingKey.querySelector('.howto-key-char');
+      const keys = ['A', 'S', 'Q', 'R'];
+      let currentIndex = 0;
+
+      setInterval(() => {
+        keyChar.style.opacity = '0';
+        keyChar.style.transform = 'translateY(-10px)';
+        
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % keys.length;
+          keyChar.textContent = keys[currentIndex];
+          keyChar.style.opacity = '1';
+          keyChar.style.transform = 'translateY(0)';
+        }, 200);
+      }, 2000);
+
+      // Add transition styles
+      keyChar.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+    }
+
+    // Scroll-triggered animations for feature blocks
+    const featureBlocks = document.querySelectorAll('.howto-feature-block');
+    
+    if (featureBlocks.length > 0 && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '-50px'
+      });
+
+      featureBlocks.forEach(block => {
+        observer.observe(block);
+      });
+    } else {
+      // Fallback: show all blocks immediately
+      featureBlocks.forEach(block => {
+        block.classList.add('visible');
+      });
+    }
+
+    // Parallax effect on scroll for orbs
+    const orbs = document.querySelectorAll('.howto-gradient-orb');
+    if (orbs.length > 0) {
+      let ticking = false;
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const howtoSection = document.querySelector('.howto-fullscreen');
+            
+            if (howtoSection) {
+              const sectionTop = howtoSection.offsetTop;
+              const relativeScroll = scrolled - sectionTop;
+              
+              if (relativeScroll > -window.innerHeight && relativeScroll < howtoSection.offsetHeight) {
+                orbs.forEach((orb, index) => {
+                  const speed = 0.05 + (index * 0.02);
+                  const yOffset = relativeScroll * speed;
+                  orb.style.transform = `translateY(${yOffset}px)`;
+                });
+              }
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    }
+  }
+
+  // Initialize on DOMContentLoaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
