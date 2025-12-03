@@ -11,12 +11,14 @@ const translations = {
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
     'features.title': 'AI That Accelerates Your Thinking and Work.',
     'features.subtitle': 'No more "I don\'t get it." Instant, context‑aware understanding keeps you moving.',
-    'features.instant.title': 'Ultra-Fast Smart Explanations Without Prompts',
+    'features.instant.title': 'Shortcut → Whoosh → Done.',
     'features.instant.description': 'No need to type prompts like "explain this error code." Just highlight what\'s on your screen and hit the shortcut. IrukaDark instantly delivers context-aware explanations right where you are.',
-    'features.flow.title': 'Real-Time Screen Analysis AI',
-    'features.flow.description': 'No more switching between windows. No need to copy text, paste it into an AI input form, and wait for answers. Resolve questions stress-free without breaking your flow.',
-    'features.secure.title': 'Works with Any Digital Tool',
-    'features.secure.description': 'IrukaDark works with any tool. Of course, it works alongside the latest AI products. It can also be used with legacy business systems.',
+    'features.flow.title': 'Analyzes the Screen You\'re Looking At.',
+    'features.flow.description': 'Dev tools, SaaS dashboards, technical docs, academic PDFs. IrukaDark handles them all through one universal interface: your screen. No need to learn how each app works. Just select what catches your eye, and understand it instantly—in any language.',
+    'features.secure.title': 'Versatile Features at Your Fingertips.',
+    'features.secure.description': 'Image generation, video creation, deep-dive explanations, diagrams, slide creation, terminal operations, and more. Handle all your quick tasks without switching screens—your all-in-one AI companion.',
+    'features.clipboard.title': 'Copy, Copy, Copy. Then Paste, Paste, Paste.',
+    'features.clipboard.description': 'No more switching back and forth. Stack multiple copies in a row, then paste them in sequence. Turn repetitive copy-paste into a lightning-fast workflow.',
 
     // Demo section
     'demo.title': 'See It in Action',
@@ -24,7 +26,7 @@ const translations = {
     'demo.note': 'Tip: Text = Option+A · Screenshot = Option+S',
 
     // Languages section
-    'languages.title': 'Supported Languages',
+    'languages.title': 'Understands Languages Worldwide. Translates by Meaning, Not Word-for-Word.',
     'languages.subtitle': 'IrukaDark delivers explanations in 17 languages worldwide.',
 
     // Where it works
@@ -95,8 +97,8 @@ const translations = {
     'where.copilot.desc': 'Instantly understand AI-generated content and suggestions. Maximize productivity.',
 
     // Terminal section
-    'terminal.title': 'Terminal Features',
-    'terminal.subtitle': 'Control your terminal from IrukaDark. IrukaDark generates and executes commands for you.',
+    'terminal.title': 'Mini Terminal: AI-CLI at Your Fingertips.',
+    'terminal.subtitle': 'Control your terminal from IrukaDark. Don\'t know the command? No problem—just describe what you want in plain language. You can even launch Claude Code for quick AI-driven development right from the corner of your screen.',
     'terminal.generate.title': 'AI-Generated Commands',
     'terminal.generate.description': 'Simply describe what you want to do in natural language, and IrukaDark generates the appropriate terminal command. No need to remember complex syntax or flags.',
     'terminal.execute.title': 'Direct Execution',
@@ -106,7 +108,7 @@ const translations = {
     'terminal.safe.title': 'Safe Execution Mode',
     'terminal.safe.description': 'IrukaDark highlights potentially destructive commands and requires explicit confirmation. This prevents accidental execution of dangerous operations like rm -rf.',
 
-    'howto.title': 'Shortcuts',
+    'howto.title': 'Instant AI Activation.',
     'howto.subtitle': 'Use global shortcuts to trigger IrukaDark instantly.',
     'howto.group.screenshot': 'AI Reads Everything You See.',
     'howto.group.text': 'Instant Explanation for Selected Text.',
@@ -136,7 +138,7 @@ const translations = {
     'howto.cards.screenshotDetail.title': 'Option+Shift+S — Screenshot Deep Dive',
     'howto.cards.screenshotDetail.caption': 'Option+Shift+S',
     'howto.cards.screenshotDetail.description': 'Press Option+Shift+S for a more detailed analysis of the region you capture—ideal for dense visuals.',
-    'chat.title': 'Chat Features',
+    'chat.title': 'Text, Images, Videos—Generated Instantly.',
     'chat.subtitle': 'Generate content and extend conversations with @ commands and slash commands.',
     'chat.atcommand.title': 'Generate Creatives On-the-Spot with @ Commands.',
     'chat.atcommand.subtitle': '',
@@ -191,12 +193,14 @@ const translations = {
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
     'features.title': 'あなたの思考と作業を加速するAI。',
     'features.subtitle': 'もう「わからない」で止まらない。瞬時理解で作業が加速します。',
-    'features.instant.title': 'プロンプト不要の超高速スマート解説',
+    'features.instant.title': 'ショートカットキーでシュタッっと解説。',
     'features.instant.description': 'わざわざ「このエラーコードの意味を教えて」なんてプロンプトを入力する必要はありません。画面に映っている気になる箇所で専用ショートカットを押すだけ。状況に応じて最適なコマンドを切り替えながら、文脈に沿った解説がその場で瞬時に得られます。',
-    'features.flow.title': 'リアルタイム画面解析AI',
-    'features.flow.description': 'もう、いちいちウィンドウを行き来する必要はありません。「AIに質問するためにテキストをコピーして、AIの入力フォームに貼り付けて、回答を待つ」なんてことは不要です。作業の流れを止めることなく、ストレスフリーに疑問を解決できます。',
-    'features.secure.title': 'あらゆるデジタルツールと一緒に',
-    'features.secure.description': 'IrukaDarkはあらゆるツールと併用できます。最新AIプロダクトと一緒に使うことはもちろん。業務用のレガシーなシステムと一緒に使うこともできます。',
+    'features.flow.title': '今、あなたが見ているその画面を解析。',
+    'features.flow.description': '開発ツール、SaaSダッシュボード、技術ドキュメント、学術論文PDF。IrukaDarkは、それらすべてを「画面」という共通のインターフェースで扱います。アプリごとの使い方を覚える必要はありません。気になる部分を選べば、どんな言語でも、その場で意味が分かります。',
+    'features.secure.title': 'かゆいところに手が届く、多彩な機能。',
+    'features.secure.description': '画像生成・動画生成はもちろん、解説の深掘りや図解、スライド作成、ターミナル操作まで。ちょっとした作業も画面を変えずに全部まとめて任せられる、オールインワンな相方です。',
+    'features.clipboard.title': 'コピー、コピー、コピー。そしてペースト、ペースト、ペースト。',
+    'features.clipboard.description': '行ったり来たりはもう不要。複数のコピーを連続で積み上げて、順番にペースト。繰り返しのコピペ作業が一気に高速化します。',
 
     // どこで使えるか
     'where.title': 'どんな画面からでも<br>一瞬で。',
@@ -266,8 +270,8 @@ const translations = {
     'where.copilot.desc': 'AI生成コンテンツや提案内容を即座に理解。作業効率を最大化。',
 
     // Terminal section
-    'terminal.title': 'ターミナル機能',
-    'terminal.subtitle': 'IrukaDarkからターミナルを操作できます。しかも、ターミナルのコマンド自体をIrukaDarkがつくってくれます。',
+    'terminal.title': 'ミニターミナルで、いつでもAI-CLIを起動。',
+    'terminal.subtitle': 'IrukaDarkからターミナルを操作できます。コマンドがわからなくても大丈夫。自然言語でコマンドを生成してくれます。Claude Codeも起動できるので、サクッと画面端でAI駆動開発もできます。',
     'terminal.generate.title': 'AI生成コマンド',
     'terminal.generate.description': '自然言語で「やりたいこと」を伝えるだけで、IrukaDarkが適切なターミナルコマンドを生成。複雑な構文やフラグを覚える必要はありません。',
     'terminal.execute.title': '直接実行機能',
@@ -277,7 +281,7 @@ const translations = {
     'terminal.safe.title': '安全実行モード',
     'terminal.safe.description': 'IrukaDarkは破壊的な可能性のあるコマンドをハイライト表示し、明示的な確認を要求します。rm -rfのような危険な操作の誤実行を防ぎます。',
 
-    'howto.title': 'ショートカット',
+    'howto.title': '瞬間AI起動。',
     'howto.subtitle': 'ショートカットでいつでもIrukaDarkを呼び出せます。',
     'howto.group.screenshot': '見えているもの全てを、AIが読み解く。',
     'howto.group.text': '選択したテキストを、即座に解説。',
@@ -307,7 +311,7 @@ const translations = {
     'howto.cards.screenshotDetail.title': 'Option+Shift+S — スクショ詳細解説',
     'howto.cards.screenshotDetail.caption': 'Option+Shift+S',
     'howto.cards.screenshotDetail.description': '情報量の多いスライドや図解はOption+Shift+Sで詳細版を。細部まで丁寧に解説を受け取れます。',
-    'chat.title': 'チャット機能',
+    'chat.title': '文章も、画像も、動画も、すぐに生成。',
     'chat.subtitle': '@コマンドとスラッシュコマンドでコンテンツ生成や会話の拡張ができます。',
     'chat.atcommand.title': '@コマンドで、クリエイティブをその場で生成。',
     'chat.atcommand.subtitle': '',
@@ -356,7 +360,7 @@ const translations = {
     'demo.note': 'ヒント: テキスト = Option+A ・ スクショ = Option+S',
 
     // Languages section
-    'languages.title': '対応言語',
+    'languages.title': '世界中の言葉を理解し、直訳ではなく意味ベースでの翻訳。',
     'languages.subtitle': 'IrukaDark は世界17言語でそのまま解説を返します。'
   }
 };
