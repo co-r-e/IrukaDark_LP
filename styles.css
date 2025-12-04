@@ -2056,7 +2056,6 @@ body:has([href*="user-gaide"]) .grid.features {
 /* Howto section - Hero title */
 .howto-hero-title {
   font-size: clamp(64px, 12vw, 140px);
-  font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1.05;
   margin: 0 0 16px;
@@ -2067,7 +2066,7 @@ body:has([href*="user-gaide"]) .grid.features {
 .howto-hero-subtitle {
   font-size: 20px;
   color: var(--text-muted);
-  margin: 0 0 80px;
+  margin: 0 0 180px;
   text-align: center;
 }
 
@@ -2160,7 +2159,7 @@ body:has([href*="user-gaide"]) .grid.features {
   }
 
   .howto-hero-subtitle {
-    margin-bottom: 60px;
+    margin-bottom: 120px;
   }
 }
 
@@ -2179,7 +2178,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
   .howto-hero-subtitle {
     font-size: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 100px;
   }
 }
 
