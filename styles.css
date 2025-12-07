@@ -5772,33 +5772,160 @@ h4.command-section-title::before {
   }
 }
 
-/* Time Management Visual */
+/* Time Management Section - Rich Design */
+.time-section {
+  position: relative;
+  overflow: visible;
+}
+
+.time-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+
 .time-visual {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+}
+
+.time-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 77, 109, 0.15) 0%, rgba(217, 70, 239, 0.1) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: timeGlowPulse 4s ease-in-out infinite;
+}
+
+@keyframes timeGlowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 }
 
 .time-illustration {
-  max-width: 280px;
+  max-width: 300px;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 8px 24px rgba(155, 89, 182, 0.3));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .time-illustration:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 12px 32px rgba(155, 89, 182, 0.4));
+  transform: scale(1.08) rotate(2deg);
+  filter: drop-shadow(0 16px 48px rgba(255, 77, 109, 0.3));
 }
 
-@media (max-width: 768px) {
-  .time-illustration {
-    max-width: 200px;
+.time-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.time-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.time-card-featured {
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.04) 0%, rgba(217, 70, 239, 0.03) 50%, rgba(0, 212, 255, 0.03) 100%);
+  border-color: rgba(255, 77, 109, 0.15);
+}
+
+.time-card-content {
+  flex: 1;
+}
+
+.time-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.time-card-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .time-showcase {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .time-visual {
-    margin: 24px 0;
+    order: -1;
+  }
+
+  .time-glow {
+    width: 250px;
+    height: 250px;
+  }
+
+  .time-illustration {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .time-showcase {
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .time-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .time-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .time-card-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .time-card-title {
+    font-size: 16px;
+  }
+
+  .time-card-desc {
+    font-size: 13px;
+  }
+
+  .time-glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .time-illustration {
+    max-width: 200px;
   }
 }
