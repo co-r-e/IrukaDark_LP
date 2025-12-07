@@ -1397,7 +1397,7 @@
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span class="faq-question-text">開発ツールは必要ですか？</span>
+            <span class="faq-question-text">機能が多くて迷います。最初はどのように使うとよいですか？</span>
             <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
@@ -1405,14 +1405,14 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>不要です。ダウンロードページからインストーラを入手し、案内に沿ってセットアップするだけで利用できます。</p>
+              <p>最初は Option+S の画面解説がおすすめです。気になる部分を範囲選択するだけで、すぐにAIの便利さを体感できます。次に、テキストを選択して Option+A を試してみてください。そしてクリップボード機能で快適なコピペ作業を体験しましょう。慣れてきたら、あなたの作業スタイルに合わせて他の機能も活用していってください。</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span class="faq-question-text">素早く使うには？</span>
+            <span class="faq-question-text">初期設定は大変？</span>
             <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
@@ -1420,7 +1420,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。</p>
+              <p>少し手間取ることがあるかもしれません。特に画面収録やアクセシビリティの許可設定で詰まる可能性があります。ただ、スムーズにいけば3分もかかりませんので、最初だけ頑張りましょう。</p>
             </div>
           </div>
         </div>
@@ -1483,90 +1483,6 @@ tccutil reset Accessibility com.core.irukadark
 sudo tccutil reset Accessibility
 </code></pre>
               <p class="muted">この問題はmacOSのセキュリティ仕様によるもので、署名付きアプリでもバイナリ更新時に発生することがあります。</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span class="faq-question-text">OSごとの許可設定は？</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <div class="table-wrap">
-                <table class="faq-table">
-                  <thead>
-                    <tr>
-                      <th>許可/設定</th>
-                      <th>macOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>画面キャプチャ</td>
-                      <td>必須: 「画面収録」を許可</td>
-                    </tr>
-                    <tr>
-                      <td>アクセシビリティ</td>
-                      <td>必須（ショートカットや画面上選択の操作に必要）</td>
-                    </tr>
-                    <tr>
-                      <td>管理者権限</td>
-                      <td>不要</td>
-                    </tr>
-                    <tr>
-                      <td>ネットワーク（HTTPS）</td>
-                      <td>送信を許可</td>
-                    </tr>
-                    <tr>
-                      <td>グローバルショートカット</td>
-                      <td>システム設定 → キーボード/ショートカット</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span class="faq-question-text">事前に必要なMacの設定は？</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <div class="table-wrap">
-                <table class="faq-table">
-                  <thead>
-                    <tr>
-                      <th>項目</th>
-                      <th>macOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>開発ツール</td>
-                      <td>一般利用では不要</td>
-                    </tr>
-                    <tr>
-                      <td>画面キャプチャ</td>
-                      <td>スクショ解析に「画面収録」の許可が必要</td>
-                    </tr>
-                    <tr>
-                      <td>インターネット</td>
-                      <td>HTTPS通信を許可</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
         </div>
@@ -1634,13 +1550,13 @@ sudo tccutil reset Accessibility
         },
         {
           "@type": "Question",
-          "name": "開発ツールは必要ですか？",
-          "acceptedAnswer": {"@type": "Answer", "text": "いいえ。ダウンロードページからインストーラを取得し、案内に従ってセットアップするだけで利用できます。"}
+          "name": "機能が多くて迷います。最初はどのように使うとよいですか？",
+          "acceptedAnswer": {"@type": "Answer", "text": "最初は Option+S の画面解説がおすすめです。気になる部分を範囲選択するだけで、すぐにAIの便利さを体感できます。次に、テキストを選択して Option+A を試してみてください。そしてクリップボード機能で快適なコピペ作業を体験しましょう。慣れてきたら、あなたの作業スタイルに合わせて他の機能も活用していってください。"}
         },
         {
           "@type": "Question",
-          "name": "素早く使うには？",
-          "acceptedAnswer": {"@type": "Answer", "text": "テキストを選択して Option+A。画像やグラフなどは範囲を選択して Option+S でスクリーンショット解説が利用できます。"}
+          "name": "初期設定は大変？",
+          "acceptedAnswer": {"@type": "Answer", "text": "少し手間取ることがあるかもしれません。特に画面収録やアクセシビリティの許可設定で詰まる可能性があります。ただ、スムーズにいけば3分もかかりませんので、最初だけ頑張りましょう。"}
         },
         {
           "@type": "Question",
@@ -1656,16 +1572,6 @@ sudo tccutil reset Accessibility
           "@type": "Question",
           "name": "アクセシビリティのエラーが出る",
           "acceptedAnswer": {"@type": "Answer", "text": "IrukaDark内のIrukaAutomationバイナリがアクセシビリティAPIを使用します。アップデートでバイナリの署名ハッシュが変わると、macOSが以前の許可を無効化しエラーが出ることがあります。システム設定→プライバシーとセキュリティ→アクセシビリティでIrukaDarkを削除・再追加するか、`tccutil reset Accessibility com.core.irukadark` を実行して再許可してください。解決しない場合は `sudo tccutil reset Accessibility` ですべてのアクセシビリティ許可をリセットします（他アプリに影響するので注意）。"}
-        },
-        {
-          "@type": "Question",
-          "name": "OSごとの許可設定は？",
-          "acceptedAnswer": {"@type": "Answer", "text": "macOS: 画面収録の許可が必要。アクセシビリティもショートカット操作のため必須。フルディスクアクセスは不要。"}
-        },
-        {
-          "@type": "Question",
-          "name": "事前に必要なPCセットアップは？",
-          "acceptedAnswer": {"@type": "Answer", "text": "一般利用では開発ツールは不要です。ダウンロードしてインストールするだけで利用できます。スクリーンショット解析には『画面収録』、ショートカット操作には『アクセシビリティ』の許可、そしてAI利用のためにインターネット接続が必要です。"}
         }
       ]
     }
