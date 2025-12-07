@@ -244,6 +244,16 @@
               <p class="feature-card-description" data-i18n="features.clipboard.description">行ったり来たりはもう不要。複数のコピーを連続で積み上げて、順番にペースト。繰り返しのコピペ作業が一気に高速化します。</p>
             </div>
           </article>
+
+          <article class="feature-card">
+            <div class="feature-card-image">
+              <img src="../media/irukadark_timer.png" alt="タイマー機能" />
+            </div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title" data-i18n="features.timer.title">時間をスマートにコントロールする。</h3>
+              <p class="feature-card-description" data-i18n="features.timer.description">タイマー、ストップウォッチはもちろん、時間設定でアプリやWebサイトを自動で開くことができます。"1時間後にあの作業をするぞ"ということを忘れることがありません。</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -779,127 +789,6 @@
       </div>
     </section>
 
-    <section id="chat" class="container section">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="chat.title">文章も、画像も、動画も、すぐに生成。</h2>
-        <p class="section-sub" data-i18n="chat.subtitle">@コマンドとスラッシュコマンドでコンテンツ生成や会話の拡張ができます。</p>
-      </div>
-
-      <!-- Chat Window Visualization -->
-      <div class="chat-showcase">
-        <div class="chat-window">
-          <div class="chat-body">
-            <div class="chat-messages">
-              <div class="chat-message chat-message-user">
-                <div class="chat-bubble chat-bubble-user">
-                  <span class="chat-command">@image</span> 夕焼けの日本庭園と桜
-                </div>
-              </div>
-              <div class="chat-message chat-message-ai">
-                <div class="chat-bubble chat-bubble-ai">
-                  <div class="chat-image-grid">
-                    <div class="chat-image-placeholder">
-                      <div class="chat-image-shimmer"></div>
-                    </div>
-                    <div class="chat-image-placeholder">
-                      <div class="chat-image-shimmer"></div>
-                    </div>
-                  </div>
-                  <span class="chat-generating">画像を生成中...</span>
-                </div>
-              </div>
-              <div class="chat-message chat-message-user">
-                <div class="chat-bubble chat-bubble-user">
-                  <span class="chat-command">/next</span>
-                </div>
-              </div>
-              <div class="chat-message chat-message-ai">
-                <div class="chat-bubble chat-bubble-ai">
-                  <div class="chat-typing">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="chat-input-area">
-              <div class="chat-input-container">
-                <input type="text" class="chat-input" placeholder="メッセージを入力..." disabled>
-                <button class="chat-send-btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- @ Commands -->
-      <div class="command-section">
-        <h3 class="command-section-title" data-i18n="chat.atcommand.title">@コマンドで、クリエイティブをその場で生成。</h3>
-        <div class="command-list">
-          <div class="command-item">
-            <span class="command-name">@image</span>
-            <span class="command-desc" data-i18n="atcommand.image.description"><code>@image</code> に続けてプロンプトを入力すると画像を生成できます。サイズや同時生成枚数は <code>/image</code> で設定します。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">@video</span>
-            <span class="command-desc" data-i18n="atcommand.video.description"><code>@video</code> に続けてプロンプトを入力すると動画を生成できます。サイズ、秒数、画質、本数は <code>/video</code> で設定します。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">@slide</span>
-            <span class="command-desc" data-i18n="atcommand.slide.description"><code>@slide</code> に続けてプロンプトを入力するとスライド画像を生成できます。テンプレートや設定は <code>/slide</code> で管理します。</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slash Commands -->
-      <div class="command-section">
-        <h3 class="command-section-title" data-i18n="chat.slash.title">スラッシュコマンドで、かゆいところに手が届く。</h3>
-
-        <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">解説を拡張</h4>
-        <div class="command-list">
-          <div class="command-item">
-            <span class="command-name">/what do you mean?</span>
-            <span class="command-desc" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">/next</span>
-            <span class="command-desc" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">/table</span>
-            <span class="command-desc" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">/translate</span>
-            <span class="command-desc" data-i18n="howto2.commands.translate.description">直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</span>
-          </div>
-        </div>
-
-        <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.settings">設定・モード切替</h4>
-        <div class="command-list">
-          <div class="command-item">
-            <span class="command-name">/web</span>
-            <span class="command-desc" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">/image</span>
-            <span class="command-desc" data-i18n="howto2.commands.image.description">画像生成の設定：サイズや同時生成枚数を調整できます。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">/video</span>
-            <span class="command-desc" data-i18n="howto2.commands.video.description">動画生成の設定：サイズ、秒数、画質、本数を調整できます。</span>
-          </div>
-          <div class="command-item">
-            <span class="command-name">/slide</span>
-            <span class="command-desc" data-i18n="howto2.commands.slide.description">スライド生成の設定：テンプレート、枚数、スタイルを調整できます。</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="how3" class="container section">
       <div class="section-head">
         <h2 class="section-title" data-i18n="howto3.title">コピペを、最高に、高速に。</h2>
@@ -1025,6 +914,163 @@
         </article>
       </div>
     </section>
+
+    <!-- タイムマネジメント機能 -->
+    <section id="time" class="container section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="time.title">極限の集中を維持するための、スマートなタイムマネジメント。</h2>
+        <p class="section-sub" data-i18n="time.subtitle">時間を味方につけて、作業効率を最大化。</p>
+      </div>
+
+      <div class="time-visual">
+        <img src="../media/stopwatch.svg" alt="ストップウォッチのイラスト" class="time-illustration" />
+      </div>
+
+      <div class="grid features howto-grid">
+        <article class="card">
+          <div class="card-head">
+            <h4 class="card-title" data-i18n="time.timer.title">タイマー機能</h4>
+          </div>
+          <p class="card-body" data-i18n="time.timer.description">集中作業やポモドーロテクニックに最適。設定した時間が来たら通知でお知らせします。</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h4 class="card-title" data-i18n="time.stopwatch.title">ストップウォッチ機能</h4>
+          </div>
+          <p class="card-body" data-i18n="time.stopwatch.description">作業時間の計測に便利。タスクにかかった時間を正確に把握できます。</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h4 class="card-title" data-i18n="time.schedule.title">スケジュール機能</h4>
+          </div>
+          <p class="card-body" data-i18n="time.schedule.description">指定した時間にアプリを起動させたり、Webサイトを開くことができます。オンライン会議URLをセットすれば、指定した時間に自動でアクセス。もう予定を忘れることはありません。つまり、「すみません。作業に集中していて遅れました。」という失態を犯すことはなくなったということです。集中タイムに没頭できます。「アイドルのLIVEチケットの販売開始時間が明日の12:00ぴったりだから、その時間になった瞬間にサイトを開くぞ」ということもできるということです。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="chat" class="container section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="chat.title">文章も、画像も、動画も、すぐに生成。</h2>
+        <p class="section-sub" data-i18n="chat.subtitle">@コマンドとスラッシュコマンドでコンテンツ生成や会話の拡張ができます。</p>
+      </div>
+
+      <!-- Chat Window Visualization -->
+      <div class="chat-showcase">
+        <div class="chat-window">
+          <div class="chat-body">
+            <div class="chat-messages">
+              <div class="chat-message chat-message-user">
+                <div class="chat-bubble chat-bubble-user">
+                  <span class="chat-command">@image</span> 夕焼けの日本庭園と桜
+                </div>
+              </div>
+              <div class="chat-message chat-message-ai">
+                <div class="chat-bubble chat-bubble-ai">
+                  <div class="chat-image-grid">
+                    <div class="chat-image-placeholder">
+                      <div class="chat-image-shimmer"></div>
+                    </div>
+                    <div class="chat-image-placeholder">
+                      <div class="chat-image-shimmer"></div>
+                    </div>
+                  </div>
+                  <span class="chat-generating">画像を生成中...</span>
+                </div>
+              </div>
+              <div class="chat-message chat-message-user">
+                <div class="chat-bubble chat-bubble-user">
+                  <span class="chat-command">/next</span>
+                </div>
+              </div>
+              <div class="chat-message chat-message-ai">
+                <div class="chat-bubble chat-bubble-ai">
+                  <div class="chat-typing">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <div class="chat-input-container">
+                <input type="text" class="chat-input" placeholder="メッセージを入力..." disabled>
+                <button class="chat-send-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- @ Commands -->
+      <div class="command-section">
+        <h3 class="command-section-title" data-i18n="chat.atcommand.title">@コマンドで、クリエイティブをその場で生成。</h3>
+        <div class="command-list">
+          <div class="command-item">
+            <span class="command-name">@image</span>
+            <span class="command-desc" data-i18n="atcommand.image.description"><code>@image</code> に続けてプロンプトを入力すると画像を生成できます。サイズや同時生成枚数は <code>/image</code> で設定します。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">@video</span>
+            <span class="command-desc" data-i18n="atcommand.video.description"><code>@video</code> に続けてプロンプトを入力すると動画を生成できます。サイズ、秒数、画質、本数は <code>/video</code> で設定します。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">@slide</span>
+            <span class="command-desc" data-i18n="atcommand.slide.description"><code>@slide</code> に続けてプロンプトを入力するとスライド画像を生成できます。テンプレートや設定は <code>/slide</code> で管理します。</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slash Commands -->
+      <div class="command-section">
+        <h3 class="command-section-title" data-i18n="chat.slash.title">スラッシュコマンドで、かゆいところに手が届く。</h3>
+
+        <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">解説を拡張</h4>
+        <div class="command-list">
+          <div class="command-item">
+            <span class="command-name">/what do you mean?</span>
+            <span class="command-desc" data-i18n="howto2.commands.what.description">直前の解説の意味をもっと詳しく。背景や意図まで深掘りして補足してくれます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/next</span>
+            <span class="command-desc" data-i18n="howto2.commands.next.description">さっきの解説の続きを依頼。再選択せずに話をどんどん掘り下げられます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/table</span>
+            <span class="command-desc" data-i18n="howto2.commands.table.description">直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/translate</span>
+            <span class="command-desc" data-i18n="howto2.commands.translate.description">直前の解説を指定した言語に翻訳。対応言語は10種類以上で、言い換えにも使えます。</span>
+          </div>
+        </div>
+
+        <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.settings">設定・モード切替</h4>
+        <div class="command-list">
+          <div class="command-item">
+            <span class="command-name">/web</span>
+            <span class="command-desc" data-i18n="howto2.commands.web.description">Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/image</span>
+            <span class="command-desc" data-i18n="howto2.commands.image.description">画像生成の設定：サイズや同時生成枚数を調整できます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/video</span>
+            <span class="command-desc" data-i18n="howto2.commands.video.description">動画生成の設定：サイズ、秒数、画質、本数を調整できます。</span>
+          </div>
+          <div class="command-item">
+            <span class="command-name">/slide</span>
+            <span class="command-desc" data-i18n="howto2.commands.slide.description">スライド生成の設定：テンプレート、枚数、スタイルを調整できます。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- ターミナル機能 -->
     <section id="terminal" class="container section">
@@ -1162,8 +1208,6 @@
           </li>
           <li><img src="https://hatscripts.github.io/circle-flags/flags/de.svg" alt="DE" class="flag-icon">Deutsch (de)
           </li>
-          <li><img src="https://hatscripts.github.io/circle-flags/flags/sa.svg" alt="SA" class="flag-icon">العربية (ar)
-          </li>
           <li><img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" alt="RU" class="flag-icon">Русский (ru)
           </li>
           <li><img src="https://hatscripts.github.io/circle-flags/flags/kr.svg" alt="KR" class="flag-icon">한국어 (ko)</li>
@@ -1246,6 +1290,10 @@
                 チーム間でのスニペット共有
               </li>
               <li class="pricing-feature" data-i18n="pricing.team.feature3">
+                <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                プロンプトテンプレートの共有
+              </li>
+              <li class="pricing-feature" data-i18n="pricing.team.feature4">
                 <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 設定オンボーディングサポート
               </li>

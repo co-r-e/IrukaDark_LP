@@ -227,6 +227,16 @@
                 <p class="feature-card-description" data-i18n="features.clipboard.description">No more switching back and forth. Stack multiple copies in a row, then paste them in sequence. Turn repetitive copy-paste into a lightning-fast workflow.</p>
               </div>
             </article>
+
+            <article class="feature-card">
+              <div class="feature-card-image">
+                <img src="./media/irukadark_timer.png" alt="Timer feature" />
+              </div>
+              <div class="feature-card-content">
+                <h3 class="feature-card-title" data-i18n="features.timer.title">Smart Time Control.</h3>
+                <p class="feature-card-description" data-i18n="features.timer.description">Timer, stopwatch, and more—set a time to automatically open apps or websites. Never forget "I need to do that task in an hour."</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -754,127 +764,6 @@
         </div>
       </section>
 
-      <section id="chat" class="container section">
-        <div class="section-head">
-          <h2 class="section-title" data-i18n="chat.title">Text, Images, Videos—Generated Instantly.</h2>
-          <p class="section-sub" data-i18n="chat.subtitle">Generate content and extend conversations with @ commands and slash commands.</p>
-        </div>
-
-        <!-- Chat Window Visualization -->
-        <div class="chat-showcase">
-          <div class="chat-window">
-            <div class="chat-body">
-              <div class="chat-messages">
-                <div class="chat-message chat-message-user">
-                  <div class="chat-bubble chat-bubble-user">
-                    <span class="chat-command">@image</span> A serene Japanese garden at sunset with cherry blossoms
-                  </div>
-                </div>
-                <div class="chat-message chat-message-ai">
-                  <div class="chat-bubble chat-bubble-ai">
-                    <div class="chat-image-grid">
-                      <div class="chat-image-placeholder">
-                        <div class="chat-image-shimmer"></div>
-                      </div>
-                      <div class="chat-image-placeholder">
-                        <div class="chat-image-shimmer"></div>
-                      </div>
-                    </div>
-                    <span class="chat-generating">Generating images...</span>
-                  </div>
-                </div>
-                <div class="chat-message chat-message-user">
-                  <div class="chat-bubble chat-bubble-user">
-                    <span class="chat-command">/next</span>
-                  </div>
-                </div>
-                <div class="chat-message chat-message-ai">
-                  <div class="chat-bubble chat-bubble-ai">
-                    <div class="chat-typing">
-                      <span></span><span></span><span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="chat-input-area">
-                <div class="chat-input-container">
-                  <input type="text" class="chat-input" placeholder="Type a message..." disabled>
-                  <button class="chat-send-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- @ Commands -->
-        <div class="command-section">
-          <h3 class="command-section-title" data-i18n="chat.atcommand.title">Generate Creatives On-the-Spot with @ Commands.</h3>
-          <div class="command-list">
-            <div class="command-item">
-              <span class="command-name">@image</span>
-              <span class="command-desc" data-i18n="atcommand.image.description">Type <code>@image</code> followed by a space and your prompt to generate images. Configure size and parallel generation count with <code>/image</code>.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">@video</span>
-              <span class="command-desc" data-i18n="atcommand.video.description">Type <code>@video</code> followed by a space and your prompt to generate videos. Configure size, duration, quality, and count with <code>/video</code>.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">@slide</span>
-              <span class="command-desc" data-i18n="atcommand.slide.description">Type <code>@slide</code> followed by a space and your prompt to generate slide images. Configure templates and settings with <code>/slide</code>.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slash Commands -->
-        <div class="command-section">
-          <h3 class="command-section-title" data-i18n="chat.slash.title">Slash Commands for Fine-Tuned Control.</h3>
-
-          <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">Extend Explanations</h4>
-          <div class="command-list">
-            <div class="command-item">
-              <span class="command-name">/what do you mean?</span>
-              <span class="command-desc" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">/next</span>
-              <span class="command-desc" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">/table</span>
-              <span class="command-desc" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">/translate</span>
-              <span class="command-desc" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</span>
-            </div>
-          </div>
-
-          <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.settings">Settings & Modes</h4>
-          <div class="command-list">
-            <div class="command-item">
-              <span class="command-name">/web</span>
-              <span class="command-desc" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">/image</span>
-              <span class="command-desc" data-i18n="howto2.commands.image.description">Configure image generation settings: size and number of images to generate in parallel.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">/video</span>
-              <span class="command-desc" data-i18n="howto2.commands.video.description">Configure video generation settings: size, duration, quality, and number of videos.</span>
-            </div>
-            <div class="command-item">
-              <span class="command-name">/slide</span>
-              <span class="command-desc" data-i18n="howto2.commands.slide.description">Configure slide generation settings: templates, count, and visual style.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="how3" class="container section">
         <div class="section-head">
           <h2 class="section-title" data-i18n="howto3.title">Copy-Paste, Supercharged.</h2>
@@ -1001,6 +890,163 @@
         </div>
       </section>
 
+      <!-- Time Management -->
+      <section id="time" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="time.title">Smart Time Management for Peak Focus.</h2>
+          <p class="section-sub" data-i18n="time.subtitle">Make time your ally and maximize productivity.</p>
+        </div>
+
+        <div class="time-visual">
+          <img src="./media/stopwatch.svg" alt="Stopwatch illustration" class="time-illustration" />
+        </div>
+
+        <div class="grid features howto-grid">
+          <article class="card">
+            <div class="card-head">
+              <h4 class="card-title" data-i18n="time.timer.title">Timer</h4>
+            </div>
+            <p class="card-body" data-i18n="time.timer.description">Perfect for focused work sessions and the Pomodoro Technique. Get notified when your set time is up.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h4 class="card-title" data-i18n="time.stopwatch.title">Stopwatch</h4>
+            </div>
+            <p class="card-body" data-i18n="time.stopwatch.description">Track how long tasks take. Know exactly where your time goes.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h4 class="card-title" data-i18n="time.schedule.title">Scheduler</h4>
+            </div>
+            <p class="card-body" data-i18n="time.schedule.description">Launch apps or open websites at scheduled times. Set your online meeting URL and it opens automatically when it's time. Never forget an appointment again. No more "Sorry, I was so focused on my work that I lost track of time." Stay fully immersed in your focus time. You can even set it to open a site the moment your favorite artist's concert tickets go on sale at exactly 12:00 tomorrow.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="chat" class="container section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="chat.title">Text, Images, Videos—Generated Instantly.</h2>
+          <p class="section-sub" data-i18n="chat.subtitle">Generate content and extend conversations with @ commands and slash commands.</p>
+        </div>
+
+        <!-- Chat Window Visualization -->
+        <div class="chat-showcase">
+          <div class="chat-window">
+            <div class="chat-body">
+              <div class="chat-messages">
+                <div class="chat-message chat-message-user">
+                  <div class="chat-bubble chat-bubble-user">
+                    <span class="chat-command">@image</span> A serene Japanese garden at sunset with cherry blossoms
+                  </div>
+                </div>
+                <div class="chat-message chat-message-ai">
+                  <div class="chat-bubble chat-bubble-ai">
+                    <div class="chat-image-grid">
+                      <div class="chat-image-placeholder">
+                        <div class="chat-image-shimmer"></div>
+                      </div>
+                      <div class="chat-image-placeholder">
+                        <div class="chat-image-shimmer"></div>
+                      </div>
+                    </div>
+                    <span class="chat-generating">Generating images...</span>
+                  </div>
+                </div>
+                <div class="chat-message chat-message-user">
+                  <div class="chat-bubble chat-bubble-user">
+                    <span class="chat-command">/next</span>
+                  </div>
+                </div>
+                <div class="chat-message chat-message-ai">
+                  <div class="chat-bubble chat-bubble-ai">
+                    <div class="chat-typing">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-input-area">
+                <div class="chat-input-container">
+                  <input type="text" class="chat-input" placeholder="Type a message..." disabled>
+                  <button class="chat-send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- @ Commands -->
+        <div class="command-section">
+          <h3 class="command-section-title" data-i18n="chat.atcommand.title">Generate Creatives On-the-Spot with @ Commands.</h3>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="command-name">@image</span>
+              <span class="command-desc" data-i18n="atcommand.image.description">Type <code>@image</code> followed by a space and your prompt to generate images. Configure size and parallel generation count with <code>/image</code>.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">@video</span>
+              <span class="command-desc" data-i18n="atcommand.video.description">Type <code>@video</code> followed by a space and your prompt to generate videos. Configure size, duration, quality, and count with <code>/video</code>.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">@slide</span>
+              <span class="command-desc" data-i18n="atcommand.slide.description">Type <code>@slide</code> followed by a space and your prompt to generate slide images. Configure templates and settings with <code>/slide</code>.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slash Commands -->
+        <div class="command-section">
+          <h3 class="command-section-title" data-i18n="chat.slash.title">Slash Commands for Fine-Tuned Control.</h3>
+
+          <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.extend">Extend Explanations</h4>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="command-name">/what do you mean?</span>
+              <span class="command-desc" data-i18n="howto2.commands.what.description">Ask for a deeper dive on the previous answer, adding missing context or nuance.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/next</span>
+              <span class="command-desc" data-i18n="howto2.commands.next.description">Continue the last explanation so IrukaDark keeps elaborating without reselecting content.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/table</span>
+              <span class="command-desc" data-i18n="howto2.commands.table.description">Reformat the previous response into a clean table to compare points at a glance.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/translate</span>
+              <span class="command-desc" data-i18n="howto2.commands.translate.description">Translate the last explanation into 10+ supported languages—or paraphrase in the same language—just by naming the target.</span>
+            </div>
+          </div>
+
+          <h4 class="command-section-title" style="font-size:16px; margin-top:28px;" data-i18n="howto2.group.settings">Settings & Modes</h4>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="command-name">/web</span>
+              <span class="command-desc" data-i18n="howto2.commands.web.description">Toggle web search mode so IrukaDark pulls in fresh results while it explains.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/image</span>
+              <span class="command-desc" data-i18n="howto2.commands.image.description">Configure image generation settings: size and number of images to generate in parallel.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/video</span>
+              <span class="command-desc" data-i18n="howto2.commands.video.description">Configure video generation settings: size, duration, quality, and number of videos.</span>
+            </div>
+            <div class="command-item">
+              <span class="command-name">/slide</span>
+              <span class="command-desc" data-i18n="howto2.commands.slide.description">Configure slide generation settings: templates, count, and visual style.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <!-- Terminal Features -->
       <section id="terminal" class="container section">
         <div class="section-head">
@@ -1122,7 +1168,6 @@
             <li><img src="https://hatscripts.github.io/circle-flags/flags/br.svg" alt="BR" class="flag-icon">Português (Brasil) (pt-BR)</li>
             <li><img src="https://hatscripts.github.io/circle-flags/flags/fr.svg" alt="FR" class="flag-icon">Français (fr)</li>
             <li><img src="https://hatscripts.github.io/circle-flags/flags/de.svg" alt="DE" class="flag-icon">Deutsch (de)</li>
-            <li><img src="https://hatscripts.github.io/circle-flags/flags/sa.svg" alt="SA" class="flag-icon">العربية (ar)</li>
             <li><img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" alt="RU" class="flag-icon">Русский (ru)</li>
             <li><img src="https://hatscripts.github.io/circle-flags/flags/kr.svg" alt="KR" class="flag-icon">한국어 (ko)</li>
             <li><img src="https://hatscripts.github.io/circle-flags/flags/id.svg" alt="ID" class="flag-icon">Bahasa Indonesia (id)</li>
@@ -1199,6 +1244,10 @@
                   Shared snippets across team
                 </li>
                 <li class="pricing-feature" data-i18n="pricing.team.feature3">
+                  <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Shared prompt templates
+                </li>
+                <li class="pricing-feature" data-i18n="pricing.team.feature4">
                   <svg class="pricing-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   Settings onboarding support
                 </li>

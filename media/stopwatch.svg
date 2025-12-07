@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Dark metallic gradient for stopwatch body -->
+    <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d3d3d;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d0d0d;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glossy highlight -->
+    <linearGradient id="glossHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+
+    <!-- Face gradient - dark with subtle glow -->
+    <radialGradient id="faceGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f0f;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Chrome ring gradient -->
+    <linearGradient id="chromeRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a4a4a;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5a5a5a;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a3a3a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Accent gradient (pink/purple like keyboard) -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4d6d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d946ef;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan accent -->
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow effects -->
+    <filter id="pinkGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Drop shadow -->
+    <filter id="dropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="4" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Inner shadow for depth -->
+    <filter id="innerShadow">
+      <feOffset dx="0" dy="2"/>
+      <feGaussianBlur stdDeviation="3" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="black" flood-opacity="0.4" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Energy burst effects (pink/cyan like keyboard) -->
+  <g opacity="0.9">
+    <!-- Pink lightning bolts -->
+    <polygon points="95,200 115,180 105,195 130,170 100,210 110,195" fill="url(#accentGrad)" filter="url(#pinkGlow)"/>
+    <polygon points="400,220 420,195 408,215 435,185 395,230 410,210" fill="url(#accentGrad)" filter="url(#pinkGlow)"/>
+    <polygon points="80,340 105,310 90,335 120,295 75,355 95,325" fill="url(#accentGrad)" filter="url(#pinkGlow)"/>
+    <polygon points="420,360 445,330 430,355 460,315 415,375 435,345" fill="url(#accentGrad)" filter="url(#pinkGlow)"/>
+
+    <!-- Cyan lightning bolts -->
+    <polygon points="130,150 145,135 138,148 158,125 125,160 140,145" fill="url(#cyanAccent)" filter="url(#cyanGlow)"/>
+    <polygon points="370,160 390,140 380,158 405,130 365,170 385,150" fill="url(#cyanAccent)" filter="url(#cyanGlow)"/>
+    <polygon points="110,400 130,375 118,395 145,365 105,410 125,385" fill="url(#cyanAccent)" filter="url(#cyanGlow)"/>
+    <polygon points="390,410 415,380 400,405 430,370 385,420 405,395" fill="url(#cyanAccent)" filter="url(#cyanGlow)"/>
+  </g>
+
+  <!-- Particles -->
+  <g>
+    <circle cx="70" cy="170" r="4" fill="#ff4d6d" filter="url(#pinkGlow)"/>
+    <circle cx="440" cy="180" r="3" fill="#00d4ff" filter="url(#cyanGlow)"/>
+    <circle cx="55" cy="350" r="3" fill="#d946ef" filter="url(#pinkGlow)"/>
+    <circle cx="455" cy="370" r="4" fill="#ff4d6d" filter="url(#pinkGlow)"/>
+    <circle cx="100" cy="130" r="2" fill="#00d4ff" filter="url(#cyanGlow)"/>
+    <circle cx="410" cy="140" r="2" fill="#d946ef" filter="url(#pinkGlow)"/>
+    <circle cx="90" cy="420" r="3" fill="#00d4ff" filter="url(#cyanGlow)"/>
+    <circle cx="420" cy="430" r="2" fill="#ff4d6d" filter="url(#pinkGlow)"/>
+  </g>
+
+  <!-- Main stopwatch with shadow -->
+  <g filter="url(#dropShadow)">
+
+    <!-- Top button (start/stop) - metallic black -->
+    <rect x="240" y="70" width="32" height="45" rx="6" fill="url(#metalBody)" stroke="#4a4a4a" stroke-width="1"/>
+    <rect x="242" y="72" width="28" height="41" rx="5" fill="url(#glossHighlight)" opacity="0.5"/>
+    <rect x="244" y="60" width="24" height="15" rx="5" fill="url(#chromeRing)" stroke="#3a3a3a" stroke-width="1"/>
+
+    <!-- Crown/dial with ridges -->
+    <rect x="248" y="95" width="16" height="28" rx="3" fill="url(#metalBody)" stroke="#4a4a4a" stroke-width="1"/>
+    <g stroke="#5a5a5a" stroke-width="0.5">
+      <line x1="251" y1="100" x2="251" y2="118"/>
+      <line x1="254" y1="100" x2="254" y2="118"/>
+      <line x1="257" y1="100" x2="257" y2="118"/>
+      <line x1="260" y1="100" x2="260" y2="118"/>
+    </g>
+
+    <!-- Side button right -->
+    <rect x="378" y="168" width="35" height="22" rx="6" fill="url(#metalBody)" stroke="#4a4a4a" stroke-width="1" transform="rotate(30 395 179)"/>
+    <rect x="380" y="170" width="31" height="18" rx="5" fill="url(#glossHighlight)" opacity="0.3" transform="rotate(30 395 179)"/>
+
+    <!-- Side button left -->
+    <rect x="99" y="168" width="35" height="22" rx="6" fill="url(#metalBody)" stroke="#4a4a4a" stroke-width="1" transform="rotate(-30 116 179)"/>
+    <rect x="101" y="170" width="31" height="18" rx="5" fill="url(#glossHighlight)" opacity="0.3" transform="rotate(-30 116 179)"/>
+
+    <!-- Main body outer ring - dark chrome -->
+    <circle cx="256" cy="290" r="170" fill="url(#metalBody)" stroke="#4a4a4a" stroke-width="2"/>
+
+    <!-- Chrome bezel -->
+    <circle cx="256" cy="290" r="160" fill="none" stroke="url(#chromeRing)" stroke-width="8"/>
+
+    <!-- Inner ring -->
+    <circle cx="256" cy="290" r="150" fill="url(#metalBody)" stroke="#3a3a3a" stroke-width="2"/>
+
+    <!-- Watch face - dark -->
+    <circle cx="256" cy="290" r="140" fill="url(#faceGrad)" stroke="#2a2a2a" stroke-width="2"/>
+
+    <!-- Glossy overlay on face -->
+    <ellipse cx="256" cy="240" rx="100" ry="60" fill="url(#glossHighlight)" opacity="0.15"/>
+
+    <!-- Hour markers - glowing -->
+    <g stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round" filter="url(#pinkGlow)">
+      <!-- 12 -->
+      <line x1="256" y1="165" x2="256" y2="185"/>
+      <!-- 3 -->
+      <line x1="381" y1="290" x2="361" y2="290"/>
+      <!-- 6 -->
+      <line x1="256" y1="415" x2="256" y2="395"/>
+      <!-- 9 -->
+      <line x1="131" y1="290" x2="151" y2="290"/>
+    </g>
+
+    <!-- Minute markers -->
+    <g stroke="#6a6a6a" stroke-width="2" stroke-linecap="round">
+      <!-- 1 -->
+      <line x1="312" y1="172" x2="304" y2="186"/>
+      <!-- 2 -->
+      <line x1="358" y1="210" x2="346" y2="220"/>
+      <!-- 4 -->
+      <line x1="378" y1="346" x2="366" y2="336"/>
+      <!-- 5 -->
+      <line x1="332" y1="398" x2="323" y2="385"/>
+      <!-- 7 -->
+      <line x1="180" y1="398" x2="189" y2="385"/>
+      <!-- 8 -->
+      <line x1="134" y1="346" x2="146" y2="336"/>
+      <!-- 10 -->
+      <line x1="154" y1="210" x2="166" y2="220"/>
+      <!-- 11 -->
+      <line x1="200" y1="172" x2="208" y2="186"/>
+    </g>
+
+    <!-- Small tick marks -->
+    <g fill="#4a4a4a">
+      <circle cx="282" cy="158" r="2"/>
+      <circle cx="230" cy="158" r="2"/>
+      <circle cx="340" cy="180" r="2"/>
+      <circle cx="172" cy="180" r="2"/>
+      <circle cx="368" cy="218" r="2"/>
+      <circle cx="144" cy="218" r="2"/>
+      <circle cx="388" cy="260" r="2"/>
+      <circle cx="124" cy="260" r="2"/>
+      <circle cx="388" cy="320" r="2"/>
+      <circle cx="124" cy="320" r="2"/>
+      <circle cx="368" cy="362" r="2"/>
+      <circle cx="144" cy="362" r="2"/>
+      <circle cx="340" cy="400" r="2"/>
+      <circle cx="172" cy="400" r="2"/>
+      <circle cx="282" cy="422" r="2"/>
+      <circle cx="230" cy="422" r="2"/>
+    </g>
+
+    <!-- Sub-dial for seconds -->
+    <circle cx="256" cy="225" r="32" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="2"/>
+    <circle cx="256" cy="225" r="28" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+    <g stroke="#5a5a5a" stroke-width="1.5" stroke-linecap="round">
+      <line x1="256" y1="200" x2="256" y2="206"/>
+      <line x1="281" y1="225" x2="275" y2="225"/>
+      <line x1="256" y1="250" x2="256" y2="244"/>
+      <line x1="231" y1="225" x2="237" y2="225"/>
+    </g>
+    <!-- Sub-dial hand - cyan glow -->
+    <line x1="256" y1="225" x2="256" y2="205" stroke="url(#cyanAccent)" stroke-width="2" stroke-linecap="round" filter="url(#cyanGlow)"/>
+    <circle cx="256" cy="225" r="4" fill="url(#cyanAccent)" filter="url(#cyanGlow)"/>
+
+    <!-- Main hands -->
+    <!-- Minute hand - sleek black -->
+    <path d="M252 290 L256 170 L260 290 Z" fill="#2a2a2a" stroke="#4a4a4a" stroke-width="1"/>
+    <line x1="256" y1="290" x2="256" y2="175" stroke="#5a5a5a" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Second hand - pink glow -->
+    <line x1="256" y1="310" x2="345" y2="235" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round" filter="url(#pinkGlow)"/>
+
+    <!-- Center cap - metallic with accent -->
+    <circle cx="256" cy="290" r="14" fill="url(#metalBody)" stroke="#4a4a4a" stroke-width="2"/>
+    <circle cx="256" cy="290" r="10" fill="url(#chromeRing)"/>
+    <circle cx="256" cy="290" r="5" fill="url(#accentGrad)" filter="url(#pinkGlow)"/>
+  </g>
+
+  <!-- Additional energy sparks -->
+  <g opacity="0.8">
+    <path d="M140 165 Q155 150 150 170 Q165 155 145 175" fill="none" stroke="#ff4d6d" stroke-width="2" stroke-linecap="round" filter="url(#pinkGlow)"/>
+    <path d="M365 155 Q375 140 378 165 Q390 148 370 170" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" filter="url(#cyanGlow)"/>
+    <path d="M125 385 Q140 400 130 380 Q148 395 120 390" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" filter="url(#cyanGlow)"/>
+    <path d="M380 400 Q395 385 385 405 Q402 390 375 410" fill="none" stroke="#d946ef" stroke-width="2" stroke-linecap="round" filter="url(#pinkGlow)"/>
+  </g>
+</svg>

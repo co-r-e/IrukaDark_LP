@@ -5771,3 +5771,34 @@ h4.command-section-title::before {
     font-size: 18px;
   }
 }
+
+/* Time Management Visual */
+.time-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.time-illustration {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(155, 89, 182, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.time-illustration:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 12px 32px rgba(155, 89, 182, 0.4));
+}
+
+@media (max-width: 768px) {
+  .time-illustration {
+    max-width: 200px;
+  }
+
+  .time-visual {
+    margin: 24px 0;
+  }
+}
