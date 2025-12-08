@@ -20,10 +20,10 @@
   /* spacing (easy to tweak) */
   --space-hero-t: 64px;
   --space-hero-b: 24px;
-  --space-sec-t: 80px;
-  --space-sec-b: 64px;
-  --space-cta-t: 56px;
-  --space-cta-b: 72px;
+  --space-sec-t: 120px;
+  --space-sec-b: 100px;
+  --space-cta-t: 80px;
+  --space-cta-b: 100px;
 }
 
 * {
@@ -5815,18 +5815,11 @@ h4.command-section-title::before {
 }
 
 .time-illustration {
-  max-width: 300px;
+  max-width: 100%;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.4));
-  transition: transform 0.4s ease, filter 0.4s ease;
   position: relative;
   z-index: 1;
-}
-
-.time-illustration:hover {
-  transform: scale(1.08) rotate(2deg);
-  filter: drop-shadow(0 16px 48px rgba(255, 77, 109, 0.3));
 }
 
 .time-features {
@@ -5887,7 +5880,7 @@ h4.command-section-title::before {
   }
 
   .time-illustration {
-    max-width: 240px;
+    max-width: 100%;
   }
 }
 
@@ -5926,6 +5919,6 @@ h4.command-section-title::before {
   }
 
   .time-illustration {
-    max-width: 200px;
+    max-width: 100%;
   }
 }

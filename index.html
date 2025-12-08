@@ -210,16 +210,6 @@
 
             <article class="feature-card">
               <div class="feature-card-image">
-                <img src="./media/irukadark_connecttools.png" alt="Connect with any digital tool" />
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.secure.title">Versatile Features at Your Fingertips.</h3>
-                <p class="feature-card-description" data-i18n="features.secure.description">Image generation, video creation, deep-dive explanations, diagrams, slide creation, terminal operations, and more. Handle all your quick tasks without switching screens—your all-in-one AI companion.</p>
-              </div>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-card-image">
                 <img src="./media/irukadark_clipboard.png" alt="Clipboard stack feature" />
               </div>
               <div class="feature-card-content">
@@ -235,6 +225,16 @@
               <div class="feature-card-content">
                 <h3 class="feature-card-title" data-i18n="features.timer.title">Smart Time Control.</h3>
                 <p class="feature-card-description" data-i18n="features.timer.description">Timer, stopwatch, and more—set a time to automatically open apps or websites. Never forget "I need to do that task in an hour."</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card-image">
+                <img src="./media/irukadark_connecttools.png" alt="Connect with any digital tool" />
+              </div>
+              <div class="feature-card-content">
+                <h3 class="feature-card-title" data-i18n="features.secure.title">Versatile Features at Your Fingertips.</h3>
+                <p class="feature-card-description" data-i18n="features.secure.description">Image generation, video creation, deep-dive explanations, diagrams, slide creation, terminal operations, and more. Handle all your quick tasks without switching screens—your all-in-one AI companion.</p>
               </div>
             </article>
           </div>
@@ -1430,6 +1430,20 @@
               </div>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Does the schedule feature work when my Mac is in sleep mode?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>No, it does not work during sleep mode. For the schedule feature to work, your Mac must be awake and IrukaDark must be running. To automatically open apps or websites at a specified time, make sure your Mac is not in sleep mode at that time.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -1515,6 +1529,11 @@
           "@type": "Question",
           "name": "Why do I see an Accessibility error?",
           "acceptedAnswer": {"@type": "Answer", "text": "IrukaDark ships a helper binary (IrukaAutomation) that uses macOS Accessibility. After an update the binary hash changes, so macOS may drop the previous permission. Re-add IrukaDark in System Settings → Privacy & Security → Accessibility, or run `tccutil reset Accessibility com.core.irukadark` (and allow the dialog). If it still fails, `sudo tccutil reset Accessibility` resets all Accessibility permissions."}
+        },
+        {
+          "@type": "Question",
+          "name": "Does the schedule feature work when my Mac is in sleep mode?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No, it does not work during sleep mode. For the schedule feature to work, your Mac must be awake and IrukaDark must be running. To automatically open apps or websites at a specified time, make sure your Mac is not in sleep mode at that time."}
         }
       ]
     }

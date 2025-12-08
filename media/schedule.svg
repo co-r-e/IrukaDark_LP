@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 540" width="480" height="540">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1e2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14141f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="toggleOn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d6d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d946ef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="toggleOff" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3a3a4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a2a3a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dayChipBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Schedule Card 1 (Active) -->
+  <g>
+    <rect x="40" y="15" width="400" height="95" rx="12" fill="url(#cardBg)" stroke="#2a2a3a" stroke-width="1"/>
+    <text x="60" y="57" font-family="SF Mono, Monaco, monospace" font-size="28" font-weight="600" fill="#ffffff">09:30</text>
+    <g>
+      <rect x="170" y="33" width="32" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="186" y="47" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Mon</text>
+      <rect x="206" y="33" width="30" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="221" y="47" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Tue</text>
+      <rect x="240" y="33" width="34" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="257" y="47" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Wed</text>
+      <rect x="278" y="33" width="30" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="293" y="47" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Thu</text>
+      <rect x="312" y="33" width="24" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="324" y="47" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Fri</text>
+    </g>
+    <rect x="360" y="35" width="36" height="18" rx="9" fill="url(#toggleOn)"/>
+    <circle cx="387" cy="44" r="7" fill="#ffffff"/>
+    <g transform="translate(406, 33)">
+      <path d="M4 14.5V18h3.5l10.5-10.5-3.5-3.5L4 14.5zm14.5-8.5c.4-.4.4-1 0-1.4l-2.1-2.1c-.4-.4-1-.4-1.4 0l-1.7 1.7 3.5 3.5 1.7-1.7z" fill="#666677" transform="scale(0.8)"/>
+    </g>
+    <g transform="translate(60, 73)">
+      <path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z" fill="url(#cyanAccent)" transform="scale(0.65) translate(0, 2)"/>
+      <text x="18" y="12" font-family="SF Pro, -apple-system, sans-serif" font-size="11" fill="url(#cyanAccent)">meet.google.com</text>
+    </g>
+  </g>
+
+  <!-- Schedule Card 2 (Active) -->
+  <g>
+    <rect x="40" y="118" width="400" height="95" rx="12" fill="url(#cardBg)" stroke="#2a2a3a" stroke-width="1"/>
+    <text x="60" y="160" font-family="SF Mono, Monaco, monospace" font-size="28" font-weight="600" fill="#ffffff">12:00</text>
+    <g>
+      <rect x="170" y="136" width="32" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="186" y="150" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Mon</text>
+      <rect x="206" y="136" width="34" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="223" y="150" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Wed</text>
+      <rect x="244" y="136" width="24" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="256" y="150" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Fri</text>
+    </g>
+    <rect x="360" y="138" width="36" height="18" rx="9" fill="url(#toggleOn)"/>
+    <circle cx="387" cy="147" r="7" fill="#ffffff"/>
+    <g transform="translate(406, 136)">
+      <path d="M4 14.5V18h3.5l10.5-10.5-3.5-3.5L4 14.5zm14.5-8.5c.4-.4.4-1 0-1.4l-2.1-2.1c-.4-.4-1-.4-1.4 0l-1.7 1.7 3.5 3.5 1.7-1.7z" fill="#666677" transform="scale(0.8)"/>
+    </g>
+    <g transform="translate(60, 176)">
+      <path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z" fill="url(#cyanAccent)" transform="scale(0.65) translate(0, 2)"/>
+      <text x="18" y="12" font-family="SF Pro, -apple-system, sans-serif" font-size="11" fill="url(#cyanAccent)">zoom.us/j/123456789</text>
+    </g>
+  </g>
+
+  <!-- Schedule Card 3 (Active) -->
+  <g>
+    <rect x="40" y="221" width="400" height="95" rx="12" fill="url(#cardBg)" stroke="#2a2a3a" stroke-width="1"/>
+    <text x="60" y="263" font-family="SF Mono, Monaco, monospace" font-size="28" font-weight="600" fill="#ffffff">14:00</text>
+    <g>
+      <rect x="170" y="239" width="30" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="185" y="253" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Tue</text>
+      <rect x="204" y="239" width="30" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="219" y="253" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#888899" text-anchor="middle">Thu</text>
+    </g>
+    <rect x="360" y="241" width="36" height="18" rx="9" fill="url(#toggleOn)"/>
+    <circle cx="387" cy="250" r="7" fill="#ffffff"/>
+    <g transform="translate(406, 239)">
+      <path d="M4 14.5V18h3.5l10.5-10.5-3.5-3.5L4 14.5zm14.5-8.5c.4-.4.4-1 0-1.4l-2.1-2.1c-.4-.4-1-.4-1.4 0l-1.7 1.7 3.5 3.5 1.7-1.7z" fill="#666677" transform="scale(0.8)"/>
+    </g>
+    <g transform="translate(60, 279)">
+      <path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z" fill="url(#cyanAccent)" transform="scale(0.65) translate(0, 2)"/>
+      <text x="18" y="12" font-family="SF Pro, -apple-system, sans-serif" font-size="11" fill="url(#cyanAccent)">teams.microsoft.com</text>
+    </g>
+  </g>
+
+  <!-- Schedule Card 4 (Inactive) -->
+  <g>
+    <rect x="40" y="324" width="400" height="95" rx="12" fill="url(#cardBg)" stroke="#2a2a3a" stroke-width="1" opacity="0.7"/>
+    <text x="60" y="366" font-family="SF Mono, Monaco, monospace" font-size="28" font-weight="600" fill="#666677">18:30</text>
+    <g opacity="0.6">
+      <rect x="170" y="342" width="28" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="184" y="356" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#666677" text-anchor="middle">Sat</text>
+      <rect x="202" y="342" width="30" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="217" y="356" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#666677" text-anchor="middle">Sun</text>
+    </g>
+    <rect x="360" y="344" width="36" height="18" rx="9" fill="url(#toggleOff)"/>
+    <circle cx="369" cy="353" r="7" fill="#555566"/>
+    <g transform="translate(406, 342)" opacity="0.5">
+      <path d="M4 14.5V18h3.5l10.5-10.5-3.5-3.5L4 14.5zm14.5-8.5c.4-.4.4-1 0-1.4l-2.1-2.1c-.4-.4-1-.4-1.4 0l-1.7 1.7 3.5 3.5 1.7-1.7z" fill="#666677" transform="scale(0.8)"/>
+    </g>
+    <g transform="translate(60, 382)" opacity="0.5">
+      <path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z" fill="#666677" transform="scale(0.65) translate(0, 2)"/>
+      <text x="18" y="12" font-family="SF Pro, -apple-system, sans-serif" font-size="11" fill="#666677">discord.gg/irukadark</text>
+    </g>
+  </g>
+
+  <!-- Schedule Card 5 (Inactive) -->
+  <g>
+    <rect x="40" y="427" width="400" height="95" rx="12" fill="url(#cardBg)" stroke="#2a2a3a" stroke-width="1" opacity="0.7"/>
+    <text x="60" y="469" font-family="SF Mono, Monaco, monospace" font-size="28" font-weight="600" fill="#666677">21:00</text>
+    <g opacity="0.6">
+      <rect x="170" y="445" width="28" height="20" rx="4" fill="url(#dayChipBg)" stroke="#3a3a4a" stroke-width="0.5"/>
+      <text x="184" y="459" font-family="SF Pro, -apple-system, sans-serif" font-size="9" fill="#666677" text-anchor="middle">Fri</text>
+    </g>
+    <rect x="360" y="447" width="36" height="18" rx="9" fill="url(#toggleOff)"/>
+    <circle cx="369" cy="456" r="7" fill="#555566"/>
+    <g transform="translate(406, 445)" opacity="0.5">
+      <path d="M4 14.5V18h3.5l10.5-10.5-3.5-3.5L4 14.5zm14.5-8.5c.4-.4.4-1 0-1.4l-2.1-2.1c-.4-.4-1-.4-1.4 0l-1.7 1.7 3.5 3.5 1.7-1.7z" fill="#666677" transform="scale(0.8)"/>
+    </g>
+    <g transform="translate(60, 485)" opacity="0.5">
+      <path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z" fill="#666677" transform="scale(0.65) translate(0, 2)"/>
+      <text x="18" y="12" font-family="SF Pro, -apple-system, sans-serif" font-size="11" fill="#666677">twitch.tv/irukadark</text>
+    </g>
+  </g>
+</svg>

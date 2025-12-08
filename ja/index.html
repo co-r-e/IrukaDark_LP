@@ -227,16 +227,6 @@
 
           <article class="feature-card">
             <div class="feature-card-image">
-              <img src="../media/irukadark_connecttools.png" alt="あらゆるデジタルツールと連携" />
-            </div>
-            <div class="feature-card-content">
-              <h3 class="feature-card-title" data-i18n="features.secure.title">かゆいところに手が届く、多彩な機能。</h3>
-              <p class="feature-card-description" data-i18n="features.secure.description">画像生成・動画生成はもちろん、解説の深掘りや図解、スライド作成、ターミナル操作まで。ちょっとした作業も画面を変えずに全部まとめて任せられる、オールインワンな相方です。</p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-card-image">
               <img src="../media/irukadark_clipboard.png" alt="クリップボードスタック機能" />
             </div>
             <div class="feature-card-content">
@@ -252,6 +242,16 @@
             <div class="feature-card-content">
               <h3 class="feature-card-title" data-i18n="features.timer.title">時間をスマートにコントロールする。</h3>
               <p class="feature-card-description" data-i18n="features.timer.description">タイマー、ストップウォッチはもちろん、時間設定でアプリやWebサイトを自動で開くことができます。"1時間後にあの作業をするぞ"ということを忘れることがありません。</p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card-image">
+              <img src="../media/irukadark_connecttools.png" alt="あらゆるデジタルツールと連携" />
+            </div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title" data-i18n="features.secure.title">かゆいところに手が届く、多彩な機能。</h3>
+              <p class="feature-card-description" data-i18n="features.secure.description">画像生成・動画生成はもちろん、解説の深掘りや図解、スライド作成、ターミナル操作まで。ちょっとした作業も画面を変えずに全部まとめて任せられる、オールインワンな相方です。</p>
             </div>
           </article>
         </div>
@@ -925,7 +925,7 @@
       <div class="time-showcase">
         <div class="time-visual">
           <div class="time-glow"></div>
-          <img src="../media/stopwatch.svg" alt="ストップウォッチのイラスト" class="time-illustration" />
+          <img src="../media/schedule.svg" alt="スケジュール機能のイラスト" class="time-illustration" />
         </div>
 
         <div class="time-features">
@@ -1486,6 +1486,21 @@ sudo tccutil reset Accessibility
             </div>
           </div>
         </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">スケジュール機能はPCのスリープ時にも自動起動しますか？</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>いいえ、スリープ中は自動起動しません。スケジュール機能を利用するには、PCが起動している状態である必要があります。指定した時刻にアプリやWebサイトを自動で開くには、その時刻にMacがスリープ状態ではなく、IrukaDarkが起動している必要があります。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -1572,6 +1587,11 @@ sudo tccutil reset Accessibility
           "@type": "Question",
           "name": "アクセシビリティのエラーが出る",
           "acceptedAnswer": {"@type": "Answer", "text": "IrukaDark内のIrukaAutomationバイナリがアクセシビリティAPIを使用します。アップデートでバイナリの署名ハッシュが変わると、macOSが以前の許可を無効化しエラーが出ることがあります。システム設定→プライバシーとセキュリティ→アクセシビリティでIrukaDarkを削除・再追加するか、`tccutil reset Accessibility com.core.irukadark` を実行して再許可してください。解決しない場合は `sudo tccutil reset Accessibility` ですべてのアクセシビリティ許可をリセットします（他アプリに影響するので注意）。"}
+        },
+        {
+          "@type": "Question",
+          "name": "スケジュール機能はPCのスリープ時にも自動起動しますか？",
+          "acceptedAnswer": {"@type": "Answer", "text": "いいえ、スリープ中は自動起動しません。スケジュール機能を利用するには、PCが起動している状態である必要があります。指定した時刻にアプリやWebサイトを自動で開くには、その時刻にMacがスリープ状態ではなく、IrukaDarkが起動している必要があります。"}
         }
       ]
     }
