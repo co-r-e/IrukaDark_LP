@@ -2059,8 +2059,25 @@ body:has([href*="user-gaide"]) .grid.features {
   letter-spacing: -0.04em;
   line-height: 1.05;
   margin: 0 0 16px;
-  color: var(--text);
   text-align: center;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2), var(--primary), var(--primary-2));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 4s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .howto-hero-subtitle {
@@ -4690,6 +4707,52 @@ body:has([href*="user-gaide"]) .grid.features {
   padding: 2px 6px;
   border-radius: 4px;
   color: var(--text);
+}
+
+/* Window Control Section */
+.window-control-showcase {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.window-control-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-control-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.window-control-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 968px) {
+  .window-control-showcase {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .window-control-visual {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .window-control-showcase {
+    gap: 32px;
+    margin-top: 32px;
+  }
 }
 
 /* Chat Window Visualization - Ultra Premium */
