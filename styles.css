@@ -5985,3 +5985,69 @@ h4.command-section-title::before {
     max-width: 100%;
   }
 }
+
+/* ========================================
+   Minutes Section - 議事録機能
+   ======================================== */
+
+.minutes-section {
+  padding: 100px 0;
+}
+
+.minutes-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.minutes-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minutes-illustration {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.minutes-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .minutes-showcase {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .minutes-visual {
+    order: -1;
+  }
+
+  .minutes-illustration {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .minutes-section {
+    padding: 60px 0;
+  }
+
+  .minutes-showcase {
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .minutes-desc {
+    font-size: 1rem;
+  }
+}
