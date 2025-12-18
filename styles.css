@@ -1426,7 +1426,6 @@ body {
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
-  background: #000;
   box-shadow: 0 16px 40px rgba(255, 77, 109, 0.08), 0 6px 20px rgba(217, 70, 239, 0.06);
 }
 
@@ -1435,10 +1434,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: #000;
-  border-radius: 16px;
 }
 
 .hero-media {
