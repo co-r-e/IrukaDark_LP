@@ -73,11 +73,27 @@ function serveFile(req, res, filePath) {
     if (err || !stat.isFile()) return send404(res);
     const ext = path.extname(filePath).toLowerCase();
     const type = MIME[ext] || 'application/octet-stream';
-    res.writeHead(200, {
+    
+    // 開発環境: 常に最新ファイルを取得（キャッシュ無効化）
+    const headers = {
       'Content-Type': type,
-      'Cache-Control': 'no-cache',
-      'Accept-Ranges': 'bytes'
-    });
+      'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+      'Pragma': 'no-cache',
+      'Expires': '0',
+      'Accept-Ranges': 'bytes',
+      'Last-Modified': stat.mtime.toUTCString(),
+      'ETag': `"${stat.mtime.getTime()}-${stat.size}"`
+    };
+    
+    // ETag/If-None-Match による304 Not Modified チェック
+    const ifNoneMatch = req.headers['if-none-match'];
+    const etag = headers['ETag'];
+    if (ifNoneMatch === etag) {
+      res.writeHead(304, headers);
+      return res.end();
+    }
+    
+    res.writeHead(200, headers);
     if (req.method === 'HEAD') return res.end();
     fs.createReadStream(filePath).pipe(res);
   });
