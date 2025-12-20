@@ -1346,8 +1346,12 @@ html[lang="en"] .hero-left .hero-title {
 
 @media (max-width: 768px) {
   .hero {
+    /* fallback for older browsers */
+    min-height: calc(100vh - var(--nav-height));
+    /* iOS Safari: -webkit-fill-available handles dynamic viewport */
+    min-height: -webkit-fill-available;
+    /* Modern browsers: dvh handles dynamic viewport */
     min-height: calc(100dvh - var(--nav-height));
-    min-height: calc(100vh - var(--nav-height)); /* fallback for older browsers */
     padding: 0;
     overflow-x: hidden;
   }
@@ -1433,6 +1437,17 @@ html[lang="en"] .hero-left .hero-title {
 .hero-features-scroll-buttons {
   display: flex;
   gap: 16px;
+}
+
+.scroll-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hero-features-controls .scroll-btn {
@@ -3760,8 +3775,12 @@ body:has([href*="user-gaide"]) .grid.features {
   /* Mobile hero: match other card area width (container default 92%) */
   .hero {
     gap: 32px;
+    /* fallback for older browsers */
+    min-height: calc(100vh - var(--nav-height));
+    /* iOS Safari: -webkit-fill-available handles dynamic viewport */
+    min-height: -webkit-fill-available;
+    /* Modern browsers: dvh handles dynamic viewport */
     min-height: calc(100dvh - var(--nav-height));
-    min-height: calc(100vh - var(--nav-height)); /* fallback for older browsers */
     padding: 0;
     overflow-x: hidden;
   }
@@ -4125,8 +4144,12 @@ body:has([href*="user-gaide"]) .grid.features {
 
   .hero {
     gap: 28px;
+    /* fallback for older browsers */
+    min-height: calc(100vh - var(--nav-height));
+    /* iOS Safari: -webkit-fill-available handles dynamic viewport */
+    min-height: -webkit-fill-available;
+    /* Modern browsers: dvh handles dynamic viewport */
     min-height: calc(100dvh - var(--nav-height));
-    min-height: calc(100vh - var(--nav-height)); /* fallback for older browsers */
     padding: 0;
     overflow-x: hidden;
   }
