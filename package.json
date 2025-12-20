@@ -5,7 +5,8 @@
   "description": "Local dev server for IrukaDark landing page",
   "type": "module",
   "scripts": {
-    "dev": "node dev-server.mjs"
+    "dev": "node dev-server.mjs",
+    "update-cache": "node update-cache-buster.mjs"
   },
   "dependencies": {}
 }
