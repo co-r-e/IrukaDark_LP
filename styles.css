@@ -1383,6 +1383,7 @@ html[lang="en"] .hero-left .hero-title {
 
   .hero-right .hero-sub {
     font-size: 0.95rem;
+    line-height: 1.3;
   }
 }
 
@@ -1534,8 +1535,13 @@ html[lang="en"] .hero-left .hero-title {
     box-sizing: border-box;
   }
 
+  .hero-features-controls .btn {
+    order: 2;
+  }
+
   .hero-features-scroll-buttons {
     justify-content: center;
+    order: 1;
   }
 }
 
@@ -3827,7 +3833,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
   .hero-sub {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.3;
     max-width: 100%;
     margin-bottom: 28px;
   }
@@ -4188,7 +4194,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
   .hero-sub {
     font-size: 15px;
-    line-height: 1.4;
+    line-height: 1.2;
     margin-bottom: 24px;
   }
 
