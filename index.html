@@ -139,6 +139,9 @@
               </button>
             </div>
           </div>
+          <a href="https://app.irukadark.com/login" class="btn btn-secondary" data-i18n="header.login">
+            Login
+          </a>
           <a id="download-nav" href="/downloads" class="btn btn-primary" data-i18n="header.clone">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;">
               <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
@@ -152,102 +155,104 @@
     <main>
       <!-- Hero -->
       <section class="hero">
-        <canvas id="hero-laser-canvas"></canvas>
         <div class="container">
           <div class="hero-content">
-            <h1 class="hero-title" data-i18n="hero.title">
-              <span class="grad-white">High-Speed Desktop AI</span><br>That Boosts Your Productivity.
-            </h1>
-            <p class="hero-sub" data-i18n="hero.subtitle">
-              <strong>Instant explanations, terminal, and clipboard tools, all in one. A compact AI utility summoned by a single shortcut, packed with powerful features to accelerate your workflow.</strong>
-            </p>
-            <div class="hero-cta">
-              <a id="download-btn" href="/downloads" class="btn btn-primary btn-lg" data-i18n="hero.cta">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;">
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                </svg>
-                Download for Mac
-              </a>
+            <div class="hero-left">
+              <h1 class="hero-title" data-i18n="hero.title">
+                <span class="grad-white">High-Speed Desktop AI</span><br>That Boosts Your Productivity.
+              </h1>
+            </div>
+            <div class="hero-right">
+              <p class="hero-sub" data-i18n="hero.subtitle">
+                <strong>Instant explanations, terminal, and clipboard tools, all in one. A compact AI utility summoned by a single shortcut, packed with powerful features to accelerate your workflow.</strong>
+              </p>
             </div>
           </div>
-        </div>
-        <div class="scroll-indicator">
-          <span class="scroll-text">SCROLL</span>
-          <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </div>
-      </section>
 
-      <!-- Features -->
-      <section id="features" class="container section">
-        <div class="section-head">
-          <h2 class="section-title" data-i18n="features.title">AI That Accelerates Your Thinking and Work.</h2>
-          <p class="section-sub" data-i18n="features.subtitle">No more "I don't get it." Instant, context‑aware understanding keeps you moving.</p>
-        </div>
+            <div class="features-scroll-wrapper hero-features">
+              <div class="features-scroll">
+                <article class="feature-card">
+                  <div class="feature-card-image">
+                    <img src="./media/irukadark_key.png" alt="Keyboard shortcut icon" />
+                  </div>
+                  <div class="feature-card-content">
+                    <h3 class="feature-card-title" data-i18n="features.instant.title">Shortcut → Whoosh → Done.</h3>
+                    <p class="feature-card-description" data-i18n="features.instant.description">No need to type prompts like "explain this error code." Just highlight what's on your screen and hit the shortcut. IrukaDark instantly delivers context-aware explanations right where you are.</p>
+                  </div>
+                </article>
 
-        <div class="features-scroll-wrapper">
-          <div class="features-scroll">
-            <article class="feature-card">
-              <div class="feature-card-image">
-                <img src="./media/irukadark_key.png" alt="Keyboard shortcut icon" />
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.instant.title">Shortcut → Whoosh → Done.</h3>
-                <p class="feature-card-description" data-i18n="features.instant.description">No need to type prompts like "explain this error code." Just highlight what's on your screen and hit the shortcut. IrukaDark instantly delivers context-aware explanations right where you are.</p>
-              </div>
-            </article>
+                <article class="feature-card">
+                  <div class="feature-card-image">
+                    <img src="./media/irukadark_onestop.png" alt="All-in-one workflow icon" />
+                  </div>
+                  <div class="feature-card-content">
+                    <h3 class="feature-card-title" data-i18n="features.flow.title">Analyzes the Screen You're Looking At.</h3>
+                    <p class="feature-card-description" data-i18n="features.flow.description">Dev tools, SaaS dashboards, technical docs, academic PDFs. IrukaDark handles them all through one universal interface: your screen. No need to learn how each app works. Just select what catches your eye, and understand it instantly -in any language.</p>
+                  </div>
+                </article>
 
-            <article class="feature-card">
-              <div class="feature-card-image">
-                <img src="./media/irukadark_onestop.png" alt="All-in-one workflow icon" />
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.flow.title">Analyzes the Screen You're Looking At.</h3>
-                <p class="feature-card-description" data-i18n="features.flow.description">Dev tools, SaaS dashboards, technical docs, academic PDFs. IrukaDark handles them all through one universal interface: your screen. No need to learn how each app works. Just select what catches your eye, and understand it instantly -in any language.</p>
-              </div>
-            </article>
+                <article class="feature-card coming-soon-wrapper">
+                  <span class="coming-soon-stamp">Coming Soon</span>
+                  <div class="feature-card-image">
+                    <img src="./media/irukadark_minutes.png" alt="Meeting minutes feature" />
+                  </div>
+                  <div class="feature-card-content">
+                    <h3 class="feature-card-title" data-i18n="features.minutes.title">Record Meetings, Create Minutes, Share in One Slide. All Automatic.</h3>
+                    <p class="feature-card-description" data-i18n="features.minutes.description">Automatically record any online meeting - Zoom, Teams, Google Meet, you name it. When the meeting ends, text minutes are ready, plus a single slide image summarizing everything. Need details? Check the minutes. Need a quick share? Use the slide. Meeting notes done with a shortcut.</p>
+                  </div>
+                </article>
 
-            <article class="feature-card coming-soon-wrapper">
-              <span class="coming-soon-stamp">Coming Soon</span>
-              <div class="feature-card-image">
-                <img src="./media/irukadark_minutes.png" alt="Meeting minutes feature" />
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.minutes.title">Record Meetings, Create Minutes, Share in One Slide. All Automatic.</h3>
-                <p class="feature-card-description" data-i18n="features.minutes.description">Automatically record any online meeting - Zoom, Teams, Google Meet, you name it. When the meeting ends, text minutes are ready, plus a single slide image summarizing everything. Need details? Check the minutes. Need a quick share? Use the slide. Meeting notes done with a shortcut.</p>
-              </div>
-            </article>
+                <article class="feature-card">
+                  <div class="feature-card-image">
+                    <img src="./media/irukadark_clipboard.png" alt="Clipboard stack feature" />
+                  </div>
+                  <div class="feature-card-content">
+                    <h3 class="feature-card-title" data-i18n="features.clipboard.title">Copy, Copy, Copy. Then Paste, Paste, Paste.</h3>
+                    <p class="feature-card-description" data-i18n="features.clipboard.description">No more switching back and forth. Stack multiple copies in a row, then paste them in sequence. Turn repetitive copy-paste into a lightning-fast workflow.</p>
+                  </div>
+                </article>
 
-            <article class="feature-card">
-              <div class="feature-card-image">
-                <img src="./media/irukadark_clipboard.png" alt="Clipboard stack feature" />
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.clipboard.title">Copy, Copy, Copy. Then Paste, Paste, Paste.</h3>
-                <p class="feature-card-description" data-i18n="features.clipboard.description">No more switching back and forth. Stack multiple copies in a row, then paste them in sequence. Turn repetitive copy-paste into a lightning-fast workflow.</p>
-              </div>
-            </article>
+                <article class="feature-card">
+                  <div class="feature-card-image">
+                    <img src="./media/irukadark_timer.png" alt="Timer feature" />
+                  </div>
+                  <div class="feature-card-content">
+                    <h3 class="feature-card-title" data-i18n="features.timer.title">Smart Time Control.</h3>
+                    <p class="feature-card-description" data-i18n="features.timer.description">Timer, stopwatch, and more -set a time to automatically open apps or websites. Never forget "I need to do that task in an hour."</p>
+                  </div>
+                </article>
 
-            <article class="feature-card">
-              <div class="feature-card-image">
-                <img src="./media/irukadark_timer.png" alt="Timer feature" />
+                <article class="feature-card">
+                  <div class="feature-card-image">
+                    <img src="./media/irukadark_connecttools.png" alt="Connect with any digital tool" />
+                  </div>
+                  <div class="feature-card-content">
+                    <h3 class="feature-card-title" data-i18n="features.secure.title">Versatile Features at Your Fingertips.</h3>
+                    <p class="feature-card-description" data-i18n="features.secure.description">Image generation, video creation, deep-dive explanations, diagrams, slide creation, terminal operations, and more. Handle all your quick tasks without switching screens -your all-in-one AI companion.</p>
+                  </div>
+                </article>
               </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.timer.title">Smart Time Control.</h3>
-                <p class="feature-card-description" data-i18n="features.timer.description">Timer, stopwatch, and more -set a time to automatically open apps or websites. Never forget "I need to do that task in an hour."</p>
+              <div class="hero-features-controls">
+                <a id="download-btn-hero" href="/downloads" class="btn btn-primary" data-i18n="hero.cta">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;">
+                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                  </svg>
+                  Download for Mac
+                </a>
+                <div class="hero-features-scroll-buttons">
+                  <button class="scroll-btn scroll-btn-left" aria-label="Scroll left">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                  <button class="scroll-btn scroll-btn-right" aria-label="Scroll right">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-card-image">
-                <img src="./media/irukadark_connecttools.png" alt="Connect with any digital tool" />
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title" data-i18n="features.secure.title">Versatile Features at Your Fingertips.</h3>
-                <p class="feature-card-description" data-i18n="features.secure.description">Image generation, video creation, deep-dive explanations, diagrams, slide creation, terminal operations, and more. Handle all your quick tasks without switching screens -your all-in-one AI companion.</p>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -1551,7 +1556,6 @@
     </footer>
 
     <script src="./app.js"></script>
-    <script type="module" src="./hero-laser.js"></script>
 
     <!-- Structured Data: FAQPage -->
     <script type="application/ld+json">

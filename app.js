@@ -716,6 +716,60 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
+  // Set initial scroll position for hero features cards (show the leftmost card)
+  const heroFeaturesScroll = document.querySelector('.hero-features .features-scroll');
+  const scrollBtnLeft = document.querySelector('.hero-features-scroll-buttons .scroll-btn-left');
+  const scrollBtnRight = document.querySelector('.hero-features-scroll-buttons .scroll-btn-right');
+  
+  if (heroFeaturesScroll) {
+    heroFeaturesScroll.scrollLeft = 0;
+    
+    // Update button states based on scroll position
+    const updateScrollButtons = () => {
+      if (scrollBtnLeft && scrollBtnRight) {
+        const isAtStart = heroFeaturesScroll.scrollLeft <= 0;
+        const isAtEnd = heroFeaturesScroll.scrollLeft >= heroFeaturesScroll.scrollWidth - heroFeaturesScroll.clientWidth - 1;
+        
+        scrollBtnLeft.disabled = isAtStart;
+        scrollBtnRight.disabled = isAtEnd;
+      }
+    };
+    
+    // Initial button state
+    updateScrollButtons();
+    
+    // Update button states on scroll
+    heroFeaturesScroll.addEventListener('scroll', updateScrollButtons);
+    
+    // Scroll button handlers
+    if (scrollBtnLeft) {
+      scrollBtnLeft.addEventListener('click', () => {
+        const cardWidth = heroFeaturesScroll.querySelector('.feature-card')?.offsetWidth || 260;
+        const gap = 24;
+        const scrollAmount = cardWidth + gap;
+        heroFeaturesScroll.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
+      });
+    }
+    
+    if (scrollBtnRight) {
+      scrollBtnRight.addEventListener('click', () => {
+        const cardWidth = heroFeaturesScroll.querySelector('.feature-card')?.offsetWidth || 260;
+        const gap = 24;
+        const scrollAmount = cardWidth + gap;
+        heroFeaturesScroll.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      });
+    }
+    
+    // Update button states on window resize
+    window.addEventListener('resize', updateScrollButtons);
+  }
+
   // Mobile navigation toggle
   const nav = document.querySelector('.nav');
   const navToggle = document.getElementById('navToggle');
