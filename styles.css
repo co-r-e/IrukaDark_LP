@@ -1479,10 +1479,12 @@ html[lang="en"] .hero-left .hero-title {
     padding: 16px 0 32px;
     overflow-x: hidden;
     box-sizing: border-box;
+    margin-left: -16px;
+    width: calc(100% + 16px);
   }
 
   .hero-features .features-scroll {
-    padding: 0 16px 0 16px;
+    padding: 0 16px 0 0;
     gap: 16px;
     scroll-padding: 16px;
   }
@@ -3777,6 +3779,15 @@ body:has([href*="user-gaide"]) .grid.features {
     box-sizing: border-box;
   }
 
+  .hero-features .features-scroll-wrapper {
+    margin-left: -16px;
+    width: calc(100% + 16px);
+  }
+
+  .hero-features .features-scroll {
+    padding: 0 16px 0 0;
+  }
+
   .hero-title {
     font-size: clamp(28px, 7vw, 42px);
     line-height: 1.15;
@@ -4130,6 +4141,15 @@ body:has([href*="user-gaide"]) .grid.features {
     width: 100%;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  .hero-features .features-scroll-wrapper {
+    margin-left: -12px;
+    width: calc(100% + 12px);
+  }
+
+  .hero-features .features-scroll {
+    padding: 0 12px 0 0;
   }
 
   .hero-title {
