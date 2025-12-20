@@ -30,7 +30,11 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
 body {
   height: 100%;
 }
@@ -106,9 +110,9 @@ body {
 }
 
 .nav .container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 48px;
+  width: min(1120px, 92%);
+  max-width: min(1120px, 92%);
+  padding: 0;
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -1364,6 +1368,7 @@ html[lang="en"] .hero-left .hero-title {
   width: 260px;
   min-width: 220px;
   border-radius: 16px;
+  border: none;
 }
 
 .hero-features .feature-card-image {
@@ -2566,7 +2571,7 @@ body:has([href*="user-gaide"]) .grid.features {
   }
 
   .nav .container {
-    padding: 0 48px;
+    padding: 0;
   }
 
   .brand-logo.lg {
