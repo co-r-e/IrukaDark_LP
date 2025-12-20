@@ -1387,6 +1387,7 @@ html[lang="en"] .hero-left .hero-title {
     font-size: 0.95rem;
     line-height: 1.3;
     margin-top: 0;
+    margin-bottom: 12px;
   }
 }
 
@@ -1488,7 +1489,7 @@ html[lang="en"] .hero-left .hero-title {
 @media (max-width: 768px) {
   .hero-features {
     width: 100%;
-    margin-top: 24px;
+    margin-top: 12px;
     padding: 0;
     box-sizing: border-box;
   }
@@ -3815,6 +3816,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
   .hero-right .hero-sub {
     margin-top: 0;
+    margin-bottom: 12px;
   }
 
   .hero-features .features-scroll-wrapper {
@@ -3848,7 +3850,7 @@ body:has([href*="user-gaide"]) .grid.features {
     font-size: 16px;
     line-height: 1.3;
     max-width: 100%;
-    margin-bottom: 28px;
+    margin-bottom: 12px;
   }
 
   .hero-cta {
@@ -4193,6 +4195,7 @@ body:has([href*="user-gaide"]) .grid.features {
 
   .hero-right .hero-sub {
     margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .hero-features .features-scroll-wrapper {
@@ -4218,7 +4221,7 @@ body:has([href*="user-gaide"]) .grid.features {
   .hero-sub {
     font-size: 15px;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
   .hero-cta .btn {
