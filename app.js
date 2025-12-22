@@ -31,7 +31,7 @@ const translations = {
 
     // Languages section
     'languages.title': 'Understands Languages Worldwide. Translates by Meaning, Not Word-for-Word.',
-    'languages.subtitle': 'IrukaDark delivers explanations in 17 languages worldwide.',
+    'languages.subtitle': 'IrukaDark delivers explanations in 16 languages worldwide.',
 
     // Where it works
     'where.title': 'From Any Screen,<br>In an Instant.',
@@ -189,7 +189,7 @@ const translations = {
     'howto2.commands.table.title': '/table',
     'howto2.commands.table.description': 'Reformat the previous response into a clean table to compare points at a glance.',
     'howto2.commands.translate.title': '/translate',
-    'howto2.commands.translate.description': 'Translate the last explanation into 17 supported languages—or paraphrase in the same language—just by naming the target.',
+    'howto2.commands.translate.description': 'Translate the last explanation into 16 supported languages—or paraphrase in the same language—just by naming the target.',
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Toggle web search mode so IrukaDark pulls in fresh results while it explains.',
     'howto2.commands.image.title': '/image',
@@ -389,7 +389,7 @@ const translations = {
     'howto2.commands.table.title': '/table',
     'howto2.commands.table.description': '直前の回答を表形式に整理。比較しやすく、ポイントが一目でわかります。',
     'howto2.commands.translate.title': '/translate',
-    'howto2.commands.translate.description': '直前の解説を指定した言語に翻訳。対応言語は17種類で、言い換えにも使えます。',
+    'howto2.commands.translate.description': '直前の解説を指定した言語に翻訳。対応言語は16種類で、言い換えにも使えます。',
     'howto2.commands.web.title': '/web',
     'howto2.commands.web.description': 'Web検索モードのオン/オフを切り替え。最新の検索結果を反映した解説にできます。',
     'howto2.commands.image.title': '/image',
@@ -415,7 +415,7 @@ const translations = {
 
     // Languages section
     'languages.title': '世界中の言葉を理解し、直訳ではなく意味ベースでの翻訳。',
-    'languages.subtitle': 'IrukaDark は世界17言語でそのまま解説を返します。'
+    'languages.subtitle': 'IrukaDark は世界16言語でそのまま解説を返します。'
   }
 };
 
