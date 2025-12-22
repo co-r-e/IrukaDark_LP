@@ -6296,14 +6296,14 @@ h4.command-section-title::before {
 }
 
 /* ========================================
-   Minutes Section - 議事録機能
+   Notetaker Section - AIノートテイカー機能
    ======================================== */
 
-.minutes-section {
+.notetaker-section {
   padding: 100px 0;
 }
 
-.minutes-showcase {
+.notetaker-showcase {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -6311,21 +6311,21 @@ h4.command-section-title::before {
   margin-top: 48px;
 }
 
-.minutes-visual {
+.notetaker-visual {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.minutes-illustration {
+.notetaker-illustration {
   width: 100%;
   max-width: 500px;
   height: auto;
   border-radius: 16px;
 }
 
-.minutes-cards {
+.notetaker-cards {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -6376,31 +6376,31 @@ h4.command-section-title::before {
 }
 
 @media (max-width: 900px) {
-  .minutes-showcase {
+  .notetaker-showcase {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .minutes-visual {
+  .notetaker-visual {
     order: -1;
   }
 
-  .minutes-illustration {
+  .notetaker-illustration {
     max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
-  .minutes-section {
+  .notetaker-section {
     padding: 60px 0;
   }
 
-  .minutes-showcase {
+  .notetaker-showcase {
     gap: 32px;
     margin-top: 32px;
   }
 
-  .minutes-desc {
+  .notetaker-desc {
     font-size: 1rem;
   }
 }

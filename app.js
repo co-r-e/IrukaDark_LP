@@ -5,7 +5,7 @@ const translations = {
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly.',
     'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
     'hero.title': '<span class="grad-white">High-Speed Desktop AI</span><br>That Boosts Your Productivity.',
-    'hero.subtitle': '<strong>A small but powerful AI, launched with a single shortcut. Instant screen explanations, meeting minutes, clipboard tools, image and video generation, all in one. A feature-packed all-in-one utility.</strong>',
+    'hero.subtitle': '<strong>A small but powerful AI, launched with a single shortcut. Instant screen explanations, AI notetaker, clipboard tools, image and video generation, all in one. A feature-packed all-in-one utility.</strong>',
     'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
@@ -17,8 +17,8 @@ const translations = {
     'features.flow.description': 'IrukaDark watches your screen alongside you. Other AI tools, SaaS dashboards, dev tools, technical docs, academic PDFs. It works with any app, in any language.',
     'features.secure.title': 'Versatile Features at Your Fingertips.',
     'features.secure.description': 'Image generation, video creation, deep-dive explanations, diagrams, slide creation, terminal operations, and more. Handle all your quick tasks without switching screens, your all-in-one AI companion.',
-    'features.minutes.title': 'Record Meetings, Create Minutes, Share in One Slide. All Automatic.',
-    'features.minutes.description': 'Easily record any meeting, whether Zoom, Teams, Google Meet, or others. Get meeting minutes, of course. Plus, key points condensed into a single slide image. Whether you need to review details or quickly share highlights, it\'s got you covered.',
+    'features.notetaker.title': 'Record Meetings, Auto-Summarize, Share in One Slide. All Automatic.',
+    'features.notetaker.description': 'Easily record any meeting, whether Zoom, Teams, Google Meet, or others. AI notetaker summarizes it all for you. Plus, key points condensed into a single slide image. Whether you need to review details or quickly share highlights, it\'s got you covered.',
     'features.clipboard.title': 'Copy, Copy, Copy. Then Paste, Paste, Paste.',
     'features.clipboard.description': 'No more switching back and forth. Stack multiple copies in a row, then paste them in sequence. Turn repetitive copy-paste into a lightning-fast workflow.',
     'features.timer.title': 'Smart Time Control.',
@@ -111,6 +111,11 @@ const translations = {
     'terminal.history.description': 'All executed commands are saved to history. Quickly rerun previous commands or modify them for new tasks, improving your workflow efficiency.',
     'terminal.safe.title': 'Safe Execution Mode',
     'terminal.safe.description': 'IrukaDark highlights potentially destructive commands and requires explicit confirmation. This prevents accidental execution of dangerous operations like rm -rf.',
+
+    // AI Notetaker section
+    'notetaker.title': 'Incredible AI Notetaker.',
+    'notetaker.subtitle': 'Start recording video or audio anytime with Option+M.',
+    'notetaker.description': 'The smart IrukaDark automatically summarizes your meeting content. It also compresses meeting notes into slides and visualizes them as summary images. This makes it easy to quickly grasp information when reviewing meeting records.',
 
     'howto.title': 'Instant AI Activation.',
     'howto.subtitle': 'Use global shortcuts to trigger IrukaDark instantly.',
@@ -221,8 +226,8 @@ const translations = {
     'features.flow.description': 'IrukaDarkはあなたと一緒に画面を見てくれます。他のAIツール、SaaSダッシュボード、開発ツール、技術ドキュメント、学術論文PDF。どんなアプリでも、言語でも、全てに対応。',
     'features.secure.title': 'かゆいところに手が届く、多彩な生成機能。',
     'features.secure.description': '画像生成・動画生成はもちろん、解説の深掘りや図解、スライド作成、ターミナル操作まで。ちょっとした作業も画面を変えずに全部まとめて任せられる、オールインワンな相方です。',
-    'features.minutes.title': '会議を録画、議事録を作成、スライド一枚で共有。すべて自動。',
-    'features.minutes.description': 'Zoom、Teams、Google Meetなど、どんな会議でも手軽に録画。議事録をまとめるのはもちろん。論点を一枚のスライド画像にギュッと凝縮。詳細を読み返したいときも、要点を素早く共有したいときも、便利に対応。',
+    'features.notetaker.title': '会議を録画、議事録を作成、スライド一枚で共有。すべて自動。',
+    'features.notetaker.description': 'Zoom、Teams、Google Meetなど、どんな会議でも手軽に録画。議事録をまとめるのはもちろん。論点を一枚のスライド画像にギュッと凝縮。詳細を読み返したいときも、要点を素早く共有したいときも、便利に対応。',
     'features.clipboard.title': 'コピー、コピー、コピー。そしてペースト、ペースト、ペースト。',
     'features.clipboard.description': '行ったり来たりはもう不要。複数のコピーを連続で積み上げて、順番にペースト。繰り返しのコピペ作業が一気に高速化します。',
     'features.timer.title': '集中を維持するための、スマートなタイムマネジメント。',
@@ -306,6 +311,11 @@ const translations = {
     'terminal.history.description': '実行したコマンドはすべて履歴に保存されます。以前のコマンドを素早く再実行したり、修正して新しいタスクに応用でき、作業効率が向上します。',
     'terminal.safe.title': '安全実行モード',
     'terminal.safe.description': 'IrukaDarkは破壊的な可能性のあるコマンドをハイライト表示し、明示的な確認を要求します。rm -rfのような危険な操作の誤実行を防ぎます。',
+
+    // AIノートテイカー機能
+    'notetaker.title': 'とんでもない議事録機能。',
+    'notetaker.subtitle': '録画も録音もOption+Mでいつでも議事録開始。',
+    'notetaker.description': '会議の内容は、賢いIrukaDarkがうまいことまとめてくれます。さらに議事録内容をスライドにギュッと詰め込んでサマリー画像としてビジュアライズします。議事録を見返すときにもすぐに情報を把握できるようになります。',
 
     'howto.title': '瞬間AI起動',
     'howto.subtitle': 'ショートカットでいつでもIrukaDarkを呼び出せます。',
