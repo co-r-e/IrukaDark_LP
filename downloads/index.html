@@ -35,31 +35,54 @@
     <main>
       <section class="container section">
         <div class="section-head">
-          <h1 class="section-title">Download IrukaDark for Mac</h1>
-          <p class="section-sub">Download the latest macOS installer.</p>
+          <h1 id="downloads-title" class="section-title">Download IrukaDark for Mac</h1>
+          <p id="downloads-subtitle" class="section-sub">Download the latest macOS installer.</p>
         </div>
 
-        <div class="grid download-cards">
-          <article class="card dl-card" data-os="mac-arm64">
-            <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../icons/apple.svg" alt="Apple logo" /></div>
-            <div>
-              <div class="dl-title">macOS · Apple Silicon</div>
-              <div class="dl-sub">For M1, M2, M3, M4 processors</div>
-              <div class="dl-actions">
-                <a id="download-arm64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-arm64.dmg">Download (DMG)</a>
+        <!-- macOS Downloads -->
+        <div id="mac-downloads" class="download-section">
+          <div class="grid download-cards">
+            <article class="card dl-card" data-os="mac-arm64">
+              <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../icons/apple.svg" alt="Apple logo" /></div>
+              <div>
+                <div class="dl-title">macOS · Apple Silicon</div>
+                <div class="dl-sub">For M1, M2, M3, M4 processors</div>
+                <div class="dl-actions">
+                  <a id="download-arm64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-arm64.dmg">Download (DMG)</a>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="card dl-card" data-os="mac-x64">
-            <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../icons/apple.svg" alt="Apple logo" /></div>
-            <div>
-              <div class="dl-title">macOS · Intel</div>
-              <div class="dl-sub">For Intel processors</div>
-              <div class="dl-actions">
-                <a id="download-x64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-x64.dmg">Download (DMG)</a>
+            </article>
+            <article class="card dl-card" data-os="mac-x64">
+              <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../icons/apple.svg" alt="Apple logo" /></div>
+              <div>
+                <div class="dl-title">macOS · Intel</div>
+                <div class="dl-sub">For Intel processors</div>
+                <div class="dl-actions">
+                  <a id="download-x64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-x64.dmg">Download (DMG)</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
+        </div>
+
+        <!-- Windows Downloads (Coming Soon) -->
+        <div id="windows-downloads" class="download-section" style="display: none;">
+          <div class="grid download-cards">
+            <article class="card dl-card dl-card-coming-soon" data-os="windows">
+              <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../icons/windows.svg" alt="Windows logo" /></div>
+              <div>
+                <div class="dl-title">Windows</div>
+                <div class="dl-sub">Coming Soon</div>
+                <div class="dl-actions">
+                  <span class="btn btn-secondary dl-btn disabled">Coming Soon</span>
+                </div>
+                <p class="dl-coming-soon-note">Windows version is under development. Stay tuned!</p>
+              </div>
+            </article>
+          </div>
+          <div class="download-alt-section" style="margin-top: 24px;">
+            <p class="muted">Looking for macOS? <a href="#" id="show-mac-downloads" class="link">View macOS downloads</a></p>
+          </div>
         </div>
 
         <div class="section" style="margin-top:24px;">
@@ -84,14 +107,6 @@
             <article class="card download-note">
               <div>
                 <div class="card-head">
-                  <h3 class="card-title">Prepare Your API Key</h3>
-                </div>
-                <p class="card-body">Before the first launch, visit Google AI Studio to create an API key and paste it into IrukaDark’s settings.</p>
-              </div>
-            </article>
-            <article class="card download-note">
-              <div>
-                <div class="card-head">
                   <h3 class="card-title">Screen Recording Won’t Enable?</h3>
                 </div>
                 <p class="card-body">If Screen Recording permission keeps failing, try starting capture with the Option+S shortcut—it often succeeds on the first attempt.</p>
@@ -106,6 +121,51 @@
 
     <script src="../components.js?v=20251222173619"></script>
     <script src="../app.js?v=20251222173619"></script>
-    
+    <script>
+      // OS-aware downloads page
+      (function() {
+        function initDownloadsPage() {
+          const os = (typeof detectOS === 'function') ? detectOS() : 'mac';
+          const isWindows = os === 'windows';
+
+          const title = document.getElementById('downloads-title');
+          const subtitle = document.getElementById('downloads-subtitle');
+          const macSection = document.getElementById('mac-downloads');
+          const windowsSection = document.getElementById('windows-downloads');
+          const showMacLink = document.getElementById('show-mac-downloads');
+
+          function showMacSection() {
+            if (title) title.textContent = 'Download IrukaDark for Mac';
+            if (subtitle) subtitle.textContent = 'Download the latest macOS installer.';
+            if (macSection) macSection.style.display = 'block';
+            if (windowsSection) windowsSection.style.display = 'none';
+          }
+
+          function showWindowsSection() {
+            if (title) title.textContent = 'Download IrukaDark for Windows';
+            if (subtitle) subtitle.textContent = 'Windows version is coming soon.';
+            if (macSection) macSection.style.display = 'none';
+            if (windowsSection) windowsSection.style.display = 'block';
+          }
+
+          if (isWindows) {
+            showWindowsSection();
+          }
+
+          if (showMacLink) {
+            showMacLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              showMacSection();
+            });
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initDownloadsPage);
+        } else {
+          initDownloadsPage();
+        }
+      })();
+    </script>
   </body>
-  </html>
+</html>

@@ -35,31 +35,54 @@
     <main>
       <section class="container section">
         <div class="section-head">
-          <h1 class="section-title">IrukaDark をダウンロード（Mac）</h1>
-          <p class="section-sub">最新の macOS 用インストーラをダウンロード。</p>
+          <h1 id="downloads-title" class="section-title">IrukaDark をダウンロード（Mac）</h1>
+          <p id="downloads-subtitle" class="section-sub">最新の macOS 用インストーラをダウンロード。</p>
         </div>
 
-        <div class="grid download-cards">
-          <article class="card dl-card" data-os="mac-arm64">
-            <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/apple.svg" alt="Apple ロゴ" /></div>
-            <div>
-              <div class="dl-title">macOS（Apple Silicon）</div>
-              <div class="dl-sub">M1・M2・M3・M4 プロセッサ用</div>
-              <div class="dl-actions">
-                <a id="download-arm64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-arm64.dmg">ダウンロード（DMG）</a>
+        <!-- macOS Downloads -->
+        <div id="mac-downloads" class="download-section">
+          <div class="grid download-cards">
+            <article class="card dl-card" data-os="mac-arm64">
+              <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/apple.svg" alt="Apple ロゴ" /></div>
+              <div>
+                <div class="dl-title">macOS（Apple Silicon）</div>
+                <div class="dl-sub">M1・M2・M3・M4 プロセッサ用</div>
+                <div class="dl-actions">
+                  <a id="download-arm64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-arm64.dmg">ダウンロード（DMG）</a>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="card dl-card" data-os="mac-x64">
-            <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/apple.svg" alt="Apple ロゴ" /></div>
-            <div>
-              <div class="dl-title">macOS（Intel）</div>
-              <div class="dl-sub">Intel プロセッサ用</div>
-              <div class="dl-actions">
-                <a id="download-x64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-x64.dmg">ダウンロード（DMG）</a>
+            </article>
+            <article class="card dl-card" data-os="mac-x64">
+              <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/apple.svg" alt="Apple ロゴ" /></div>
+              <div>
+                <div class="dl-title">macOS（Intel）</div>
+                <div class="dl-sub">Intel プロセッサ用</div>
+                <div class="dl-actions">
+                  <a id="download-x64" class="btn btn-primary dl-btn" href="https://github.com/co-r-e/IrukaDark/releases/download/v1.3.7/IrukaDark-1.3.7-mac-x64.dmg">ダウンロード（DMG）</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
+        </div>
+
+        <!-- Windows Downloads (Coming Soon) -->
+        <div id="windows-downloads" class="download-section" style="display: none;">
+          <div class="grid download-cards">
+            <article class="card dl-card dl-card-coming-soon" data-os="windows">
+              <div class="dl-icon" aria-hidden="true"><img class="dl-icon-img" src="../../icons/windows.svg" alt="Windows ロゴ" /></div>
+              <div>
+                <div class="dl-title">Windows</div>
+                <div class="dl-sub">準備中</div>
+                <div class="dl-actions">
+                  <span class="btn btn-secondary dl-btn disabled">準備中</span>
+                </div>
+                <p class="dl-coming-soon-note">Windows版は現在開発中です。もうしばらくお待ちください！</p>
+              </div>
+            </article>
+          </div>
+          <div class="download-alt-section" style="margin-top: 24px;">
+            <p class="muted">macOS版をお探しですか？ <a href="#" id="show-mac-downloads" class="link">macOS版のダウンロードはこちら</a></p>
+          </div>
         </div>
 
         <div class="section" style="margin-top:24px;">
@@ -84,14 +107,6 @@
             <article class="card download-note">
               <div>
                 <div class="card-head">
-                  <h3 class="card-title">APIキーの準備</h3>
-                </div>
-                <p class="card-body">初回起動前に Google AI Studio で API キーを取得し、IrukaDark の設定で登録してください。</p>
-              </div>
-            </article>
-            <article class="card download-note">
-              <div>
-                <div class="card-head">
                   <h3 class="card-title">画面収録が許可されない場合</h3>
                 </div>
                 <p class="card-body">画面収録の許可がうまくいかないときは、ひとまず Option+S のショートカットからの解析開始を試すと成功しやすいです。</p>
@@ -106,5 +121,51 @@
 
     <script src="../../components.js?v=20251222173619"></script>
     <script src="../../app.js?v=20251222173619"></script>
+    <script>
+      // OS-aware downloads page (Japanese)
+      (function() {
+        function initDownloadsPage() {
+          const os = (typeof detectOS === 'function') ? detectOS() : 'mac';
+          const isWindows = os === 'windows';
+
+          const title = document.getElementById('downloads-title');
+          const subtitle = document.getElementById('downloads-subtitle');
+          const macSection = document.getElementById('mac-downloads');
+          const windowsSection = document.getElementById('windows-downloads');
+          const showMacLink = document.getElementById('show-mac-downloads');
+
+          function showMacSection() {
+            if (title) title.textContent = 'IrukaDark をダウンロード（Mac）';
+            if (subtitle) subtitle.textContent = '最新の macOS 用インストーラをダウンロード。';
+            if (macSection) macSection.style.display = 'block';
+            if (windowsSection) windowsSection.style.display = 'none';
+          }
+
+          function showWindowsSection() {
+            if (title) title.textContent = 'IrukaDark をダウンロード（Windows）';
+            if (subtitle) subtitle.textContent = 'Windows版は現在準備中です。';
+            if (macSection) macSection.style.display = 'none';
+            if (windowsSection) windowsSection.style.display = 'block';
+          }
+
+          if (isWindows) {
+            showWindowsSection();
+          }
+
+          if (showMacLink) {
+            showMacLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              showMacSection();
+            });
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initDownloadsPage);
+        } else {
+          initDownloadsPage();
+        }
+      })();
+    </script>
   </body>
-  </html>
+</html>

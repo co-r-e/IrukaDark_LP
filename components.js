@@ -1,33 +1,48 @@
 // Header and Footer Components
-// This file generates common header and footer for all pages
+// Generates common header and footer for all pages
 
 (function() {
+  // OS Detection (local copy for availability before app.js loads)
+  function detectOSLocal() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const platform = (navigator.platform || '').toLowerCase();
+
+    if (platform.includes('mac') || userAgent.includes('macintosh') || userAgent.includes('mac os')) {
+      return 'mac';
+    }
+    if (platform.includes('win') || userAgent.includes('windows')) {
+      return 'windows';
+    }
+    return 'other';
+  }
+
+  const detectedOSLocal = detectOSLocal();
+
   // Detect base path based on current page location
   function getBasePath() {
     const path = window.location.pathname;
-    // Check if we're in a subdirectory
+
     if (path.includes('/ja/downloads/') || path.includes('/ja/user-guide/')) {
       return '../../';
-    } else if (path.includes('/downloads/') || path.includes('/user-guide/') || 
-               path.includes('/ja/privacy') || path.includes('/ja/terms')) {
+    }
+    if (path.includes('/downloads/') || path.includes('/user-guide/') ||
+        path.includes('/ja/privacy') || path.includes('/ja/terms')) {
       return '../';
-    } else if (path.includes('/ja/') || path.includes('/ja')) {
+    }
+    if (path.includes('/ja/') || path.includes('/ja')) {
       return '../';
     }
     return './';
   }
 
-  // Detect if current page is Japanese
   function isJapanesePage() {
     return window.location.pathname.includes('/ja');
   }
 
-  // Get home URL based on language
   function getHomeUrl() {
     return isJapanesePage() ? '/ja' : '/';
   }
 
-  // Get downloads URL based on language
   function getDownloadsUrl() {
     return isJapanesePage() ? '/ja/downloads' : '/downloads';
   }
@@ -37,7 +52,7 @@
     const basePath = getBasePath();
     const isJa = isJapanesePage();
     const homeUrl = getHomeUrl();
-    
+
     // Navigation links based on language
     const navLinks = isJa ? `
           <a href="${homeUrl}#how" class="nav-link">機能</a>
@@ -51,7 +66,20 @@
           <a href="${homeUrl}#faq" class="nav-link">FAQ</a>
     `;
 
-    const downloadLabel = isJa ? 'Mac用ダウンロード' : 'Download for Mac';
+    // OS detection for download button
+    const isMac = detectedOSLocal === 'mac' || detectedOSLocal === 'other';
+
+    const macIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>';
+    const windowsIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M3 5.557l7.357-1.002v7.103H3V5.557zm0 12.886l7.357 1.002v-7.103H3v6.101zm8.143 1.13L21 21V12.312h-9.857v7.26zm0-14.144v7.228H21V3l-9.857 1.43z"/></svg>';
+
+    const osIcon = isMac ? macIcon : windowsIcon;
+
+    let downloadLabel;
+    if (isJa) {
+      downloadLabel = isMac ? 'Mac用ダウンロード' : 'Windows用ダウンロード';
+    } else {
+      downloadLabel = isMac ? 'Download for Mac' : 'Download for Windows';
+    }
 
     return `
     <header class="nav">
@@ -93,10 +121,8 @@
               </button>
             </div>
           </div>
-          <a id="download-nav" href="${getDownloadsUrl()}" class="btn btn-primary" data-i18n="header.clone">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
+          <a id="download-nav" href="${getDownloadsUrl()}" class="btn btn-primary" data-i18n="header.clone" data-os="${isMac ? 'mac' : 'windows'}">
+            ${osIcon}
             ${downloadLabel}
           </a>
         </nav>
@@ -169,4 +195,3 @@
     isJapanesePage
   };
 })();
-

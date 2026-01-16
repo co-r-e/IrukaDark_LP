@@ -1,12 +1,40 @@
+// OS Detection (returns 'mac', 'windows', or 'other')
+function detectOS() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const platform = (navigator.platform || '').toLowerCase();
+
+  if (platform.includes('mac') || userAgent.includes('macintosh') || userAgent.includes('mac os')) {
+    return 'mac';
+  }
+  if (platform.includes('win') || userAgent.includes('windows')) {
+    return 'windows';
+  }
+  return 'other';
+}
+
+const detectedOS = detectOS();
+
+// OS-specific SVG icons
+const osIcons = {
+  mac: '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>',
+  windows: '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M3 5.557l7.357-1.002v7.103H3V5.557zm0 12.886l7.357 1.002v-7.103H3v6.101zm8.143 1.13L21 21V12.312h-9.857v7.26zm0-14.144v7.228H21V3l-9.857 1.43z"/></svg>',
+  macLarge: '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>',
+  windowsLarge: '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M3 5.557l7.357-1.002v7.103H3V5.557zm0 12.886l7.357 1.002v-7.103H3v6.101zm8.143 1.13L21 21V12.312h-9.857v7.26zm0-14.144v7.228H21V3l-9.857 1.43z"/></svg>'
+};
+
 // Multi-language support
 const translations = {
   en: {
     'meta.title': 'IrukaDark — AI that instantly explains your screen',
     'meta.description': 'Explain text, images, tables, and PDFs right on your screen. One‑key shortcuts (Option+A/S), bilingual JA/EN, privacy‑friendly.',
-    'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
+    'header.clone': 'Download for Mac',
+    'header.clone.mac': 'Download for Mac',
+    'header.clone.windows': 'Download for Windows',
     'hero.title': '<span class="grad-white">High-Speed Desktop AI</span><br>That Boosts Your Productivity.',
     'hero.subtitle': '<strong>A small but powerful AI, launched with a single shortcut. Instant screen explanations, AI notetaker, clipboard tools, image and video generation, all in one. A feature-packed all-in-one utility.</strong>',
-    'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download for Mac',
+    'hero.cta': 'Download for Mac',
+    'hero.cta.mac': 'Download for Mac',
+    'hero.cta.windows': 'Download for Windows',
     'demo.question': 'What does this mean?',
     'demo.explanation': 'This `reduce` method takes each element (user) from the array and converts it into an object. `acc` is the accumulator with an initial value of an empty object `{}`. It creates a hash map with each user\'s ID as the key and the user object as the value.',
     'features.title': 'AI That Accelerates Your Thinking and Work.',
@@ -133,8 +161,8 @@ const translations = {
     'howto.cards.diagram.title': 'Option+Control+A — Diagram',
     'howto.cards.diagram.caption': 'Option+Control+A',
     'howto.cards.diagram.description': 'Converts selected text into a visual diagram. Great for understanding concepts and relationships visually.',
-    'howto.cards.rewrite.title': 'Option+E — Rewrite',
-    'howto.cards.rewrite.caption': 'Option+E',
+    'howto.cards.rewrite.title': 'Option+W — Rewrite',
+    'howto.cards.rewrite.caption': 'Option+W',
     'howto.cards.rewrite.description': 'Rewrite your text with improved clarity while preserving the original meaning.',
     'howto.cards.translate.title': 'Option+R — Translate & Rephrase',
     'howto.cards.translate.caption': 'Option+R',
@@ -200,7 +228,16 @@ const translations = {
     'howto2.commands.slide.description': 'Configure slide generation settings: templates, count, and visual style.',
     'cta.title': 'Download',
     'cta.description': 'Never stop thinking. Upgrade your workflow. Free download for macOS.',
-    'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Download',
+    'cta.description.mac': 'Never stop thinking. Upgrade your workflow. Free download for macOS.',
+    'cta.description.windows': 'Never stop thinking. Upgrade your workflow. Free download for Windows.',
+    'cta.button.mac': 'Download',
+    'cta.button.windows': 'Download',
+    'downloads.title.mac': 'Download IrukaDark for Mac',
+    'downloads.title.windows': 'Download IrukaDark for Windows',
+    'downloads.subtitle.mac': 'Download the latest macOS installer.',
+    'downloads.subtitle.windows': 'Download the latest Windows installer.',
+    'downloads.comingsoon': 'Coming Soon',
+    'downloads.comingsoon.desc': 'Windows version is under development. Stay tuned!',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.',
     'footer.terms': 'Terms of Service',
     'footer.privacy': 'Privacy Policy',
@@ -212,10 +249,14 @@ const translations = {
   ja: {
     'meta.title': 'IrukaDark（イルカダーク）— 画面のすべてを超高速解説するAI',
     'meta.description': 'IrukaDark（イルカダーク）は、テキスト・画像・表・PDFを画面上でそのまま解説・要約。Option+A/Sのショートカット、日英対応、プライバシー配慮。',
-    'header.clone': '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
+    'header.clone': 'Mac用ダウンロード',
+    'header.clone.mac': 'Mac用ダウンロード',
+    'header.clone.windows': 'Windows用ダウンロード',
     'hero.title': '作業効率が大幅に向上する<br><span class="grad-white">高速デスクトップAI</span>',
     'hero.subtitle': '<strong>ショートカット一発で起動する小さくてパワフルなAI。画面の瞬間解説、議事録、クリップボード拡張、画像・動画生成もこれひとつ。強力な機能を凝縮したオールインワン・ユーティリティ。</strong>',
-    'hero.cta': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
+    'hero.cta': 'Mac用ダウンロード',
+    'hero.cta.mac': 'Mac用ダウンロード',
+    'hero.cta.windows': 'Windows用ダウンロード',
     'demo.question': 'これどういうこと？',
     'demo.explanation': 'この`reduce`メソッドは、配列の各要素（user）を取り出し、オブジェクトに変換しています。`acc`は累積器（accumulator）で、初期値は空のオブジェクト`{}`です。各ユーザーのIDをキー、ユーザーオブジェクトを値としたハッシュマップを作成しています。',
     'features.title': 'あなたの思考と作業を加速するAI。',
@@ -333,8 +374,8 @@ const translations = {
     'howto.cards.diagram.title': 'Option+Control+A — 図解',
     'howto.cards.diagram.caption': 'Option+Control+A',
     'howto.cards.diagram.description': '選択したテキストを図解画像にします。概念や関係性を視覚的に理解したいときに。',
-    'howto.cards.rewrite.title': 'Option+E — リライト',
-    'howto.cards.rewrite.caption': 'Option+E',
+    'howto.cards.rewrite.title': 'Option+W — リライト',
+    'howto.cards.rewrite.caption': 'Option+W',
     'howto.cards.rewrite.description': '文章の意味を変えずに、より洗練された表現に書き換えます。',
     'howto.cards.translate.title': 'Option+R — 翻訳・言い換え',
     'howto.cards.translate.caption': 'Option+R',
@@ -400,7 +441,16 @@ const translations = {
     'howto2.commands.slide.description': 'スライド生成の設定：テンプレート、枚数、スタイルを調整できます。',
     'cta.title': 'ダウンロード',
     'cta.description': 'もう思考を止めない。あなたのワークフローを、アップグレードしよう。macOS向けに無料ダウンロード',
-    'cta.button': '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 3px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Mac用ダウンロード',
+    'cta.description.mac': 'もう思考を止めない。あなたのワークフローを、アップグレードしよう。macOS向けに無料ダウンロード',
+    'cta.description.windows': 'もう思考を止めない。あなたのワークフローを、アップグレードしよう。Windows向けに無料ダウンロード',
+    'cta.button.mac': 'ダウンロード',
+    'cta.button.windows': 'ダウンロード',
+    'downloads.title.mac': 'IrukaDark をダウンロード（Mac）',
+    'downloads.title.windows': 'IrukaDark をダウンロード（Windows）',
+    'downloads.subtitle.mac': '最新の macOS 用インストーラをダウンロード。',
+    'downloads.subtitle.windows': '最新の Windows 用インストーラをダウンロード。',
+    'downloads.comingsoon': '準備中',
+    'downloads.comingsoon.desc': 'Windows版は現在開発中です。もうしばらくお待ちください！',
     'footer.copyright': '© <span id="year"></span> CORe, Inc. All rights reserved.',
     'footer.terms': '利用規約',
     'footer.privacy': 'プライバシーポリシー',
@@ -614,30 +664,24 @@ window.infoNotices = infoNotices;
 function switchLanguage(lang) {
   currentLang = lang;
 
-  // Update dropdown display (if present on this page)
   const langTrigger = document.getElementById('langTrigger');
   const langCodeEl = langTrigger ? langTrigger.querySelector('#langCode') : null;
   const langOptions = document.querySelectorAll('.lang-option');
 
-  // Keep the globe icon the same for both languages
-  // No need to change the globe icon
-
-  // Update active option
+  // Update active language option
   if (langOptions && langOptions.length) {
     langOptions.forEach(option => {
       option.classList.toggle('active', option.dataset.lang === lang);
     });
   }
 
-  // Update compact code label next to globe
+  // Update language code label
   if (langCodeEl) {
-    langCodeEl.textContent = (lang === 'ja' ? 'JA' : 'EN');
+    langCodeEl.textContent = lang === 'ja' ? 'JA' : 'EN';
   }
 
-  // Close dropdown
   if (langTrigger) closeLanguageDropdown();
 
-  // Update HTML lang attribute
   document.documentElement.lang = lang;
 
   // Update all elements with data-i18n attributes
@@ -673,6 +717,15 @@ function switchLanguage(lang) {
   updateContentPatternsLanguage(lang);
   // Refresh pattern keys for animation to match selected language
   patternKeys = Object.keys(contentPatterns[lang] || contentPatterns.en);
+
+  // Update OS-aware download buttons after language change
+  if (typeof window.updateDownloadButtonsForOS === 'function') {
+    window.updateDownloadButtonsForOS();
+  }
+  // Update header CTA label for OS
+  if (typeof window.applyHeaderCtaResponsiveLabel === 'function') {
+    window.applyHeaderCtaResponsiveLabel();
+  }
 }
 
 // Dropdown toggle functionality
@@ -1224,22 +1277,12 @@ function startContentAnimation() {
   }, 3000); // Start after 3 seconds
 }
 
-// Initialize when page loads
+// Initialize content animation when page loads
 document.addEventListener('DOMContentLoaded', () => {
-
-  // Initialize language switching
-  // cleanup: .lang-btn not used
-
-  // Initialize with page default language (falls back to 'en')
   const initialLang = window.DEFAULT_LANG || 'en';
   switchLanguage(initialLang);
-
-  // Initialize animation
   startContentAnimation();
 });
-
-// Subtle tilt effect for .tilt elements
-// removed: tilt effect (unused)
 
 // ------------------------------
 // Download buttons routing
@@ -1268,6 +1311,209 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ---------------------------------------------
+// OS-aware download button labels
+// - Updates hero and CTA download buttons with OS-specific icons and labels
+// ---------------------------------------------
+(function osAwareDownloadButtons() {
+  function updateDownloadButtonsForOS() {
+    const lang = (document.documentElement && document.documentElement.lang) || currentLang || (window.DEFAULT_LANG || 'en');
+    const os = detectedOS || 'mac';
+    const isMac = os === 'mac' || os === 'other';
+
+    // Get OS-specific icon and labels
+    const iconSmall = isMac ? osIcons.mac : osIcons.windows;
+    const iconLarge = isMac ? osIcons.macLarge : osIcons.windowsLarge;
+
+    // Hero button
+    const heroBtn = document.getElementById('download-btn-hero');
+    if (heroBtn) {
+      const heroLabelKey = isMac ? 'hero.cta.mac' : 'hero.cta.windows';
+      const heroLabel = (translations[lang] && translations[lang][heroLabelKey]) ||
+        (isMac
+          ? (lang === 'ja' ? 'Mac用ダウンロード' : 'Download for Mac')
+          : (lang === 'ja' ? 'Windows用ダウンロード' : 'Download for Windows'));
+      heroBtn.innerHTML = iconLarge + heroLabel;
+      heroBtn.setAttribute('data-os', isMac ? 'mac' : 'windows');
+    }
+
+    // CTA button
+    const ctaBtn = document.getElementById('download-btn-cta');
+    if (ctaBtn) {
+      const ctaLabelKey = isMac ? 'cta.button.mac' : 'cta.button.windows';
+      const ctaLabel = (translations[lang] && translations[lang][ctaLabelKey]) ||
+        (lang === 'ja' ? 'ダウンロード' : 'Download');
+      ctaBtn.innerHTML = iconLarge + ctaLabel;
+      ctaBtn.setAttribute('data-os', isMac ? 'mac' : 'windows');
+    }
+
+    // CTA description (use ID selector for reliability)
+    const ctaDesc = document.getElementById('cta-description');
+    if (ctaDesc) {
+      const ctaDescKey = isMac ? 'cta.description.mac' : 'cta.description.windows';
+      const ctaDescText = (translations[lang] && translations[lang][ctaDescKey]);
+      if (ctaDescText) {
+        ctaDesc.innerHTML = ctaDescText;
+      }
+    }
+
+    // Hide macOS-specific sections on Windows
+    const windowControlSection = document.getElementById('window-control');
+    if (windowControlSection) {
+      windowControlSection.style.display = isMac ? '' : 'none';
+    }
+
+    // Replace Option key with Alt key for Windows users
+    if (!isMac) {
+      replaceOptionWithAlt();
+    }
+  }
+
+  // Replace macOS key references with Windows equivalents
+  function replaceOptionWithAlt() {
+    // Replace keyboard symbol ⌥ with Alt, ⌘ with Ctrl
+    document.querySelectorAll('.kbd-symbol').forEach(el => {
+      const text = el.textContent.trim();
+      if (text === '⌥') {
+        el.textContent = 'Alt';
+        el.style.fontSize = '0.75em';
+      } else if (text === '⌃') {
+        el.textContent = 'Ctrl';
+        el.style.fontSize = '0.75em';
+      } else if (text === '⌘') {
+        el.textContent = 'Ctrl';
+        el.style.fontSize = '0.75em';
+      }
+    });
+
+    // Replace keyboard label "Option" with "Alt", "Control" with "Ctrl", "Command" with "Ctrl"
+    document.querySelectorAll('.kbd-label').forEach(el => {
+      const text = el.textContent.trim();
+      if (text === 'Option') {
+        el.textContent = 'Alt';
+      } else if (text === 'Control') {
+        el.textContent = 'Ctrl';
+      } else if (text === 'Command') {
+        el.textContent = 'Ctrl';
+      }
+    });
+
+    // Replace "Option+" with "Alt+" and "Control+" with "Ctrl+" in text content
+    const textElements = document.querySelectorAll(
+      '.howto-card-title, .howto-card-desc, .card-body, .card-title, .card-subtitle, .section-sub, .demo-note, [data-i18n]'
+    );
+    textElements.forEach(el => {
+      let html = el.innerHTML;
+      let changed = false;
+
+      // Replace Option with Alt
+      if (html.includes('Option+') || html.includes('Option +')) {
+        html = html.replace(/Option\+/g, 'Alt+').replace(/Option \+/g, 'Alt +');
+        changed = true;
+      }
+      // Replace Control with Ctrl
+      if (html.includes('Control+') || html.includes('Control +')) {
+        html = html.replace(/Control\+/g, 'Ctrl+').replace(/Control \+/g, 'Ctrl +');
+        changed = true;
+      }
+      // Replace Command with Ctrl
+      if (html.includes('Command+') || html.includes('Command +')) {
+        html = html.replace(/Command\+/g, 'Ctrl+').replace(/Command \+/g, 'Ctrl +');
+        changed = true;
+      }
+      // Replace ⌥ symbol in text
+      if (html.includes('⌥')) {
+        html = html.replace(/⌥/g, 'Alt');
+        changed = true;
+      }
+      // Replace ⌃ symbol in text
+      if (html.includes('⌃')) {
+        html = html.replace(/⌃/g, 'Ctrl');
+        changed = true;
+      }
+      // Replace ⌘ symbol in text
+      if (html.includes('⌘')) {
+        html = html.replace(/⌘/g, 'Ctrl');
+        changed = true;
+      }
+      // Replace macOS with Windows in text
+      if (html.includes('macOS')) {
+        html = html.replace(/macOS/g, 'Windows');
+        changed = true;
+      }
+
+      if (changed) {
+        el.innerHTML = html;
+      }
+    });
+
+    // Update keyboard visualization for Windows layout
+    updateKeyboardForWindows();
+  }
+
+  // Update the keyboard visualization to Windows layout
+  function updateKeyboardForWindows() {
+    const keyboard = document.querySelector('.keyboard');
+    if (!keyboard) return;
+
+    // Key text mappings: Mac → Windows
+    const keyMappings = {
+      'delete': 'backspace',
+      'return': 'enter',
+      'fn': 'Fn',
+      'control': 'Ctrl',
+      'option': 'Alt',
+      'command': 'Win'
+    };
+
+    // Update all modifier keys and special keys
+    keyboard.querySelectorAll('.key').forEach(keyEl => {
+      // Check for text content (modifier keys don't have .key-main)
+      const textContent = keyEl.textContent.trim().toLowerCase();
+
+      // Handle keys with just text (no children like key-main/key-symbol)
+      if (!keyEl.querySelector('.key-main') && !keyEl.querySelector('.key-symbol')) {
+        const keyText = textContent;
+        if (keyMappings[keyText]) {
+          keyEl.textContent = keyMappings[keyText];
+          // Adjust font size for longer text
+          if (keyMappings[keyText].length > 3) {
+            keyEl.style.fontSize = '0.55em';
+          }
+        }
+      }
+    });
+
+    // Update highlighted keys for Windows shortcuts
+    // On Mac: shift, V, option, command are highlighted (for Command+Shift+V and Option+Shift+V)
+    // On Windows: shift, V, Alt, Ctrl should be highlighted (for Ctrl+Shift+V and Alt+Shift+V)
+    // Find the bottom row and update highlights
+    const bottomRow = keyboard.querySelector('.keyboard-row:last-child');
+    if (bottomRow) {
+      bottomRow.querySelectorAll('.key.modifier').forEach(keyEl => {
+        const text = keyEl.textContent.trim().toLowerCase();
+        // Update highlighting for Windows keys
+        if (text === 'ctrl' || text === 'alt') {
+          keyEl.classList.add('highlighted');
+        }
+        // Remove highlight from Win key (Windows logo key is not used for these shortcuts)
+        if (text === 'win') {
+          keyEl.classList.remove('highlighted');
+        }
+      });
+    }
+  }
+
+  // Expose globally for language switch updates
+  window.updateDownloadButtonsForOS = updateDownloadButtonsForOS;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateDownloadButtonsForOS);
+  } else {
+    updateDownloadButtonsForOS();
+  }
+})();
+
+// ---------------------------------------------
 // Mobile-only header CTA label override
 // - Header button (`#download-nav`) shows a shorter label on small screens
 // - Only affects the header; hero/CTA buttons remain unchanged
@@ -1278,8 +1524,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!navBtn) return;
     const lang = (document.documentElement && document.documentElement.lang) || currentLang || (window.DEFAULT_LANG || 'en');
     const isMobile = (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) || (window.innerWidth && window.innerWidth <= 720);
-    const svgIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 2px; vertical-align: middle;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>';
-    const desktopLabel = (translations[lang] && translations[lang]['header.clone']) || (svgIcon + (lang === 'ja' ? 'Mac用ダウンロード' : 'Download for Mac'));
+
+    // OS detection
+    const os = detectedOS || 'mac';
+    const isMac = os === 'mac' || os === 'other';
+    const svgIcon = isMac ? osIcons.mac : osIcons.windows;
+
+    // Desktop labels based on OS
+    const desktopLabelKey = isMac ? 'header.clone.mac' : 'header.clone.windows';
+    const desktopLabelText = (translations[lang] && translations[lang][desktopLabelKey]) ||
+      (isMac
+        ? (lang === 'ja' ? 'Mac用ダウンロード' : 'Download for Mac')
+        : (lang === 'ja' ? 'Windows用ダウンロード' : 'Download for Windows'));
+    const desktopLabel = svgIcon + desktopLabelText;
     const mobileLabel = svgIcon + (lang === 'ja' ? 'ダウンロード' : 'Download');
     navBtn.innerHTML = isMobile ? mobileLabel : desktopLabel;
   }

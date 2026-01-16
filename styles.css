@@ -38,16 +38,12 @@ html {
 }
 
 body {
-  height: 100%;
-}
-
-body {
   margin: 0;
+  height: 100%;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   background: var(--bg);
   color: var(--text);
   line-height: 1.55;
-  /* offset content for fixed header */
   padding-top: var(--nav-height);
   overflow-x: hidden;
   width: 100%;
@@ -170,9 +166,6 @@ body {
   height: 32px;
   width: auto;
   display: block;
-}
-
-.brand-logo {
   color: inherit;
 }
 
@@ -1842,16 +1835,7 @@ html[lang="en"] .hero-left .hero-title {
 }
 
 .section-title::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -12px;
-  width: 80px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-2));
-  box-shadow: 0 0 20px rgba(217, 70, 239, 0.35);
+  content: none;
 }
 
 .section-title.no-deco::after {
@@ -3139,6 +3123,28 @@ body:has([href*="user-gaide"]) .grid.features {
 
 .dl-card.active {
   box-shadow: 0 0 0 2px var(--ring), var(--glass-shadow);
+}
+
+/* Coming Soon card styles */
+.dl-card-coming-soon {
+  opacity: 0.85;
+}
+
+.dl-card-coming-soon .dl-btn.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.dl-coming-soon-note {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.download-alt-section {
+  text-align: center;
 }
 
 @media (max-width: 1100px) {
