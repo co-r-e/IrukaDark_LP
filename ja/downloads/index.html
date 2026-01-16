@@ -45,51 +45,5 @@
 
     <script src="../../components.js?v=20251222173619"></script>
     <script src="../../app.js?v=20251222173619"></script>
-    <script>
-      // OS-aware downloads page (Japanese)
-      (function() {
-        function initDownloadsPage() {
-          const os = (typeof detectOS === 'function') ? detectOS() : 'mac';
-          const isWindows = os === 'windows';
-
-          const title = document.getElementById('downloads-title');
-          const subtitle = document.getElementById('downloads-subtitle');
-          const macSection = document.getElementById('mac-downloads');
-          const windowsSection = document.getElementById('windows-downloads');
-          const showMacLink = document.getElementById('show-mac-downloads');
-
-          function showMacSection() {
-            if (title) title.textContent = 'IrukaDark をダウンロード（Mac）';
-            if (subtitle) subtitle.textContent = '最新の macOS 用インストーラをダウンロード。';
-            if (macSection) macSection.style.display = 'block';
-            if (windowsSection) windowsSection.style.display = 'none';
-          }
-
-          function showWindowsSection() {
-            if (title) title.textContent = 'IrukaDark をダウンロード（Windows）';
-            if (subtitle) subtitle.textContent = 'Windows版は現在準備中です。';
-            if (macSection) macSection.style.display = 'none';
-            if (windowsSection) windowsSection.style.display = 'block';
-          }
-
-          if (isWindows) {
-            showWindowsSection();
-          }
-
-          if (showMacLink) {
-            showMacLink.addEventListener('click', function(e) {
-              e.preventDefault();
-              showMacSection();
-            });
-          }
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initDownloadsPage);
-        } else {
-          initDownloadsPage();
-        }
-      })();
-    </script>
   </body>
 </html>

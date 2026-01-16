@@ -45,51 +45,5 @@
 
     <script src="../components.js?v=20251222173619"></script>
     <script src="../app.js?v=20251222173619"></script>
-    <script>
-      // OS-aware downloads page
-      (function() {
-        function initDownloadsPage() {
-          const os = (typeof detectOS === 'function') ? detectOS() : 'mac';
-          const isWindows = os === 'windows';
-
-          const title = document.getElementById('downloads-title');
-          const subtitle = document.getElementById('downloads-subtitle');
-          const macSection = document.getElementById('mac-downloads');
-          const windowsSection = document.getElementById('windows-downloads');
-          const showMacLink = document.getElementById('show-mac-downloads');
-
-          function showMacSection() {
-            if (title) title.textContent = 'Download IrukaDark for Mac';
-            if (subtitle) subtitle.textContent = 'Download the latest macOS installer.';
-            if (macSection) macSection.style.display = 'block';
-            if (windowsSection) windowsSection.style.display = 'none';
-          }
-
-          function showWindowsSection() {
-            if (title) title.textContent = 'Download IrukaDark for Windows';
-            if (subtitle) subtitle.textContent = 'Windows version is coming soon.';
-            if (macSection) macSection.style.display = 'none';
-            if (windowsSection) windowsSection.style.display = 'block';
-          }
-
-          if (isWindows) {
-            showWindowsSection();
-          }
-
-          if (showMacLink) {
-            showMacLink.addEventListener('click', function(e) {
-              e.preventDefault();
-              showMacSection();
-            });
-          }
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initDownloadsPage);
-        } else {
-          initDownloadsPage();
-        }
-      })();
-    </script>
   </body>
 </html>
